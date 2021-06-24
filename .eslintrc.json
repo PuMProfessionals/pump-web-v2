@@ -1,0 +1,30 @@
+{
+    "env": {
+        "browser": true,
+    },
+    "extends": [
+        "plugin:react/recommended", 
+        "airbnb", 
+        "prettier", 
+        "prettier/react"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "prettier"
+    ],
+    "rules": {
+        "no-console": "error"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
+}
