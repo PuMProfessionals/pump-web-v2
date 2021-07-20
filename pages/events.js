@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { PageLayout } from "../sections/hoc";
 
-export default function Home() {
+export default function Events() {
   return (
     <div>
       <Head>
@@ -9,7 +9,7 @@ export default function Home() {
       </Head>
       <PageLayout>
         <div style={{ height: "500px" }}>
-          hello
+          events
         </div>
       </PageLayout>
     </div>

@@ -23,7 +23,6 @@ export const Navbar = ({
 }) => {
   const [isHidden, setIsHidden] = useState(false);
   const handleClick = () => setIsHidden(!isHidden);
-  console.log(path);
   return (
     <NavbarContainer
       backgroundColor={backgroundColor}
@@ -52,7 +51,13 @@ export const Navbar = ({
                 </Link>
               </Resource>
             ))}
-          <SButton>Donate</SButton>
+          <SButton>
+              <Link href="/donate">
+                <a style={{ color: baseTheme.colors.navy }} >
+                  Donate
+                </a>
+              </Link>
+          </SButton>
         </ResourcesContainer>
       </Container>
     </NavbarContainer>
@@ -127,10 +132,7 @@ const ResourcesContainer = styled.div`
   )};
 `;
 const Resource = styled(Text)`
-  ${({ theme, fontColor, isSelected }) => `
-        padding: 0 20px;
-        color: ${isSelected ? theme.colors.yellow : fontColor};
-    `};
+  padding: 0 20px;
   ${media(
     "tablet",
     `
@@ -140,10 +142,10 @@ const Resource = styled(Text)`
 `;
 const ResourceLink = styled.a`
   ${({ theme, fontColor, isSelected }) => `
-        color: ${isSelected ? theme.colors.gold : fontColor};
+        color: ${isSelected ? theme.colors.yellow : fontColor};
         :hover {
             cursor: pointer;
-            color: ${isSelected ? theme.colors.gold : theme.colors.yellow};
+            color: ${isSelected ? theme.colors.yellow : theme.colors.brightBlue};
         }
   `};
 `;
