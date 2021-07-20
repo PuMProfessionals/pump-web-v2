@@ -1,14 +1,16 @@
-import Image from "next/image";
 import styled from "styled-components";
 
-import PowerUp from "../../public/home/power-up.png";
 import PumpDigest from "../../public/home/pump-digest.png";
 import ImpactReport from "../../public/home/impact-report.png";
-import { CardCarousel } from "../../components";
+import { CardCarousel, Text } from "../../components";
+import { baseTheme } from "../../theme";
+import { media } from "../../utils";
 
- 
 export const WhatsHappening = ({ ...props }) => (
   <Wrapper {...props}>
+      <Title size={baseTheme.size.h1} bold="true">
+          What&apos;s Happening?
+      </Title>
       <CarouselWrapper>
         <CardCarousel 
             slides={[
@@ -36,11 +38,6 @@ export const WhatsHappening = ({ ...props }) => (
                     title: "Impact Report 2",
                     description: "We are heading into our third year of operations! Read about our projects from the 2020-21 fiscal year in our first ever impact report.",
                     thumbnail: ImpactReport
-                },
-                {
-                    title: "PowerUp Mentorship",
-                    description: "Explore articles on research, student life, PuMP has partnered up with The STEM Fellowship to launch our mentorship program, PowerUp!",
-                    thumbnail: PumpDigest
                 }
             ]}
         />
@@ -49,9 +46,39 @@ export const WhatsHappening = ({ ...props }) => (
 );
 
 const Wrapper = styled.div`
-    padding: 0 20px;
+    margin: 0 5vw 5vh 5vw;
+
 `;
 const CarouselWrapper = styled.div`
     margin: auto;
-    width: 80%;
+    ${media(
+        1200,
+        `
+            width: 70%;
+        `
+    )};
+    ${media(
+        1050,
+        `
+            width: 80%;
+        `
+    )};
+    ${media(
+        900,
+        `
+            width: 90%;
+        `
+    )};
+    ${media(
+        800,
+        `
+            width: 100%;
+        `
+    )};
+`;
+const Title = styled(Text)`
+  ${({ theme }) => `
+      font-family: ${theme.font.josefin};
+      color: ${theme.colors.navy};
+  `};
 `;

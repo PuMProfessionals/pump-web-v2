@@ -53,7 +53,7 @@ const Wrapper = styled.div`
     margin-bottom: 30px;
     max-width: 300px;
     height: 470px;
-    box-shadow: 10px 8px 24px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 8px 8px rgba(0, 0, 0, 0.25);
     ${({ theme }) => `
         p {
             font-family: ${theme.font.lato};
