@@ -27,11 +27,12 @@ export const ContactSection = () => {
 
 const Wrapper = styled.div`
   padding: 0 5%;
+  margin-bottom: 8%;
   display: flex;
   flex-direction: row;
   align-items: center;
   ${media(
-    "tablet",
+    750,
     `
             flex-direction: column;
         `

@@ -9,7 +9,7 @@ export const TopSection = ({ ...props }) => (
   <MainContainer {...props}>
     <FirstColumn>
       <JosefinTitle size="4.5em" bold="true">
-        {CONSTANTS.full_pump}
+        {CONSTANTS.pump}
       </JosefinTitle>
       <SText size="default">{CONSTANTS.registered_charity_descr}</SText>
       <Button>
