@@ -1,14 +1,14 @@
 import Head from "next/head";
 import { PageLayout } from "../sections/hoc";
 
-export default function Home() {
+export default function About({ ...props }) {
   return (
-    <div>
+    <div {...props}>
       <Head>
         <title>PuMP</title>
       </Head>
       <PageLayout>
-        hello
+        resources
       </PageLayout>
     </div>
   );

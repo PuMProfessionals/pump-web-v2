@@ -1,6 +1,7 @@
 import { useState } from "react";
-import styled from "styled-components";
 import Image from "next/image";
+import Link from "next/link";
+import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import { Text, Button } from "../components";
@@ -10,15 +11,19 @@ import PumpLogo from "../public/pump-logo.svg";
 import { baseTheme } from "../theme";
 import { media } from "../utils";
 
-const RESOURCES = ["Home", "About Us", "Resources", "Events", "Partners"]
+{/* TODO: Refactor into object? paths must be same as linked pages*/}
+const RESOURCES = ["Home", "About Us", "Resources", "Events", "Partners"];
+const PATHS = ["", "about", "resources", "events", "partners"];
 
 export const Navbar = ({
   backgroundColor = baseTheme.colors.navy,
   fontColor = baseTheme.colors.white,
+  path, 
   ...props
 }) => {
   const [isHidden, setIsHidden] = useState(false);
   const handleClick = () => setIsHidden(!isHidden);
+  console.log(path);
   return (
     <NavbarContainer
       backgroundColor={backgroundColor}
@@ -26,17 +31,25 @@ export const Navbar = ({
       {...props}
     >
       <LogoContainer>
-        {/* TODO: CLICK IS TO HOME PAGE*/}
-        <PumpImg src={PumpLogo} alt="Pump Logo" width={80} height={50} />
+        {/* TODO: NEW LOGO */}
+        <Link href="/">
+          <a>
+            <PumpImg src={PumpLogo} alt="Pump Logo" width={80} height={50} />
+          </a>
+        </Link>
         {isHidden ? <Icon src={Close} alt="Cross icon" width={30} height={30} onClick={handleClick}/>
           : <Icon src={Open} alt="Hamburger icon" width={30} height={30} onClick={handleClick} />}
       </LogoContainer>
       <Container isHidden={isHidden}>
         <ResourcesContainer>
           {RESOURCES
-            .map((resource) => (
-              <Resource key={resource} fontColor={fontColor}>
-                {resource}
+            .map((resource, index) => (
+              <Resource key={resource}>
+                <Link href={`/${PATHS[index]}`}>
+                  <ResourceLink fontColor={fontColor} isSelected={path == PATHS[index]}>
+                    {resource}
+                  </ResourceLink>
+                </Link>
               </Resource>
             ))}
           <SButton>Donate</SButton>
@@ -114,13 +127,9 @@ const ResourcesContainer = styled.div`
   )};
 `;
 const Resource = styled(Text)`
-  ${({ theme }) => `
+  ${({ theme, fontColor, isSelected }) => `
         padding: 0 20px;
-
-        :hover {
-            cursor: pointer;
-            color: ${theme.colors.yellow};
-        }
+        color: ${isSelected ? theme.colors.yellow : fontColor};
     `};
   ${media(
     "tablet",
@@ -128,7 +137,15 @@ const Resource = styled(Text)`
           padding: 0;
           `
   )};
-  color: ${(props) => props.fontColor};
+`;
+const ResourceLink = styled.a`
+  ${({ theme, fontColor, isSelected }) => `
+        color: ${isSelected ? theme.colors.gold : fontColor};
+        :hover {
+            cursor: pointer;
+            color: ${isSelected ? theme.colors.gold : theme.colors.yellow};
+        }
+  `};
 `;
 const Icon = styled(Image)`
   display: none!important;
@@ -160,5 +177,5 @@ const SButton = styled(Button)`
 Navbar.propTypes = {
   backgroundColor: PropTypes.string,
   fontColor: PropTypes.string,
-  isHidden: PropTypes.bool,
+  mainPath: PropTypes.string
 };
