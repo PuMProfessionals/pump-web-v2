@@ -34,7 +34,7 @@ const Wrapper = styled.div`
   ${media(
     750,
     `
-            flex-direction: column;
+        flex-direction: column;
         `
   )};
 `;

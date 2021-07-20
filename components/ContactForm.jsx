@@ -96,6 +96,9 @@ const FirstInputWrapper = styled.div`
 const SInput = styled(Input)`
   width: 39%;
   margin-top: 10px;
+  @media only screen and (min-width: 1600px) {
+    width: 43%;
+  }
   ${media(
     "tablet",
     `
