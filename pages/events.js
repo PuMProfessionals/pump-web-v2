@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Input } from "../components";
 import { PageLayout } from "../sections/hoc";
 
 export default function Events() {
@@ -9,7 +10,7 @@ export default function Events() {
       </Head>
       <PageLayout>
         <div style={{ height: "500px" }}>
-          events
+            <Input placeholder="Sample placeholder" />
         </div>
       </PageLayout>
     </div>
