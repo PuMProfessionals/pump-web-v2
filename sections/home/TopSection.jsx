@@ -104,9 +104,11 @@ const Graphic = styled(Image)`
 `;
 
 const FirstColumn = styled.div`
+  width: 60%;
   ${media(
     "laptop",
-    `
+    ` 
+        width: 100%;
         flex: 0 0 35%;
         `
   )};

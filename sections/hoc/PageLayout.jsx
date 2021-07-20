@@ -24,7 +24,7 @@ export const PageLayout = ({ children, ...props }) => {
 
 const Wrapper = styled.div`
   @media only screen and (min-width: 2000px) {
-    max-width: 2000px;
+    max-width: 1600px;
     margin: auto;
   }
 `;
