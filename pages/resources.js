@@ -1,16 +1,13 @@
 import Head from "next/head";
 import { PageLayout } from "../sections/hoc";
-import { TopSection } from "../sections/home";
 
-export default function Home() {
+export default function About({ ...props }) {
   return (
-    <div>
+    <div {...props}>
       <Head>
         <title>PuMP</title>
       </Head>
-      <PageLayout>
-        <TopSection />
-      </PageLayout>
+      <PageLayout>resources</PageLayout>
     </div>
   );
 }

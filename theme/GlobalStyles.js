@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
         }
         a {
             text-decoration: none;
-            color: ${theme.colors.navy};
+            color: ${theme.colors.white};
         }
     `};
 `;

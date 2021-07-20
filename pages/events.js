@@ -1,15 +1,17 @@
 import Head from "next/head";
+import { Input } from "../components";
 import { PageLayout } from "../sections/hoc";
-import { TopSection } from "../sections/home";
 
-export default function Home() {
+export default function Events() {
   return (
     <div>
       <Head>
         <title>PuMP</title>
       </Head>
       <PageLayout>
-        <TopSection />
+        <div style={{ height: "500px" }}>
+          <Input placeholder="Sample placeholder" />
+        </div>
       </PageLayout>
     </div>
   );
