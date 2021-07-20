@@ -1,7 +1,9 @@
 import Head from "next/head";
 import { PageLayout } from "../sections/hoc";
-import { TopSection } from "../sections/home";
+import { TopSection, WhatsHappening } from "../sections/home";
 
+const WhatsHappeningItems = {
+};
 export default function Home() {
   return (
     <div>
@@ -10,6 +12,7 @@ export default function Home() {
       </Head>
       <PageLayout>
         <TopSection />
+        <WhatsHappening />
       </PageLayout>
     </div>
   );

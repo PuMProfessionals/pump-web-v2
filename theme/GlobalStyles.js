@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
     ${({ theme }) => `
         *,
         *::before,
@@ -27,5 +27,3 @@ const GlobalStyle = createGlobalStyle`
         }
     `};
 `;
-
-export default GlobalStyle;

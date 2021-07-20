@@ -6,6 +6,8 @@ import { baseTheme, GlobalStyle } from "../theme";
 
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+import "swiper/swiper-bundle.min.css";
+import "swiper/components/navigation/navigation.min.css";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());

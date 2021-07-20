@@ -24,7 +24,7 @@ export function Card ({
                     <Image
                         alt="Sample"
                         src={thumbnail}
-                        height={250}
+                        height={200}
                         width={300}
                     />
                 </ImageWrapper>
@@ -52,6 +52,7 @@ const Wrapper = styled.div`
     border-radius: 44px;
     margin-bottom: 30px;
     max-width: 300px;
+    height: 470px;
     box-shadow: 10px 8px 24px rgba(0, 0, 0, 0.25);
     ${({ theme }) => `
         p {
@@ -60,11 +61,6 @@ const Wrapper = styled.div`
             line-height: 1.5;
         }
     `};
-
-    :hover {
-        transform: scale(1.03);
-        transition: all ease 0.4s;
-    }
 `;
 const Section = styled.div`
     display: flex;
@@ -86,5 +82,6 @@ const Title = styled.h3`
 const ImageWrapper = styled.div`
     display: flex;
     justify-content: center;
-    border-radius: 44px 44px 0px 0px;
+    border-top-left-radius: 44px;
+    border-top-right-radius: 44px;
 `;
