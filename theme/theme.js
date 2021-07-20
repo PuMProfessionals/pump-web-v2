@@ -5,6 +5,7 @@ const baseTheme = {
     josefin: "Josefin Sans, sans-serif",
     oswald: "Oswald, sans-serif",
     lato: "Lato, sans-serif",
+    kumbh: "'Kumbh Sans', sans-serif"
   },
   size: {
     default: "1rem",
