@@ -7,49 +7,50 @@ import { Text } from "./Text";
 import { baseTheme } from "../theme";
 import { media, CONSTANTS } from "../utils";
 
-{/* TODO: setup STMP? - issues about security*/}
+{
+  /* TODO: setup STMP? - issues about security*/
+}
 export const ContactForm = ({
   title, // string
   descriptionText, // string
   ...props
 }) => {
-    const [fullName, setFullName] = useState("");
-    const [subjectLine, setSubjectLine] = useState("");
-    const [message, setMessage] = useState("");
-    return (
-        <Wrapper {...props}>
-        <Title size={baseTheme.size.h2} bold="true">
-            {title}
-        </Title>
-        <Text>{descriptionText}</Text>
-        <InputsWrapper>
-            <FirstInputWrapper>
-            <SInput 
-                placeholder="Full Name" 
-                onChange={e => setFullName(e.target.value)}
-            />
-            <SInput 
-                placeholder="Subject line"
-                onChange={e => setSubjectLine(e.target.value)} 
-            />
-            </FirstInputWrapper>
-            <TextArea 
-                placeholder="Write a Message..." 
-                onChange={e => setMessage(e.target.value)}
-            />
-        </InputsWrapper>
-        <Button style={{ marginTop: "30px" }}>
-            <a 
-                style = {{ color: baseTheme.colors.navy }} 
-                href={
-                `mailto:${CONSTANTS.email}?subject=${subjectLine} from ${fullName}
-                &body=${message}`
-            }>
-                Send Message
-            </a>
-        </Button>
-        </Wrapper>
-    );
+  const [fullName, setFullName] = useState("");
+  const [subjectLine, setSubjectLine] = useState("");
+  const [message, setMessage] = useState("");
+  return (
+    <Wrapper {...props}>
+      <Title size={baseTheme.size.h2} bold="true">
+        {title}
+      </Title>
+      <Text>{descriptionText}</Text>
+      <InputsWrapper>
+        <FirstInputWrapper>
+          <SInput
+            placeholder="Full Name"
+            onChange={(e) => setFullName(e.target.value)}
+          />
+          <SInput
+            placeholder="Subject line"
+            onChange={(e) => setSubjectLine(e.target.value)}
+          />
+        </FirstInputWrapper>
+        <TextArea
+          placeholder="Write a Message..."
+          onChange={(e) => setMessage(e.target.value)}
+        />
+      </InputsWrapper>
+      <Button style={{ marginTop: "30px" }}>
+        <a
+          style={{ color: baseTheme.colors.navy }}
+          href={`mailto:${CONSTANTS.email}?subject=${subjectLine} from ${fullName}
+                &body=${message}`}
+        >
+          Send Message
+        </a>
+      </Button>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.div`

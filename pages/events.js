@@ -8,9 +8,7 @@ export default function Events() {
         <title>PuMP</title>
       </Head>
       <PageLayout>
-        <div style={{ height: "500px" }}>
-          events
-        </div>
+        <div style={{ height: "500px" }}>events</div>
       </PageLayout>
     </div>
   );
