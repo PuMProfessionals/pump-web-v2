@@ -15,9 +15,9 @@ export const Footer = ({ path, ...props }) => (
     <FirstColumn>
       <Image src={PumpLogo} alt="Pump Logo" width={120} height={90} />
       <SText lineHeight="24px" style={{ padding: "20px 0 20px 0" }}>
-        {CONSTANTS.footer.registered_charity_descr}
+        {CONSTANTS.registered_charity_descr}
       </SText>
-      <SText size="small">{CONSTANTS.footer.copyright}</SText>
+      <SText size="small">{CONSTANTS.copyright}</SText>
     </FirstColumn>
     <SecondColumn>
       <JosefinNoHoverText bold size="defaultLarger" style={{ marginBottom: "20px" }}>
@@ -38,10 +38,10 @@ export const Footer = ({ path, ...props }) => (
       <JosefinNoHoverText bold size="defaultLarger" style={{ marginBottom: "20px" }}>
         Contact
       </JosefinNoHoverText>
-      <a href={`mailto:${CONSTANTS.footer.email}`}>
+      <a href={`mailto:${CONSTANTS.email}`}>
         <Email>{CONSTANTS.email}</Email>
       </a>
-      <JosefinNoHoverText>{CONSTANTS.footer.address}</JosefinNoHoverText>
+      <JosefinNoHoverText>{CONSTANTS.address}</JosefinNoHoverText>
       <LogoContainer>
         <a href={CONSTANTS.facebook} target="_blank" rel="noopener noreferrer">
           <Logo>

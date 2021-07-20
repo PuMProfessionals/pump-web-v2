@@ -5,8 +5,8 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import { Text, Button } from "../components";
-import Open from "../public/home/open-hamburger.svg";
-import Close from "../public/home/close-hamburger.svg";
+import Open from "../public/open-hamburger.svg";
+import Close from "../public/close-hamburger.svg";
 import PumpLogo from "../public/pump-logo.svg";
 import { baseTheme } from "../theme";
 import { media } from "../utils";
