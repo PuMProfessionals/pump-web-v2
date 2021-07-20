@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { PageLayout } from "../components/hoc";
+import { PageLayout } from "../sections/hoc";
 
 export default function Home() {
   return (

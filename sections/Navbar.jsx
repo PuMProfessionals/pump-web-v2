@@ -1,22 +1,19 @@
-import React, { useState } from "react";
-import Image from "next/image";
+import { useState } from "react";
 import styled from "styled-components";
+import Image from "next/image";
 import PropTypes from "prop-types";
 
-import { Text } from "./Text";
-import { Button } from "./Button";
-import Open from "../public/open-hamburger.svg";
-import Close from "../public/close-hamburger.svg";
+import { Text, Button } from "../components";
+import Open from "../public/home/open-hamburger.svg";
+import Close from "../public/home/close-hamburger.svg";
 import PumpLogo from "../public/pump-logo.svg";
-import { baseTheme } from "../theme"
-import { CONSTANTS, media } from "../utils";
+import { baseTheme } from "../theme";
+import { media } from "../utils";
 
-const START_INDEX = 0;
-const ONE_LESS_THAN_SIZE = 5;
-const DONATE = CONSTANTS.resources[ONE_LESS_THAN_SIZE];
+const RESOURCES = ["Home", "About Us", "Resources", "Events", "Partners"]
 
 export const Navbar = ({
-  backgroundColor = baseTheme.colors.greyBlue,
+  backgroundColor = baseTheme.colors.navy,
   fontColor = baseTheme.colors.white,
   ...props
 }) => {
@@ -28,22 +25,21 @@ export const Navbar = ({
       fontColor={fontColor}
       {...props}
     >
-      <LogoContainer onClick={handleClick}>
+      <LogoContainer>
         {/* TODO: CLICK IS TO HOME PAGE*/}
-        <Image src={PumpLogo} alt="Pump Logo" width={80} height={80}/>
-        {!isHidden && <Image src={Open} alt="Hamburgeer" width={80} height={80} />}
-        {!!isHidden && <Image src={Close} alt="Cross" width={80} height={80} />}
+        <PumpImg src={PumpLogo} alt="Pump Logo" width={80} height={50} />
+        {isHidden ? <Icon src={Close} alt="Cross icon" width={30} height={30} onClick={handleClick}/>
+          : <Icon src={Open} alt="Hamburger icon" width={30} height={30} onClick={handleClick} />}
       </LogoContainer>
       <Container isHidden={isHidden}>
         <ResourcesContainer>
-          {CONSTANTS.resources
-            .slice(START_INDEX, ONE_LESS_THAN_SIZE)
+          {RESOURCES
             .map((resource) => (
               <Resource key={resource} fontColor={fontColor}>
                 {resource}
               </Resource>
             ))}
-          <SButton>{DONATE}</SButton>
+          <SButton>Donate</SButton>
         </ResourcesContainer>
       </Container>
     </NavbarContainer>
@@ -79,11 +75,11 @@ const LogoContainer = styled.div`
   ${media(
     "tablet",
     `
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding-bottom: 20px;
-        `
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-bottom: 20px;
+            `
   )};
 `;
 const Container = styled.div`
@@ -99,6 +95,12 @@ const Container = styled.div`
   // props does not work within media function
   @media only screen and (max-width: 900px) {
     display: ${(props) => (props.isHidden ? "flex" : "none")};
+  }
+`;
+const PumpImg = styled(Image)`
+  padding-top: 15px!important;
+  :hover {
+    cursor: pointer;
   }
 `;
 const ResourcesContainer = styled.div`
@@ -128,8 +130,23 @@ const Resource = styled(Text)`
   )};
   color: ${(props) => props.fontColor};
 `;
+const Icon = styled(Image)`
+  display: none!important;
+  ${media(
+    "tablet",
+    `
+          display: flex!important;
+          cursor: pointer;
+          margin-top: 10px;
+          opacity: 1;
+          :hover {
+            opacity: 0.8;
+          }
+          `
+  )};
+`;
 const SButton = styled(Button)`
-  margin-left: "10px";
+  margin-left: 20px;
   ${media(
     "tablet",
     `
