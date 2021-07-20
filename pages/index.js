@@ -2,8 +2,6 @@ import Head from "next/head";
 import { PageLayout } from "../sections/hoc";
 import { TopSection, WhatsHappening } from "../sections/home";
 
-const WhatsHappeningItems = {
-};
 export default function Home() {
   return (
     <div>
