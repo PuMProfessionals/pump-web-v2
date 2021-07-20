@@ -8,9 +8,7 @@ export default function Donate() {
         <title>PuMP</title>
       </Head>
       <PageLayout>
-        <div style={{ height: "500px" }}>
-          donate
-        </div>
+        <div style={{ height: "500px" }}>donate</div>
       </PageLayout>
     </div>
   );

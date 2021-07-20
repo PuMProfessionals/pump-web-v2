@@ -10,7 +10,7 @@ export default function Events() {
       </Head>
       <PageLayout>
         <div style={{ height: "500px" }}>
-            <Input placeholder="Sample placeholder" />
+          <Input placeholder="Sample placeholder" />
         </div>
       </PageLayout>
     </div>

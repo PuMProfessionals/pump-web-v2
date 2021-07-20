@@ -21,7 +21,7 @@ export const UASLayout = ({ titleText, graphic, descriptionText, ...props }) => 
 );
 
 const Wrapper = styled.div`
-    padding: 8vh 0;
+  padding: 8vh 0;
 `;
 const Title = styled(Text)`
   ${({ theme }) => `

@@ -9,7 +9,7 @@ export const CONSTANTS = {
   instagram: "https://www.instagram.com/pumpprofessionals/?hl=en",
   resources: ["Home", "About Us", "Resources", "Events", "Partners", "Donate"],
   registered_charity_descr:
-      "A registered charity dedicated to connecting aspiring students to health sciences opportunities",
+    "A registered charity dedicated to connecting aspiring students to health sciences opportunities",
   copyright: "© 2021 Prospective Medical Professionals",
   address: "Richmond Hill, Ontario",
 };

@@ -1,15 +1,15 @@
-import Router from 'next/router';
+import Router from "next/router";
 import Head from "next/head";
-import React from 'react';
+import React from "react";
 import { ThemeProvider } from "styled-components";
 import { baseTheme, GlobalStyle } from "../theme";
 
 import NProgress from "nprogress";
-import "nprogress/nprogress.css"; 
+import "nprogress/nprogress.css";
 
-Router.events.on('routeChangeStart', () => NProgress.start()); 
-Router.events.on('routeChangeComplete', () => NProgress.done()); 
-Router.events.on('routeChangeError', () => NProgress.done());  
+Router.events.on("routeChangeStart", () => NProgress.start());
+Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeError", () => NProgress.done());
 
 /* eslint-disable react/prop-types */
 function MyApp({ Component, pageProps }) {

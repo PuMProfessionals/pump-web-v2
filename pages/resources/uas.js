@@ -11,14 +11,14 @@ export default function UAS() {
         <title>PuMP</title>
       </Head>
       <PageLayout>
-        <UASLayout 
-            titleText="What is UAS?"
-            descriptionText="The University Admissions Server is a Discord community for
+        <UASLayout
+          titleText="What is UAS?"
+          descriptionText="The University Admissions Server is a Discord community for
             high school and undergraduate students to learn more about diverse university
             programs. Our goal is to create an information hub to answer student questions
             on admission requirements, program curriculum, student life, extracurricular
             opportunities, and more."
-            graphic={SampleGraphic}
+          graphic={SampleGraphic}
         />
       </PageLayout>
     </div>

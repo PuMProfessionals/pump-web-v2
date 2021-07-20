@@ -11,14 +11,16 @@ import PumpLogo from "../public/pump-logo.svg";
 import { baseTheme } from "../theme";
 import { media } from "../utils";
 
-{/* TODO: Refactor into object? paths must be same as linked pages*/}
+{
+  /* TODO: Refactor into object? paths must be same as linked pages*/
+}
 const RESOURCES = ["Home", "About Us", "Resources", "Events", "Partners"];
 const PATHS = ["", "about", "resources", "events", "partners"];
 
 export const Navbar = ({
   backgroundColor = baseTheme.colors.navy,
   fontColor = baseTheme.colors.white,
-  path, 
+  path,
   ...props
 }) => {
   const [isHidden, setIsHidden] = useState(false);
@@ -36,27 +38,42 @@ export const Navbar = ({
             <PumpImg src={PumpLogo} alt="Pump Logo" width={80} height={50} />
           </a>
         </Link>
-        {isHidden ? <Icon src={Close} alt="Cross icon" width={30} height={30} onClick={handleClick}/>
-          : <Icon src={Open} alt="Hamburger icon" width={30} height={30} onClick={handleClick} />}
+        {isHidden ? (
+          <Icon
+            src={Close}
+            alt="Cross icon"
+            width={30}
+            height={30}
+            onClick={handleClick}
+          />
+        ) : (
+          <Icon
+            src={Open}
+            alt="Hamburger icon"
+            width={30}
+            height={30}
+            onClick={handleClick}
+          />
+        )}
       </LogoContainer>
       <Container isHidden={isHidden}>
         <ResourcesContainer>
-          {RESOURCES
-            .map((resource, index) => (
-              <Resource key={resource}>
-                <Link href={`/${PATHS[index]}`}>
-                  <ResourceLink fontColor={fontColor} isSelected={path == PATHS[index]}>
-                    {resource}
-                  </ResourceLink>
-                </Link>
-              </Resource>
-            ))}
-          <SButton>
-              <Link href="/donate">
-                <a style={{ color: baseTheme.colors.navy }} >
-                  Donate
-                </a>
+          {RESOURCES.map((resource, index) => (
+            <Resource key={resource}>
+              <Link href={`/${PATHS[index]}`}>
+                <ResourceLink
+                  fontColor={fontColor}
+                  isSelected={path == PATHS[index]}
+                >
+                  {resource}
+                </ResourceLink>
               </Link>
+            </Resource>
+          ))}
+          <SButton>
+            <Link href="/donate">
+              <a style={{ color: baseTheme.colors.navy }}>Donate</a>
+            </Link>
           </SButton>
         </ResourcesContainer>
       </Container>
@@ -116,7 +133,7 @@ const Container = styled.div`
   }
 `;
 const PumpImg = styled(Image)`
-  padding-top: 15px!important;
+  padding-top: 15px !important;
   :hover {
     cursor: pointer;
   }
@@ -150,7 +167,7 @@ const ResourceLink = styled.a`
   `};
 `;
 const Icon = styled(Image)`
-  display: none!important;
+  display: none !important;
   ${media(
     "tablet",
     `
@@ -179,5 +196,5 @@ const SButton = styled(Button)`
 Navbar.propTypes = {
   backgroundColor: PropTypes.string,
   fontColor: PropTypes.string,
-  mainPath: PropTypes.string
+  mainPath: PropTypes.string,
 };

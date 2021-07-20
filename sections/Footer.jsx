@@ -26,11 +26,9 @@ export const Footer = ({ path, ...props }) => (
       {/* TODO: need to add links to appropriate pages */}
       {CONSTANTS.resources.map((resource, index) => (
         <JosefinText key={resource}>
-            <Link href={`/${PATHS[index]}`}>
-                <ResourceLink isSelected={path == PATHS[index]}>
-                    {resource}
-                </ResourceLink>
-            </Link>
+          <Link href={`/${PATHS[index]}`}>
+            <ResourceLink isSelected={path == PATHS[index]}>{resource}</ResourceLink>
+          </Link>
         </JosefinText>
       ))}
     </SecondColumn>
@@ -45,12 +43,22 @@ export const Footer = ({ path, ...props }) => (
       <LogoContainer>
         <a href={CONSTANTS.facebook} target="_blank" rel="noopener noreferrer">
           <Logo>
-            <SocialMedia src={FacebookLogo} alt="Facebook Logo" width={50} height={50} />
+            <SocialMedia
+              src={FacebookLogo}
+              alt="Facebook Logo"
+              width={50}
+              height={50}
+            />
           </Logo>
         </a>
         <a href={CONSTANTS.instagram} target="_blank" rel="noopener noreferrer">
           <Logo>
-            <SocialMedia src={InstagramLogo} alt="Instagram Logo" width={50} height={50} />
+            <SocialMedia
+              src={InstagramLogo}
+              alt="Instagram Logo"
+              width={50}
+              height={50}
+            />
           </Logo>
         </a>
       </LogoContainer>

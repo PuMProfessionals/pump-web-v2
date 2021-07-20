@@ -8,9 +8,7 @@ export default function Partners() {
         <title>PuMP</title>
       </Head>
       <PageLayout>
-        <div style={{ height: "500px" }}>
-          partners
-        </div>
+        <div style={{ height: "500px" }}>partners</div>
       </PageLayout>
     </div>
   );

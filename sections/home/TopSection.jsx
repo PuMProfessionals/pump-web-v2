@@ -11,9 +11,7 @@ export const TopSection = ({ ...props }) => (
       <JosefinTitle size="4.5em" bold="true">
         {CONSTANTS.full_pump}
       </JosefinTitle>
-      <SText size="default">
-        {CONSTANTS.registered_charity_descr}
-      </SText>
+      <SText size="default">{CONSTANTS.registered_charity_descr}</SText>
       <Button>
         <ButtonText size="default" bold="true">
           Donate

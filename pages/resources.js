@@ -7,9 +7,7 @@ export default function About({ ...props }) {
       <Head>
         <title>PuMP</title>
       </Head>
-      <PageLayout>
-        resources
-      </PageLayout>
+      <PageLayout>resources</PageLayout>
     </div>
   );
 }

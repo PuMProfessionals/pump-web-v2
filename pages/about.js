@@ -7,9 +7,7 @@ export default function About() {
       <Head>
         <title>PuMP</title>
       </Head>
-      <PageLayout>
-        about
-      </PageLayout>
+      <PageLayout>about</PageLayout>
     </div>
   );
 }

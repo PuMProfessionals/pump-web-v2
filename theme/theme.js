@@ -18,7 +18,7 @@ const baseTheme = {
   radius: {
     default: "8px",
     border: "20px",
-    button: "44px"
+    button: "44px",
   },
   media: {
     small: "325",
