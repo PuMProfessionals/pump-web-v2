@@ -16,8 +16,15 @@ export const PageLayout = ({ children, ...props }) => {
   return (
     <div {...props}>
       <Navbar path={mainPath} />
-      {children}
+      <Wrapper>{children}</Wrapper>
       <Footer path={mainPath} />
     </div>
   );
 };
+
+const Wrapper = styled.div`
+  @media only screen and (min-width: 2000px) {
+    max-width: 2000px;
+    margin: auto;
+  }
+`;

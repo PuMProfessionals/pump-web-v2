@@ -31,7 +31,7 @@ export const TopSection = ({ ...props }) => (
 
 const MainContainer = styled.div`
   display: flex;
-  margin: 5em;
+  padding: 5%;
   flex-wrap: nowrap;
   flex-direction: row;
   align-items: center;
@@ -104,7 +104,12 @@ const Graphic = styled(Image)`
 `;
 
 const FirstColumn = styled.div`
-  flex: 0 0 35%;
+  ${media(
+    "laptop",
+    `
+        flex: 0 0 35%;
+        `
+  )};
   ${media(
     "tablet",
     `
