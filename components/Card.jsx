@@ -10,13 +10,28 @@ import { baseTheme } from "../theme";
     - Thumbnail: image
     - Title: text (PuMP Digest)
     - Description: text (Check out . . )
+    - imageHeight and imageWidth are dimensions of thumbnail
+    - cardHeight is height of card 
 */
-export function Card({ thumbnail, title, description, ...props }) {
+export function Card({
+  thumbnail,
+  title,
+  description,
+  imageHeight = 200,
+  imageWidth = 300,
+  cardHeight = 470,
+  ...props
+}) {
   return (
-    <Wrapper {...props}>
+    <Wrapper cardHeight={cardHeight} {...props}>
       <Section>
         <ImageWrapper>
-          <Image alt="Sample" src={thumbnail} height={200} width={300} />
+          <Image
+            alt={`Card image for ${title}`}
+            src={thumbnail}
+            height={imageHeight}
+            width={imageWidth}
+          />
         </ImageWrapper>
         <Content>
           <Title>{title}</Title>
@@ -38,9 +53,9 @@ const Wrapper = styled.div`
   border-radius: 44px;
   margin-bottom: 30px;
   max-width: 300px;
-  height: 470px;
   box-shadow: 2px 8px 8px rgba(0, 0, 0, 0.25);
-  ${({ theme }) => `
+  ${({ theme, cardHeight }) => `
+        height: ${cardHeight}px;
         p {
             font-family: ${theme.font.lato};
             font-size: ${theme.size.small};
