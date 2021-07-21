@@ -42,6 +42,13 @@ const Wrapper = styled.div`
 const SContactForm = styled(ContactForm)`
   width: 60%;
   margin-right: 5%;
+  ${media(
+    "tablet",
+    `
+        margin-right: 0%;
+        width: 70%;
+        `
+  )};
 `;
 const ImageContainer = styled.div`
   ${media(

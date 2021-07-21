@@ -7,7 +7,7 @@ import { baseTheme, GlobalStyle } from "../theme";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import "swiper/swiper-bundle.min.css";
-import "swiper/components/pagination/pagination.min.css"
+import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import "react-toastify/dist/ReactToastify.css";
 import "../theme/css/Carousel.css";

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Pagination } from "swiper/core";
+import SwiperCore, { Navigation, Autoplay, Pagination } from "swiper/core";
 
 import { Card } from "./Card";
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation, Autoplay, Pagination]);
 
 export function CardCarousel({ slides, ...props }) {
   return (
@@ -12,12 +12,16 @@ export function CardCarousel({ slides, ...props }) {
       <Swiper
         id="swiper-replace"
         slidesPerView={1}
-        spaceBetween={30} 
-        loop={true} 
-        loopFillGroupWithBlank={true} 
+        spaceBetween={30}
+        loop={true}
+        loopFillGroupWithBlank={true}
         pagination={{
-          "clickable": true
-        }} 
+          clickable: true,
+        }}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
         navigation={true}
         breakpoints={{
           1400: {

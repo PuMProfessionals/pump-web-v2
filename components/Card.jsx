@@ -64,10 +64,11 @@ const Wrapper = styled.div`
         }
   `};
   ${media(
-    450,
+    370,
     `
       max-width: 240px;
       margin-left: 0;
+      padding-bottom: 20px;
     `
   )};
 `;
