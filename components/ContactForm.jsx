@@ -60,7 +60,7 @@ const Wrapper = styled.div`
   ${media(
     "tablet",
     `
-        padding: 5% 10% 10% 10%;
+        padding: 5% 10% 12% 10%;
         `
   )};
 `;

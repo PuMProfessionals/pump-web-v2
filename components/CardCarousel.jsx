@@ -1,27 +1,30 @@
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination } from "swiper/core";
+import SwiperCore, { Navigation, Pagination } from "swiper/core";
 
 import { Card } from "./Card";
-import { media } from "../utils";
 
-SwiperCore.use([Pagination]);
+SwiperCore.use([Navigation, Pagination]);
 
 export function CardCarousel({ slides, ...props }) {
   return (
     <div {...props}>
       <Swiper
+        id="swiper-replace"
         slidesPerView={1}
-        spaceBetween={10}
+        spaceBetween={30} 
+        loop={true} 
+        loopFillGroupWithBlank={true} 
         pagination={{
-          clickable: true,
-        }}
+          "clickable": true
+        }} 
+        navigation={true}
         breakpoints={{
-          1200: {
+          1400: {
             slidesPerView: 3,
             spaceBetween: 20,
           },
-          750: {
+          950: {
             slidesPerView: 2,
             spaceBetween: 20,
           },
@@ -44,10 +47,5 @@ export function CardCarousel({ slides, ...props }) {
 }
 
 const SCard = styled(Card)`
-  ${media(
-    1200,
-    `
-      margin: auto;
-    `
-  )};
+  margin: auto;
 `;

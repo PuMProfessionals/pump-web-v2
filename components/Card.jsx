@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import { Button } from "./Button";
 import { baseTheme } from "../theme";
+import { media } from "../utils";
 
 /* 
     Example:
@@ -23,7 +24,7 @@ export function Card({
   ...props
 }) {
   return (
-    <Wrapper cardHeight={cardHeight} {...props}>
+    <Wrapper imageWidth={imageWidth} cardHeight={cardHeight} {...props}>
       <Section>
         <ImageWrapper>
           <Image
@@ -52,16 +53,23 @@ const Wrapper = styled.div`
   margin-top: 20px;
   border-radius: 44px;
   margin-bottom: 30px;
-  max-width: 300px;
   box-shadow: 2px 8px 8px rgba(0, 0, 0, 0.25);
-  ${({ theme, cardHeight }) => `
+  ${({ theme, cardHeight, imageWidth }) => `
         height: ${cardHeight}px;
+        max-width: ${imageWidth}px;
         p {
             font-family: ${theme.font.lato};
             font-size: ${theme.size.small};
             line-height: 1.5;
         }
-    `};
+  `};
+  ${media(
+    450,
+    `
+      max-width: 240px;
+      margin-left: 0;
+    `
+  )};
 `;
 const Section = styled.div`
   display: flex;

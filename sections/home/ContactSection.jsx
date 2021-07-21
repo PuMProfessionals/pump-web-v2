@@ -35,6 +35,7 @@ const Wrapper = styled.div`
     750,
     `
         flex-direction: column;
+        margin-bottom: 15%;
         `
   )};
 `;

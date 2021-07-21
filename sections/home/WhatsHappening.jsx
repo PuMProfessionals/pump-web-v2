@@ -51,36 +51,26 @@ export const WhatsHappening = ({ ...props }) => (
 );
 
 const Wrapper = styled.div`
-  margin: 0 5vw 5vh 5vw;
+  margin-bottom: 15vh;
+  padding: 0 2%;
+  ${media(
+    1400,
+    `   
+            padding: 0 6%;
+        `
+  )};
 `;
 const CarouselWrapper = styled.div`
-  margin: auto;
+  margin: 0 6%;
   ${media(
-    1200,
-    `
-            width: 70%;
-        `
-  )};
-  ${media(
-    1050,
-    `
-            width: 80%;
-        `
-  )};
-  ${media(
-    900,
-    `
-            width: 90%;
-        `
-  )};
-  ${media(
-    800,
-    `
-            width: 100%;
+    1400,
+    `   
+            margin: auto;
         `
   )};
 `;
 const Title = styled(Text)`
+  padding: 0 5%;
   ${({ theme }) => `
       font-family: ${theme.font.josefin};
       color: ${theme.colors.navy};
