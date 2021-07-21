@@ -6,8 +6,12 @@ import { baseTheme, GlobalStyle } from "../theme";
 
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+<<<<<<< HEAD
 import "swiper/swiper-bundle.min.css";
 import "swiper/components/navigation/navigation.min.css";
+=======
+import "react-toastify/dist/ReactToastify.css";
+>>>>>>> 266e01cb15aafadf8f7840778d13782e64978ad2
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());

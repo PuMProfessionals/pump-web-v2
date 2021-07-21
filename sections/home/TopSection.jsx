@@ -9,7 +9,7 @@ export const TopSection = ({ ...props }) => (
   <MainContainer {...props}>
     <FirstColumn>
       <JosefinTitle size="4.5em" bold="true">
-        {CONSTANTS.full_pump}
+        {CONSTANTS.pump}
       </JosefinTitle>
       <SText size="default">{CONSTANTS.registered_charity_descr}</SText>
       <Button>
@@ -31,7 +31,7 @@ export const TopSection = ({ ...props }) => (
 
 const MainContainer = styled.div`
   display: flex;
-  margin: 5em;
+  padding: 5%;
   flex-wrap: nowrap;
   flex-direction: row;
   align-items: center;
@@ -104,7 +104,14 @@ const Graphic = styled(Image)`
 `;
 
 const FirstColumn = styled.div`
-  flex: 0 0 35%;
+  width: 60%;
+  ${media(
+    "laptop",
+    ` 
+        width: 100%;
+        flex: 0 0 35%;
+        `
+  )};
   ${media(
     "tablet",
     `

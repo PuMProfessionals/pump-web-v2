@@ -1,6 +1,10 @@
 import Head from "next/head";
 import { PageLayout } from "../sections/hoc";
-import { TopSection, WhatsHappening } from "../sections/home";
+import { 
+  TopSection, 
+  WhatsHappening,
+  ContactSection 
+} from "../sections/home";
 
 export default function Home() {
   return (
@@ -11,6 +15,7 @@ export default function Home() {
       <PageLayout>
         <TopSection />
         <WhatsHappening />
+        <ContactSection />
       </PageLayout>
     </div>
   );
