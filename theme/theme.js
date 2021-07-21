@@ -1,10 +1,11 @@
 import "styled-components";
 
-const baseTheme = {
+export const baseTheme = {
   font: {
     josefin: "Josefin Sans, sans-serif",
     oswald: "Oswald, sans-serif",
     lato: "Lato, sans-serif",
+    kumbh: "'Kumbh Sans', sans-serif",
   },
   size: {
     default: "1rem",
@@ -76,5 +77,3 @@ const baseTheme = {
     topBottom: "0px 8px 5px rgba(0, 0, 0, 0.15), 0px -5px 5px rgba(0, 0, 0, 0.15)",
   },
 };
-
-export default baseTheme;

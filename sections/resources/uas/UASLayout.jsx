@@ -26,7 +26,7 @@ const Wrapper = styled.div`
 const Title = styled(Text)`
   ${({ theme }) => `
       font-family: ${theme.font.josefin};
-      color: ${theme.colors.black};
+      color: ${theme.colors.navy};
   `};
 `;
 
