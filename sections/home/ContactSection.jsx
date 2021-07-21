@@ -32,7 +32,7 @@ const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
   ${media(
-    750,
+    "tablet",
     `
         flex-direction: column;
         margin-bottom: 15%;
@@ -45,7 +45,7 @@ const SContactForm = styled(ContactForm)`
 `;
 const ImageContainer = styled.div`
   ${media(
-    750,
+    "tablet",
     `
             display: none;
         `

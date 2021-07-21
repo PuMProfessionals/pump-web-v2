@@ -60,7 +60,13 @@ const Wrapper = styled.div`
   ${media(
     "tablet",
     `
-        padding: 5% 10% 12% 10%;
+        padding: 5% 10% 10% 10%;
+        `
+  )};
+  ${media(
+    "mobile",
+    `
+        padding: 5% 10% 14% 10%;
         `
   )};
 `;
@@ -86,7 +92,7 @@ const FirstInputWrapper = styled.div`
   justify-content: space-between;
   margin-bottom: 30px;
   ${media(
-    "tablet",
+    1000,
     `
         flex-direction: column;
         margin-bottom: 0;
@@ -94,10 +100,13 @@ const FirstInputWrapper = styled.div`
   )};
 `;
 const SInput = styled(Input)`
-  width: 39%;
+  width: 35%;
   margin-top: 10px;
+  @media only screen and (min-width: 1200px) {
+    width: 39%;
+  }
   @media only screen and (min-width: 1600px) {
-    width: 43%;
+    width: 41%;
   }
   ${media(
     "tablet",
