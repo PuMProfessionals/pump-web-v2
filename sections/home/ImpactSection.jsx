@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Link from "next/link";
 
 import ImpactGraphic1 from "../../public/home/impact-section-graphic-1.svg";
 import ImpactGraphic2 from "../../public/home/impact-section-graphic-2.svg";
@@ -6,7 +7,6 @@ import ImpactGraphic3 from "../../public/home/impact-section-graphic-3.svg";
 import { ImpactCard, Text, Button } from "../../components";
 import { media } from "../../utils";
 import { baseTheme } from "../../theme";
-import Link from "next/link";
 
 export const ImpactSection = ({ 
   ...props 
