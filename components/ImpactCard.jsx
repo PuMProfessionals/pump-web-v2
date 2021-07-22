@@ -76,7 +76,7 @@ const Title = styled.h2`
   ${media(
     "tablet",
     `  
-      margin: 10px 0px 0px 0px;
+      margin: 40px 0px 10px 0px;
     `
   )};
 `;
