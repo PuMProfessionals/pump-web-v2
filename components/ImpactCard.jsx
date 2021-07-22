@@ -15,13 +15,15 @@ export const ImpactCard = ({
   description,
   imageHeight = 200,
   imageWidth = 300,
+  cardHeight = 370,
+  ...props
 }) => {
   return (
-    <Wrapper>
+    <Wrapper cardHeight={cardHeight} {...props}>
       <Section>
         <ImageWrapper>
           <Image
-            alt={`Card image for Impact`}
+            alt={`Card image for ${impactNum} ${description}`}
             src={thumbnail}
             height={imageHeight}
             width={imageWidth}
@@ -40,7 +42,9 @@ const Wrapper = styled.div`
   margin-left: 20px;
   margin-bottom: 30px;
   width: 50%;
-  height: 370px;
+  ${({ cardHeight }) => `
+    height: ${cardHeight}px;
+  `};
 
   ${media(
     "tablet",
@@ -55,15 +59,11 @@ const Wrapper = styled.div`
 const Section = styled.div`
   display: flex;
   flex-direction: column;
-  ${media(
-    "tablet",
-    `
-        flex-direction: row;
-        `
-  )};
 `;
 const Content = styled.div`
-  color: black;
+  ${({ theme }) => `
+    color: ${theme.colors.navy};
+`};
 `;
 const Title = styled.h2`
   ${({ theme }) => `
@@ -75,10 +75,9 @@ const Title = styled.h2`
   font-size: 3.5rem;
   ${media(
     "tablet",
+    `  
+      margin: 10px 0px 0px 0px;
     `
-        text-align: left;
-        padding: 0 0 0 40px;
-        `
   )};
 `;
 const Description = styled.text`
@@ -90,31 +89,15 @@ const Description = styled.text`
   text-align: center;
   font-size: 1.5rem;
   padding: 0 10% 0 10%;
+  justify-content: center;
   ${media(
     "tablet",
+    `  
+      margin: 0 5% 5% 5%;
     `
-        text-align: left;
-        padding: 0 0 0 40px;
-        `
   )};
 `;
 const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
-
-  ${media(
-    "tablet",
-    `   
-        margin-right: 0;
-        max-width: 200px;
-        min-width: 200px;
-        margin: 0 0 0 10%;
-        
-        `
-  )};
 `;
-/*
-TO IMPLEMENT
-- CHANGE ORDER OF SVG VS STATISTIC FOR SECOND CARD
-- PASS IN ORDER VALUE AND CHANGE THE ORDER OF THE IMAGE WRAPPER / IMAGE
-    */

@@ -6,7 +6,7 @@ import ImpactGraphic3 from "../../public/home/impact-section-graphic-3.svg";
 import { ImpactCard } from "../../components";
 import { media } from "../../utils";
 
-export const ImpactSection = () => {
+export const ImpactSection = ({ ...props }) => {
   return (
     <Wrapper>
       <ImpactCard
