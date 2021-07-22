@@ -1,5 +1,8 @@
+/* eslint-disable no-undef, no-useless-escape */ //  (for process.env)
 import { useState } from "react";
+import emailjs from "emailjs-com";
 import styled from "styled-components";
+import { toast, ToastContainer } from "react-toastify";
 import { Button } from "./Button";
 import { Input } from "./Input";
 import { TextArea } from "./TextArea";
@@ -7,44 +10,126 @@ import { Text } from "./Text";
 import { baseTheme } from "../theme";
 import { media, CONSTANTS } from "../utils";
 
-{
-  /* TODO: setup STMP? - issues about security*/
-}
 export const ContactForm = ({
   title, // string
   descriptionText, // string
   ...props
 }) => {
-  const [fullName, setFullName] = useState("");
-  const [subjectLine, setSubjectLine] = useState("");
-  const [message, setMessage] = useState("");
+  const [query, setQuery] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const overMessageLimit = true;
+
+  const customError = () => (
+    <div>
+      <span role="img" arial-label="waving-hand">
+        👋
+      </span>{" "}
+      Unfortunately, we could not send the form due to an internal server error.
+      Please feel free to send us an email at&nbsp;
+      <SLink href={`mailto:${CONSTANTS.email}`}>{CONSTANTS.email}</SLink>. Sorry for
+      the inconvenience!
+    </div>
+  );
+
+  const handleChange = () => (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setQuery((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  function validateEmail(email) {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateEmail(query.email)) {
+      let params = {
+        from_name: query.name,
+        reply_to: query.email,
+        message: query.message,
+      };
+      emailjs
+        .send(
+          process.env.NEXT_PUBLIC_SERVICE_ID,
+          process.env.NEXT_PUBLIC_TEMPLATE_ID,
+          params,
+          process.env.NEXT_PUBLIC_USER_ID
+        )
+        .then(
+          () => {
+            setQuery({
+              name: "",
+              email: "",
+              message: "",
+            });
+            toast.success(
+              "👋 An email has successfully been sent! Thank you for reaching out to us! We will get back to you shortly."
+            );
+          },
+          () => {
+            toast.error(customError);
+          }
+        );
+    } else {
+      toast.error("Please enter a valid email address.");
+    }
+  };
+
   return (
     <Wrapper {...props}>
       <Title size={baseTheme.size.h2} bold="true">
         {title}
       </Title>
+      <ToastContainer />
       <Text>{descriptionText}</Text>
-      <InputsWrapper>
-        <FirstInputWrapper>
-          <SInput
-            placeholder="Full Name"
-            onChange={(e) => setFullName(e.target.value)}
-          />
-          <SInput
-            placeholder="Subject line"
-            onChange={(e) => setSubjectLine(e.target.value)}
-          />
-        </FirstInputWrapper>
-        <TextArea
-          placeholder="Write a Message..."
-          onChange={(e) => setMessage(e.target.value)}
-        />
-      </InputsWrapper>
+      {!overMessageLimit && (
+        <form
+          acceptCharset="UTF-8"
+          method="POST"
+          encType="multipart/form-data"
+          onSubmit={handleSubmit}
+        >
+          <InputsWrapper>
+            <FirstInputWrapper>
+              <SInput
+                placeholder="Full Name"
+                name="name"
+                type="text"
+                value={query.name}
+                onChange={handleChange()}
+              />
+              <SInput
+                placeholder="Email Address"
+                name="email"
+                type="email"
+                value={query.email}
+                onChange={handleChange()}
+              />
+            </FirstInputWrapper>
+            <TextArea
+              placeholder="Write a Message..."
+              name="message"
+              value={query.message}
+              required={true}
+              onChange={handleChange()}
+            />
+          </InputsWrapper>
+          <Button style={{ marginTop: "30px" }}>Send Message</Button>
+        </form>
+      )}
       <Button style={{ marginTop: "30px" }}>
         <a
+          href={`mailto:${CONSTANTS.email}`}
           style={{ color: baseTheme.colors.navy }}
-          href={`mailto:${CONSTANTS.email}?subject=${subjectLine} from ${fullName}
-                &body=${message}`}
         >
           Send Message
         </a>
@@ -76,6 +161,17 @@ const Title = styled(Text)`
       color: ${theme.colors.navy};
   `};
 `;
+const SLink = styled.a`
+  text-decoration: underline;
+  color: white;
+  :hover {
+    opacity: 70%;
+    cursor: pointer;
+    ${({ theme }) => `
+        color: ${theme.colors.brightBlue};
+    `};
+  }
+`;
 const InputsWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -92,7 +188,7 @@ const FirstInputWrapper = styled.div`
   justify-content: space-between;
   margin-bottom: 30px;
   ${media(
-    1000,
+    "tablet",
     `
         flex-direction: column;
         margin-bottom: 0;

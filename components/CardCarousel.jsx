@@ -51,5 +51,5 @@ export function CardCarousel({ slides, ...props }) {
 }
 
 const SCard = styled(Card)`
-  margin: auto;
+  margin: 0 15% 50px 15%;
 `;

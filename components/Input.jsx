@@ -2,8 +2,22 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-export const Input = ({ placeholder, ...props }) => (
-  <SInput placeholder={placeholder} {...props} />
+export const Input = ({
+  placeholder,
+  name,
+  value,
+  type,
+  required = true,
+  ...props
+}) => (
+  <SInput
+    placeholder={placeholder}
+    name={name}
+    tyle={type}
+    value={value}
+    required={required}
+    {...props}
+  />
 );
 
 const SInput = styled.input`

@@ -5,12 +5,12 @@ import ImpactGraphic1 from "../../public/home/impact-section-graphic-1.svg";
 import ImpactGraphic2 from "../../public/home/impact-section-graphic-2.svg";
 import ImpactGraphic3 from "../../public/home/impact-section-graphic-3.svg";
 import { ImpactCard, Text, Button } from "../../components";
-import { baseTheme } from "../../theme";
 import { media } from "../../utils";
+import { baseTheme } from "../../theme";
 
 export const ImpactSection = ({ ...props }) => {
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       <TopWrapper>
         <Title size={baseTheme.size.h1} bold="true">
           Our Impact
