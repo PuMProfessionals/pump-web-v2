@@ -8,9 +8,7 @@ import { ImpactCard, Text, Button } from "../../components";
 import { media } from "../../utils";
 import { baseTheme } from "../../theme";
 
-export const ImpactSection = ({ 
-  ...props 
-}) => {
+export const ImpactSection = ({ ...props }) => {
   return (
     <Wrapper {...props}>
       <TopWrapper>
