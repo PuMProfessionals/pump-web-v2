@@ -5,4 +5,5 @@ export { Card } from "./Card";
 export { CardCarousel } from "./CardCarousel";
 export { ContactForm } from "./ContactForm";
 export { TextArea } from "./TextArea";
+export { LeftImageTextLayout } from "./LeftImageTextLayout";
 export { ImpactCard } from "./ImpactCard";
