@@ -18,7 +18,6 @@ export default function Home() {
         <WhatsHappening />
         <ImpactSection />
         <ContactSection />
-        <div>DO NOT USE OR TEST WITHOUT EXPLICIT APPROVAL</div>
       </PageLayout>
     </div>
   );

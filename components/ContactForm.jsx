@@ -1,6 +1,6 @@
-/* eslint-disable no-undef, no-useless-escape */ //  (for process.env) 
-import { useState, useEffect } from "react";
-import axios from "axios";
+/* eslint-disable no-undef, no-useless-escape */ //  (for process.env)
+import { useState } from "react";
+import emailjs from "emailjs-com";
 import styled from "styled-components";
 import { toast, ToastContainer } from "react-toastify";
 import { Button } from "./Button";
@@ -15,69 +15,72 @@ export const ContactForm = ({
   descriptionText, // string
   ...props
 }) => {
-  const [formStatus, setFormStatus] = useState(false);
-  const [formError, setFormError] = useState(false);
   const [query, setQuery] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
+  const overMessageLimit = true;
 
   const customError = () => (
     <div>
-      <span role="img" arial-label="waving-hand">👋</span> Unfortunately, we could not send the form due to an internal server error. 
+      <span role="img" arial-label="waving-hand">
+        👋
+      </span>{" "}
+      Unfortunately, we could not send the form due to an internal server error.
       Please feel free to send us an email at&nbsp;
-      <SLink href={`mailto:${CONSTANTS.email}`}>{CONSTANTS.email}</SLink>. Sorry for the inconvenience!
+      <SLink href={`mailto:${CONSTANTS.email}`}>{CONSTANTS.email}</SLink>. Sorry for
+      the inconvenience!
     </div>
-  )
+  );
+
   const handleChange = () => (e) => {
     const name = e.target.name;
     const value = e.target.value;
     setQuery((prevState) => ({
-        ...prevState,
-        [name]: value
+      ...prevState,
+      [name]: value,
     }));
   };
 
   function validateEmail(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re =
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(validateEmail(query.email)) {
-      const GETFORM_FORM_ENDPOINT = process.env.NEXT_PUBLIC_GETFORM_FORM_ENDPOINT;
-      const formData = new FormData();
-      Object.entries(query).forEach(([key, value]) => {
-          formData.append(key, value);
-      });
-      axios
-        .post(
-            GETFORM_FORM_ENDPOINT,
-            formData,
-            { headers: { Accept: "application/json" } }
+    if (validateEmail(query.email)) {
+      let params = {
+        from_name: query.name,
+        reply_to: query.email,
+        message: query.message,
+      };
+      emailjs
+        .send(
+          process.env.NEXT_PUBLIC_SERVICE_ID,
+          process.env.NEXT_PUBLIC_TEMPLATE_ID,
+          params,
+          process.env.NEXT_PUBLIC_USER_ID
         )
-        .then(function (response) {
-            setFormStatus(true);
+        .then(
+          () => {
             setQuery({
-                name: "",
-                email: "",
-                message: ""
+              name: "",
+              email: "",
+              message: "",
             });
-            console.log(response);
             toast.success(
               "👋 An email has successfully been sent! Thank you for reaching out to us! We will get back to you shortly."
             );
-        })
-        .catch(function (err) {
-          console.log(err);
-          toast.error(customError);
-        });
+          },
+          () => {
+            toast.error(customError);
+          }
+        );
     } else {
-      toast.error(
-        "Please enter a valid email address."
-      );
+      toast.error("Please enter a valid email address.");
     }
   };
 
@@ -88,41 +91,49 @@ export const ContactForm = ({
       </Title>
       <ToastContainer />
       <Text>{descriptionText}</Text>
-      <form
+      {!overMessageLimit && (
+        <form
           acceptCharset="UTF-8"
           method="POST"
           encType="multipart/form-data"
           onSubmit={handleSubmit}
-      >
-        <InputsWrapper>
-          <FirstInputWrapper>
-            <SInput
-              placeholder="Full Name"
-              name="name"
-              type="text"
-              value={query.name}
+        >
+          <InputsWrapper>
+            <FirstInputWrapper>
+              <SInput
+                placeholder="Full Name"
+                name="name"
+                type="text"
+                value={query.name}
+                onChange={handleChange()}
+              />
+              <SInput
+                placeholder="Email Address"
+                name="email"
+                type="email"
+                value={query.email}
+                onChange={handleChange()}
+              />
+            </FirstInputWrapper>
+            <TextArea
+              placeholder="Write a Message..."
+              name="message"
+              value={query.message}
+              required={true}
               onChange={handleChange()}
             />
-            <SInput
-              placeholder="Email Address"
-              name="email"
-              type="email"
-              value={query.email}
-              onChange={handleChange()}
-            />
-          </FirstInputWrapper>
-          <TextArea
-            placeholder="Write a Message..."
-            name="message"
-            value={query.message}
-            required={true}
-            onChange={handleChange()}
-          />
-        </InputsWrapper>
-        <Button style={{ marginTop: "30px" }}>
-            Send Message
-        </Button>
-      </form>
+          </InputsWrapper>
+          <Button style={{ marginTop: "30px" }}>Send Message</Button>
+        </form>
+      )}
+      <Button style={{ marginTop: "30px" }}>
+        <a
+          href={`mailto:${CONSTANTS.email}`}
+          style={{ color: baseTheme.colors.navy }}
+        >
+          Send Message
+        </a>
+      </Button>
     </Wrapper>
   );
 };
