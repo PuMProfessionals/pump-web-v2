@@ -14,7 +14,7 @@ export const ImpactCard = ({
   impactNum,
   description,
   imageHeight = 200,
-  imageWidth = 300
+  imageWidth = 300,
 }) => {
   return (
     <Wrapper>
