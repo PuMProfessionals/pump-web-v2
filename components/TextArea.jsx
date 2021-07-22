@@ -2,8 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-export const TextArea = ({ placeholder, ...props }) => (
-  <STextArea placeholder={placeholder} {...props} />
+export const TextArea = ({ placeholder, name, value, required = true, ...props }) => (
+  <STextArea 
+    placeholder={placeholder} 
+    name={name} 
+    value={value}
+    required={required}
+    {...props} 
+  />
 );
 
 const STextArea = styled.textarea`
