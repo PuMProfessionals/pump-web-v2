@@ -10,6 +10,8 @@ import { Text } from "./Text";
 import { baseTheme } from "../theme";
 import { media, CONSTANTS } from "../utils";
 
+const overMessageLimit = true;
+
 export const ContactForm = ({
   title, // string
   descriptionText, // string
@@ -20,7 +22,6 @@ export const ContactForm = ({
     email: "",
     message: "",
   });
-  const overMessageLimit = true;
 
   const customError = () => (
     <div>
@@ -91,7 +92,7 @@ export const ContactForm = ({
       </Title>
       <ToastContainer />
       <Text>{descriptionText}</Text>
-      {!overMessageLimit && (
+      {!overMessageLimit ? (
         <form
           acceptCharset="UTF-8"
           method="POST"
@@ -125,15 +126,16 @@ export const ContactForm = ({
           </InputsWrapper>
           <Button style={{ marginTop: "30px" }}>Send Message</Button>
         </form>
+      ) : (
+        <Button style={{ marginTop: "30px" }}>
+          <a
+            href={`mailto:${CONSTANTS.email}`}
+            style={{ color: baseTheme.colors.navy }}
+          >
+            Send Message
+          </a>
+        </Button>
       )}
-      <Button style={{ marginTop: "30px" }}>
-        <a
-          href={`mailto:${CONSTANTS.email}`}
-          style={{ color: baseTheme.colors.navy }}
-        >
-          Send Message
-        </a>
-      </Button>
     </Wrapper>
   );
 };

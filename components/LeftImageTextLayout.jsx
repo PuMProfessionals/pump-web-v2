@@ -69,9 +69,3 @@ const InfoSection = styled.div`
     `
   )}
 `;
-
-LeftImageTextLayout.propTypes = {
-  titleText: PropTypes.string,
-  descriptionText: PropTypes.string,
-  graphic: PropTypes.string,
-};
