@@ -11,6 +11,17 @@ import { baseTheme } from "../theme";
 import { media, CONSTANTS } from "../utils";
 
 const overMessageLimit = true;
+const customError = () => (
+  <div>
+    <span role="img" arial-label="waving-hand">
+      👋
+    </span>{" "}
+    Unfortunately, we could not send the form due to an internal server error.
+    Please feel free to send us an email at&nbsp;
+    <SLink href={`mailto:${CONSTANTS.email}`}>{CONSTANTS.email}</SLink>. Sorry for
+    the inconvenience!
+  </div>
+);
 
 export const ContactForm = ({
   title, // string
@@ -22,18 +33,6 @@ export const ContactForm = ({
     email: "",
     message: "",
   });
-
-  const customError = () => (
-    <div>
-      <span role="img" arial-label="waving-hand">
-        👋
-      </span>{" "}
-      Unfortunately, we could not send the form due to an internal server error.
-      Please feel free to send us an email at&nbsp;
-      <SLink href={`mailto:${CONSTANTS.email}`}>{CONSTANTS.email}</SLink>. Sorry for
-      the inconvenience!
-    </div>
-  );
 
   const handleChange = () => (e) => {
     const name = e.target.name;

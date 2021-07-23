@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "cache-posts": "node scripts/blogUtils.js",
+    "cache-posts": "node scripts/blogCache.js",
     "format": "prettier-eslint --write \"{,!(node_modules)/**/}*.{js,jsx}\"",
     "lint": "next lint"
   },

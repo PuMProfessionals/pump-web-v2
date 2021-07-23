@@ -3,7 +3,6 @@ For example, see UAS page.
 */
 import Image from "next/image";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 import { Text } from "./Text";
 import { baseTheme } from "../theme";
