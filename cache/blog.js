@@ -1,0 +1,1 @@
+export const postNames = [{"id":"writing-research-papers.mdx","title":"The Complete Guide To Writing Research Papers"},{"id":"interviews-dos-and-donts.mdx","title":"Interview Do's and Don'ts"}]
