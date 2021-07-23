@@ -23,7 +23,6 @@ export const ImpactSection = ({ ...props }) => {
           </Link>
         </Button>
       </TopWrapper>
-
       <ImpactWrapper>
         <ImpactCard
           thumbnail={ImpactGraphic1}
@@ -46,7 +45,6 @@ export const ImpactSection = ({ ...props }) => {
 };
 
 const Wrapper = styled.div`
-  margin-bottom: 15vh;
   padding: 0 2%;
   ${media(
     1400,
