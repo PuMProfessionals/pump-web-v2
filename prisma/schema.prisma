@@ -1,0 +1,52 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Post {
+  id           Int @default(autoincrement()) @id
+  slug         String @unique
+  title        String
+  date         DateTime
+  summary      String
+  releaseBatch String @map(name: "release_batch")
+  tags         String[]
+  published    Boolean @default(false)
+  author       Author[] @relation(fields: [authorId], references: [id])
+  authorId     Int?
+
+  @@map(name: "posts")
+}
+
+model Author {
+  id       Int @default(autoincrement()) @id
+  name     String
+  position String?
+  image    String?
+  email    String @unique
+  about    String?
+  posts    Post[]
+
+  @@map(name: "authors")
+}
+
+model Posting {
+  id          Int @default(autoincrement()) @id
+  slug        String @unique
+  postingName String @map(name: "posting_name")
+  orgName     String @map(name: "org_name")
+  address     String
+  tags        String[]
+  published   Boolean @default(false)
+  archived    Boolean @default(false)
+  postedDate  DateTime @default(now()) @map(name: "posted_date")
+
+  @@map(name: "posting")
+}

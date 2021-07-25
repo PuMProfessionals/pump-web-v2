@@ -2,11 +2,12 @@
   "name": "pump-web-v2",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "cache-posts": "node scripts/blogCache.js",
+    "cache-posts": "node lib/blogCache.js",
     "format": "prettier-eslint --write \"{,!(node_modules)/**/}*.{js,jsx}\"",
     "lint": "next lint"
   },
@@ -21,6 +22,7 @@
     ]
   },
   "dependencies": {
+    "@prisma/client": "^2.27.0",
     "axios": "^0.21.1",
     "emailjs-com": "^3.2.0",
     "gray-matter": "^4.0.3",
@@ -45,6 +47,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "husky": "^4.3.8",
-    "lint-staged": "^11.0.0"
+    "lint-staged": "^11.0.0",
+    "prisma": "^2.27.0"
   }
 }
