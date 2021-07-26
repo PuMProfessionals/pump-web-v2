@@ -16,20 +16,20 @@ export const StudentResource = ({
   isGraphicLeft = true,
   ...props
 }) => (
-  <StudentResourceSection isGraphicLeft={isGraphicLeft} {...props}>
-    <Graphic src={graphic}/>
+  <Wrapper isGraphicLeft={isGraphicLeft} {...props}>
+    <Graphic src={graphic} isGraphicLeft={isGraphicLeft} />
     <InfoSection isGraphicLeft={isGraphicLeft}>
       <Title>{titleText}</Title>
       <Text>{descriptionText}</Text>
       <ButtonSection isGraphicLeft={isGraphicLeft}>
-        {buttons.map(button => (
+        {buttons.map((button) => (
           <a key={button.text} href={button.link}>
             <SButton backgroundColor={button.color}>{button.text}</SButton>
           </a>
         ))}
       </ButtonSection>
     </InfoSection>
-  </StudentResourceSection>
+  </Wrapper>
 );
 
 const Title = styled.h2`
@@ -42,6 +42,9 @@ const Title = styled.h2`
 
 const Graphic = styled.img`
   border: 2px solid black; /* TODO: curved border? */
+  ${({ isGraphicLeft }) => `
+    ${isGraphicLeft ? "margin-left: 5%;" : "margin-right: 5%;"}
+  `};
   ${media(
     "800",
     `
@@ -50,7 +53,8 @@ const Graphic = styled.img`
   )}
 `;
 
-const StudentResourceSection = styled.div`
+const Wrapper = styled.div`
+  padding: 8vh 0;
   display: flex;
   ${({ isGraphicLeft }) => `
     flex-direction: ${isGraphicLeft ? "row" : "row-reverse"}
@@ -71,8 +75,8 @@ const InfoSection = styled.div`
   flex-direction: column;
   ${({ isGraphicLeft }) => `
     text-align: ${isGraphicLeft ? "left" : "right"};
-    ${isGraphicLeft ? "margin-left: 8%" : "margin-right: 8%;"}
   `};
+  margin: 0% 5%;
   ${media(
     800,
     `
@@ -80,7 +84,7 @@ const InfoSection = styled.div`
       margin: 5% 0 0;
       width: 85%;
     `
-  )} /* TODO: change text color based on background */
+  )}/* TODO: change text color based on background */
 `;
 
 const ButtonSection = styled.div`
@@ -106,5 +110,5 @@ StudentResource.propTypes = {
   descriptionText: PropTypes.string,
   buttons: PropTypes.Object,
   graphic: PropTypes.string,
-  isGraphicLeft: PropTypes.boolean
+  isGraphicLeft: PropTypes.boolean,
 };
