@@ -19,20 +19,29 @@ model Post {
   authors         String[]
   authorImages    String[]
 
-
   @@map("posts")
 }
 
-model Posting {
-  id          Int      @id @default(autoincrement())
-  slug        String   @unique
-  postingName String   @map("posting_name")
-  orgName     String   @map("org_name")
-  address     String
-  tags        String[]
-  published   Boolean  @default(true)
-  archived    Boolean  @default(false)
-  postedDate  DateTime @default(now()) @map("posted_date")
+model Author {
+  id       Int @id @default(autoincrement())
+  slug     String @unique
+  name     String
+  position String
+  email    String
+  about    String?
+}
 
-  @@map("posting")
+model Opportunity {
+  id            Int      @id @default(autoincrement())
+  slug          String   @unique
+  postingName   String   @map("posting_name")
+  orgImages     String   @map("org_images")
+  orgName       String   @map("org_name")
+  address       String
+  tags          String[]
+  published     Boolean  @default(true)
+  archived      Boolean  @default(false)
+  postedDate    String   @map("posted_date")
+
+  @@map("opportunity")
 }

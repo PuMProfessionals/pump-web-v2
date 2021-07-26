@@ -6,13 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "cache-posts": "node lib/blogCache.js",
+    "cache-posts": "node lib/cache.js",
     "format": "prettier-eslint --write \"{,!(node_modules)/**/}*.{js,jsx}\"",
     "lint": "next lint"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run cache-posts && git add cache/blog.js"
+      "pre-commit": "lint-staged && npm run cache-posts && git add cache/cache.js"
     }
   },
   "lint-staged": {

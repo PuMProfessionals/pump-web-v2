@@ -1,4 +1,5 @@
 import { prisma } from "../../prisma/index";
+import { posts } from "../../cache/cache";
 
 /*
     params: 
@@ -7,7 +8,13 @@ import { prisma } from "../../prisma/index";
     - tags = tags to filter
 */
 export default async (req, res) => {
-    let results = await prisma.post.findMany();
+    let results;
+    try {
+        results = await prisma.post.findMany();
+    } catch (e) {
+        results = posts;
+    }
+
     if(req.query.search) {
         results = results.filter(post => post.title.toLowerCase().includes(req.query.search));
     }
