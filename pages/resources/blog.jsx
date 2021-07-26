@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import styled from "styled-components";
@@ -6,6 +7,7 @@ import styled from "styled-components";
 import { prisma } from "../../prisma/index";
 import { Input } from "../../components";
 import { PageLayout } from "../../sections/hoc";
+import { baseTheme } from "../../theme";
 
 const customError = () => (
     <div>
@@ -48,9 +50,13 @@ export default function Blog({ posts, ...props }) {
                     value={searchParameter}
                     onChange={handleChange}
                 />
-                {!!blogPosts && blogPosts.map(({ title }) => (
+                {!!blogPosts && blogPosts.map(({ title, slug }) => (
                     <div key={title}>
-                        <div>{title}</div>
+                        <Link href={`/resources/blog/${slug}`}>
+                            <a style={{ color: baseTheme.colors.navy }}>
+                                {title}
+                            </a>
+                        </Link>
                     </div>
                 ))}
             </Wrapper>
