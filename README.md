@@ -26,7 +26,7 @@ To run the database run
 ```npx prisma generate``` and ```npx prisma studio``` to open up the db at ```localhost:5555```. You will need to get the correct ```postgresql``` variable from me. 
 Feel free to PM if it is needed. To seed the database, run ```npx prisma db seed --preview-feature```
 
-If the database schema is changed run ```npx prisma migrate dev --name <name-of-migration>``
+If the database schema is changed run ```npx prisma migrate dev --name <name-of-migration>```
 
 ## Troubleshooting with husky
 No pre-commits? Run the following commands 
