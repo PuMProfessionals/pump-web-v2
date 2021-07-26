@@ -37,6 +37,8 @@ model Opportunity {
   postingName   String   @map("posting_name")
   orgImages     String   @map("org_images")
   orgName       String   @map("org_name")
+  lat           Decimal  @default(-1000)
+  long          Decimal  @default(-1000)
   address       String
   tags          String[]
   published     Boolean  @default(true)
