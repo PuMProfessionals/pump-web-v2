@@ -12,7 +12,7 @@ const BlogsPage = ({
     frontMatter
 }) => {
     return (
-        <PageLayout title="hello">
+        <PageLayout title={frontMatter.title}>
             <Wrapper>
                 <MDXRemote {...source} />
             </Wrapper>
@@ -26,6 +26,7 @@ export const getStaticProps = async ({ params }) => {
     const { data, content } = getSlug("blog", params?.slug);
 
     const mdxSource = await serialize(content, { scope: data });
+    // eslint-disable-next-line no-console
     console.log(data);
     return {
         props: {
