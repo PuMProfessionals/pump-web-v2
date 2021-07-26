@@ -67,7 +67,9 @@ export default function Blog({ posts, ...props }) {
 const Wrapper = styled.div``;
 
 export async function getStaticProps() {
-  const posts = await prisma.post.findMany();
+  let posts = await prisma.post.findMany();
+  posts = posts.sort((post1, post2) => (post1.date > post2.date ? 1 : -1));
+
   return {
     props: { posts },
   };
