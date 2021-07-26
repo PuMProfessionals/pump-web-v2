@@ -4,30 +4,23 @@ import { Text } from "./Text";
 import { baseTheme } from "../theme";
 import { media } from "../utils";
 
-export const Video = ({
-    embedId,
-    titleText,
-    descriptionText,
-    ...props
-}) => {
-  return(
+export const Video = ({ embedId, titleText, descriptionText, ...props }) => {
+  return (
     <Wrapper {...props}>
       <TitleSection>
-        <Title size={baseTheme.size.h2} bold="true"> 
-          {titleText} 
+        <Title size={baseTheme.size.h2} bold="true">
+          {titleText}
         </Title>
       </TitleSection>
-      <InfoSection> 
-        {descriptionText} 
-      </InfoSection>
+      <InfoSection>{descriptionText}</InfoSection>
       <VideoSection>
-        <SIframe 
-          width="560" 
-          height="315" 
+        <SIframe
+          width="560"
+          height="315"
           src={`https://www.youtube.com/embed/${embedId}`}
-          title="YouTube video player" 
-          frameBorder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
       </VideoSection>
@@ -45,9 +38,9 @@ const SIframe = styled.iframe`
   )};
 `;
 const Wrapper = styled.div`
-    padding: 2vh 0;
-    margin-bottom: 15vh;
-    ${media(
+  padding: 2vh 0;
+  margin-bottom: 15vh;
+  ${media(
     750,
     `
       margin-bottom: 25vh;
@@ -82,15 +75,3 @@ const VideoSection = styled.div`
     `
   )};
 `;
-
-
-
-
-
-
-
-
-
-  
-
-

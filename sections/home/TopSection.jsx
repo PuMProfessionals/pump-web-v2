@@ -17,9 +17,7 @@ export const TopSection = ({ ...props }) => (
       <Button>
         <ButtonText size="default" bold="true">
           <Link href="/donate">
-            <a style={{ color: baseTheme.colors.navy }}>
-            Donate
-            </a>
+            <a style={{ color: baseTheme.colors.navy }}>Donate</a>
           </Link>
         </ButtonText>
       </Button>
