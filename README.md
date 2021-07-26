@@ -1,7 +1,7 @@
 # pumprofessionals.org
 Next.js overview documentation guide: https://docs.google.com/document/d/1ElPavrzWHcNjwqCyV2-TlAyOdshDsEC0lc215Xf_VhM/edit
 
-Our website is built with [Next.js](https://nextjs.org/) and is bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Our website is built with [Next.js](https://nextjs.org/).
 
 ## Getting Started
 
@@ -15,26 +15,18 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Getting-started with the database
+We use ```Prisma``` for our ORM and use ```PostgreSQL``` for our database (in ```prisma``` folder). We also have a cache incase anything goes wrong found in ```cache/cache.js```. 
+Feel free to read the ```Prisma``` documentation.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+To update the cache, run ```npm run cache-posts``` to run the script. This is just a backup
+option if our database fails but it is used in some utility files as well.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+To run the database run 
+```npx prisma generate``` and ```npx prisma studio``` to open up the db at ```localhost:5555```. You will need to get the correct ```postgresql``` variable from me. 
+Feel free to PM if it is needed. To seed the database, run ```npx prisma db seed --preview-feature```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/).
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If the database schema is changed run ```npx prisma migrate dev --name <name-of-migration>``
 
 ## Troubleshooting with husky
 No pre-commits? Run the following commands 
