@@ -5,15 +5,21 @@ const matter = require("gray-matter");
 const { prisma } = require("../prisma/index");
 
 const DIGEST_PATHS = path.join(process.cwd(), "_digest");
+const AUTHOR_PATHS = path.join(process.cwd(), "_author");
+const OPPORTUNITIES_PATHS = path.join(process.cwd(), "_direct");
 
 const main = async () => {
     const posts = getPosts();
+    const authors = getAuthors();
+    const opportunities = getOpportunities();
     await insertPost(posts);
+    await insertAuthor(authors);
+    await insertOpportunity(opportunities);
 };
 
 /*
   Get all file project paths for filtering and building cache
-  @returns stringified array of all posts in _digest folder
+  @returns array of all posts in _digest folder
 */
 function getPosts() {
     const releaseNames = fs.readdirSync(DIGEST_PATHS);
@@ -44,6 +50,56 @@ function getPosts() {
     return postNames;
 }
 
+
+/*
+  Get all file author paths for filtering and building cache
+  @returns array of all authors in _author folder
+*/
+function getAuthors() {
+    const allAuthorPaths = fs.readdirSync(AUTHOR_PATHS);
+    const authorNames = allAuthorPaths.map(author => {
+      const authorPath = path.join(AUTHOR_PATHS, author);
+      const fileContents = fs.readFileSync(authorPath, "utf8");
+      const slug = author.replace(/\.mdx?$/, "");
+      const matterResult = matter(fileContents);
+      return {
+        slug,
+        name: matterResult.data.name,
+        email: matterResult.data.email,
+        position: matterResult.data.position,
+        about: matterResult.data.about ? matterResult.data.about : ""
+      }
+    });
+    return authorNames;
+}
+
+
+/*
+  Get all file opporunities paths for filtering and building cache
+  @returns array of all opportunities in _direct folder
+*/
+function getOpportunities() {
+    const allOpportunitiesPath = fs.readdirSync(OPPORTUNITIES_PATHS);
+    const opportunities = allOpportunitiesPath.map(opp => {
+      const oppPath = path.join(OPPORTUNITIES_PATHS, opp);
+      const fileContents = fs.readFileSync(oppPath, "utf8");
+      const slug = opp.replace(/\.mdx?$/, "");
+      const matterResult = matter(fileContents);
+      return {
+        slug,
+        postingName: matterResult.data.postingName,
+        orgImages: matterResult.data.orgImages,
+        orgName: matterResult.data.orgName,
+        address: matterResult.data.address,
+        tags: matterResult.data.tags,
+        published: matterResult.data.published ? matterResult.data.published : true,
+        archived: matterResult.data.archived ? matterResult.data.archived : false,
+        postedDate: matterResult.data.postedDate
+      }
+    });
+    return opportunities
+}
+
 /*
 * Upsert posts
 * @param posts - Posts to upsert
@@ -61,6 +117,43 @@ const insertPost = async(postsName) => {
         console.log({ postUpsert });
     }
 }
+
+/*
+* Upsert authors
+* @param authors - Authors to upsert
+*/
+const insertAuthor = async(authors) => {
+    const authorsUpserts = [];
+    for (let author of authors) {
+        const { slug, ...rest } = author;
+        const authorUpsert = await prisma.author.upsert({
+            where: { slug: slug },
+            update: { ...rest },
+            create: { slug, ...rest },
+        });
+        authorsUpserts.push(authorUpsert);
+        console.log({ authorUpsert });
+    }
+}
+
+/*
+* Upsert opportunities
+* @param opportunities - Opportunities to upsert
+*/
+const insertOpportunity = async(opportunities) => {
+    const oppUpserts = [];
+    for (let opp of opportunities) {
+        const { slug, ...rest } = opp;
+        const oppUpsert = await prisma.opportunity.upsert({
+            where: { slug: slug },
+            update: { ...rest },
+            create: { slug, ...rest },
+        });
+        oppUpserts.push(oppUpsert);
+        console.log({ oppUpsert });
+    }
+}
+
 
 // Execute seeding
 main()
