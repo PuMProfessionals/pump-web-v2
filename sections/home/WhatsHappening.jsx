@@ -6,7 +6,6 @@ import { CardCarousel, Text } from "../../components";
 import { baseTheme } from "../../theme";
 import { media } from "../../utils";
 
-
 export const WhatsHappening = ({ ...props }) => (
   <Wrapper {...props}>
     <Title size={baseTheme.size.h1} bold="true">
@@ -47,7 +46,7 @@ export const WhatsHappening = ({ ...props }) => (
           },
         ]}
       />
-    </CarouselWrapper> 
+    </CarouselWrapper>
   </Wrapper>
 );
 
