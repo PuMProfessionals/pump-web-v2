@@ -10,7 +10,7 @@ import { Text } from "./Text";
 import { baseTheme } from "../theme";
 import { media, CONSTANTS } from "../utils";
 
-const overMessageLimit = true;
+const overMessageLimit = false;
 const customError = () => (
   <div>
     <span role="img" arial-label="waving-hand">

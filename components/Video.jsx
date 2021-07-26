@@ -1,14 +1,11 @@
-import React from 'react';
 import styled from "styled-components";
-import ReactPlayer from 'react-player';
 
 import { Text } from "./Text";
 import { baseTheme } from "../theme";
+import { media } from "../utils";
 
-
- 
 export const Video = ({
-    videoLink,
+    embedId,
     titleText,
     descriptionText,
     ...props
@@ -23,49 +20,67 @@ export const Video = ({
       <InfoSection> 
         {descriptionText} 
       </InfoSection>
-
       <VideoSection>
-        <ReactPlayer
-          url = {videoLink}
+        <SIframe 
+          width="560" 
+          height="315" 
+          src={`https://www.youtube.com/embed/${embedId}`}
+          title="YouTube video player" 
+          frameBorder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowFullScreen
         />
       </VideoSection>
     </Wrapper>
-
   );
 };
 
-const Wrapper = styled.div`
-    padding = 8vh 0;
+const SIframe = styled.iframe`
+  ${media(
+    750,
+    `
+      width: 80%;
+      height: 80vh;
+    `
+  )};
 `;
-    
+const Wrapper = styled.div`
+    padding: 2vh 0;
+    margin-bottom: 15vh;
+    ${media(
+    750,
+    `
+      margin-bottom: 25vh;
+    `
+  )};
+`;
 const Title = styled(Text)`
   ${({ theme }) => `
       font-family: ${theme.font.josefin};
-
-  text-align: left;
-`};
-`
+      text-align: center;
+  `};
+`;
 const InfoSection = styled.text`
   display: flex;
-  
-  text-align: left;
+  text-align: center;
   font-size: 1rem;
-  padding-left: 10%;
-  padding-right: 10%;
-  
+  line-height: 1.5;
+  padding: 0 10%;
 `;
 const TitleSection = styled.div`
-  margin: 5% 10% 0%;
+  margin: 5% 10% 0;
 `;
-
-const VideoSection = styled(Text)`
-  height: 80vh;
-  width: 100%;
-  
+const VideoSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
- 
+  margin-top: 5vh;
+  ${media(
+    750,
+    `
+      margin-top: 10vh;
+    `
+  )};
 `;
 
 
