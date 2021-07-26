@@ -16,8 +16,8 @@ const customError = () => (
     <span role="img" arial-label="waving-hand">
       👋
     </span>{" "}
-    Unfortunately, we could not send the form due to an internal server error.
-    Please feel free to send us an email at&nbsp;
+    Unfortunately, we could not send the form due to an internal server error. Please
+    feel free to send us an email at&nbsp;
     <SLink href={`mailto:${CONSTANTS.email}`}>{CONSTANTS.email}</SLink>. Sorry for
     the inconvenience!
   </div>
