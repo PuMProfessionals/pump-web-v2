@@ -1,4 +1,4 @@
-import { posts } from "../../cache/blog";
+import { prisma } from "../../prisma/index";
 
 /*
     params: 
@@ -6,8 +6,8 @@ import { posts } from "../../cache/blog";
     - release = release batch
     - tags = tags to filter
 */
-export default (req, res) => {
-    let results = posts;
+export default async (req, res) => {
+    let results = await prisma.post.findMany();
     if(req.query.search) {
         results = results.filter(post => post.title.toLowerCase().includes(req.query.search));
     }

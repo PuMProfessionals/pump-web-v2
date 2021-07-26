@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import styled from "styled-components";
-import { posts } from "../../cache/blog";
+
+import { prisma } from "../../prisma/index";
 import { Input } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 
@@ -17,7 +18,7 @@ const customError = () => (
     </div>
   );
 
-export default function Blog({ ...props }) {
+export default function Blog({ posts, ...props }) {
     const [searchParameter, setSearchParameter] = useState("");
     const [blogPosts, setBlogPosts] = useState([]);
     useEffect(() => {
@@ -58,3 +59,10 @@ export default function Blog({ ...props }) {
 }
 
 const Wrapper = styled.div``;
+
+export async function getStaticProps() {
+    const posts = await prisma.post.findMany();
+    return {
+      props : { posts }
+    }
+}
