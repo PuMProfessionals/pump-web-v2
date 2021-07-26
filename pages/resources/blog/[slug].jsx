@@ -5,7 +5,7 @@ import { MDXRemote } from "next-mdx-remote";
 import { prisma } from "../../../prisma/index";
 import { posts } from "../../../cache/cache";
 import { PageLayout } from "../../../sections/hoc";
-import { getSlug } from "../../../utils";
+import { getSlug } from "../../../utils/markdownUtils";
 
 const BlogsPage = ({ source, frontMatter }) => {
   return (
