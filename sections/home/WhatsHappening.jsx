@@ -2,15 +2,18 @@ import styled from "styled-components";
 
 import PumpDigest from "../../public/home/pump-digest.png";
 import ImpactReport from "../../public/home/impact-report.png";
-import { CardCarousel, Text } from "../../components";
+import { CardCarousel, Text, Video} from "../../components";
 import { baseTheme } from "../../theme";
 import { media } from "../../utils";
+
 
 export const WhatsHappening = ({ ...props }) => (
   <Wrapper {...props}>
     <Title size={baseTheme.size.h1} bold="true">
       What&apos;s Happening?
     </Title>
+
+
     <CarouselWrapper>
       <CardCarousel
         slides={[
@@ -46,7 +49,8 @@ export const WhatsHappening = ({ ...props }) => (
           },
         ]}
       />
-    </CarouselWrapper>
+    </CarouselWrapper> 
+    <Video videoLink = "https://www.youtube.com/watch?v=f5jsJWl5WS0" titleText = "Get Started With UAS" descriptionText = "Watch this quick guide on how to navigate the UAS Discord Server to get started!"  />
   </Wrapper>
 );
 

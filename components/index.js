@@ -7,3 +7,4 @@ export { ContactForm } from "./ContactForm";
 export { TextArea } from "./TextArea";
 export { ImpactCard } from "./ImpactCard";
 export { LeftImageTextLayout } from "./LeftImageTextLayout";
+export { Video } from "./Video";
