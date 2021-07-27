@@ -17,7 +17,6 @@ model Post {
   tags            String[]
   published       Boolean  @default(true)
   authors         String[]
-  authorImages    String[]
 
   @@map("posts")
 }
@@ -26,7 +25,8 @@ model Author {
   id       Int @id @default(autoincrement())
   slug     String @unique
   name     String
-  position String
+  board    String @default("National")
+  position String 
   email    String
   about    String?
 }

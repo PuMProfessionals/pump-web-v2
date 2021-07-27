@@ -39,7 +39,6 @@ function getPosts() {
         date: matterResult.data.date,
         authors: matterResult.data.authors,
         releaseBatch: matterResult.data.releaseBatch,
-        authorImages: matterResult.data.authorImages,
         tags: matterResult.data.tags,
       };
     });
@@ -66,6 +65,7 @@ function getAuthors() {
       name: matterResult.data.name,
       email: matterResult.data.email,
       position: matterResult.data.position,
+      board: matterResult.data.board ? matterResult.data.board : "National",
       about: matterResult.data.about ? matterResult.data.about : "",
     };
   });
