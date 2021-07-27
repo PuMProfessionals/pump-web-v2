@@ -36,3 +36,89 @@ npm install -D husky@4
 
 npm install -D husky
 ```
+
+## Writing to our blog
+Each blog template is written in ```Markdown``` and will require some ```html``` but you won't actually need to know too much to be successful. Here's a sample file of what it looks like:
+```
+---
+title: Interview Do's and Don'ts
+date: 01/13/2021
+releaseBatch: January 2021
+summary: So you sent in your resumé, wrote a cover letter, answered some written questions, and finally landed an interview – but what’s next? 
+authors: ["Lucy Zhao"]
+tags: ["Interviews", "Pathways", "Skills"]
+---
+<div>
+<h1> A Sample Blog Application </h1>
+My journey of (seriously) programming started at me horribly failing at a hackathon. 
+I had never used Git before, and my teammate could not quite connect the backend with the frontend
+of our project. So, coming into my third hackathon at SheHacks V, I felt more prepared with more experience, but I really only had the <a href="https://shehacks.ca/" target="_blank" rel="noopener noreferrer">SheHacks website</a>
+
+<div align="center">
+    <figure>
+        <img src="/blog/january-2021/she-hacks.png" alt="Shehacks banner" width="500"/>
+        <figcaption>Hackathon banner
+        </figcaption>
+    </figure>
+</div>
+
+</div>
+```
+
+The top portion is called the frontmatter and it is what is used to show the relevant information of your blog post to your users. This MUST be at the top of all of your google docs.
+```
+---
+title: Interview Do's and Don'ts // title of your blog
+date: 01/13/2021 // publication date
+releaseBatch: January 2021 // MONTH YEAR of blog release
+summary: So you sent in your resumé, wrote a cover letter, answered some written questions, and finally landed an interview – but what’s next? // Insert a summary of your blog
+authors: ["Lucy Zhao"] // INSERT RELATIVE AUTHORS HERE
+tags: ["Interviews", "Pathways", "Skills"] // INSERT RELEVANT TAGS HERE
+---
+```
+
+Any time you want to insert a title please include ```<h1>TITLE</h1>```. So if I wanted the title of my section to be Donuts I would input ```<h1>Donuts</h1>```
+
+Any time you add an image please use the following template:
+```
+<div align="center">
+    <figure>
+        <img src="/blog/<RELEASE_NAME>/<NAME_OF_YOUR_IMAGE>" alt=<DESCRIPTION_OF_YOUR_IMAGE> width="500"/>
+        <figcaption>
+        <IMAGE_CAPTION>
+        </figcaption>
+    </figure>
+</div>
+```
+
+and change anything in ```<BOLDED_LETTERS>```. If my blog post was being released in January 2021 and my image name was named ```she-hacks.png```, I would name the following:
+```
+<div align="center">
+    <figure>
+        <img src="/blog/january-2021/she-hacks.png" alt="Hackathon banner" width="500"/>
+        <figcaption>Hackathon banner
+        </figcaption>
+    </figure>
+</div>
+```
+
+The alternative text and caption can be the same but anything in figcaption is basically a caption of your image! If you don't need one, just delete figcaption like below!
+```
+<div align="center">
+    <figure>
+        <img src="/blog/january-2021/she-hacks.png" alt="Hackathon banner" width="500"/>
+    </figure>
+</div>
+```
+
+Any time you add an external link please use:
+```
+<a href=<EXTERNAL_LINK> target="_blank" rel="noopener noreferrer"><TEXT THAT SUMMARIZES LINK HERE></a>
+```
+
+For example if I want to go to the SheHacks page, which has the website https://shehacks.ca/ and I want it to be clicked on SheHacks website, I would insert the following:
+```<a href="https://shehacks.ca/" target="_blank" rel="noopener noreferrer">SheHacks website</a>```
+
+I used this template for my personal website and it's worked really well. To see the RAW text (what the template should look like): https://raw.githubusercontent.com/xsharonhe/personal-portfolio-v2/main/_projects/bridge-it.mdx
+
+To see what it actually shows on the page you can visit: https://www.sharonhe.me/projects/bridge-it
