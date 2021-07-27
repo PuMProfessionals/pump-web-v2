@@ -102,6 +102,8 @@ and change anything in ```<BOLDED_LETTERS>```. If my blog post was being release
 </div>
 ```
 
+Please also DOWNLOAD your image and place it in the IMAGES folder within the google drive that has all your posts. Make sure the naming is the same as what you put as the name of your image. E.g. if I want the ```she-hacks.png``` page to be added, I would name my image ```she-hacks.png``` and put it into the images folder.
+
 The alternative text and caption can be the same but anything in figcaption is basically a caption of your image! If you don't need one, just delete figcaption like below!
 ```
 <div align="center">
