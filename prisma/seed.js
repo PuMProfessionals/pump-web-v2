@@ -90,11 +90,11 @@ function getOpportunities() {
       orgName: matterResult.data.orgName,
       address: matterResult.data.address,
       lat: matterResult.data.lat ? matterResult.data.lat : -1000,
-      long: matterResult.data.lon ? matterResult.data.long : - 1000,
+      long: matterResult.data.lon ? matterResult.data.long : -1000,
       tags: matterResult.data.tags,
       published: matterResult.data.published ? matterResult.data.published : true,
       archived: matterResult.data.archived ? matterResult.data.archived : false,
-      postedDate: matterResult.data.postedDate
+      postedDate: matterResult.data.postedDate,
     };
   });
   return opportunities;
