@@ -12,8 +12,8 @@ export const StudentResource = ({
   descriptionText,
   buttons,
   graphic,
-  graphicWidth,
-  graphicHeight,
+  graphicWidth = 500,
+  graphicHeight = 350,
   isGraphicLeft = true,
   ...props
 }) => (
@@ -27,15 +27,17 @@ export const StudentResource = ({
     <InfoSection isGraphicLeft={isGraphicLeft}>
       <Title>{titleText}</Title>
       <Text>{descriptionText}</Text>
-      <ButtonSection isGraphicLeft={isGraphicLeft}>
-        {buttons.map((button) => (
-          <Link key={button.text} href={button.link}>
-            <a>
-              <SButton backgroundColor={button.color}>{button.text}</SButton>
-            </a>
-          </Link>
-        ))}
-      </ButtonSection>
+      {!!buttons && (
+        <ButtonSection isGraphicLeft={isGraphicLeft}>
+          {buttons.map(button => (
+            <Link key={button.text} href={button.link}>
+              <a>
+                <SButton backgroundColor={button.color}>{button.text}</SButton>
+              </a>
+            </Link>
+          ))}
+        </ButtonSection>
+      )}
     </InfoSection>
   </Wrapper>
 );
@@ -92,13 +94,13 @@ const InfoSection = styled.div`
       margin: 5% 0 0;
       width: 85%;
     `
-  )}/* TODO: change text color based on background */
+  )} /* TODO: change text color based on background */
 `;
 
 const ButtonSection = styled.div`
   display: flex;
   ${({ isGraphicLeft }) => `
-    justify-content: ${isGraphicLeft ? "left" : "right"}
+    justify-content: ${isGraphicLeft ? "flex-start" : "flex-end"}
   `};
   flex-flow: row wrap;
   ${media(

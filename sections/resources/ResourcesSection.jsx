@@ -11,29 +11,11 @@ export const ResourcesSection = () => {
         {
           color: "yellow",
           text: "Browse Opportunities",
-          link: "/",
+          link: "/resources/opportunities",
         },
       ],
       graphic: SampleGraphic,
-      graphicWidth: 500,
-      graphicHeight: 350,
       isGraphicLeft: false,
-    },
-    {
-      titleText: "The Pathway Project",
-      descriptionText: `Explore the complete timeline of a medical student, from
-        high school to residency and beyond`,
-      buttons: [
-        {
-          color: "yellow",
-          text: "Launch Timeline",
-          link: "/",
-        },
-      ],
-      graphic: SampleGraphic,
-      graphicWidth: 500,
-      graphicHeight: 350,
-      isGraphicLeft: true,
     },
     {
       titleText: "University Admissions Server (UAS)",
@@ -44,7 +26,7 @@ export const ResourcesSection = () => {
         {
           color: "yellow",
           text: "Join our Community of 800+ Students",
-          link: "/",
+          link: "/resources/uas",
         },
         {
           color: "white",
@@ -53,9 +35,6 @@ export const ResourcesSection = () => {
         },
       ],
       graphic: SampleGraphic,
-      graphicWidth: 500,
-      graphicHeight: 350,
-      isGraphicLeft: false,
     },
     {
       titleText: "PuMP Digest",
@@ -66,13 +45,11 @@ export const ResourcesSection = () => {
         {
           color: "yellow",
           text: "Read Blog",
-          link: "/",
+          link: "/resources/blog",
         },
       ],
       graphic: SampleGraphic,
-      graphicWidth: 500,
-      graphicHeight: 350,
-      isGraphicLeft: true,
+      isGraphicLeft: false,
     },
   ];
 
