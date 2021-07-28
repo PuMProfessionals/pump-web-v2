@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Post {
+  id              Int      @id @default(autoincrement())
+  slug            String   @unique
+  title           String
+  date            String
+  summary         String
+  releaseBatch    String   @map("release_batch")
+  tags            String[]
+  published       Boolean  @default(true)
+  authors         String[]
+
+  @@map("posts")
+}
+
+model Author {
+  id       Int @id @default(autoincrement())
+  slug     String @unique
+  name     String
+  board    String @default("National")
+  position String 
+  email    String
+  about    String?
+}
+
+model Opportunity {
+  id            Int      @id @default(autoincrement())
+  slug          String   @unique
+  postingName   String   @map("posting_name")
+  orgImages     String   @map("org_images")
+  orgName       String   @map("org_name")
+  lat           Decimal  @default(-1000)
+  long          Decimal  @default(-1000)
+  address       String
+  tags          String[]
+  published     Boolean  @default(true)
+  archived      Boolean  @default(false)
+  postedDate    String   @map("posted_date")
+
+  @@map("opportunity")
+}

@@ -10,6 +10,19 @@ import { Text } from "./Text";
 import { baseTheme } from "../theme";
 import { media, CONSTANTS } from "../utils";
 
+const overMessageLimit = true;
+const customError = () => (
+  <div>
+    <span role="img" arial-label="waving-hand">
+      👋
+    </span>{" "}
+    Unfortunately, we could not send the form due to an internal server error. Please
+    feel free to send us an email at&nbsp;
+    <SLink href={`mailto:${CONSTANTS.email}`}>{CONSTANTS.email}</SLink>. Sorry for
+    the inconvenience!
+  </div>
+);
+
 export const ContactForm = ({
   title, // string
   descriptionText, // string
@@ -20,19 +33,6 @@ export const ContactForm = ({
     email: "",
     message: "",
   });
-  const overMessageLimit = true;
-
-  const customError = () => (
-    <div>
-      <span role="img" arial-label="waving-hand">
-        👋
-      </span>{" "}
-      Unfortunately, we could not send the form due to an internal server error.
-      Please feel free to send us an email at&nbsp;
-      <SLink href={`mailto:${CONSTANTS.email}`}>{CONSTANTS.email}</SLink>. Sorry for
-      the inconvenience!
-    </div>
-  );
 
   const handleChange = () => (e) => {
     const name = e.target.name;
@@ -91,7 +91,7 @@ export const ContactForm = ({
       </Title>
       <ToastContainer />
       <Text>{descriptionText}</Text>
-      {!overMessageLimit && (
+      {!overMessageLimit ? (
         <form
           acceptCharset="UTF-8"
           method="POST"
@@ -125,15 +125,16 @@ export const ContactForm = ({
           </InputsWrapper>
           <Button style={{ marginTop: "30px" }}>Send Message</Button>
         </form>
+      ) : (
+        <Button style={{ marginTop: "30px" }}>
+          <a
+            href={`mailto:${CONSTANTS.email}`}
+            style={{ color: baseTheme.colors.navy }}
+          >
+            Send Message
+          </a>
+        </Button>
       )}
-      <Button style={{ marginTop: "30px" }}>
-        <a
-          href={`mailto:${CONSTANTS.email}`}
-          style={{ color: baseTheme.colors.navy }}
-        >
-          Send Message
-        </a>
-      </Button>
     </Wrapper>
   );
 };

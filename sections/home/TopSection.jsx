@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import styled from "styled-components";
 
 import TitleGraphic from "../../public/home/top-section-graphic.svg";
+import { baseTheme } from "../../theme";
 import { media, CONSTANTS } from "../../utils";
 import { Text, Button } from "../../components";
 
@@ -14,7 +16,9 @@ export const TopSection = ({ ...props }) => (
       <SText size="default">{CONSTANTS.registered_charity_descr}</SText>
       <Button>
         <ButtonText size="default" bold="true">
-          Donate
+          <Link href="/donate">
+            <a style={{ color: baseTheme.colors.navy }}>Donate</a>
+          </Link>
         </ButtonText>
       </Button>
     </FirstColumn>
