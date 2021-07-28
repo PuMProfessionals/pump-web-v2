@@ -1,4 +1,3 @@
-/* Copy component from ui-library, use nextjs components */
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
@@ -79,7 +78,7 @@ const Wrapper = styled.div`
 `;
 
 const InfoSection = styled.div`
-  width: 40%;
+  width: 35%;
   display: flex;
   flex-direction: column;
   ${({ isGraphicLeft }) => `

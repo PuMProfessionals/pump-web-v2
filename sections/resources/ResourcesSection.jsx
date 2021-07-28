@@ -11,7 +11,7 @@ export const ResourcesSection = () => {
         {
           color: "yellow",
           text: "Browse Opportunities",
-          link: "http://example.org/",
+          link: "/",
         },
       ],
       graphic: SampleGraphic,
@@ -27,7 +27,7 @@ export const ResourcesSection = () => {
         {
           color: "yellow",
           text: "Launch Timeline",
-          link: "http://example.org/",
+          link: "/",
         },
       ],
       graphic: SampleGraphic,
@@ -44,7 +44,7 @@ export const ResourcesSection = () => {
         {
           color: "yellow",
           text: "Join our Community of 800+ Students",
-          link: "http://example.org/",
+          link: "/",
         },
         {
           color: "white",
@@ -66,7 +66,7 @@ export const ResourcesSection = () => {
         {
           color: "yellow",
           text: "Read Blog",
-          link: "http://example.org/",
+          link: "/",
         },
       ],
       graphic: SampleGraphic,
