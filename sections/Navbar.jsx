@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import { Text, Button } from "../components";
 import Open from "../public/open-hamburger.svg";
 import Close from "../public/close-hamburger.svg";
-import PumpLogo from "../public/pump-logo.svg";
+import PumpLogo from "../public/pump-logo.png";
 import { baseTheme } from "../theme";
 import { media } from "../utils";
 

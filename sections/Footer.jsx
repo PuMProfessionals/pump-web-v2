@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 
-import PumpLogo from "../public/pump-logo.svg";
+import PumpLogo from "../public/pump-logo.png";
 import FacebookLogo from "../public/fb.svg";
 import InstagramLogo from "../public/instagram.svg";
 import { CONSTANTS, media } from "../utils";
