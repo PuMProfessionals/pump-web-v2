@@ -13,7 +13,7 @@ const PATHS = ["", "about", "resources", "events", "partners", "donate"];
 export const Footer = ({ path, ...props }) => (
   <FooterContainer {...props}>
     <FirstColumn>
-      <Image src={PumpLogo} alt="Pump Logo" width={120} height={90} />
+      <Image src={PumpLogo} alt="Pump Logo" width={120} height={50} />
       <SText lineHeight="24px" style={{ padding: "20px 0 20px 0" }}>
         {CONSTANTS.registered_charity_descr}
       </SText>

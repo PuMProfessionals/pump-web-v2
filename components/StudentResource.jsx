@@ -29,7 +29,7 @@ export const StudentResource = ({
       <Text>{descriptionText}</Text>
       {!!buttons && (
         <ButtonSection isGraphicLeft={isGraphicLeft}>
-          {buttons.map(button => (
+          {buttons.map((button) => (
             <Link key={button.text} href={button.link}>
               <a>
                 <SButton backgroundColor={button.color}>{button.text}</SButton>
@@ -94,7 +94,7 @@ const InfoSection = styled.div`
       margin: 5% 0 0;
       width: 85%;
     `
-  )} /* TODO: change text color based on background */
+  )}/* TODO: change text color based on background */
 `;
 
 const ButtonSection = styled.div`
