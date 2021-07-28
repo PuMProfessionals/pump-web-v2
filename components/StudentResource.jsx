@@ -108,7 +108,9 @@ const SButton = styled(Button)`
 StudentResource.propTypes = {
   titleText: PropTypes.string,
   descriptionText: PropTypes.string,
-  buttons: PropTypes.Object,
-  graphic: PropTypes.string,
-  isGraphicLeft: PropTypes.boolean,
+  buttons: PropTypes.array,
+  graphic: PropTypes.object,
+  graphicWidth: PropTypes.number,
+  graphicHeight: PropTypes.number,
+  isGraphicLeft: PropTypes.bool,
 };
