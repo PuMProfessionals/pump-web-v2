@@ -1,6 +1,6 @@
 /* Copy component from ui-library, use nextjs components */
-// import Image from "next/image";
-// import Link from "next/link";
+import Image from "next/image";
+import Link from "next/link";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
@@ -13,19 +13,28 @@ export const StudentResource = ({
   descriptionText,
   buttons,
   graphic,
+  graphicWidth,
+  graphicHeight,
   isGraphicLeft = true,
   ...props
 }) => (
   <Wrapper isGraphicLeft={isGraphicLeft} {...props}>
-    <Graphic src={graphic} isGraphicLeft={isGraphicLeft} />
+    <Graphic
+      src={graphic}
+      width={graphicWidth}
+      height={graphicHeight}
+      isGraphicLeft={isGraphicLeft}
+    />
     <InfoSection isGraphicLeft={isGraphicLeft}>
       <Title>{titleText}</Title>
       <Text>{descriptionText}</Text>
       <ButtonSection isGraphicLeft={isGraphicLeft}>
         {buttons.map((button) => (
-          <a key={button.text} href={button.link}>
-            <SButton backgroundColor={button.color}>{button.text}</SButton>
-          </a>
+          <Link key={button.text} href={button.link}>
+            <a>
+              <SButton backgroundColor={button.color}>{button.text}</SButton>
+            </a>
+          </Link>
         ))}
       </ButtonSection>
     </InfoSection>
@@ -40,8 +49,8 @@ const Title = styled.h2`
   margin: 0;
 `;
 
-const Graphic = styled.img`
-  border: 2px solid black; /* TODO: curved border? */
+const Graphic = styled(Image)`
+  /* TODO: curved border ? */
   ${({ isGraphicLeft }) => `
     ${isGraphicLeft ? "margin-left: 5%;" : "margin-right: 5%;"}
   `};

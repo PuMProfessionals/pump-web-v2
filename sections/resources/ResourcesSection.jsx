@@ -1,7 +1,8 @@
 import { StudentResource } from "../../components";
+import SampleGraphic from "../../public/home/top-section-graphic.svg";
 
 export const ResourcesSection = () => {
-  const Resources = [
+  const resources = [
     {
       titleText: "PuMP Direct",
       descriptionText: `Browse and filter our database of local opportunities in
@@ -13,7 +14,9 @@ export const ResourcesSection = () => {
           link: "http://example.org/",
         },
       ],
-      graphic: "https://via.placeholder.com/500x350",
+      graphic: SampleGraphic,
+      graphicWidth: 500,
+      graphicHeight: 350,
       isGraphicLeft: false,
     },
     {
@@ -27,7 +30,9 @@ export const ResourcesSection = () => {
           link: "http://example.org/",
         },
       ],
-      graphic: "https://via.placeholder.com/500x350",
+      graphic: SampleGraphic,
+      graphicWidth: 500,
+      graphicHeight: 350,
       isGraphicLeft: true,
     },
     {
@@ -44,10 +49,12 @@ export const ResourcesSection = () => {
         {
           color: "white",
           text: "Learn more",
-          link: "http://example.org/",
+          link: "/resources/uas",
         },
       ],
-      graphic: "https://via.placeholder.com/500x350",
+      graphic: SampleGraphic,
+      graphicWidth: 500,
+      graphicHeight: 350,
       isGraphicLeft: false,
     },
     {
@@ -62,17 +69,22 @@ export const ResourcesSection = () => {
           link: "http://example.org/",
         },
       ],
-      graphic: "https://via.placeholder.com/500x350",
+      graphic: SampleGraphic,
+      graphicWidth: 500,
+      graphicHeight: 350,
       isGraphicLeft: true,
     },
   ];
 
-  return Resources.map((resource) => (
+  return resources.map((resource) => (
     <StudentResource
+      key={resource.titleText}
       titleText={resource.titleText}
       descriptionText={resource.descriptionText}
       buttons={resource.buttons}
       graphic={resource.graphic}
+      graphicWidth={resource.graphicWidth}
+      graphicHeight={resource.graphicHeight}
       isGraphicLeft={resource.isGraphicLeft}
     />
   ));
