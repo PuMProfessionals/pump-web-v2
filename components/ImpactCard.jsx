@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
+import { Text } from "./Text";
 import { media } from "../utils";
 
 /*
@@ -88,7 +89,7 @@ const Title = styled.h2`
     `
   )};
 `;
-const Description = styled.text`
+const Description = styled(Text)`
   display: flex;
   ${({ theme }) => `
         font-family: ${theme.font.josefin};

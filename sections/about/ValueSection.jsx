@@ -7,7 +7,7 @@ import { baseTheme } from "../../theme";
 
 export const ValueSection = ({ ...props }) => {
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       <TopWrapper>
         <Title size={baseTheme.size.h1} bold="true">
           Our Impact
