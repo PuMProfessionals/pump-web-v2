@@ -9,7 +9,7 @@ export default function About() {
         <title>PuMP</title>
       </Head>
       <PageLayout>
-        <ValueSection/>
+        <ValueSection />
       </PageLayout>
     </div>
   );

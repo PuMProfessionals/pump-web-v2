@@ -36,10 +36,8 @@ export const ImpactCard = ({
           />
         </ImageWrapper>
         <Content textColour={textColour} {...props}>
-            <Title titleSize={titleSize}>{impactNum}</Title>
-          {!!description && (
-            <Description>{description}</Description>
-          )}
+          <Title titleSize={titleSize}>{impactNum}</Title>
+          {!!description && <Description>{description}</Description>}
         </Content>
       </Section>
     </Wrapper>

@@ -1,52 +1,51 @@
 import styled from "styled-components";
 
-import  placeholderImage  from "../../public/home/impact-section-graphic-1.svg";
+import placeholderImage from "../../public/home/impact-section-graphic-1.svg";
 import { ImpactCard, Text } from "../../components";
 import { media } from "../../utils";
 import { baseTheme } from "../../theme";
 
-
 export const ValueSection = ({ ...props }) => {
-    return (
-        <Wrapper>
-            <TopWrapper>
-                <Title size={baseTheme.size.h1} bold="true">
-                    Our Impact
-                </Title>
-                <Description>
-                    PuMP looks to make a difference by connecting student with learning opportunities, while also
-                    encouraging community involvement by providing resources, local events and conferences. By creating
-                    transparency between studetns and this ever-changing, competitive field, the organization looks to empower
-                    youth to continue exploring possible careers in medicine.
-                </Description>
-            </TopWrapper>
-            <ImpactWrapper>
-                <ImpactCard
-                    thumbnail={placeholderImage}
-                    isImageTop={false}
-                    impactNum="CONNECT"
-                    textColour={baseTheme.colors.yellow}
-                    titleSize={2.5}
-                />
-                <ImpactCard
-                    thumbnail={placeholderImage}
-                    isImageTop={false}
-                    impactNum="INVOLVE"
-                    textColour={baseTheme.colors.brightBlue}
-                    titleSize={2.5}
-                />
-                <ImpactCard
-                    thumbnail={placeholderImage}
-                    isImageTop={false}
-                    impactNum="EMPOWER"
-                    textColour={baseTheme.colors.turquoise}
-                    titleSize={2.5}
-                />
-            </ImpactWrapper>
-        </Wrapper>
-    );
-}
-
+  return (
+    <Wrapper>
+      <TopWrapper>
+        <Title size={baseTheme.size.h1} bold="true">
+          Our Impact
+        </Title>
+        <Description>
+          PuMP looks to make a difference by connecting student with learning
+          opportunities, while also encouraging community involvement by providing
+          resources, local events and conferences. By creating transparency between
+          studetns and this ever-changing, competitive field, the organization looks
+          to empower youth to continue exploring possible careers in medicine.
+        </Description>
+      </TopWrapper>
+      <ImpactWrapper>
+        <ImpactCard
+          thumbnail={placeholderImage}
+          isImageTop={false}
+          impactNum="CONNECT"
+          textColour={baseTheme.colors.yellow}
+          titleSize={2.5}
+        />
+        <ImpactCard
+          thumbnail={placeholderImage}
+          isImageTop={false}
+          impactNum="INVOLVE"
+          textColour={baseTheme.colors.brightBlue}
+          titleSize={2.5}
+        />
+        <ImpactCard
+          thumbnail={placeholderImage}
+          isImageTop={false}
+          impactNum="EMPOWER"
+          textColour={baseTheme.colors.turquoise}
+          titleSize={2.5}
+        />
+      </ImpactWrapper>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
   padding: 0 2%;
@@ -55,7 +54,7 @@ const Wrapper = styled.div`
     `   
             padding: 0 6%;
         `
-)};
+  )};
 `;
 const Title = styled(Text)`
   margin-bottom: 20px;
@@ -87,5 +86,5 @@ const ImpactWrapper = styled.div`
       flex-direction: column;
       margin-bottom: 15%;
       `
-)};
+  )};
 `;

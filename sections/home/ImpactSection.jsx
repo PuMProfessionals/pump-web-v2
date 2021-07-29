@@ -26,7 +26,7 @@ export const ImpactSection = ({ ...props }) => {
       <ImpactWrapper>
         <ImpactCard
           thumbnail={ImpactGraphic1}
-          isImageTop= {true}
+          isImageTop={true}
           impactNum="4,000"
           description="Students reached directly through our services"
           textColour={baseTheme.colors.navy}
@@ -34,7 +34,7 @@ export const ImpactSection = ({ ...props }) => {
         />
         <ImpactCard
           thumbnail={ImpactGraphic2}
-          isImageTop= {true}
+          isImageTop={true}
           impactNum="2,000"
           description="Following our events across social media"
           textColour={baseTheme.colors.navy}
@@ -42,7 +42,7 @@ export const ImpactSection = ({ ...props }) => {
         />
         <ImpactCard
           thumbnail={ImpactGraphic3}
-          isImageTop= {true}
+          isImageTop={true}
           impactNum="32K"
           description="In total reached across Canada"
           textColour={baseTheme.colors.navy}
