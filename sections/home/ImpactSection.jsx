@@ -87,4 +87,4 @@ const TopWrapper = styled.div`
   padding: 0 5% 60px 5%;
 `;
 
-//TO DO - fix resizing image issue when the application window is resized smaller
+
