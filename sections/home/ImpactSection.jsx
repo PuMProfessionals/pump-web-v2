@@ -86,5 +86,3 @@ const Title = styled(Text)`
 const TopWrapper = styled.div`
   padding: 0 5% 60px 5%;
 `;
-
-
