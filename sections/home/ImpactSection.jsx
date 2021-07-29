@@ -26,27 +26,21 @@ export const ImpactSection = ({ ...props }) => {
       <ImpactWrapper>
         <ImpactCard
           thumbnail={ImpactGraphic1}
-          isImageTop={true}
-          impactNum="4,000"
+          cardTitle="4,000"
           description="Students reached directly through our services"
           textColour={baseTheme.colors.navy}
-          titleSize={3.5}
         />
         <ImpactCard
           thumbnail={ImpactGraphic2}
-          isImageTop={true}
-          impactNum="2,000"
+          cardTitle="2,000"
           description="Following our events across social media"
           textColour={baseTheme.colors.navy}
-          titleSize={3.5}
         />
         <ImpactCard
           thumbnail={ImpactGraphic3}
-          isImageTop={true}
-          impactNum="32K"
+          cardTitle="32K"
           description="In total reached across Canada"
           textColour={baseTheme.colors.navy}
-          titleSize={3.5}
         />
       </ImpactWrapper>
     </Wrapper>

@@ -24,21 +24,21 @@ export const ValueSection = ({ ...props }) => {
         <ImpactCard
           thumbnail={placeholderImage}
           isImageTop={false}
-          impactNum="CONNECT"
+          cardTitle="CONNECT"
           textColour={baseTheme.colors.yellow}
           titleSize={2.5}
         />
         <ImpactCard
           thumbnail={placeholderImage}
           isImageTop={false}
-          impactNum="INVOLVE"
+          cardTitle="INVOLVE"
           textColour={baseTheme.colors.brightBlue}
           titleSize={2.5}
         />
         <ImpactCard
           thumbnail={placeholderImage}
           isImageTop={false}
-          impactNum="EMPOWER"
+          cardTitle="EMPOWER"
           textColour={baseTheme.colors.turquoise}
           titleSize={2.5}
         />

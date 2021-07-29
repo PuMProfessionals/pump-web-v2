@@ -5,7 +5,7 @@ import { media } from "../utils";
 /*
     Example:
     - Thumbnail: image
-    - isImageTop: will put the right order of image and text as specified
+    - isImageTop: determines if the image is above the text
     - impactNum: some number or title of the entire card
     - Description: text (cool statistic caption)
     - textColour: color of the title and description in card
@@ -14,11 +14,11 @@ import { media } from "../utils";
 */
 export const ImpactCard = ({
   thumbnail,
-  isImageTop,
-  impactNum,
+  isImageTop = true,
+  cardTitle,
   description,
   textColour,
-  titleSize,
+  titleSize = 3.5,
   imageHeight = 200,
   imageWidth = 300,
   cardHeight = 370,
@@ -29,14 +29,14 @@ export const ImpactCard = ({
       <Section isImageTop={isImageTop}>
         <ImageWrapper>
           <Image
-            alt={`Card image for ${impactNum} ${description}`}
+            alt={`Card image for ${cardTitle} ${description}`}
             src={thumbnail}
             height={imageHeight}
             width={imageWidth}
           />
         </ImageWrapper>
         <Content textColour={textColour} {...props}>
-          <Title titleSize={titleSize}>{impactNum}</Title>
+          <Title titleSize={titleSize}>{cardTitle}</Title>
           {!!description && <Description>{description}</Description>}
         </Content>
       </Section>
