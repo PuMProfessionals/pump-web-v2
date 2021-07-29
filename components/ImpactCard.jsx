@@ -5,14 +5,20 @@ import { media } from "../utils";
 /*
     Example:
     - Thumbnail: image
-    - impactNum: some number
+    - isImageTop: will put the right order of image and text as specified
+    - impactNum: some number or title of the entire card
     - Description: text (cool statistic caption)
+    - textColour: color of the title and description in card
+    - textSize: size of text at the very top (title)
     - imageHeight and imageWidth are dimensions of thumbnail
 */
 export const ImpactCard = ({
   thumbnail,
+  isImageTop,
   impactNum,
   description,
+  textColour,
+  titleSize,
   imageHeight = 200,
   imageWidth = 300,
   cardHeight = 370,
@@ -20,7 +26,7 @@ export const ImpactCard = ({
 }) => {
   return (
     <Wrapper cardHeight={cardHeight} {...props}>
-      <Section>
+      <Section isImageTop={isImageTop}>
         <ImageWrapper>
           <Image
             alt={`Card image for ${impactNum} ${description}`}
@@ -29,9 +35,11 @@ export const ImpactCard = ({
             width={imageWidth}
           />
         </ImageWrapper>
-        <Content>
-          <Title>{impactNum}</Title>
-          <Description>{description}</Description>
+        <Content textColour={textColour} {...props}>
+            <Title titleSize={titleSize}>{impactNum}</Title>
+          {!!description && (
+            <Description>{description}</Description>
+          )}
         </Content>
       </Section>
     </Wrapper>
@@ -58,21 +66,23 @@ const Wrapper = styled.div`
 `;
 const Section = styled.div`
   display: flex;
-  flex-direction: column;
+  ${({ isImageTop }) => `
+    flex-direction: ${isImageTop ? "column" : "column-reverse"};
+`};
 `;
 const Content = styled.div`
-  ${({ theme }) => `
-    color: ${theme.colors.navy};
+  ${({ textColour }) => `
+    color: ${textColour};
 `};
 `;
 const Title = styled.h2`
-  ${({ theme }) => `
+  ${({ theme, titleSize }) => `
         font-family: ${theme.font.josefin};
+        font-size: ${titleSize}rem;
     `};
   font-weight: bold;
   text-align: center;
   margin: 20px 0px;
-  font-size: 3.5rem;
   ${media(
     "tablet",
     `  
@@ -100,4 +110,5 @@ const Description = styled.text`
 const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
+  padding: 5% 0;
 `;
