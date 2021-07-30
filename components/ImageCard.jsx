@@ -22,7 +22,7 @@ export function ImageCard({
   textColour = baseTheme.colors.navy,
   opacity = 1,
   titleSize = 3.5,
-  descriptionSize = 2,
+  descriptionSize = 1.5,
   imageHeight = 200,
   imageWidth = 300,
   ...props
@@ -46,7 +46,7 @@ export function ImageCard({
           <Content textColour={textColour} {...props}>
             <Title titleSize={titleSize}>{cardTitle}</Title>
             {!!description && (
-              <Description textColour={textColour} descriptionSize={descriptionSize}>
+              <Description textColour={textColour} size={`${descriptionSize}rem`}>
                 {description}
               </Description>
             )}
@@ -69,7 +69,6 @@ const Wrapper = styled.div`
         background-image: url(${image});
         p {
             font-family: ${theme.font.lato};
-            font-size: ${theme.size.small};
             line-height: 1.5;
         }
   `};
@@ -98,7 +97,7 @@ const Title = styled.h2`
     `};
   font-weight: bold;
   text-align: center;
-  margin: 25px 0px;
+  margin: 25px 0px 0px 0px;
 
   ${media(
     "tablet",
@@ -119,11 +118,12 @@ const Description = styled(Text)`
   ${({ theme, textColour }) => `
         font-family: ${theme.font.josefin};
         color: ${textColour};
+        text-shadow: 1px 1px ${theme.colors.navy}
     `};
-  font-weight: 600;
+  font-weight: 100;
   text-align: center;
-  font-size: 3rem;
   justify-content: center;
+  margin: 0px;
   ${media(
     "tablet",
     `  

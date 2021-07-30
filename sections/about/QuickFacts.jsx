@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-import TieDye1 from "../../public/about/tie-dye-rect.jpg";
+import TieDye from "../../public/about/tie-dye-rect.jpg";
+import Navy from "../../public/about/navy-rect.png";
 import { Text, ImageCard } from "../../components";
 import { baseTheme } from "../../theme";
 import { media } from "../../utils";
@@ -11,7 +12,7 @@ export const QuickFacts = ({ ...props }) => (
       Quick Facts
     </Title>
     <ImageCard
-      image={TieDye1}
+      image={TieDye}
       cardTitle="2018"
       description="YEAR FOUNDED"
       textColour={baseTheme.colors.yellow}
