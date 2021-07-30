@@ -10,3 +10,4 @@ export { LeftImageTextLayout } from "./LeftImageTextLayout";
 export { Video } from "./Video";
 export { StudentResource } from "./StudentResource";
 export { ImageCard } from "./ImageCard";
+export { ImageCardCarousel } from "./ImageCardCarousel.jsx";
