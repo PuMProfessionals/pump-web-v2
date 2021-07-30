@@ -62,7 +62,6 @@ const Wrapper = styled.div`
   margin-top: 20px;
   border-radius: 44px;
   margin-bottom: 30px;
-  box-shadow: 2px 8px 8px rgba(0, 0, 0, 0.25);
   ${({ theme, cardHeight, imageWidth, image }) => `
         height: ${cardHeight}px;
         max-width: ${imageWidth}px;
@@ -88,6 +87,8 @@ const Section = styled.div`
 const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
+  border-radius: 30px;
+  min-width: 300px;
 `;
 const Title = styled.h2`
   ${({ theme, titleSize }) => `
@@ -102,7 +103,7 @@ const Title = styled.h2`
   ${media(
     "tablet",
     `  
-      margin: 40px 0px 10px 0px;
+      margin: 30px 0px 0px 0px;
     `
   )};
 `;
@@ -123,7 +124,7 @@ const Description = styled(Text)`
   font-weight: 100;
   text-align: center;
   justify-content: center;
-  margin: 0px;
+  margin: 0% 2% 10% 2%;
   ${media(
     "tablet",
     `  

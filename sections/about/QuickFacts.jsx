@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import TieDye from "../../public/about/tie-dye-rect.jpg";
+import TieDye from "../../public/about/tiedye-rect.png";
 import Navy from "../../public/about/navy-rect.png";
 import { Text, ImageCard } from "../../components";
 import { baseTheme } from "../../theme";
@@ -11,14 +11,35 @@ export const QuickFacts = ({ ...props }) => (
     <Title size={baseTheme.size.h1} bold="true">
       Quick Facts
     </Title>
-    <ImageCard
-      image={TieDye}
-      cardTitle="2018"
-      description="YEAR FOUNDED"
-      textColour={baseTheme.colors.yellow}
-      opacity={0.95}
-      titleSize={6.5}
-    />
+    <Content>
+      <ImageCard
+        image={Navy}
+        cardTitle="2018"
+        description="YEAR FOUNDED"
+        textColour={baseTheme.colors.yellow}
+        opacity={0.95}
+        titleSize={5.5}
+        descriptionSize={1.3}
+      />
+      <ImageCard
+        image={TieDye}
+        cardTitle="217"
+        description="STUDENTS INVOLVED"
+        textColour={baseTheme.colors.yellow}
+        opacity={0.95}
+        titleSize={5.5}
+        descriptionSize={1.3}
+      />
+      <ImageCard
+        image={Navy}
+        cardTitle="5"
+        description="BOARDS ACROSS CANADA"
+        textColour={baseTheme.colors.yellow}
+        opacity={0.95}
+        titleSize={5.5}
+        descriptionSize={1.3}
+      />
+    </Content>
   </Wrapper>
 );
 
@@ -39,4 +60,14 @@ const Title = styled(Text)`
       font-family: ${theme.font.josefin};
       color: ${theme.colors.navy};
   `};
+`;
+const Content = styled.div`
+  display: flex;
+  ${media(
+    "tablet",
+    `
+        flex-direction: column;
+        margin-bottom: 15%;
+        `
+  )}; ;
 `;
