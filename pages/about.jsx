@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { PageLayout } from "../sections/hoc";
+import { ValueSection } from "../sections/about";
 
 export default function About() {
   return (
@@ -7,7 +8,9 @@ export default function About() {
       <Head>
         <title>PuMP</title>
       </Head>
-      <PageLayout>about</PageLayout>
+      <PageLayout>
+        <ValueSection />
+      </PageLayout>
     </div>
   );
 }
