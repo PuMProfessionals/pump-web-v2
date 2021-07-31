@@ -113,7 +113,6 @@ const LogoContainer = styled.div`
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            padding-bottom: 20px;
             `
   )};
 `;
