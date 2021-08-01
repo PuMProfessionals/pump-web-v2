@@ -1,5 +1,5 @@
 /*
- * Constants / any strings 
+ * Constants / any strings
  */
 export const CONSTANTS = {
   pump: "Prospective Medical Professionals",

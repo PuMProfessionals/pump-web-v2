@@ -42,7 +42,7 @@ export function Card({
           </div>
           {!!buttonText && (
             <Button>
-            <Link href="/">
+              <Link href="/">
                 <a style={{ color: baseTheme.colors.navy }}>{buttonText}</a>
               </Link>
             </Button>
