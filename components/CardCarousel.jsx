@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay, Pagination } from "swiper/core";
 
 import { Card } from "./Card";
+import { media } from "../utils";
 
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 
@@ -52,4 +53,10 @@ export function CardCarousel({ slides, ...props }) {
 
 const SCard = styled(Card)`
   margin: 0 15% 50px 15%;
+  ${media(
+    1400,
+    `   
+            margin: auto;
+        `
+  )};
 `;
