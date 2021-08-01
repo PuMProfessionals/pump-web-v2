@@ -19,10 +19,10 @@ export function Card({
   title,
   description,
   imageHeight = 200,
-  imageWidth = 300,
+  imageWidth = 320,
   cardHeight = 490,
-  buttonText = "Learn More",
-  linkTo = "/",
+  buttonText,
+  linkTo,
   ...props
 }) {
   return (
@@ -59,6 +59,7 @@ const Wrapper = styled.div`
   margin-top: 20px;
   border-radius: 44px;
   margin-bottom: 30px;
+  background-color: white;
   box-shadow: 2px 8px 8px rgba(0, 0, 0, 0.25);
   ${({ theme, cardHeight, imageWidth }) => `
         height: ${cardHeight}px;

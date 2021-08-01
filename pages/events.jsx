@@ -1,4 +1,7 @@
 import Head from "next/head";
+import styled from "styled-components";
+
+import { EventsCarousel } from "../sections/events";
 import { PageLayout } from "../sections/hoc";
 
 export default function Events() {
@@ -8,8 +11,14 @@ export default function Events() {
         <title>PuMP</title>
       </Head>
       <PageLayout>
-        <div style={{ height: "500px" }}>events</div>
+        <Wrapper>
+          <EventsCarousel />
+        </Wrapper>
       </PageLayout>
     </div>
   );
 }
+
+const Wrapper = styled.div`
+  padding: 5%;
+`;
