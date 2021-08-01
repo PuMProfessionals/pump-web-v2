@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Image from "next/image";
 
 import LeftArrow from "../public/home/LeftArrow.svg";
+import { baseTheme } from "../theme";
 
 /**
  * text prop
@@ -15,12 +16,19 @@ import LeftArrow from "../public/home/LeftArrow.svg";
  * |- optional image (right aligned)
  */
 
-export const Title = () => (
-  <Wrapper>
+export const Title = ({
+  title,
+  arrowLink,
+  description,
+  image,
+  backgroundColor = baseTheme.colors.navy,
+  ...props
+}) => (
+  <Wrapper backgroundColor={backgroundColor}>
     <BackArrow>
       <Image src={LeftArrow} width={50} />
     </BackArrow>
-    <STitle>University Admissions Server (UAS)</STitle>
+    <STitle>{title}</STitle>
   </Wrapper>
 );
 
@@ -42,7 +50,15 @@ const Wrapper = styled.div`
   align-items: flex-start;
   text-align: center;
   padding-bottom: 2rem;
-  ${({ theme }) => `
-    background-color: ${theme.colors.navy};
+  ${({ backgroundColor }) => `
+    background-color: ${backgroundColor};
   `};
 `;
+
+Title.PropTypes = {
+  title: PropTypes.string,
+  arrowLink: PropTypes.strin,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  backgroundColor: PropTypes.string,
+};
