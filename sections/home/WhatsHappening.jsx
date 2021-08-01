@@ -51,7 +51,7 @@ export const WhatsHappening = ({ ...props }) => (
 );
 
 const Wrapper = styled.div`
-  margin-bottom: 10vh;
+  margin: 12vh 0;
   padding: 0 2%;
   ${media(
     1400,
