@@ -10,7 +10,12 @@ export default function About({ ...props }) {
         <title>PuMP</title>
       </Head>
       <PageLayout>
-        <Title title="University Admissions Server (UAS)" link="/" />
+        <Title
+          title="University Admissions Server (UAS)"
+          arrowLink="/resources"
+          description={`Explore the complete timeline of a medical student, from
+                        high school to residency and beyond`}
+        />
         <ResourcesSection />
       </PageLayout>
     </div>
