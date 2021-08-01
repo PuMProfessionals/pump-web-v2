@@ -2,6 +2,7 @@ import Head from "next/head";
 import { PageLayout } from "../sections/hoc";
 import { ResourcesSection } from "../sections/resources";
 import { Title } from "../components";
+import SampleGraphic from "../public/home/impact-section-graphic-3.svg";
 
 export default function About({ ...props }) {
   return (
@@ -11,10 +12,11 @@ export default function About({ ...props }) {
       </Head>
       <PageLayout>
         <Title
+          leftAlign="true"
           title="University Admissions Server (UAS)"
           arrowLink="/resources"
-          description={`Explore the complete timeline of a medical student, from
-                        high school to residency and beyond`}
+          description="Explore the complete timeline of a medical student, high school to residency and beyond"
+          image={SampleGraphic}
         />
         <ResourcesSection />
       </PageLayout>
