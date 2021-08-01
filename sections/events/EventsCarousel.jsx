@@ -60,5 +60,5 @@ const Title = styled(Text)`
   `};
 `;
 const Description = styled(Text)`
-  padding: 0 5% 5% 5%;
+  padding: 0 5% 3% 5%;
 `;

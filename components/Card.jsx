@@ -17,6 +17,7 @@ import { media } from "../utils";
 export function Card({
   thumbnail,
   title,
+  component, // optional component to replace in content
   description,
   imageHeight = 200,
   imageWidth = 320,
@@ -38,8 +39,13 @@ export function Card({
         </ImageWrapper>
         <Content>
           <div>
-            <Title>{title}</Title>
-            <p style={{ marginBottom: "20px" }}>{description}</p>
+            {component ? component 
+              : (
+                <>
+                  <Title>{title}</Title>
+                  <p style={{ marginBottom: "20px" }}>{description}</p>
+                </>
+            )}
           </div>
           {!!buttonText && (
             <Button>
@@ -97,8 +103,6 @@ const Title = styled.h3`
   font-weight: bold;
 `;
 const ImageWrapper = styled.div`
-  display: flex;
-  justify-content: center;
   border-top-left-radius: 44px;
   border-top-right-radius: 44px;
 `;

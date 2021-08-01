@@ -47,7 +47,6 @@ export const ImpactCard = ({
 
 const Wrapper = styled.div`
   margin-left: 20px;
-  margin-bottom: 30px;
   width: 50%;
   ${({ cardHeight }) => `
     height: ${cardHeight}px;
