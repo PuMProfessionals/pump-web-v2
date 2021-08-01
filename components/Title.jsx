@@ -67,10 +67,6 @@ const Wrapper = styled.div`
   ${({ backgroundColor }) => `
     background-color: ${backgroundColor};
   `};
-
-  justify-content: center;
-  text-align: center;
-  padding-bottom: 2rem;
   ${({ leftAlign }) => `
     justify-content: ${leftAlign ? "space-between" : "center"};
     text-align: ${leftAlign ? "left" : "center"};
