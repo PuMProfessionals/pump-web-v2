@@ -22,6 +22,7 @@ export function Card({
   imageWidth = 300,
   cardHeight = 490,
   buttonText = "Learn More",
+  linkTo = "/",
   ...props
 }) {
   return (
@@ -42,7 +43,7 @@ export function Card({
           </div>
           {!!buttonText && (
             <Button>
-              <Link href="/">
+              <Link href={linkTo}>
                 <a style={{ color: baseTheme.colors.navy }}>{buttonText}</a>
               </Link>
             </Button>
