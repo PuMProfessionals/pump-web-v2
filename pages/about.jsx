@@ -9,9 +9,9 @@ import { ValueSection, BoardSection, QuickFacts } from "../sections/about";
 const calgaryBoard = [
   {
     name: "Brookyln Wiggins",
-    avatar: Brooklyn
-  }
-]
+    avatar: Brooklyn,
+  },
+];
 export default function About() {
   return (
     <div>
@@ -21,7 +21,7 @@ export default function About() {
       <PageLayout>
         <ValueSection />
         <QuickFacts />
-        <BoardSection 
+        <BoardSection
           board="Calgary Board"
           boardDescription="Est. 2018 | 74 Members"
           boardMembers={calgaryBoard}

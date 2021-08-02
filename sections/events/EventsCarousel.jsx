@@ -6,12 +6,12 @@ import { media } from "../../utils";
 import { baseTheme } from "../../theme";
 
 export function EventsCarousel({
-    slides,
-    title, // string
-    description, // string
-    backgroundColor = baseTheme.colors.greyBlue,
-    textColor = baseTheme.colors.white,
-    ...props
+  slides,
+  title, // string
+  description, // string
+  backgroundColor = baseTheme.colors.greyBlue,
+  textColor = baseTheme.colors.white,
+  ...props
 }) {
   return (
     <div>
@@ -20,27 +20,23 @@ export function EventsCarousel({
       </Head>
       <Wrapper backgroundColor={backgroundColor} {...props}>
         <Title size={baseTheme.size.h1} color={textColor} bold="true">
-            {title}
+          {title}
         </Title>
         <Description size={baseTheme.size.h4} color={textColor}>
-            {description}
+          {description}
         </Description>
         <CarouselWrapper>
-            <CardCarousel
-                cardHeight={520}
-                cardWidth={230}
-                slides={slides}
-            />
-         </CarouselWrapper>
+          <CardCarousel cardHeight={520} cardWidth={230} slides={slides} />
+        </CarouselWrapper>
       </Wrapper>
     </div>
   );
 }
 
 const Wrapper = styled.div`
-    padding: 20px;
-    border-radius: 44px;
-    ${({ backgroundColor }) => `
+  padding: 20px;
+  border-radius: 44px;
+  ${({ backgroundColor }) => `
         background-color: ${backgroundColor};
     `};
 `;

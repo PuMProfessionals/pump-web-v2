@@ -20,7 +20,7 @@ export const WhatsHappening = ({ ...props }) => (
               "Check out our blog to explore our articles on research, student life, post-secondary education, careers in medicine, and more!",
             thumbnail: PumpDigest,
             buttonText: "Learn More",
-            linkTo: "/resources/blog"
+            linkTo: "/resources/blog",
           },
           {
             title: "Impact Report",
@@ -28,7 +28,7 @@ export const WhatsHappening = ({ ...props }) => (
               "We are heading into our third year of operations! Read about our projects from the 2020-21 fiscal year in our first ever impact report.",
             thumbnail: ImpactReport,
             buttonText: "Learn More",
-            linkTo: "/"
+            linkTo: "/",
           },
           {
             title: "PowerUp Mentorship",
@@ -36,7 +36,7 @@ export const WhatsHappening = ({ ...props }) => (
               "Explore articles on research, student life, PuMP has partnered up with The STEM Fellowship to launch our mentorship program, PowerUp!",
             thumbnail: PumpDigest,
             buttonText: "Learn More",
-            linkTo: "/"
+            linkTo: "/",
           },
           {
             title: "PuMP Digest 2",
@@ -44,7 +44,7 @@ export const WhatsHappening = ({ ...props }) => (
               "Check out our blog to explore our articles on research, student life, post-secondary education, careers in medicine, and more!",
             thumbnail: PumpDigest,
             buttonText: "Learn More",
-            linkTo: "/"
+            linkTo: "/",
           },
           {
             title: "Impact Report 2",
@@ -52,7 +52,7 @@ export const WhatsHappening = ({ ...props }) => (
               "We are heading into our third year of operations! Read about our projects from the 2020-21 fiscal year in our first ever impact report.",
             thumbnail: ImpactReport,
             buttonText: "Learn More",
-            linkTo: "/"
+            linkTo: "/",
           },
         ]}
       />

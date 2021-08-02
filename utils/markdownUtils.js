@@ -47,8 +47,8 @@ export const getEventSlugs = () => {
   const events = allEventsPath.map((event) => {
     const slug = event.replace(/\.mdx?$/, "");
     return {
-      slug
+      slug,
     };
   });
   return events;
-}
+};

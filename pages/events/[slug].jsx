@@ -7,14 +7,14 @@ import { PageLayout } from "../../sections/hoc";
 import { getSlug, getEventSlugs } from "../../utils/markdownUtils";
 
 const EventsPage = ({ source, frontMatter }) => {
-    return (
-        <PageLayout>
-            <Title title={frontMatter.title} />
-            <Wrapper>
-                <MDXRemote {...source} />
-            </Wrapper>
-        </PageLayout>
-    );
+  return (
+    <PageLayout>
+      <Title title={frontMatter.title} />
+      <Wrapper>
+        <MDXRemote {...source} />
+      </Wrapper>
+    </PageLayout>
+  );
 };
 
 export default EventsPage;

@@ -39,12 +39,13 @@ export function Card({
         </ImageWrapper>
         <Content>
           <div>
-            {component ? component 
-              : (
-                <>
-                  <Title>{title}</Title>
-                  <p style={{ marginBottom: "20px" }}>{description}</p>
-                </>
+            {component ? (
+              component
+            ) : (
+              <>
+                <Title>{title}</Title>
+                <p style={{ marginBottom: "20px" }}>{description}</p>
+              </>
             )}
           </div>
           {!!buttonText && (
