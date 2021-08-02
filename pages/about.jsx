@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { PageLayout } from "../sections/hoc";
-import { ValueSection } from "../sections/about";
+import { ValueSection, QuickFacts } from "../sections/about";
 
 export default function About() {
   return (
@@ -10,6 +10,7 @@ export default function About() {
       </Head>
       <PageLayout>
         <ValueSection />
+        <QuickFacts />
       </PageLayout>
     </div>
   );
