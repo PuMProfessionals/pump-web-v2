@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import Image from "next/image";
@@ -95,6 +94,7 @@ const TitleSection = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
+  /* TODO: replace with background svg */
   ${({ backgroundColor }) => `
     background-color: ${backgroundColor};
   `};
