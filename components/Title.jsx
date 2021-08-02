@@ -6,16 +6,7 @@ import Image from "next/image";
 import LeftArrow from "../public/LeftArrow-NoCircle.svg";
 import { baseTheme } from "../theme";
 import { Text } from "../components";
-
-/**
- * title prop
- * background color prop
- * back button optional
- * |- link prop
- * description optional
- * |- align left
- * |- optional image (right aligned)
- */
+import { media } from "../utils";
 
 export const Title = ({
   title,
@@ -23,12 +14,16 @@ export const Title = ({
   description,
   image,
   backgroundColor = baseTheme.colors.navy,
-  leftAlign = !!image,
+  isLeftAligned = !!image,
   ...props
 }) => (
-  <Wrapper backgroundColor={backgroundColor} leftAlign={leftAlign} {...props}>
+  <Wrapper
+    backgroundColor={backgroundColor}
+    isLeftAligned={isLeftAligned}
+    {...props}
+  >
     {!!arrowLink && (
-      <BackArrow leftAlign={leftAlign}>
+      <BackArrow isLeftAligned={isLeftAligned}>
         <a href={arrowLink}>
           <Image src={LeftArrow} width={25} />
         </a>
@@ -43,23 +38,42 @@ export const Title = ({
 );
 
 const STitle = styled.h1`
-  font-size: 3rem; /* mobile: shrink text  */
+  font-size: 3rem;
   color: white;
   font-weight: 900;
+  ${media(
+    "tablet",
+    `
+      font-size: 2rem;
+    `
+  )}
 `;
 
 const BackArrow = styled.div`
   position: absolute;
-  ${({ leftAlign }) => `
-  left: ${leftAlign ? "8%" : "10%"};
-  top: ${leftAlign ? "80px" : "150px"};
+  ${({ isLeftAligned }) => `
+    left: ${isLeftAligned ? "8%" : "10%"};
+    top: ${isLeftAligned ? "80px" : "150px"};
   `}
+  ${media(
+    600,
+    `
+      left: 8%;
+      top: 80px;
+    `
+  )}
 `;
 
 const TitleSection = styled.div`
-  width: 60%; /* mobile: wider */
+  width: 60%;
   display: flex;
   flex-direction: column;
+  ${media(
+    600,
+    `
+      width: 80%;
+    `
+  )}
 `;
 
 const Wrapper = styled.div`
@@ -67,18 +81,28 @@ const Wrapper = styled.div`
   ${({ backgroundColor }) => `
     background-color: ${backgroundColor};
   `};
-  ${({ leftAlign }) => `
-    justify-content: ${leftAlign ? "space-between" : "center"};
-    text-align: ${leftAlign ? "left" : "center"};
-    padding: ${leftAlign ? "0 4rem 2rem" : "0 0 2rem"};
+  ${({ isLeftAligned }) => `
+    justify-content: ${isLeftAligned ? "space-between" : "center"};
+    text-align: ${isLeftAligned ? "left" : "center"};
+    padding: ${isLeftAligned ? "0 4rem 2rem" : "0 0 2rem"};
   `}
+  ${media(
+    600,
+    `
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 0 2rem;
+    `
+  )}
 `;
 
 Title.propTypes = {
-  leftAlign: PropTypes.bool,
   title: PropTypes.string,
   arrowLink: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
   backgroundColor: PropTypes.string,
+  isLeftAligned: PropTypes.bool,
 };
