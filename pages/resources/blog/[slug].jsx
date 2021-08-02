@@ -4,12 +4,14 @@ import { MDXRemote } from "next-mdx-remote";
 
 import { prisma } from "../../../prisma/index";
 import { posts } from "../../../cache/cache";
+import { Title } from "../../../components";
 import { PageLayout } from "../../../sections/hoc";
 import { getSlug } from "../../../utils/markdownUtils";
 
 const BlogsPage = ({ source, frontMatter }) => {
   return (
-    <PageLayout title={frontMatter.title}>
+    <PageLayout>
+      <Title title={frontMatter.title} />
       <Wrapper>
         <MDXRemote {...source} />
       </Wrapper>

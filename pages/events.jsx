@@ -27,7 +27,7 @@ export default function Events() {
                       "Connecting high school students to a variety of opportunities. Meet institutions such as the Sanofi Biogenius Challenge, Vex Robotics, and The Knowledge Society! Join 500+ students and 20+ booths!",
                   thumbnail: PumpDigest,
                   buttonText: "Learn More",
-                  linkTo: "/"
+                  linkTo: "/events/pump-plus"
               },
               {
                   title: "MedHunt",
@@ -35,7 +35,7 @@ export default function Events() {
                       "MedHunt is a virtual scavenger hunt where teams can participate to win some cool prizes! Participants will work in teams of 1 to 3 to solve puzzles! The team who completes the scavenger hunt first are the victors!",
                   thumbnail: PumpDigest,
                   buttonText: "Learn More",
-               linkTo: "/"
+               linkTo: "/events/med-hunt"
               },
               {
                   title: "PowerUp Mentorship Program",

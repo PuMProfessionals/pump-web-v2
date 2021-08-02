@@ -6,7 +6,6 @@ export const BoardSection = ({
     board,
     boardDescription,
     boardMembers, // array
-    fontColor,
     ...props
 }) => {
     return (
