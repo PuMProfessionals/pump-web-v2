@@ -16,6 +16,8 @@ import { media } from "../utils";
  * @prop {string} arrowLink - Link of back arrow
  * @prop {string} description - Section description
  * @prop {string} image - Path to right-aligned image
+ * @prop {number} imageWidth - width of right-aligned image, default 200px
+ * @prop {number} imageHeight - heigh tof right-aligned image, default 200px
  * @prop {string} backgroundColor - Color of header, default navy (match navbar)
  * @prop {boolean} isLeftAligned - Is text left aligend
  * |- default true if image is present
@@ -26,6 +28,8 @@ export const Title = ({
   arrowLink,
   description,
   image,
+  imageWidth = 200,
+  imageHeight = 200,
   backgroundColor = baseTheme.colors.navy,
   isLeftAligned = !!image,
   ...props
@@ -46,7 +50,7 @@ export const Title = ({
       <STitle>{title}</STitle>
       {!!description && <Text color="white">{description}</Text>}
     </TitleSection>
-    {!!image && <Image src={image} width={200} height={200} />}
+    {!!image && <Image src={image} width={imageWidth} height={imageHeight} />}
   </Wrapper>
 );
 
@@ -116,6 +120,8 @@ Title.propTypes = {
   arrowLink: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
+  imageWidth: PropTypes.number,
+  imageHeight: PropTypes.number,
   backgroundColor: PropTypes.string,
   isLeftAligned: PropTypes.bool,
 };
