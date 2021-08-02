@@ -24,7 +24,11 @@ export function EventsCarousel({
           {description}
         </Description>
         <CarouselWrapper>
-          <CardCarousel cardHeight={cardHeight} cardWidth={cardWidth} slides={slides} />
+          <CardCarousel
+            cardHeight={cardHeight}
+            cardWidth={cardWidth}
+            slides={slides}
+          />
         </CarouselWrapper>
       </Wrapper>
     </div>

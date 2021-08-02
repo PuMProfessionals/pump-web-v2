@@ -15,7 +15,7 @@ export const PageLayout = ({ children, ...props }) => {
   return (
     <Wrapper {...props}>
       <Navbar path={mainPath} />
-        {children}
+      {children}
       <Footer path={mainPath} />
     </Wrapper>
   );

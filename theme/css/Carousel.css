@@ -57,19 +57,23 @@
 }
 
 @media only screen and (max-width: 500px) {
-  .regular-carousel .swiper-button-prev, .swiper-button-next{
+  .regular-carousel .swiper-button-prev,
+  .swiper-button-next {
     display: none;
   }
-  #quick-facts .swiper-button-prev, .swipper-button-next {
+  #quick-facts .swiper-button-prev,
+  .swipper-button-next {
     display: none;
   }
 }
 @media only screen and (min-width: 1600px) {
-  .regular-carousel .swiper-button-prev, .swiper-button-next {
+  .regular-carousel .swiper-button-prev,
+  .swiper-button-next {
     width: 50px;
     height: 50px;
   }
-  #quick-facts .swiper-button-prev, .swipper-button-next {
+  #quick-facts .swiper-button-prev,
+  .swipper-button-next {
     width: 50px;
     height: 50px;
   }
