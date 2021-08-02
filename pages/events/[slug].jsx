@@ -2,13 +2,11 @@ import styled from "styled-components";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 
-import { prisma } from "../../../prisma/index";
-import { posts } from "../../../cache/cache";
-import { Title } from "../../../components";
-import { PageLayout } from "../../../sections/hoc";
-import { getSlug } from "../../../utils/markdownUtils";
+import { Title } from "../../components";
+import { PageLayout } from "../../sections/hoc";
+import { getSlug, getEventSlugs } from "../../utils/markdownUtils";
 
-const BlogsPage = ({ source, frontMatter }) => {
+const EventsPage = ({ source, frontMatter }) => {
   return (
     <PageLayout>
       <Title title={frontMatter.title} />
@@ -19,10 +17,10 @@ const BlogsPage = ({ source, frontMatter }) => {
   );
 };
 
-export default BlogsPage;
+export default EventsPage;
 
 export const getStaticProps = async ({ params }) => {
-  const { data, content } = getSlug("blog", params?.slug);
+  const { data, content } = getSlug("event", params?.slug);
 
   const mdxSource = await serialize(content, { scope: data });
   // eslint-disable-next-line no-console
@@ -36,14 +34,9 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  let postPaths;
-  try {
-    postPaths = await prisma.post.findMany();
-  } catch (e) {
-    postPaths = posts;
-  }
+  const eventPaths = getEventSlugs();
 
-  const paths = postPaths.map((post) => ({
+  const paths = eventPaths.map((post) => ({
     params: {
       slug: post.slug,
     },

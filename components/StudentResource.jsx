@@ -17,18 +17,18 @@ export const StudentResource = ({
   isGraphicLeft = true,
   ...props
 }) => (
-  <Wrapper isGraphicLeft={isGraphicLeft} {...props}>
+  <Wrapper isgraphicleft={isGraphicLeft} {...props}>
     <Graphic
       src={graphic}
       width={graphicWidth}
       height={graphicHeight}
-      isGraphicLeft={isGraphicLeft}
+      isgraphicleft={isGraphicLeft}
     />
-    <InfoSection isGraphicLeft={isGraphicLeft}>
+    <InfoSection isgraphicleft={isGraphicLeft}>
       <Title>{titleText}</Title>
       <Text>{descriptionText}</Text>
       {!!buttons && (
-        <ButtonSection isGraphicLeft={isGraphicLeft}>
+        <ButtonSection isgraphicleft={isGraphicLeft}>
           {buttons.map((button) => (
             <Link key={button.text} href={button.link}>
               <a>
@@ -52,8 +52,8 @@ const Title = styled.h2`
 
 const Graphic = styled(Image)`
   /* TODO: curved border ? */
-  ${({ isGraphicLeft }) => `
-    ${isGraphicLeft ? "margin-left: 5%;" : "margin-right: 5%;"}
+  ${({ isgraphicleft }) => `
+    ${isgraphicleft ? "margin-left: 5%;" : "margin-right: 5%;"}
   `};
   ${media(
     "800",
@@ -66,8 +66,8 @@ const Graphic = styled(Image)`
 const Wrapper = styled.div`
   padding: 8vh 0;
   display: flex;
-  ${({ isGraphicLeft }) => `
-    flex-direction: ${isGraphicLeft ? "row" : "row-reverse"}
+  ${({ isgraphicleft }) => `
+    flex-direction: ${isgraphicleft ? "row" : "row-reverse"}
   `};
   align-items: center;
   justify-content: center;
@@ -83,8 +83,8 @@ const InfoSection = styled.div`
   width: 35%;
   display: flex;
   flex-direction: column;
-  ${({ isGraphicLeft }) => `
-    text-align: ${isGraphicLeft ? "left" : "right"};
+  ${({ isgraphicleft }) => `
+    text-align: ${isgraphicleft ? "left" : "right"};
   `};
   margin: 0% 5%;
   ${media(
@@ -99,8 +99,8 @@ const InfoSection = styled.div`
 
 const ButtonSection = styled.div`
   display: flex;
-  ${({ isGraphicLeft }) => `
-    justify-content: ${isGraphicLeft ? "flex-start" : "flex-end"}
+  ${({ isgraphicleft }) => `
+    justify-content: ${isgraphicleft ? "flex-start" : "flex-end"}
   `};
   flex-flow: row wrap;
   ${media(

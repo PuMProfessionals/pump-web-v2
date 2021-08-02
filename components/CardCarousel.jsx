@@ -7,11 +7,10 @@ import { media } from "../utils";
 
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 
-export function CardCarousel({ slides, ...props }) {
+export function CardCarousel({ slides, cardHeight, cardWidth, ...props }) {
   return (
     <div {...props}>
       <Swiper
-        id="swiper-replace"
         slidesPerView={1}
         spaceBetween={30}
         loop={true}
@@ -42,7 +41,11 @@ export function CardCarousel({ slides, ...props }) {
               title={slide.title}
               description={slide.description}
               thumbnail={slide.thumbnail}
+              buttonText={slide.buttonText}
+              linkTo={slide.linkTo}
               style={{ marginBottom: "50px" }}
+              cardHeight={cardHeight}
+              cardWidth={cardWidth}
             />
           </SwiperSlide>
         ))}

@@ -6,7 +6,7 @@ export default function UAS() {
   return (
     <div>
       <Head>
-        <title>PuMP</title>
+        <title>PuMP | UAS</title>
       </Head>
       <PageLayout>
         <UASLayout />
