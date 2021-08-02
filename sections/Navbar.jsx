@@ -14,8 +14,8 @@ import { media } from "../utils";
 {
   /* TODO: Refactor into object? paths must be same as linked pages*/
 }
-const RESOURCES = ["Home", "About Us", "Resources", "Events", "Partners"];
-const PATHS = ["", "about", "resources", "events", "partners"];
+const RESOURCES = ["Home", "About Us", "Resources", "Events"];
+const PATHS = ["", "about", "resources", "events"];
 
 export const Navbar = ({
   backgroundColor = baseTheme.colors.navy,
@@ -71,8 +71,8 @@ export const Navbar = ({
             </Resource>
           ))}
           <SButton>
-            <Link href="/donate">
-              <a style={{ color: baseTheme.colors.navy }}>Donate</a>
+            <Link href="/sponsors">
+              <a style={{ color: baseTheme.colors.navy }}>Sponsors</a>
             </Link>
           </SButton>
         </ResourcesContainer>

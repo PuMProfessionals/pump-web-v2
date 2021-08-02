@@ -20,7 +20,9 @@ export function Card({
   description,
   imageHeight = 200,
   imageWidth = 300,
-  cardHeight = 470,
+  cardHeight = 490,
+  buttonText = "Learn More",
+  linkTo = "/",
   ...props
 }) {
   return (
@@ -35,13 +37,17 @@ export function Card({
           />
         </ImageWrapper>
         <Content>
-          <Title>{title}</Title>
-          <p style={{ marginBottom: "20px" }}>{description}</p>
-          <Button>
-            <Link href="/">
-              <a style={{ color: baseTheme.colors.navy }}>Learn More</a>
-            </Link>
-          </Button>
+          <div>
+            <Title>{title}</Title>
+            <p style={{ marginBottom: "20px" }}>{description}</p>
+          </div>
+          {!!buttonText && (
+            <Button>
+              <Link href={linkTo}>
+                <a style={{ color: baseTheme.colors.navy }}>{buttonText}</a>
+              </Link>
+            </Button>
+          )}
         </Content>
       </Section>
     </Wrapper>

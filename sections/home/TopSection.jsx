@@ -26,8 +26,8 @@ export const TopSection = ({ ...props }) => (
       <Graphic
         src={TitleGraphic}
         alt="Title graphic - person with book, stethoscope, pills and syringe"
-        height={370}
-        width={370}
+        height={450}
+        width={450}
       />
     </SecondColumn>
   </MainContainer>
@@ -39,6 +39,7 @@ const MainContainer = styled.div`
   flex-wrap: nowrap;
   flex-direction: row;
   align-items: center;
+  justify-content: space-evenly;
   ${media(
     800,
     `
@@ -92,35 +93,26 @@ const ButtonText = styled(SText)`
 `;
 
 const Graphic = styled(Image)`
-  width: 100%;
-  height: auto;
   ${media(
     1200,
     `
-        max-width: 400px;
+        max-width: 350px;
         `
   )};
   ${media(
     600,
     `
-        max-width: 340px;
+        max-width: 300px;
         `
   )};
 `;
 
 const FirstColumn = styled.div`
-  width: 60%;
-  ${media(
-    "laptop",
-    ` 
-        width: 100%;
-        flex: 0 0 35%;
-        `
-  )};
+  width: 50%;
   ${media(
     "tablet",
     `
-        flex: 1 0 0;
+        width: 100%;
         `
   )};
 `;

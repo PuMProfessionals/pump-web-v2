@@ -66,7 +66,7 @@ const ImpactWrapper = styled.div`
     "tablet",
     `
       flex-direction: column;
-      margin-bottom: 15%;
+      margin-bottom: 12%;
       `
   )};
 `;

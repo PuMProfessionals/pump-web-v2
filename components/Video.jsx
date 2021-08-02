@@ -33,7 +33,7 @@ const SIframe = styled.iframe`
     750,
     `
       width: 80%;
-      height: 80vh;
+      height: 65vh;
     `
   )};
 `;
