@@ -4,7 +4,7 @@ import Head from "next/head";
 import Brooklyn from "../public/members/brooklyn-wiggins.png";
 // import Camille from "../public/members/camille-eamon.jpeg";
 import { PageLayout } from "../sections/hoc";
-import { ValueSection, BoardSection } from "../sections/about";
+import { ValueSection, BoardSection, QuickFacts } from "../sections/about";
 
 const calgaryBoard = [
   {
@@ -20,6 +20,7 @@ export default function About() {
       </Head>
       <PageLayout>
         <ValueSection />
+        <QuickFacts />
         <BoardSection 
           board="Calgary Board"
           boardDescription="Est. 2018 | 74 Members"
