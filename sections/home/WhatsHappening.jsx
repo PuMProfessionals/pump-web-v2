@@ -13,6 +13,7 @@ export const WhatsHappening = ({ ...props }) => (
     </Title>
     <CarouselWrapper>
       <CardCarousel
+        className="regular-carousel"
         slides={[
           {
             title: "PuMP Digest",

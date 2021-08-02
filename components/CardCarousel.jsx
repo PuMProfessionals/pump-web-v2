@@ -11,7 +11,6 @@ export function CardCarousel({ slides, cardHeight, cardWidth, ...props }) {
   return (
     <div {...props}>
       <Swiper
-        id="swiper-replace"
         slidesPerView={1}
         spaceBetween={30}
         loop={true}

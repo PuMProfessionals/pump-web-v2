@@ -1,4 +1,3 @@
-import Head from "next/head";
 import styled from "styled-components";
 
 import { CardCarousel, Text } from "../../components";
@@ -11,13 +10,12 @@ export function EventsCarousel({
   description, // string
   backgroundColor = baseTheme.colors.greyBlue,
   textColor = baseTheme.colors.white,
+  cardWidth = 230,
+  cardHeight = 520,
   ...props
 }) {
   return (
-    <div>
-      <Head>
-        <title>PuMP | Events</title>
-      </Head>
+    <div className="regular-carousel">
       <Wrapper backgroundColor={backgroundColor} {...props}>
         <Title size={baseTheme.size.h1} color={textColor} bold="true">
           {title}
@@ -26,7 +24,7 @@ export function EventsCarousel({
           {description}
         </Description>
         <CarouselWrapper>
-          <CardCarousel cardHeight={520} cardWidth={230} slides={slides} />
+          <CardCarousel cardHeight={cardHeight} cardWidth={cardWidth} slides={slides} />
         </CarouselWrapper>
       </Wrapper>
     </div>

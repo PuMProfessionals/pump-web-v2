@@ -13,6 +13,7 @@ export const QuickFacts = ({ ...props }) => (
     </Title>
     <CarouselWrapper>
       <ImageCardCarousel
+        id="quick-facts"
         slides={[
           {
             image: Navy,

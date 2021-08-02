@@ -95,6 +95,12 @@ const Content = styled.div`
   color: black;
   border-top-right-radius: 44px;
   border-bottom-right-radius: 44px;
+  ${media(
+    500,
+    `
+      padding: 10px 20px 25px 25px;
+    `
+  )};
 `;
 const Title = styled.h3`
   ${({ theme }) => `

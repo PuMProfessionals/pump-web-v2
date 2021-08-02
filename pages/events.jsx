@@ -52,6 +52,7 @@ export default function Events() {
             description="Opportunities that assist high school students with career planning, relieve stress, and connect with others."
             backgroundColor={baseTheme.colors.yellow}
             textColor={baseTheme.colors.navy}
+            cardHeight={470}
             slides={[
                 {
                   title: "University Takeovers",
