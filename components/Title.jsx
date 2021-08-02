@@ -8,6 +8,17 @@ import { baseTheme } from "../theme";
 import { Text } from "../components";
 import { media } from "../utils";
 
+/**
+ * Title Component
+ * @prop {string} title - Page title
+ * @prop {string} arrowLink - Link of back arrow
+ * @prop {string} description - Section description
+ * @prop {string} image - Path to right-aligned image
+ * @prop {string} backgroundColor - Color of header, default navy (match navbar)
+ * @prop {boolean} isLeftAligned - Is text left aligend
+ * |- default true if image is present
+ */
+
 export const Title = ({
   title,
   arrowLink,
