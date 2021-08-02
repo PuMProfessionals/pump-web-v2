@@ -9,3 +9,4 @@ export { ImpactCard } from "./ImpactCard";
 export { LeftImageTextLayout } from "./LeftImageTextLayout";
 export { Video } from "./Video";
 export { StudentResource } from "./StudentResource";
+export { Title } from "./Title";
