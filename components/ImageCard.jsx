@@ -74,7 +74,17 @@ const Wrapper = styled.div`
   ${media(
     370,
     `
-      max-width: 240px;
+      max-height: 100%;
+      max-width: 100%;
+      margin-left: 0;
+      padding-bottom: 20px;
+    `
+  )};
+  ${media(
+    280,
+    `
+      max-height: 100%;
+      max-width: 100%;
       margin-left: 0;
       padding-bottom: 20px;
     `
@@ -104,6 +114,7 @@ const Title = styled.h2`
     "tablet",
     `  
       margin: 30px 0px 0px 0px;
+
     `
   )};
 `;

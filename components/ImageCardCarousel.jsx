@@ -35,7 +35,7 @@ export function ImageCardCarousel({ slides, ...props }) {
         }}
       >
         {slides.map((slide) => (
-          <SwiperSlide key={`${slide.title}__swiper__slide`}>
+          <SwiperSlide key={`${slide.cardTitle}__swiper__slide`}>
             <SImageCard
               key={slide.cardTitle}
               cardTitle={slide.cardTitle}
@@ -54,5 +54,6 @@ export function ImageCardCarousel({ slides, ...props }) {
 }
 
 const SImageCard = styled(ImageCard)`
-  margin: 0 15% 50px 15%;
+  margin: auto;
+  margin-bottom: 15%;
 `;
