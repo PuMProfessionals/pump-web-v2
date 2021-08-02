@@ -16,7 +16,6 @@ export default function About({ ...props }) {
           arrowLink="/resources"
           description="Explore the complete timeline of a medical student, high school to residency and beyond"
           image={SampleGraphic}
-          // isLeftAligned="true"
         />
         <ResourcesSection />
       </PageLayout>

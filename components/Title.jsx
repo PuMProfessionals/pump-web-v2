@@ -9,6 +9,8 @@ import { Text } from "../components";
 import { media } from "../utils";
 
 /**
+ * see resources.jsx for an example
+ *
  * Title Component
  * @prop {string} title - Page title
  * @prop {string} arrowLink - Link of back arrow
