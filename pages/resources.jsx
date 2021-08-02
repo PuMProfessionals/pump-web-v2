@@ -2,7 +2,7 @@ import Head from "next/head";
 import { PageLayout } from "../sections/hoc";
 import { ResourcesSection } from "../sections/resources";
 
-export default function About({ ...props }) {
+export default function Resources({ ...props }) {
   return (
     <div {...props}>
       <Head>
