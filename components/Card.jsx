@@ -17,12 +17,13 @@ import { media } from "../utils";
 export function Card({
   thumbnail,
   title,
+  component, // optional component to replace in content
   description,
   imageHeight = 200,
-  imageWidth = 300,
+  imageWidth = 320,
   cardHeight = 490,
-  buttonText = "Learn More",
-  linkTo = "/",
+  buttonText,
+  linkTo,
   ...props
 }) {
   return (
@@ -38,8 +39,14 @@ export function Card({
         </ImageWrapper>
         <Content>
           <div>
-            <Title>{title}</Title>
-            <p style={{ marginBottom: "20px" }}>{description}</p>
+            {component ? (
+              component
+            ) : (
+              <>
+                <Title>{title}</Title>
+                <p style={{ marginBottom: "20px" }}>{description}</p>
+              </>
+            )}
           </div>
           {!!buttonText && (
             <Button>
@@ -59,6 +66,7 @@ const Wrapper = styled.div`
   margin-top: 20px;
   border-radius: 44px;
   margin-bottom: 30px;
+  background-color: white;
   box-shadow: 2px 8px 8px rgba(0, 0, 0, 0.25);
   ${({ theme, cardHeight, imageWidth }) => `
         height: ${cardHeight}px;
@@ -87,6 +95,12 @@ const Content = styled.div`
   color: black;
   border-top-right-radius: 44px;
   border-bottom-right-radius: 44px;
+  ${media(
+    500,
+    `
+      padding: 10px 20px 25px 25px;
+    `
+  )};
 `;
 const Title = styled.h3`
   ${({ theme }) => `
@@ -96,8 +110,6 @@ const Title = styled.h3`
   font-weight: bold;
 `;
 const ImageWrapper = styled.div`
-  display: flex;
-  justify-content: center;
   border-top-left-radius: 44px;
   border-top-right-radius: 44px;
 `;

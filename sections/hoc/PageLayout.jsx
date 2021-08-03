@@ -14,11 +14,11 @@ export const PageLayout = ({ children, ...props }) => {
   }
 
   return (
-    <div {...props}>
+    <Wrapper {...props}>
       <Navbar path={mainPath} />
-      <Wrapper>{children}</Wrapper>
+      {children}
       <Footer path={mainPath} />
-    </div>
+    </Wrapper>
   );
 };
 

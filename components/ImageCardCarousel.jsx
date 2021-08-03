@@ -2,15 +2,15 @@ import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay, Pagination } from "swiper/core";
 
-import { Card } from "./Card";
-import { media } from "../utils";
+import { ImageCard } from "./ImageCard";
 
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 
-export function CardCarousel({ slides, cardHeight, cardWidth, ...props }) {
+export function ImageCardCarousel({ slides, ...props }) {
   return (
     <div {...props}>
       <Swiper
+        id="swiper-replace"
         slidesPerView={1}
         spaceBetween={30}
         loop={true}
@@ -35,17 +35,16 @@ export function CardCarousel({ slides, cardHeight, cardWidth, ...props }) {
         }}
       >
         {slides.map((slide) => (
-          <SwiperSlide key={`${slide.title}__swiper__slide`}>
-            <SCard
-              key={slide.title}
-              title={slide.title}
+          <SwiperSlide key={`${slide.cardTitle}__swiper__slide`}>
+            <SImageCard
+              key={slide.cardTitle}
+              cardTitle={slide.cardTitle}
               description={slide.description}
-              thumbnail={slide.thumbnail}
-              buttonText={slide.buttonText}
-              linkTo={slide.linkTo}
-              style={{ marginBottom: "50px" }}
-              cardHeight={cardHeight}
-              cardWidth={cardWidth}
+              image={slide.image}
+              textColour={slide.textColour}
+              opacity={slide.opacity}
+              titleSize={slide.titleSize}
+              descriptionSize={slide.descriptionSize}
             />
           </SwiperSlide>
         ))}
@@ -54,12 +53,7 @@ export function CardCarousel({ slides, cardHeight, cardWidth, ...props }) {
   );
 }
 
-const SCard = styled(Card)`
-  margin: 0 15% 50px 15%;
-  ${media(
-    1400,
-    `   
-            margin: auto;
-        `
-  )};
+const SImageCard = styled(ImageCard)`
+  margin: auto;
+  margin-bottom: 15%;
 `;

@@ -1,4 +1,4 @@
-#swiper-replace .swiper-button-prev {
+.regular-carousel .swiper-button-prev {
   left: 0 !important;
   background-image: url("../../public/home/LeftArrow.svg") !important;
   background-repeat: no-repeat;
@@ -8,11 +8,26 @@
   height: 40px;
 }
 
-#swiper-replace .swiper-button-prev::after {
+#quick-facts .swiper-button-prev {
+  left: 0 !important;
+  background-image: url("../../public/home/LeftArrow.svg") !important;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  width: 40px;
+  height: 40px;
+  top: 100px;
+}
+
+.regular-carousel .swiper-button-prev::after {
   display: none;
 }
 
-#swiper-replace .swiper-button-next {
+#quick-facts .swiper-button-prev::after {
+  display: none;
+}
+
+.regular-carousel .swiper-button-next {
   right: 0 !important;
   background-image: url("../../public/home/RightArrow.svg") !important;
   background-repeat: no-repeat;
@@ -22,19 +37,43 @@
   height: 40px;
 }
 
-#swiper-replace .swiper-button-next::after {
+#quick-facts .swiper-button-next {
+  right: 0 !important;
+  background-image: url("../../public/home/RightArrow.svg") !important;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+  width: 40px;
+  height: 40px;
+  top: 100px;
+}
+
+.regular-carousel .swiper-button-next::after {
+  display: none;
+}
+
+#quick-facts .swiper-button-next::after {
   display: none;
 }
 
 @media only screen and (max-width: 500px) {
-  #swiper-replace .swiper-button-prev,
+  .regular-carousel .swiper-button-prev,
   .swiper-button-next {
+    display: none;
+  }
+  #quick-facts .swiper-button-prev,
+  .swipper-button-next {
     display: none;
   }
 }
 @media only screen and (min-width: 1600px) {
-  #swiper-replace .swiper-button-prev,
+  .regular-carousel .swiper-button-prev,
   .swiper-button-next {
+    width: 50px;
+    height: 50px;
+  }
+  #quick-facts .swiper-button-prev,
+  .swipper-button-next {
     width: 50px;
     height: 50px;
   }
