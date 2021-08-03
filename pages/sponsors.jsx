@@ -32,7 +32,7 @@ export default function Sponsors() {
   return (
     <div>
       <Head>
-        <title>PuMP</title>
+        <title>PuMP | Sponsors</title>
       </Head>
       <PageLayout>
         <Title title="Sponsors" />

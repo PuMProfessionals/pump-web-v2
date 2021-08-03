@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Head from "next/head";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import styled from "styled-components";
@@ -43,32 +44,37 @@ export default function Blog({ posts, ...props }) {
     }
   };
   return (
-    <PageLayout>
-      <ToastContainer />
-      <Wrapper {...props}>
-        <Title
-          title="Welcome To PuMP Digest"
-          image={SpeechBubble}
-          imageWidth={150}
-          imageHeight={150}
-        />
-        <Input
-          placeholder="Search blog"
-          name="blog-name"
-          type="text"
-          value={searchParameter}
-          onChange={handleChange}
-        />
-        {!!blogPosts &&
-          blogPosts.map(({ title, slug }) => (
-            <div key={title}>
-              <Link href={`/resources/blog/${slug}`}>
-                <a style={{ color: baseTheme.colors.navy }}>{title}</a>
-              </Link>
-            </div>
-          ))}
-      </Wrapper>
-    </PageLayout>
+    <div>
+      <Head>
+        <title>PuMP | Digest</title>
+      </Head>
+      <PageLayout>
+        <ToastContainer />
+        <Wrapper {...props}>
+          <Title
+            title="Welcome To PuMP Digest"
+            image={SpeechBubble}
+            imageWidth={150}
+            imageHeight={150}
+          />
+          <Input
+            placeholder="Search blog"
+            name="blog-name"
+            type="text"
+            value={searchParameter}
+            onChange={handleChange}
+          />
+          {!!blogPosts &&
+            blogPosts.map(({ title, slug }) => (
+              <div key={title}>
+                <Link href={`/resources/blog/${slug}`}>
+                  <a style={{ color: baseTheme.colors.navy }}>{title}</a>
+                </Link>
+              </div>
+            ))}
+        </Wrapper>
+      </PageLayout>
+    </div>
   );
 }
 

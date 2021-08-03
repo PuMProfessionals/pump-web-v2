@@ -7,7 +7,7 @@ export default function Resources({ ...props }) {
   return (
     <div {...props}>
       <Head>
-        <title>PuMP</title>
+        <title>PuMP | Resources</title>
       </Head>
       <PageLayout>
         <Title title="Student Resources" />

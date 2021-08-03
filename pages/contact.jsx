@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <div>
       <Head>
-        <title>PuMP</title>
+        <title>PuMP | Contact Us</title>
       </Head>
       <PageLayout>
         <Title title="Contact Us" />
