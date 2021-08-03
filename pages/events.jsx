@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styled from "styled-components";
 
-import PumpDigest from "../public/home/pump-digest.png";
+import PumpDigest from "../public/resources/pump-digest.png";
 import { Title } from "../components";
 import { EventsCarousel } from "../sections/events";
 import { PageLayout } from "../sections/hoc";
