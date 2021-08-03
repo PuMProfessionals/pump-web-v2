@@ -38,14 +38,14 @@ const MainContainer = styled.div`
   padding: 7% 12%;
   flex-wrap: nowrap;
   flex-direction: row;
-  align-items: center;{/*
+  align-items: center;
   ${media(
     800,
     `
         padding: 5%;
         margin: 0 7% 7% 7%;
         `
-  )};*/}
+  )};
   ${media(
     700,
     `
