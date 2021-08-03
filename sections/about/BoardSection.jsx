@@ -4,6 +4,14 @@ import { Card } from "../../components";
 import { baseTheme } from "../../theme";
 import { media } from "../../utils";
 
+/**
+ *
+ * BoardSection
+ * @prop {boardMembers} board - Board members information
+ * @prop {string} board - Board name
+ * @prop {string} boardDescription - Board description: established year and no. of members
+ * @prop {string} align - Alignment of the board description (left or right)
+ */
 export const BoardSection = ({
   board,
   boardDescription,
