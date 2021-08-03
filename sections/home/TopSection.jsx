@@ -10,10 +10,10 @@ import { Text, Button } from "../../components";
 export const TopSection = ({ ...props }) => (
   <MainContainer {...props}>
     <FirstColumn>
-			<JosefinTitle size="4.5em" bold="true">
-				{CONSTANTS.pump}
-			</JosefinTitle>
-			<SText size="default">{CONSTANTS.registered_charity_descr}</SText>
+      <JosefinTitle size="4.5em" bold="true">
+        {CONSTANTS.pump}
+      </JosefinTitle>
+      <SText size="default">{CONSTANTS.registered_charity_descr}</SText>
       <Button>
         <ButtonText size="default" bold="true">
           <Link href="/donate">
@@ -34,30 +34,30 @@ export const TopSection = ({ ...props }) => (
 );
 
 const MainContainer = styled.div`
-  display: flex;
+	display: flex;
   padding: 7% 12%;
   flex-wrap: nowrap;
   flex-direction: row;
-  align-items: center;
+  align-items: center;{/*
   ${media(
     800,
     `
         padding: 5%;
-        margin: 7%;
+        margin: 0 7% 7% 7%;
         `
-  )};
+  )};*/}
   ${media(
     700,
     `
         flex-direction: column-reverse;
         `
-  )};
+  )};{*/
   ${media(
     500,
     `
-        margin: 12%;
+        margin: 0 12% 12% 12%;
         `
-  )};
+  )};*/}
 `;
 
 const SText = styled(Text)`
