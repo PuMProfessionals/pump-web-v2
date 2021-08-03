@@ -44,30 +44,12 @@ export const QuickFacts = ({ ...props }) => (
           },
           {
             image: TieDye,
-            cardTitle: "4 in 5",
-            description: "TEENS HAVE CONSIDERED A CAREER IN MEDICINE",
+            cardTitle: "26+",
+            description: "PROJECTS SINCE 2018",
             textColour: baseTheme.colors.yellow,
             opacity: 0.95,
             titleSize: 5.5,
-            descriptionSize: 0.9,
-          },
-          {
-            image: Navy,
-            cardTitle: "76.3%",
-            description: "OF THESE TEENS ARE LOOKING FOR OPPORTUNITIES",
-            textColour: baseTheme.colors.yellow,
-            opacity: 0.95,
-            titleSize: 5.5,
-            descriptionSize: 0.9,
-          },
-          {
-            image: TieDye,
-            cardTitle: "62%",
-            description: "OF YOUTH CITE DIFFICULTY FINDING THESE OPPORTUNITIES",
-            textColour: baseTheme.colors.yellow,
-            opacity: 0.95,
-            titleSize: 5.5,
-            descriptionSize: 0.8,
+            descriptionSize: 1.3,
           },
         ]}
       />
