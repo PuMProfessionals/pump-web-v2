@@ -39,8 +39,9 @@ export default function Events() {
               },
               {
                 title: "PowerUp Mentorship Program",
+                date: "Sept. 2020 - Jan. 2021 ",
                 description:
-                  "Partnered with The STEM Fellowship, high school students are paired with university students where they can talk about scholarships, post-secondary applications, or university life.",
+                  "| Partnered with The STEM Fellowship, high school students are paired with university students where they can talk about scholarships, post-secondary applications, or university life.",
                 thumbnail: PumpDigest,
                 buttonText: "Learn More",
                 linkTo: "/",
@@ -56,8 +57,9 @@ export default function Events() {
             slides={[
               {
                 title: "University Takeovers",
+                date: "Jan. 2021 ",
                 description:
-                  "Social media features by university students sharing their day-to-day life and answering questions about their programs.",
+                  "| Social media features by university students sharing their day-to-day life and answering questions about their programs.",
                 thumbnail: PumpDigest,
                 buttonText: "Learn More",
                 linkTo: "/",
@@ -86,8 +88,9 @@ export default function Events() {
             slides={[
               {
                 title: "Doc Talks",
+                date: "Nov. 2020 ",
                 description:
-                  "Connecting high school students to a variety of opportunities. Meet institutions such as the Sanofi Biogenius Challenge, Vex Robotics, and The Knowledge Society! Join 500+ students and 20+ booths!",
+                  "| Connecting high school students to a variety of opportunities. Meet institutions such as the Sanofi Biogenius Challenge, Vex Robotics, and The Knowledge Society! Join 500+ students and 20+ booths!",
                 thumbnail: PumpDigest,
                 buttonText: "Learn More",
                 linkTo: "/",

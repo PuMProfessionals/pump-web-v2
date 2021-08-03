@@ -7,7 +7,7 @@ import { media } from "../utils";
 
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 
-export function CardCarousel({ slides, cardHeight, cardWidth, ...props }) {
+export function CardCarousel({ slides, cardHeight, cardWidth, component, ...props }) {
   return (
     <div {...props}>
       <Swiper
@@ -46,6 +46,8 @@ export function CardCarousel({ slides, cardHeight, cardWidth, ...props }) {
               style={{ marginBottom: "50px" }}
               cardHeight={cardHeight}
               cardWidth={cardWidth}
+              component={component}
+              date={slide.date}
             />
           </SwiperSlide>
         ))}

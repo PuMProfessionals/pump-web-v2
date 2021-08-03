@@ -23,6 +23,7 @@ export function Card({
   imageWidth = 320,
   cardHeight = 490,
   contentPadding,
+  date,
   buttonText,
   linkTo,
   ...props
@@ -45,7 +46,10 @@ export function Card({
             ) : (
               <>
                 <Title>{title}</Title>
-                <p style={{ marginBottom: "20px" }}>{description}</p>
+                <p style={{ marginBottom: "20px" }}>
+                  <strong>{date ? date : ""}</strong>
+                  {description}
+                </p>
               </>
             )}
           </div>
