@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import { Navbar } from "../Navbar";
 import { Footer } from "../Footer";
-import { media, CONSTANTS } from "../../utils";
+import { media } from "../../utils";
 
 export const PageLayout = ({ children, ...props }) => {
   // Logic for highlighting in same path
