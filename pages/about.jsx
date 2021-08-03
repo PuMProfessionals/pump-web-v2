@@ -103,6 +103,7 @@ export default function About() {
           board="Calgary Board"
           boardDescription="Est. 2020 | 27 Members"
           boardMembers={calgaryBoard}
+          align="right"
         />
       </PageLayout>
     </div>

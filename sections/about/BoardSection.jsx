@@ -8,33 +8,34 @@ export const BoardSection = ({
   board,
   boardDescription,
   boardMembers, // array
+  align = "left", // align content left or right for board
   ...props
 }) => {
   return (
     <Wrapper {...props}>
-      <div>
-        <Title>{board}</Title>
-        <p>{boardDescription}</p>
+        <Info align={align}>
+            <Title>{board}</Title>
+            <p>{boardDescription}</p>
+        </Info>
         <Board>
-          {boardMembers.map((member) => (
+            {boardMembers.map((member) => (
             <SCard
-              key={`About__Page__Card__${member.name}`}
-              thumbnail={member.avatar}
-              title={member.name}
-              imageWidth={member.imageWidth}
-              imageHeight={member.imageHeight}
-              cardHeight={member.cardHeight}
-              contentPadding={"5px"}
-              component={
+                key={`About__Page__Card__${member.name}`}
+                thumbnail={member.avatar}
+                title={member.name}
+                imageWidth={member.imageWidth}
+                imageHeight={member.imageHeight}
+                cardHeight={member.cardHeight}
+                contentPadding={"5px"}
+                component={
                 <PositionWrapper>
-                  <Name fontcolor={member.fontColor}>{member.name}</Name>
-                  <Position fontcolor={member.fontColor}>{member.position}</Position>
+                    <Name fontcolor={member.fontColor}>{member.name}</Name>
+                    <Position fontcolor={member.fontColor}>{member.position}</Position>
                 </PositionWrapper>
-              }
+                }
             />
-          ))}
+            ))}
         </Board>
-      </div>
     </Wrapper>
   );
 };
@@ -42,6 +43,11 @@ export const BoardSection = ({
 const Wrapper = styled.div`
   padding: 0 7%;
   margin-bottom: 5vh;
+`;
+const Info = styled.div`
+  ${({ align }) => `
+        text-align: ${align};
+    `};
 `;
 const Title = styled.h2`
   ${({ theme }) => `
@@ -74,7 +80,7 @@ const Board = styled.div`
   flex-wrap: wrap;
   margin-top: 5vh;
   ${media(
-    "tablet",
+    500,
     `
             flex-direction: column;
         `

@@ -44,7 +44,7 @@ const MainContainer = styled.div`
     800,
     `
         padding: 5%;
-        margin: 0 7& 7& 7%;
+        margin: 7%;
         `
   )};
   ${media(
@@ -56,7 +56,7 @@ const MainContainer = styled.div`
   ${media(
     500,
     `
-        margin: 0 12% 12% 12%;
+        margin: 12%;
         `
   )};
 `;
@@ -66,13 +66,11 @@ const SText = styled(Text)`
     font-family: ${theme.font.lato};
     color: ${theme.colors.navy};
     margin-top: 0;
-		max-width: 25vw;
   `};
   ${media(
     "tablet",
     `
         line-height: 1.3;
-				max-width: 100vw;
         `
   )};
 `;
@@ -81,13 +79,11 @@ const JosefinTitle = styled(SText)`
   ${({ theme }) => `
     font-family: ${theme.font.josefin};
     margin: 1em 0 0 0;
-		max-width: 30vw;
   `};
   ${media(
     1200,
     `
         font-size: 2.5rem;
-				max-width: 100vw;
         `
   )};
 `;
