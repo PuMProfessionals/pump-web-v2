@@ -7,6 +7,7 @@ import RachelLin from "../public/members/rachel-lin.png";
 import Brooklyn from "../public/members/brooklyn-wiggins.png";
 import YiAn from "../public/members/yi-an-wang.jpeg";
 import Camille from "../public/members/camille-eamon.jpeg";
+import PlaceholderGraphic from "../public/home/impact-section-graphic-3.svg";
 import { Title } from "../components";
 import { PageLayout } from "../sections/hoc";
 import { ValueSection, BoardSection, QuickFacts } from "../sections/about";
@@ -28,7 +29,7 @@ const nationalBoard = [
     imageWidth: 240,
     imageHeight: 220,
     cardHeight: 340,
-    fontColor: baseTheme.colors.yellow
+    fontColor: baseTheme.colors.yellow,
   },
   {
     name: "Shiro Puwa",
@@ -37,7 +38,7 @@ const nationalBoard = [
     imageWidth: 240,
     imageHeight: 220,
     cardHeight: 340,
-    fontColor: baseTheme.colors.brightBlue
+    fontColor: baseTheme.colors.brightBlue,
   },
   {
     name: "Rachel Lin",
@@ -46,7 +47,7 @@ const nationalBoard = [
     imageWidth: 240,
     imageHeight: 220,
     cardHeight: 340,
-    fontColor: baseTheme.colors.turquoise
+    fontColor: baseTheme.colors.turquoise,
   },
 ];
 
@@ -66,7 +67,7 @@ const calgaryBoard = [
     imageWidth: 250,
     imageHeight: 220,
     cardHeight: 340,
-    fontColor: baseTheme.colors.gold
+    fontColor: baseTheme.colors.gold,
   },
   {
     name: "Camille Eamon",
@@ -75,7 +76,7 @@ const calgaryBoard = [
     imageWidth: 260,
     imageHeight: 210,
     cardHeight: 340,
-    fontColor: baseTheme.colors.brightBlue
+    fontColor: baseTheme.colors.brightBlue,
   },
 ];
 
@@ -86,10 +87,14 @@ export default function About() {
         <title>PuMP | About Us</title>
       </Head>
       <PageLayout>
-        <Title title="About Us" />
+        <Title
+          title="About Us"
+          description="Get to know the PuMP family."
+          image={PlaceholderGraphic}
+        />
         <ValueSection />
         <QuickFacts />
-        <BoardSection 
+        <BoardSection
           board="National Board"
           boardDescription="Est. 2020 | 74 members"
           boardMembers={nationalBoard}
