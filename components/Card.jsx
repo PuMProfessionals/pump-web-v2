@@ -113,10 +113,10 @@ const Title = styled.h3`
   font-weight: bold;
 `;
 const ImageWrapper = styled.div`
-  border-top-left-radius: 44px!important;
-  border-top-right-radius: 44px!important;
+  border-top-left-radius: 44px !important;
+  border-top-right-radius: 44px !important;
 `;
 const SImage = styled(Image)`
-  border-top-left-radius: 44px!important;
-  border-top-right-radius: 44px!important;
-`
+  border-top-left-radius: 44px !important;
+  border-top-right-radius: 44px !important;
+`;

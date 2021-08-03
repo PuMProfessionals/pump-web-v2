@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import PumpDigest from "../../public/resources/pump-digest.png";
 import ImpactReport from "../../public/about/impact-report.png";
-import PowerUp from "../../public/events/power-up.png"
+import PowerUp from "../../public/events/power-up.png";
 import { CardCarousel, Text } from "../../components";
 import { baseTheme } from "../../theme";
 import { media } from "../../utils";

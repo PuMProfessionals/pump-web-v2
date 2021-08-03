@@ -16,23 +16,23 @@ export const BoardSection = ({
         <Title>{board}</Title>
         <p>{boardDescription}</p>
         <Board>
-            {boardMembers.map((member) => (
+          {boardMembers.map((member) => (
             <SCard
-                key={`About__Page__Card__${member.name}`}
-                thumbnail={member.avatar}
-                title={member.name}
-                imageWidth={member.imageWidth}
-                imageHeight={member.imageHeight}
-                cardHeight={member.cardHeight}
-                contentPadding={"5px"}
-                component={
+              key={`About__Page__Card__${member.name}`}
+              thumbnail={member.avatar}
+              title={member.name}
+              imageWidth={member.imageWidth}
+              imageHeight={member.imageHeight}
+              cardHeight={member.cardHeight}
+              contentPadding={"5px"}
+              component={
                 <PositionWrapper>
-                    <Name fontcolor={member.fontColor}>{member.name}</Name>
-                    <Position fontcolor={member.fontColor}>{member.position}</Position>
+                  <Name fontcolor={member.fontColor}>{member.name}</Name>
+                  <Position fontcolor={member.fontColor}>{member.position}</Position>
                 </PositionWrapper>
-                }
+              }
             />
-            ))}
+          ))}
         </Board>
       </div>
     </Wrapper>
@@ -54,7 +54,7 @@ const Name = styled.h3`
         font-family: ${theme.font.kumbh};
         font-weight: 700;
         font-size: 1.4rem;
-        color: ${fontcolor ? fontcolor: baseTheme.colors.navy};
+        color: ${fontcolor ? fontcolor : baseTheme.colors.navy};
     `};
 `;
 const Position = styled.p`
@@ -66,21 +66,21 @@ const Position = styled.p`
     `};
 `;
 const PositionWrapper = styled.div`
-    text-align: center;
+  text-align: center;
 `;
 const Board = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 5vh;
-    ${media(
-        "tablet",
-        `
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 5vh;
+  ${media(
+    "tablet",
+    `
             flex-direction: column;
         `
-    )};
+  )};
 `;
 const SCard = styled(Card)`
-    margin: auto;
-    margin-bottom: 5vh;
+  margin: auto;
+  margin-bottom: 5vh;
 `;
