@@ -4,10 +4,21 @@ import { CardCarousel, Text } from "../../components";
 import { media } from "../../utils";
 import { baseTheme } from "../../theme";
 
+/**
+ *
+ * EventsCarousel
+ * @prop {array} slides - Events carousel slides information in an array
+ * @prop {string} title - What category the event is
+ * @prop {string} description - Categorized event description
+ * @prop {string} backgroundColor - Color of background
+ * @prop {string} textColor - Font color
+ * @prop {number} cardWidth - Width of card
+ * @prop {number} cardHeight - Height of card
+ */
 export function EventsCarousel({
   slides,
-  title, // string
-  description, // string
+  title,
+  description,
   backgroundColor = baseTheme.colors.greyBlue,
   textColor = baseTheme.colors.white,
   cardWidth = 230,
