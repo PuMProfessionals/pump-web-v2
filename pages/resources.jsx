@@ -10,9 +10,7 @@ export default function Resources({ ...props }) {
         <title>PuMP</title>
       </Head>
       <PageLayout>
-        <Title
-          title="Student Resources"
-        />
+        <Title title="Student Resources" />
         <ResourcesSection />
       </PageLayout>
     </div>

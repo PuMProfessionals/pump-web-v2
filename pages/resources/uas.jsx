@@ -10,10 +10,7 @@ export default function UAS() {
         <title>PuMP | UAS</title>
       </Head>
       <PageLayout>
-        <Title
-          title="University Admissions Server (UAS)"
-          arrowLink="/resources"
-        />
+        <Title title="University Admissions Server (UAS)" arrowLink="/resources" />
         <UASLayout />
       </PageLayout>
     </div>
