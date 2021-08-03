@@ -21,29 +21,29 @@ export const BoardSection = ({
 }) => {
   return (
     <Wrapper {...props}>
-        <Info align={align}>
-            <Title>{board}</Title>
-            <p>{boardDescription}</p>
-        </Info>
-        <Board>
-            {boardMembers.map((member) => (
-            <SCard
-                key={`About__Page__Card__${member.name}`}
-                thumbnail={member.avatar}
-                title={member.name}
-                imageWidth={member.imageWidth}
-                imageHeight={member.imageHeight}
-                cardHeight={member.cardHeight}
-                contentPadding={"5px"}
-                component={
-                <PositionWrapper>
-                    <Name fontcolor={member.fontColor}>{member.name}</Name>
-                    <Position fontcolor={member.fontColor}>{member.position}</Position>
-                </PositionWrapper>
-                }
-            />
-            ))}
-        </Board>
+      <Info align={align}>
+        <Title>{board}</Title>
+        <p>{boardDescription}</p>
+      </Info>
+      <Board>
+        {boardMembers.map((member) => (
+          <SCard
+            key={`About__Page__Card__${member.name}`}
+            thumbnail={member.avatar}
+            title={member.name}
+            imageWidth={member.imageWidth}
+            imageHeight={member.imageHeight}
+            cardHeight={member.cardHeight}
+            contentPadding={"5px"}
+            component={
+              <PositionWrapper>
+                <Name fontcolor={member.fontColor}>{member.name}</Name>
+                <Position fontcolor={member.fontColor}>{member.position}</Position>
+              </PositionWrapper>
+            }
+          />
+        ))}
+      </Board>
     </Wrapper>
   );
 };

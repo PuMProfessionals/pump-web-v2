@@ -17,8 +17,8 @@ import { baseTheme } from "../../theme";
  */
 export function EventsCarousel({
   slides,
-  title, 
-  description, 
+  title,
+  description,
   backgroundColor = baseTheme.colors.greyBlue,
   textColor = baseTheme.colors.white,
   cardWidth = 230,
