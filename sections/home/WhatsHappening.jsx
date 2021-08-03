@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-import PumpDigest from "../../public/home/pump-digest.png";
-import ImpactReport from "../../public/home/impact-report.png";
+import PumpDigest from "../../public/resources/pump-digest.png";
+import ImpactReport from "../../public/about/impact-report.png";
+import PowerUp from "../../public/events/power-up.png"
 import { CardCarousel, Text } from "../../components";
 import { baseTheme } from "../../theme";
 import { media } from "../../utils";
@@ -35,7 +36,7 @@ export const WhatsHappening = ({ ...props }) => (
             title: "PowerUp Mentorship",
             description:
               "Explore articles on research, student life, PuMP has partnered up with The STEM Fellowship to launch our mentorship program, PowerUp!",
-            thumbnail: PumpDigest,
+            thumbnail: PowerUp,
             buttonText: "Learn More",
             linkTo: "/",
           },

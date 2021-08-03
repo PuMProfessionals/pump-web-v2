@@ -91,7 +91,7 @@ export default function About() {
         <QuickFacts />
         <BoardSection 
           board="National Board"
-          boardDescription="Est. 2018 | 74 members"
+          boardDescription="Est. 2020 | 74 members"
           boardMembers={nationalBoard}
         />
         <BoardSection
