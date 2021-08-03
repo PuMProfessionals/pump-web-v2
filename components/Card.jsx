@@ -22,6 +22,7 @@ export function Card({
   imageHeight = 200,
   imageWidth = 320,
   cardHeight = 490,
+  contentPadding,
   buttonText,
   linkTo,
   ...props
@@ -30,14 +31,14 @@ export function Card({
     <Wrapper imageWidth={imageWidth} cardHeight={cardHeight} {...props}>
       <Section>
         <ImageWrapper>
-          <Image
+          <SImage
             alt={`Card image for ${title}`}
             src={thumbnail}
             height={imageHeight}
             width={imageWidth}
           />
         </ImageWrapper>
-        <Content>
+        <Content contentpadding={contentPadding}>
           <div>
             {component ? (
               component
@@ -91,7 +92,9 @@ const Section = styled.div`
   flex-direction: column;
 `;
 const Content = styled.div`
-  padding: 15px 25px 35px 35px;
+  ${({ contentpadding }) => `
+    padding: ${contentpadding ? contentpadding : "15px 25px 35px 35px"};
+  `};
   color: black;
   border-top-right-radius: 44px;
   border-bottom-right-radius: 44px;
@@ -110,6 +113,10 @@ const Title = styled.h3`
   font-weight: bold;
 `;
 const ImageWrapper = styled.div`
-  border-top-left-radius: 44px;
-  border-top-right-radius: 44px;
+  border-top-left-radius: 44px !important;
+  border-top-right-radius: 44px !important;
+`;
+const SImage = styled(Image)`
+  border-top-left-radius: 44px !important;
+  border-top-right-radius: 44px !important;
 `;
