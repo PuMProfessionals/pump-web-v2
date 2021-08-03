@@ -7,7 +7,13 @@ import { media } from "../utils";
 
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 
-export function CardCarousel({ slides, cardHeight, cardWidth, component, ...props }) {
+export function CardCarousel({
+  slides,
+  cardHeight,
+  cardWidth,
+  component,
+  ...props
+}) {
   return (
     <div {...props}>
       <Swiper

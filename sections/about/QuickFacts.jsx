@@ -50,7 +50,7 @@ export const QuickFacts = ({ ...props }) => (
             opacity: 0.95,
             titleSize: 5.5,
             descriptionSize: 1.3,
-          }
+          },
         ]}
       />
     </CarouselWrapper>
