@@ -86,6 +86,7 @@ const Board = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin-top: 5vh;
   ${media(
     500,
@@ -95,6 +96,6 @@ const Board = styled.div`
   )};
 `;
 const SCard = styled(Card)`
-  margin: auto;
+  margin: 0 5px;
   margin-bottom: 5vh;
 `;

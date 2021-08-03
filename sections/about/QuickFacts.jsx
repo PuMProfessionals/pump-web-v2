@@ -42,6 +42,15 @@ export const QuickFacts = ({ ...props }) => (
             titleSize: 5.5,
             descriptionSize: 1.3,
           },
+          {
+            image: TieDye,
+            cardTitle: "26+",
+            description: "PROJECTS SINCE 2018",
+            textColour: baseTheme.colors.yellow,
+            opacity: 0.95,
+            titleSize: 5.5,
+            descriptionSize: 1.3,
+          },
         ]}
       />
     </CarouselWrapper>
