@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import CardFill from "../../public/members/card-fill.png";
 import { Card } from "../../components";
 import { baseTheme } from "../../theme";
 import { media } from "../../utils";
@@ -29,7 +30,7 @@ export const BoardSection = ({
         {boardMembers.map((member) => (
           <SCard
             key={`About__Page__Card__${member.name}`}
-            thumbnail={member.avatar}
+            thumbnail={member.avatar ? member.avatar : CardFill}
             title={member.name}
             imageWidth={member.imageWidth}
             imageHeight={member.imageHeight}
