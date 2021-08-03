@@ -8,6 +8,8 @@ import { prisma } from "../../prisma/index";
 import { Input } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
+import { Title } from "../../components";
+import SpeechBubble from "../../public/blog/written-speech-bubble.svg";
 
 const customError = () => (
   <div>
@@ -44,6 +46,12 @@ export default function Blog({ posts, ...props }) {
     <PageLayout>
       <ToastContainer />
       <Wrapper {...props}>
+        <Title
+          title="Welcome To PuMP Digest"
+          image={SpeechBubble}
+          imageWidth={150}
+          imageHeight={150}
+        />
         <Input
           placeholder="Search blog"
           name="blog-name"
