@@ -10,15 +10,15 @@ import { getSlug, getEventSlugs } from "../../utils/markdownUtils";
 const EventsPage = ({ source, frontMatter }) => {
   return (
     <div>
-        <Head>
-            <title>PuMP | {frontMatter.title}</title>
-        </Head>
-        <PageLayout>
+      <Head>
+        <title>PuMP | {frontMatter.title}</title>
+      </Head>
+      <PageLayout>
         <Title title={frontMatter.title} />
         <Wrapper>
-            <MDXRemote {...source} />
+          <MDXRemote {...source} />
         </Wrapper>
-        </PageLayout>
+      </PageLayout>
     </div>
   );
 };

@@ -101,22 +101,20 @@ export const ContactForm = ({
             </a>
           </Button>
         </>
-      )
+      );
     } else if (success) {
       return (
         <SuccessWrapper>
-            <Title size={baseTheme.size.h2} bold="true">
-              Thanks for contact us! We&apos;ll get back to you as soon as possible.
-            </Title>
-            <Button style={{ marginTop: "30px", margin: "auto" }}>
-              <Link href="/">
-                <a style={{ color: baseTheme.colors.navy }}>
-                  Back to Home
-                </a>
-              </Link>
+          <Title size={baseTheme.size.h2} bold="true">
+            Thanks for contact us! We&apos;ll get back to you as soon as possible.
+          </Title>
+          <Button style={{ marginTop: "30px", margin: "auto" }}>
+            <Link href="/">
+              <a style={{ color: baseTheme.colors.navy }}>Back to Home</a>
+            </Link>
           </Button>
         </SuccessWrapper>
-      )
+      );
     } else {
       return (
         <>
@@ -156,11 +154,11 @@ export const ContactForm = ({
               />
             </InputsWrapper>
             <Button style={{ marginTop: "30px" }}>Send Message</Button>
-            </form>
+          </form>
         </>
-      )
+      );
     }
-  }
+  };
 
   return (
     <Wrapper {...props}>

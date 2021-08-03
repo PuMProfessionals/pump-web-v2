@@ -35,17 +35,17 @@ export function ImageCarousel({ slides, ...props }) {
         }}
       >
         {slides.map((slide) => (
-          <SwiperSlide 
+          <SwiperSlide
             key={`${slide.title}__swiper__slide`}
             padding={slide.padding ? slide.padding : 0}
-            >
+          >
             <ImageWrapper>
-                <SImage
-                    src={slide.image}
-                    alt={`Logo for ${slide.title}`}
-                    height={slide.height ? slide.height : 150}
-                    width={slide.width ? slide.width : 250}
-                />
+              <SImage
+                src={slide.image}
+                alt={`Logo for ${slide.title}`}
+                height={slide.height ? slide.height : 150}
+                width={slide.width ? slide.width : 250}
+              />
             </ImageWrapper>
           </SwiperSlide>
         ))}
@@ -55,15 +55,15 @@ export function ImageCarousel({ slides, ...props }) {
 }
 
 const ImageWrapper = styled.div`
-    padding: 40px 0;
-    margin: 0 10vw;
-    ${media(
-        950,
-        `
+  padding: 40px 0;
+  margin: 0 10vw;
+  ${media(
+    950,
+    `
             margin: auto;
         `
-    )};
+  )};
 `;
 const SImage = styled(Image)`
-    margin: auto;
+  margin: auto;
 `;

@@ -13,10 +13,10 @@ export default function Contact() {
       <PageLayout>
         <Title title="Contact Us" />
         <Wrapper>
-            <ContactForm 
-                title="Or, contact us directly!"
-                descriptionText="A representative will reply back to your email within 24 hours. Feel free to contact us about our initiatives, joining the team, becoming a partner, or anything else you want to chat about!"
-            />
+          <ContactForm
+            title="Or, contact us directly!"
+            descriptionText="A representative will reply back to your email within 24 hours. Feel free to contact us about our initiatives, joining the team, becoming a partner, or anything else you want to chat about!"
+          />
         </Wrapper>
       </PageLayout>
     </div>
@@ -24,5 +24,5 @@ export default function Contact() {
 }
 
 const Wrapper = styled.div`
-    padding: 0 10%;
+  padding: 0 10%;
 `;

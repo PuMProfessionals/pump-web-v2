@@ -13,20 +13,20 @@ const sponsors = [
   {
     title: "Basil Box",
     image: BasilBox,
-    width: 180
+    width: 180,
   },
   {
     title: "Brain Power",
     image: BrainPower,
     width: 350,
-    height: 110
+    height: 110,
   },
   {
     title: "Cetaphil",
     image: Cetaphil,
     width: 300,
-  }
-]
+  },
+];
 
 export default function Sponsors() {
   return (
@@ -38,10 +38,7 @@ export default function Sponsors() {
         <Title title="Sponsors" />
         <Wrapper>
           <CarouselWrapper>
-            <ImageCarousel
-              className="regular-carousel"
-              slides={sponsors}
-            />
+            <ImageCarousel className="regular-carousel" slides={sponsors} />
           </CarouselWrapper>
         </Wrapper>
       </PageLayout>
