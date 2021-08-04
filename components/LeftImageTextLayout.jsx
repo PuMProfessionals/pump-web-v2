@@ -2,16 +2,25 @@
 For example, see UAS page.
 */
 import Image from "next/image";
+import Link from "next/link";
 import styled from "styled-components";
 
 import { Text } from "./Text";
+import { Button } from "./Button";
 import { baseTheme } from "../theme";
 import { media } from "../utils";
+
+/* Change LeftImageTextLayout to use in Impact Section on about page
+ * |- add multiple paragraphs
+ * |- add buttons
+ * |- add default align at top (center for whitespace around image)
+ */
 
 export const LeftImageTextLayout = ({
   titleText,
   graphic,
-  descriptionText,
+  descriptions,
+  buttons,
   ...props
 }) => (
   <Wrapper {...props}>
@@ -22,7 +31,22 @@ export const LeftImageTextLayout = ({
     </TitleSection>
     <InfoSection>
       <Graphic src={graphic} width={300} height={240} />
-      <Description>{descriptionText}</Description>
+      <Description>
+        {descriptions.map((paragraph) => (
+          <Text key={paragraph}>{paragraph}</Text>
+        ))}
+        {!!buttons && (
+          <ButtonSection>
+            {buttons.map((button) => (
+              <Link key={button.text} href={button.link}>
+                <a>
+                  <SButton backgroundColor={button.color}>{button.text}</SButton>
+                </a>
+              </Link>
+            ))}
+          </ButtonSection>
+        )}
+      </Description>
     </InfoSection>
   </Wrapper>
 );
@@ -30,6 +54,7 @@ export const LeftImageTextLayout = ({
 const Wrapper = styled.div`
   padding: 8vh 0;
 `;
+
 const Title = styled(Text)`
   ${({ theme }) => `
       font-family: ${theme.font.josefin};
@@ -38,6 +63,8 @@ const Title = styled(Text)`
 `;
 
 const Description = styled(Text)`
+  display: flex;
+  flex-direction: column;
   flex: 1;
 `;
 
@@ -67,4 +94,22 @@ const InfoSection = styled.div`
         align-items: center;
     `
   )}
+`;
+
+const ButtonSection = styled.div`
+   {
+    /* TODO: repeated button section -> move to components? */
+  }
+  display: flex;
+  flex-flow: row wrap;
+  ${media(
+    800,
+    `
+      justify-content: center;
+    `
+  )}
+`;
+
+const SButton = styled(Button)`
+  margin: 0.5rem;
 `;
