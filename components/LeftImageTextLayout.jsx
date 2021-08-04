@@ -21,6 +21,7 @@ export const LeftImageTextLayout = ({
   graphic,
   descriptions,
   buttons,
+  alignTop = true,
   ...props
 }) => (
   <Wrapper {...props}>
@@ -31,10 +32,12 @@ export const LeftImageTextLayout = ({
     </TitleSection>
     <InfoSection>
       <Graphic src={graphic} width={300} height={240} />
-      <Description>
-        {descriptions.map((paragraph) => (
-          <Text key={paragraph}>{paragraph}</Text>
-        ))}
+      <Description alignTop={alignTop}>
+        <div>
+          {descriptions.map((paragraph) => (
+            <Text key={paragraph}>{paragraph}</Text>
+          ))}
+        </div>
         {!!buttons && (
           <ButtonSection>
             {buttons.map((button) => (
@@ -62,10 +65,14 @@ const Title = styled(Text)`
   `};
 `;
 
-const Description = styled(Text)`
+const Description = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  height: 240px;
+  ${({ alignTop }) => `
+    justify-content: ${alignTop ? "space-between" : "center"};
+  `}
 `;
 
 const Graphic = styled(Image)`
