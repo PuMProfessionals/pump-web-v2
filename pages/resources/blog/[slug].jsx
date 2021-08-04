@@ -1,3 +1,4 @@
+import Head from "next/head";
 import styled from "styled-components";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
@@ -10,12 +11,17 @@ import { getSlug } from "../../../utils/markdownUtils";
 
 const BlogsPage = ({ source, frontMatter }) => {
   return (
-    <PageLayout>
-      <Title title={frontMatter.title} />
-      <Wrapper>
-        <MDXRemote {...source} />
-      </Wrapper>
-    </PageLayout>
+    <div>
+      <Head>
+        <title>PuMP | {frontMatter.title}</title>
+      </Head>
+      <PageLayout>
+        <Title title={frontMatter.title} />
+        <Wrapper>
+          <MDXRemote {...source} />
+        </Wrapper>
+      </PageLayout>
+    </div>
   );
 };
 

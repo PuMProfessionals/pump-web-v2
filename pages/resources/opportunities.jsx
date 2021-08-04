@@ -5,7 +5,7 @@ export default function Opportunities() {
   return (
     <div>
       <Head>
-        <title>PuMP</title>
+        <title>PuMP | Direct</title>
       </Head>
       <PageLayout>hello</PageLayout>
     </div>

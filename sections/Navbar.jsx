@@ -14,8 +14,8 @@ import { media } from "../utils";
 {
   /* TODO: Refactor into object? paths must be same as linked pages*/
 }
-const RESOURCES = ["Home", "About Us", "Resources", "Events"];
-const PATHS = ["", "about", "resources", "events"];
+const RESOURCES = ["Home", "About Us", "Resources", "Events", "Contact Us"];
+const PATHS = ["", "about", "resources", "events", "contact"];
 
 export const Navbar = ({
   backgroundColor = baseTheme.colors.navy,

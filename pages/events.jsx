@@ -11,7 +11,7 @@ export default function Events() {
   return (
     <div>
       <Head>
-        <title>PuMP</title>
+        <title>PuMP | Events</title>
       </Head>
       <PageLayout>
         <Title title="Events" />
