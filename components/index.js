@@ -12,4 +12,3 @@ export { StudentResource } from "./StudentResource";
 export { ImageCard } from "./ImageCard";
 export { ImageCardCarousel } from "./ImageCardCarousel.jsx";
 export { Title } from "./Title";
-export { ImageCarousel } from "./ImageCarousel.jsx";
