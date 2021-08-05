@@ -14,7 +14,6 @@ export const Loading = ({
             color={color}
             height={height}
             width={width}
-        //timeout={3000} 
         />
     </Wrapper>
 )
