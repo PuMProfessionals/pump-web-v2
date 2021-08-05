@@ -11,10 +11,16 @@ import { Button } from "./Button";
 import { baseTheme } from "../theme";
 import { media } from "../utils";
 
-/* Change LeftImageTextLayout to use in Impact Section on about page
- * |- add multiple paragraphs
- * |- add buttons
- * |- add default align at top (center for whitespace around image)
+/**
+ * Component with Title, image on the left and description, buttons on the right
+ *
+ * @prop {string} titleText - Section title
+ * @prop {object} graphic - Left image object
+ * @prop {number} imageWidth - Image width, default 300px
+ * @prop {number} imageHeight - Image height, default 240px
+ * @prop {array} descriptions - Array of paragraphs
+ * @prop {array} buttons - Array of buttons objects
+ * |- button object keys: color, button text, button link
  */
 
 export const LeftImageTextLayout = ({
@@ -142,7 +148,7 @@ const SButton = styled(Button)`
 
 LeftImageTextLayout.propTypes = {
   titleText: PropTypes.string,
-  graphic: PropTypes.string,
+  graphic: PropTypes.object,
   imageWidth: PropTypes.number,
   imageHeight: PropTypes.number,
   descriptions: PropTypes.array,
