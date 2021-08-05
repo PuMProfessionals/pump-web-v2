@@ -1,9 +1,10 @@
 /*
-For example, see UAS page.
+For example, see UAS page or Impact section on About Us page.
 */
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 import { Text } from "./Text";
 import { Button } from "./Button";
@@ -19,6 +20,8 @@ import { media } from "../utils";
 export const LeftImageTextLayout = ({
   titleText,
   graphic,
+  imageWidth = 300,
+  imageHeight = 240,
   descriptions,
   buttons,
   alignTop = true,
@@ -31,8 +34,8 @@ export const LeftImageTextLayout = ({
       </Title>
     </TitleSection>
     <InfoSection>
-      <Graphic src={graphic} width={300} height={240} />
-      <Description alignTop={alignTop}>
+      <Graphic src={graphic} width={imageWidth} height={imageHeight} />
+      <Description alignTop={alignTop} imageHeight={imageHeight}>
         <div>
           {descriptions.map((paragraph) => (
             <Text key={paragraph}>{paragraph}</Text>
@@ -63,16 +66,32 @@ const Title = styled(Text)`
       font-family: ${theme.font.josefin};
       color: ${theme.colors.navy};
   `};
+  ${media(
+    700,
+    `
+        text-align: center;
+      `
+  )};
 `;
 
 const Description = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  height: 240px;
+  margin-left: 3%;
+  ${({ imageHeight }) => `
+    height: ${imageHeight}px;
+  `};
   ${({ alignTop }) => `
     justify-content: ${alignTop ? "space-between" : "center"};
-  `}
+  `};
+  ${media(
+    700,
+    `
+        width: 80%;
+        margin: 0;
+    `
+  )};
 `;
 
 const Graphic = styled(Image)`
@@ -80,7 +99,7 @@ const Graphic = styled(Image)`
   ${media(
     700,
     `
-        margin: 0px;
+        margin: 0;
     `
   )}
 `;
@@ -120,3 +139,13 @@ const ButtonSection = styled.div`
 const SButton = styled(Button)`
   margin: 0.5rem;
 `;
+
+LeftImageTextLayout.propTypes = {
+  titleText: PropTypes.string,
+  graphic: PropTypes.string,
+  imageWidth: PropTypes.number,
+  imageHeight: PropTypes.number,
+  descriptions: PropTypes.array,
+  buttons: PropTypes.array,
+  alignTop: PropTypes.bool,
+};
