@@ -26,19 +26,19 @@ export const ImpactSection = ({ ...props }) => {
       <ImpactWrapper>
         <ImpactCard
           thumbnail={ImpactGraphic1}
-          cardTitle="4,000"
+          cardTitle="30,000"
           description="Students reached directly through our services"
           textColour={baseTheme.colors.navy}
         />
         <ImpactCard
           thumbnail={ImpactGraphic2}
-          cardTitle="2,000"
+          cardTitle="3,000"
           description="Following our events across social media"
           textColour={baseTheme.colors.navy}
         />
         <ImpactCard
           thumbnail={ImpactGraphic3}
-          cardTitle="32K"
+          cardTitle="70K"
           description="In total reached across Canada"
           textColour={baseTheme.colors.navy}
         />
@@ -66,7 +66,7 @@ const ImpactWrapper = styled.div`
     "tablet",
     `
       flex-direction: column;
-      margin-bottom: 15%;
+      margin-bottom: 12%;
       `
   )};
 `;

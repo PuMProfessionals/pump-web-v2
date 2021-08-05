@@ -76,7 +76,6 @@ const Description = styled.text`
 `;
 const ImpactWrapper = styled.div`
   padding: 0 5%;
-  margin-bottom: 8%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -84,7 +83,7 @@ const ImpactWrapper = styled.div`
     "tablet",
     `
       flex-direction: column;
-      margin-bottom: 15%;
+      margin-bottom: 5%;
       `
   )};
 `;
