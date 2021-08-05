@@ -184,9 +184,9 @@ export default function About() {
           description="Get to know the PuMP family."
           image={PlaceholderGraphic}
         />
-        titleText="Our Impact Report"
         <ValueSection />
         <LeftImageTextLayout
+          titleText="Our Impact Report"
           graphic={ImpactReport}
           imageWidth={400}
           imageHeight={282}
