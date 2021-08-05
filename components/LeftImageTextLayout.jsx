@@ -21,6 +21,7 @@ import { media } from "../utils";
  * @prop {array} descriptions - Array of paragraphs
  * @prop {array} buttons - Array of buttons objects
  * |- button object keys: color, button text, button link
+ * @prop {boolean} isAlignedTop - Text at top or center of image, default true
  */
 
 export const LeftImageTextLayout = ({
@@ -30,7 +31,7 @@ export const LeftImageTextLayout = ({
   imageHeight = 240,
   descriptions,
   buttons,
-  alignTop = true,
+  isAlignedTop = true,
   ...props
 }) => (
   <Wrapper {...props}>
@@ -41,7 +42,7 @@ export const LeftImageTextLayout = ({
     </TitleSection>
     <InfoSection>
       <Graphic src={graphic} width={imageWidth} height={imageHeight} />
-      <Description alignTop={alignTop} imageHeight={imageHeight}>
+      <Description isAlignedTop={isAlignedTop} imageHeight={imageHeight}>
         <div>
           {descriptions.map((paragraph) => (
             <Text key={paragraph}>{paragraph}</Text>
@@ -88,8 +89,8 @@ const Description = styled.div`
   ${({ imageHeight }) => `
     height: ${imageHeight}px;
   `};
-  ${({ alignTop }) => `
-    justify-content: ${alignTop ? "space-between" : "center"};
+  ${({ isAlignedTop }) => `
+    justify-content: ${isAlignedTop ? "space-between" : "center"};
   `};
   ${media(
     700,
@@ -153,5 +154,5 @@ LeftImageTextLayout.propTypes = {
   imageHeight: PropTypes.number,
   descriptions: PropTypes.array,
   buttons: PropTypes.array,
-  alignTop: PropTypes.bool,
+  isAlignedTop: PropTypes.bool,
 };
