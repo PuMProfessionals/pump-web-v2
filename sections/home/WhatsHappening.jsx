@@ -1,7 +1,4 @@
 import styled from "styled-components";
-import PumpDigest from "../../public/home/pump-digest.png";
-import ImpactReport from "../../public/home/impact-report.png";
-import { CardCarousel, Text, Loading } from "../../components";
 import PumpDigest from "../../public/resources/pump-digest.png";
 import ImpactReport from "../../public/about/impact-report.png";
 import PowerUp from "../../public/events/power-up.png";
