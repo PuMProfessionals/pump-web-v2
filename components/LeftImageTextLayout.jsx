@@ -74,7 +74,7 @@ const Title = styled(Text)`
       color: ${theme.colors.navy};
   `};
   ${media(
-    700,
+    800,
     `
         text-align: center;
       `
@@ -86,14 +86,12 @@ const Description = styled.div`
   flex-direction: column;
   flex: 1;
   margin-left: 3%;
-  ${({ imageHeight }) => `
+  ${({ imageHeight, isAlignedTop }) => `
     height: ${imageHeight}px;
-  `};
-  ${({ isAlignedTop }) => `
     justify-content: ${isAlignedTop ? "space-between" : "center"};
   `};
   ${media(
-    700,
+    800,
     `
         width: 80%;
         margin: 0;
@@ -104,7 +102,7 @@ const Description = styled.div`
 const Graphic = styled(Image)`
   margin-right: 5%;
   ${media(
-    700,
+    800,
     `
         margin: 0;
     `
@@ -121,7 +119,7 @@ const InfoSection = styled.div`
   padding-right: 5%;
   align-items: center;
   ${media(
-    700,
+    800,
     `
         flex-direction: column;
         align-items: center;
