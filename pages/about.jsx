@@ -5,10 +5,12 @@ import Asma from "../public/members/asma-khamis.png";
 import Shiro from "../public/members/shiro-puwa.png";
 import RachelLin from "../public/members/rachel-lin.png";
 import Dhruv from "../public/members/dhruv-dhall.png";
+import Aneeya from "../public/members/aneeya-johal.jpg";
 import MarkShort from "../public/members/mark-short.png";
 import Brooklyn from "../public/members/brooklyn-wiggins.png";
 import YiAn from "../public/members/yi-an-wang.jpeg";
 import Camille from "../public/members/camille-eamon.jpeg";
+import Ashley from "../public/members/ashley-lam.jpeg";
 import PlaceholderGraphic from "../public/home/impact-section-graphic-3.svg";
 import { Title } from "../components";
 import { PageLayout } from "../sections/hoc";
@@ -91,9 +93,10 @@ const torontoBoard = [
 const vancouverBoard = [
   {
     name: "Aneeya Johal",
+    avatar: Aneeya,
     position: "President",
     imageWidth: 240,
-    imageHeight: 220,
+    imageHeight: 240,
     cardHeight: 340,
   },
   {
@@ -147,9 +150,10 @@ const calgaryBoard = [
 const ottawaBoard = [
   {
     name: "Ashley Lam",
+    avatar: Ashley,
     position: "Senior Board",
-    imageWidth: 240,
-    imageHeight: 220,
+    imageWidth: 250,
+    imageHeight: 190,
     cardHeight: 340,
   },
   {
