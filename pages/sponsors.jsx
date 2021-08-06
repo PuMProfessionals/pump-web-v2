@@ -36,9 +36,7 @@ export default function Sponsors() {
       </Head>
       <PageLayout>
         <Title title="Sponsors" />
-        <Wrapper>
-          hello
-        </Wrapper>
+        <Wrapper>hello</Wrapper>
       </PageLayout>
     </div>
   );

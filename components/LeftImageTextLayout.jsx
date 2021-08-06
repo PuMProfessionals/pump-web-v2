@@ -51,7 +51,7 @@ export const LeftImageTextLayout = ({
         {!!buttons && (
           <ButtonSection>
             {buttons.map((button) => (
-              <Link key={button.text} href={button.link}>
+              <Link key={button.link} href={button.link}>
                 <a>
                   <SButton backgroundColor={button.color}>{button.text}</SButton>
                 </a>
