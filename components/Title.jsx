@@ -118,7 +118,7 @@ Title.propTypes = {
   title: PropTypes.string,
   arrowLink: PropTypes.string,
   description: PropTypes.string,
-  image: PropTypes.string,
+  image: PropTypes.object,
   imageWidth: PropTypes.number,
   imageHeight: PropTypes.number,
   backgroundColor: PropTypes.string,
