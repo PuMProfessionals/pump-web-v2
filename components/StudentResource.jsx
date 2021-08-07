@@ -83,10 +83,13 @@ const InfoSection = styled.div`
   width: 35%;
   display: flex;
   flex-direction: column;
-  ${({ isgraphicleft }) => `
+  ${({ isgraphicleft, theme }) => `
     text-align: ${isgraphicleft ? "left" : "right"};
+    // TODO: make card optional prop 
+    box-shadow: ${theme.boxShadow.topBottom};
+    border-radius: ${theme.radius.border};
   `};
-  margin: 0% 5%;
+  padding: 3%;
   ${media(
     800,
     `
