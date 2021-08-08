@@ -17,7 +17,7 @@ export const UASLayout = () => (
         {
           color: "yellow",
           text: "Join our Community of 800+ Students",
-          link: "/resources/uas" /* TODO: change to Discord server invite link */,
+          link: "/resources/" /* TODO: change to Discord server invite link */,
         },
         {
           color: "white",
