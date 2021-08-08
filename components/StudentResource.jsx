@@ -15,20 +15,21 @@ export const StudentResource = ({
   graphicWidth = 500,
   graphicHeight = 350,
   isGraphicLeft = true,
+  isCard = false,
   ...props
 }) => (
-  <Wrapper isgraphicleft={isGraphicLeft ? 1 : 0} {...props}>
+  <Wrapper isgraphicleft={isGraphicLeft} isCard={isCard} {...props}>
     <Graphic
       src={graphic}
       width={graphicWidth}
       height={graphicHeight}
       isgraphicleft={isGraphicLeft ? 1 : 0}
     />
-    <InfoSection isgraphicleft={isGraphicLeft ? 1 : 0}>
+    <InfoSection isgraphicleft={isGraphicLeft} iscard={isCard}>
       <Title>{titleText}</Title>
       <Text>{descriptionText}</Text>
       {!!buttons && (
-        <ButtonSection isgraphicleft={isGraphicLeft ? 1 : 0}>
+        <ButtonSection isgraphicleft={isGraphicLeft}>
           {buttons.map((button) => (
             <Link key={button.text} href={button.link}>
               <a>
@@ -83,10 +84,10 @@ const InfoSection = styled.div`
   width: 35%;
   display: flex;
   flex-direction: column;
-  ${({ isgraphicleft, theme }) => `
+  ${({ isgraphicleft, iscard, theme }) => `
     text-align: ${isgraphicleft ? "left" : "right"};
     // TODO: make card optional prop 
-    box-shadow: ${theme.boxShadow.topBottom};
+    box-shadow: ${iscard ? `${theme.boxShadow.topBottom}` : "none"};
     border-radius: ${theme.radius.border};
   `};
   padding: 3%;
@@ -126,4 +127,5 @@ StudentResource.propTypes = {
   graphicWidth: PropTypes.number,
   graphicHeight: PropTypes.number,
   isGraphicLeft: PropTypes.bool,
+  isCard: PropTypes.bool,
 };
