@@ -17,18 +17,18 @@ export const StudentResource = ({
   isGraphicLeft = true,
   ...props
 }) => (
-  <Wrapper isgraphicleft={isGraphicLeft} {...props}>
+  <Wrapper isgraphicleft={isGraphicLeft ? 1 : 0} {...props}>
     <Graphic
       src={graphic}
       width={graphicWidth}
       height={graphicHeight}
-      isgraphicleft={isGraphicLeft}
+      isgraphicleft={isGraphicLeft ? 1 : 0}
     />
-    <InfoSection isgraphicleft={isGraphicLeft}>
+    <InfoSection isgraphicleft={isGraphicLeft ? 1 : 0}>
       <Title>{titleText}</Title>
       <Text>{descriptionText}</Text>
       {!!buttons && (
-        <ButtonSection isgraphicleft={isGraphicLeft}>
+        <ButtonSection isgraphicleft={isGraphicLeft ? 1 : 0}>
           {buttons.map((button) => (
             <Link key={button.text} href={button.link}>
               <a>
