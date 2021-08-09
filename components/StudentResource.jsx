@@ -12,19 +12,16 @@ export const StudentResource = ({
   descriptionText,
   buttons,
   graphic,
-  graphicWidth = 500,
+  graphicWidth = 400,
   graphicHeight = 350,
   isGraphicLeft = true,
   isCard = false,
   ...props
 }) => (
   <Wrapper isgraphicleft={isGraphicLeft} isCard={isCard} {...props}>
-    <Graphic
-      src={graphic}
-      width={graphicWidth}
-      height={graphicHeight}
-      isgraphicleft={isGraphicLeft ? 1 : 0}
-    />
+    <Graphic isgraphicleft={isGraphicLeft ? 1 : 0}>
+      <Image src={graphic} width={graphicWidth} height={graphicHeight} />
+    </Graphic>
     <InfoSection isgraphicleft={isGraphicLeft} iscard={isCard}>
       <Title>{titleText}</Title>
       <Text>{descriptionText}</Text>
@@ -51,15 +48,15 @@ const Title = styled.h2`
   margin: 0;
 `;
 
-const Graphic = styled(Image)`
+const Graphic = styled.div`
   /* TODO: curved border ? */
   ${({ isgraphicleft }) => `
-    ${isgraphicleft ? "margin-left: 5%;" : "margin-right: 5%;"}
+    ${isgraphicleft ? "margin-right: 5%;" : "margin-left: 5%;"}
   `};
   ${media(
-    "800",
+    "tablet",
     `
-      width: 70%;
+      margin: 0;
     `
   )}
 `;
@@ -73,7 +70,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   ${media(
-    800,
+    "tablet",
     `
       flex-direction: column;
     `
@@ -86,13 +83,12 @@ const InfoSection = styled.div`
   flex-direction: column;
   ${({ isgraphicleft, iscard, theme }) => `
     text-align: ${isgraphicleft ? "left" : "right"};
-    // TODO: make card optional prop 
     box-shadow: ${iscard ? `${theme.boxShadow.topBottom}` : "none"};
     border-radius: ${theme.radius.border};
   `};
   padding: 3%;
   ${media(
-    800,
+    "tablet",
     `
       text-align: center;
       margin: 5% 0 0;
@@ -108,7 +104,7 @@ const ButtonSection = styled.div`
   `};
   flex-flow: row wrap;
   ${media(
-    800,
+    "tablet",
     `
       justify-content: center;
     `
