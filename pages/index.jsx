@@ -1,6 +1,11 @@
 import Head from "next/head";
-import { Video } from "../components";
+import {
+	Video,
+	SectionWrapper,
+} from "../components";
 import { PageLayout } from "../sections/hoc";
+const BackgroundGraphicPath = "/home/background-large.svg";
+const MobileGraphicPath = "/home/background-small.svg";
 import {
   TopSection,
   WhatsHappening,
@@ -15,7 +20,13 @@ export default function Home() {
         <title>PuMP | Home</title>
       </Head>
       <PageLayout>
-        <TopSection />
+				<SectionWrapper
+					backgroundPath={BackgroundGraphicPath}
+					mobilePath={MobileGraphicPath}
+					mobileThreshold={700}
+				>
+					<TopSection />
+				</SectionWrapper>
         <WhatsHappening />
         <Video
           embedId="f5jsJWl5WS0"

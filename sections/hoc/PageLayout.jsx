@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import { Navbar } from "../Navbar";
 import { Footer } from "../Footer";
-import { media, CONSTANTS } from "../../utils";
 
 export const PageLayout = ({ children, ...props }) => {
   // Logic for highlighting in same path
@@ -23,9 +22,6 @@ export const PageLayout = ({ children, ...props }) => {
 };
 
 const Wrapper = styled.div`
-  background-image: url("/home/background-large.svg");
-  background-repeat: no-repeat;
-  background-size: 100%;
   margin: 0;
   padding: 0;
   background-position: 0 -4vh;
@@ -33,17 +29,4 @@ const Wrapper = styled.div`
     max-width: 1600px;
     margin: auto;
   }
-  ${media(
-    700,
-    `   
-			background-image: url("/home/background-small.svg");
-			background-position: 0 -25vh;
-        `
-  )};
-  ${media(
-    520,
-    `   
-			background-position: 0 -10vh;
-        `
-  )};
 `;
