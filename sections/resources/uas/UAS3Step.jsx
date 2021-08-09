@@ -1,8 +1,15 @@
-import { StudentResource } from "../../../components";
+import styled from "styled-components";
+import Link from "next/link";
+
+import { StudentResource, Button } from "../../../components";
 import SampleGraphic from "../../../public/home/top-section-graphic.svg";
+import { media } from "../../../utils";
 
 export const UAS3Step = () => (
-  <div>
+  <Wrapper>
+    <TitleSection>
+      <Title>Our 3-Step Approach:</Title>
+    </TitleSection>
     <StudentResource
       titleText="1. FAQ Documents"
       descriptionText={`Concise descriptions of each university program that will be pinned in each Discord channel for easy access. FAQ sheets will address basic information about the university program, such as grade cutoffs, testing requirements, course requirements, and core curriculum.`}
@@ -25,5 +32,43 @@ export const UAS3Step = () => (
       graphicHeight={250}
       isCard={true}
     />
-  </div>
+    <div>
+      <Link href="reources/uas">
+        <a>
+    {/* TODO: change to discord server link */}
+          <Button>Join our Community of 800+ Students!</Button>
+        </a>
+      </Link>
+    </div>
+  </Wrapper>
 );
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8vh;
+`;
+
+const TitleSection = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  ${media(
+    "tablet",
+    `
+      justify-content: center; 
+      `
+  )};
+`;
+
+const Title = styled.h2`
+  font-weight: 900;
+  padding-right: 20%;
+  ${media(
+    "tablet",
+    `
+      padding-right: 0;
+      `
+  )};
+`;
