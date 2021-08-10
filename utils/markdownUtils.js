@@ -52,3 +52,14 @@ export const getEventSlugs = () => {
   });
   return events;
 };
+
+export const getOpportunitySlugs = () => {
+  const allOpportunityPath = fs.readdirSync(OPPORTUNITIES_PATHS);
+  const opportunities = allOpportunityPath.map((opp) => {
+    const slug = opp.replace(/\.mdx?$/, "");
+    return {
+      slug,
+    };
+  });
+  return opportunities;
+};
