@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { StudentResource, Button } from "../../../components";
 import SampleGraphic from "../../../public/home/top-section-graphic.svg";
+import { baseTheme } from "../../../theme";
 import { media } from "../../../utils";
 
 export const UAS3Step = () => (
@@ -35,7 +36,7 @@ export const UAS3Step = () => (
     <div>
       <Link href="reources/uas">
         <a>
-    {/* TODO: change to discord server link */}
+          {/* TODO: change to discord server link */}
           <Button>Join our Community of 800+ Students!</Button>
         </a>
       </Link>
@@ -57,7 +58,7 @@ const TitleSection = styled.div`
   ${media(
     "tablet",
     `
-      justify-content: center; 
+      justify-content: center;
       `
   )};
 `;
@@ -65,10 +66,11 @@ const TitleSection = styled.div`
 const Title = styled.h2`
   font-weight: 900;
   padding-right: 20%;
+  color: ${baseTheme.colors.navy};
   ${media(
     "tablet",
     `
       padding-right: 0;
-      `
+    `
   )};
 `;
