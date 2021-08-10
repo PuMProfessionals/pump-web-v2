@@ -9,7 +9,7 @@ export { ImpactCard } from "./ImpactCard";
 export { LeftImageTextLayout } from "./LeftImageTextLayout";
 export { Video } from "./Video";
 export { StudentResource } from "./StudentResource";
+export { Loading } from "./Loading";
 export { ImageCard } from "./ImageCard";
 export { ImageCardCarousel } from "./ImageCardCarousel.jsx";
 export { Title } from "./Title";
-export { ImageCarousel } from "./ImageCarousel.jsx";

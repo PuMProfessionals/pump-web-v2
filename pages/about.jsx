@@ -19,6 +19,8 @@ import { Title } from "../components";
 import { PageLayout } from "../sections/hoc";
 import { ValueSection, BoardSection, QuickFacts } from "../sections/about";
 import { baseTheme } from "../theme";
+import { LeftImageTextLayout } from "../components";
+import ImpactReport from "../public/about/impact-report.svg";
 
 const nationalBoard = [
   {
@@ -216,6 +218,22 @@ export default function About() {
           image={PlaceholderGraphic}
         />
         <ValueSection />
+        <LeftImageTextLayout
+          titleText="Our Impact Report"
+          graphic={ImpactReport}
+          imageWidth={400}
+          imageHeight={282}
+          descriptions={[
+            `This summer, we are excited to head into our third year of operations! Read about our projects from the 2020-2021 fiscal year in our first ever impact report below.`,
+            `Our team is dedicated to upholding our core values of community, transparency, and youth empowerment. We look forward to releasing next year's annual report and cannot wait to see what the future holds.`,
+          ]}
+          buttons={[
+            {
+              text: "Click to View",
+              link: "https://www.flipsnack.com/pumprofessionals/impact-report-2020-2021.html",
+            },
+          ]}
+        />
         <QuickFacts />
         <BoardSection
           board="National Board"

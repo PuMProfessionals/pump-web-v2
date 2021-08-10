@@ -5,7 +5,7 @@ import BasilBox from "../public/sponsors/Basil Box.png";
 import BrainPower from "../public/sponsors/Brain Power.png";
 import Cetaphil from "../public/sponsors/Cetaphil.png";
 
-import { ImageCarousel, Title } from "../components";
+import { Title } from "../components";
 import { PageLayout } from "../sections/hoc";
 import { media } from "../utils";
 
@@ -36,11 +36,7 @@ export default function Sponsors() {
       </Head>
       <PageLayout>
         <Title title="Sponsors" />
-        <Wrapper>
-          <CarouselWrapper>
-            <ImageCarousel className="regular-carousel" slides={sponsors} />
-          </CarouselWrapper>
-        </Wrapper>
+        <Wrapper>hello</Wrapper>
       </PageLayout>
     </div>
   );
@@ -52,15 +48,6 @@ const Wrapper = styled.div`
     1400,
     `   
             padding: 0 6%;
-        `
-  )};
-`;
-const CarouselWrapper = styled.div`
-  margin: 0 6%;
-  ${media(
-    1400,
-    `   
-            margin: auto;
         `
   )};
 `;
