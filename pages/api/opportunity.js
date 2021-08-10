@@ -11,7 +11,7 @@ import { opportunities } from "../../cache/cache";
 export default async (req, res) => {
   let results;
   try {
-    results = await prisma.opportunity.findMany(); //good
+    results = await prisma.posting.findMany(); //good
   } catch (e) {
     results = opportunities; //good
   }
