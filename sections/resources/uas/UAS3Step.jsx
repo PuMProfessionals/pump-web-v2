@@ -67,6 +67,8 @@ const Title = styled.h2`
   font-weight: 900;
   padding-right: 20%;
   color: ${baseTheme.colors.navy};
+  font-family: ${baseTheme.font.josefin};
+  font-size: ${baseTheme.size.h2};
   ${media(
     "tablet",
     `
