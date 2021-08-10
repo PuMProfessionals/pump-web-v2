@@ -2,14 +2,13 @@ import styled from "styled-components";
 import PumpDigest from "../../public/resources/pump-digest.png";
 import ImpactReport from "../../public/about/impact-report.png";
 import PowerUp from "../../public/events/power-up.png";
-import { CardCarousel, Text, Loading } from "../../components";
+import { CardCarousel, Text } from "../../components";
 
 import { baseTheme } from "../../theme";
 import { media } from "../../utils";
 
 export const WhatsHappening = ({ ...props }) => (
   <Wrapper {...props}>
-    <Loading color={baseTheme.colors.navy} />
     <Title size={baseTheme.size.h1} bold="true">
       What&apos;s Happening?
     </Title>
