@@ -34,7 +34,7 @@ export const StudentResource = ({
   isCard = false,
   ...props
 }) => (
-  <Wrapper isgraphicleft={isGraphicLeft} isCard={isCard} {...props}>
+  <Wrapper isgraphicleft={isGraphicLeft} iscard={isCard} {...props}>
     <Graphic isgraphicleft={isGraphicLeft ? 1 : 0}>
       <Image src={graphic} width={graphicWidth} height={graphicHeight} />
     </Graphic>
@@ -60,15 +60,15 @@ const Title = styled.h2`
   ${({ theme }) => `
       font-family: ${theme.font.josefin};
       color: ${theme.colors.black};
-  `};
-  margin: 0;
+      `};
+  margin: 3% 0 0;
 `;
 
 const Graphic = styled.div`
   /* TODO: curved border ? */
   ${({ isgraphicleft }) => `
-    ${isgraphicleft ? "margin-right: 5%;" : "margin-left: 5%;"}
-  `};
+      ${isgraphicleft ? "margin-right: 5%;" : "margin-left: 5%;"}
+      `};
   ${media(
     "tablet",
     `
@@ -81,8 +81,8 @@ const Wrapper = styled.div`
   padding: 4vh 0;
   display: flex;
   ${({ isgraphicleft }) => `
-    flex-direction: ${isgraphicleft ? "row" : "row-reverse"}
-  `};
+      flex-direction: ${isgraphicleft ? "row" : "row-reverse"}
+      `};
   align-items: center;
   justify-content: center;
   ${media(
@@ -98,26 +98,30 @@ const InfoSection = styled.div`
   display: flex;
   flex-direction: column;
   ${({ isgraphicleft, iscard, theme }) => `
-    text-align: ${isgraphicleft ? "left" : "right"};
-    box-shadow: ${iscard ? `${theme.boxShadow.topBottom}` : "none"};
-    border-radius: ${theme.radius.border};
-  `};
+      text-align: ${isgraphicleft ? "left" : "right"};
+      box-shadow: ${iscard ? `${theme.boxShadow.topBottom}` : "none"};
+      border-radius: ${theme.radius.border};
+      `};
   padding: 3%;
   ${media(
     "tablet",
     `
       text-align: center;
-      margin: 5% 0 0;
       width: 85%;
+      margin: 1rem 0 0;
     `
-  )}/* TODO: change text color based on background */
+  )};
+   {
+    /* TODO: change text color based on background */
+  }
 `;
 
 const ButtonSection = styled.div`
   display: flex;
-  ${({ isgraphicleft }) => `
-    justify-content: ${isgraphicleft ? "flex-start" : "flex-end"}
-  `};
+  ${({ isgraphicleft }) =>
+    `
+      justify-content: ${isgraphicleft ? "flex-start" : "flex-end"}
+    `};
   flex-flow: row wrap;
   ${media(
     "tablet",

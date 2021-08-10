@@ -30,7 +30,7 @@ export const UAS3Step = () => (
       titleText="3. Lounge Rooms"
       descriptionText={`A miscellaneous channel to learn more about each university's student life, network, and chat!`}
       graphic={SampleGraphic}
-      graphicHeight={250}
+      graphicWidth={250}
       isCard={true}
     />
     <div>
