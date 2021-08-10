@@ -34,9 +34,8 @@ export const UAS3Step = () => (
       isCard={true}
     />
     <div>
-      <Link href="reources/uas">
+      <Link href="https://discord.com/invite/vpyF7nCtkm">
         <a>
-          {/* TODO: change to discord server link */}
           <Button>Join our Community of 800+ Students!</Button>
         </a>
       </Link>

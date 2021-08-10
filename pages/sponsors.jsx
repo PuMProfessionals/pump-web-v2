@@ -1,32 +1,32 @@
 import Head from "next/head";
 import styled from "styled-components";
 
-import BasilBox from "../public/sponsors/Basil Box.png";
-import BrainPower from "../public/sponsors/Brain Power.png";
-import Cetaphil from "../public/sponsors/Cetaphil.png";
+// import BasilBox from "../public/sponsors/Basil Box.png";
+// import BrainPower from "../public/sponsors/Brain Power.png";
+// import Cetaphil from "../public/sponsors/Cetaphil.png";
 
 import { Title } from "../components";
 import { PageLayout } from "../sections/hoc";
 import { media } from "../utils";
 
-const sponsors = [
-  {
-    title: "Basil Box",
-    image: BasilBox,
-    width: 180,
-  },
-  {
-    title: "Brain Power",
-    image: BrainPower,
-    width: 350,
-    height: 110,
-  },
-  {
-    title: "Cetaphil",
-    image: Cetaphil,
-    width: 300,
-  },
-];
+// const sponsors = [
+//   {
+//     title: "Basil Box",
+//     image: BasilBox,
+//     width: 180,
+//   },
+//   {
+//     title: "Brain Power",
+//     image: BrainPower,
+//     width: 350,
+//     height: 110,
+//   },
+//   {
+//     title: "Cetaphil",
+//     image: Cetaphil,
+//     width: 300,
+//   },
+// ];
 
 export default function Sponsors() {
   return (

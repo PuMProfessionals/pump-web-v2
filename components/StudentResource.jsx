@@ -14,6 +14,7 @@ import { media } from "../utils";
  * @prop {string} descriptionText - resource description
  * @prop {array} buttons - array of buttons with resource relevant links
  * |- each button element should have text and link keys
+ * |- button can have external property which means it is an external link rather than internal (link to another section of website)
  * @prop {object} graphic - resource graphic
  * @prop {number} graphicWidth - width of resource graphic, default 400
  * @prop {number} graphicHeight - height of resource graphic, default 350
@@ -43,13 +44,21 @@ export const StudentResource = ({
       <Text>{descriptionText}</Text>
       {!!buttons && (
         <ButtonSection isgraphicleft={isGraphicLeft}>
-          {buttons.map((button) => (
-            <Link key={button.text} href={button.link}>
-              <a>
+          {buttons.map((button) => {
+            if (button.external) {
+              return (
+              <a key={button.text} href={button.link}>
                 <SButton backgroundColor={button.color}>{button.text}</SButton>
               </a>
-            </Link>
-          ))}
+            )} else {
+              return (
+                <Link key={button.text} href={button.link}>
+                  <a>
+                    <SButton backgroundColor={button.color}>{button.text}</SButton>
+                  </a>
+                </Link>
+            )} 
+          })}
         </ButtonSection>
       )}
     </InfoSection>

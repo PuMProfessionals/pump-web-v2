@@ -14,6 +14,7 @@ import Camille from "../public/members/camille-eamon.jpeg";
 import Ashley from "../public/members/ashley-lam.jpeg";
 import Joshua from "../public/members/joshua-cheruvathur.png";
 import Bryan from "../public/members/bryan-liu.jpg";
+import Emily from "../public/members/emily-hu.jpg";
 import PlaceholderGraphic from "../public/home/impact-section-graphic-3.svg";
 import { Title } from "../components";
 import { PageLayout } from "../sections/hoc";
@@ -43,7 +44,7 @@ const nationalBoard = [
   {
     name: "Shiro Puwa",
     avatar: Shiro,
-    position: "VP of National Ops",
+    position: "VP of National Operations",
     imageWidth: 240,
     imageHeight: 220,
     cardHeight: 340,
@@ -60,14 +61,14 @@ const nationalBoard = [
   },
   {
     name: "Ellie Tiliakou",
-    position: "VP of Western Reg. Ops",
+    position: "VP of Regional Operations",
     imageWidth: 240,
     imageHeight: 220,
     cardHeight: 340
   },
   {
     name: "Richard Xi",
-    position: "VP of Eastern Reg. Ops",
+    position: "VP of Regional Operations",
     imageWidth: 240,
     imageHeight: 220,
     cardHeight: 340,
@@ -88,32 +89,33 @@ const torontoBoard = [
     name: "Dhruv Dhall",
     avatar: Dhruv,
     position: "President",
-    imageWidth: 240,
-    imageHeight: 220,
-    cardHeight: 340,
+    imageWidth: 260,
+    imageHeight: 240,
+    cardHeight: 370,
   },
   {
     name: "Andreea Murariu",
     position: "VP of External Affairs",
     imageWidth: 240,
-    imageHeight: 220,
-    cardHeight: 340,
+    imageHeight: 240,
+    cardHeight: 370,
     fontColor: baseTheme.colors.yellow,
   },
   {
     name: "Helen Yin",
     position: "VP of Internal Affairs",
     imageWidth: 240,
-    imageHeight: 220,
-    cardHeight: 340,
+    imageHeight: 240,
+    cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
   },
   {
     name: "Emily Hu",
+    avatar: Emily,
     position: "Secretary",
-    imageWidth: 240,
-    imageHeight: 220,
-    cardHeight: 340,
+    imageWidth: 225,
+    imageHeight: 260,
+    cardHeight: 370,
     fontColor: baseTheme.colors.turquoise,
   },
 ];
@@ -181,8 +183,8 @@ const ottawaBoard = [
     name: "Joshua Cheruvathur",
     avatar: Joshua,
     position: "Senior Board",
-    imageWidth: 230,
-    imageHeight: 210,
+    imageWidth: 240,
+    imageHeight: 220,
     cardHeight: 340,
     fontColor: baseTheme.colors.brightBlue,
   },
