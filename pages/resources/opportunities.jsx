@@ -81,7 +81,7 @@ export default function Opportunities({ opps, ...props }) {
 const Wrapper = styled.div``;
 
 export async function getStaticProps() {
-  let opps = await prisma.opportunity.findMany();
+  let opps = await prisma.posting.findMany();
   opps = opps.sort((opp1, opp2) => (opp1.postedDate > opp2.postedDate ? 1 : -1));
 
   return {
