@@ -13,18 +13,6 @@ export const UASLayout = () => (
         opportunities, and more.`,
       ]}
       graphic={SampleGraphic}
-      buttons={[
-        {
-          color: "yellow",
-          text: "Join our Community of 800+ Students",
-          link: "/resources/uas" /* TODO: change to Discord server invite link */,
-        },
-        {
-          color: "white",
-          text: "Learn more",
-          link: "/resources/uas",
-        },
-      ]}
     />
   </div>
 );
