@@ -53,16 +53,18 @@ export const ResourcesSection = () => {
     },
   ];
 
-  return resources.map((resource) => (
-    <StudentResource
-      key={resource.titleText}
-      titleText={resource.titleText}
-      descriptionText={resource.descriptionText}
-      buttons={resource.buttons}
-      graphic={resource.graphic}
-      graphicWidth={resource.graphicWidth}
-      graphicHeight={resource.graphicHeight}
-      isGraphicLeft={resource.isGraphicLeft}
-    />
-  ));
+  return resources.map(
+    (resource /* TODO: add wrapper to increase margin around resources */) => (
+      <StudentResource
+        key={resource.titleText}
+        titleText={resource.titleText}
+        descriptionText={resource.descriptionText}
+        buttons={resource.buttons}
+        graphic={resource.graphic}
+        graphicWidth={resource.graphicWidth}
+        graphicHeight={resource.graphicHeight}
+        isGraphicLeft={resource.isGraphicLeft}
+      />
+    )
+  );
 };
