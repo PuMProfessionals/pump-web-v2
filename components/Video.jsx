@@ -53,7 +53,7 @@ const Title = styled(Text)`
       text-align: center;
   `};
 `;
-const InfoSection = styled.text`
+const InfoSection = styled(Text)`
   display: flex;
   text-align: center;
   font-size: 1rem;

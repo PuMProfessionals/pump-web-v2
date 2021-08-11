@@ -67,7 +67,7 @@ const Title = styled(Text)`
 const TopWrapper = styled.div`
   padding: 0 5% 60px 5%;
 `;
-const Description = styled.text`
+const Description = styled(Text)`
   display: flex;
   text-align: center;
   font-size: 1rem;

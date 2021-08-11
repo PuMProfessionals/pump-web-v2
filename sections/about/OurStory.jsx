@@ -44,7 +44,7 @@ const Title = styled(Text)`
   `};
 `;
 
-const Description = styled.text`
+const Description = styled(Text)`
   display: flex;
   text-align: center;
   font-size: 1rem;
