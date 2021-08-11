@@ -1,4 +1,5 @@
 import Head from "next/head";
+import styled from "styled-components";
 
 import Lucy from "../public/members/lucy-zhao.png";
 import Asma from "../public/members/asma-khamis.png";
@@ -16,11 +17,13 @@ import Joshua from "../public/members/joshua-cheruvathur.png";
 import Bryan from "../public/members/bryan-liu.jpg";
 import Emily from "../public/members/emily-hu.jpg";
 import PlaceholderGraphic from "../public/home/impact-section-graphic-3.svg";
-import { Title, LeftImageTextLayout } from "../components";
+import ImpactReport from "../public/about/impact-report.svg";
+
+import { Title, LeftImageTextLayout, SectionWrapper } from "../components";
 import { PageLayout } from "../sections/hoc";
 import { ValueSection, BoardSection, QuickFacts, OurStory } from "../sections/about";
 import { baseTheme } from "../theme";
-import ImpactReport from "../public/about/impact-report.svg";
+import { media } from "../utils";
 
 const nationalBoard = [
   {
@@ -162,7 +165,7 @@ const calgaryBoard = [
     avatar: YiAn,
     position: "Vice President",
     imageWidth: 250,
-    imageHeight: 220,
+    imageHeight: 210,
     cardHeight: 370,
     fontColor: baseTheme.colors.gold,
   },
@@ -171,7 +174,7 @@ const calgaryBoard = [
     avatar: Camille,
     position: "Vice President",
     imageWidth: 250,
-    imageHeight: 200,
+    imageHeight: 190,
     cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
   },
@@ -200,7 +203,7 @@ const ottawaBoard = [
     avatar: Bryan,
     position: "VP of External Affairs",
     imageWidth: 210,
-    imageHeight: 220,
+    imageHeight: 240,
     cardHeight: 370,
     fontColor: baseTheme.colors.gold,
   },
@@ -237,34 +240,114 @@ export default function About() {
           ]}
         />
         <QuickFacts />
-        <BoardSection
-          board="National Board"
-          boardDescription="Est. 2020 | 74 members"
-          boardMembers={nationalBoard}
-        />
-        <BoardSection
-          board="Toronto Board"
-          boardDescription="Est. 2018 | 50 members"
-          boardMembers={torontoBoard}
-          align="right"
-        />
-        <BoardSection
-          board="Vancouver Board"
-          boardDescription="Est. 2020 | 31 members"
-          boardMembers={vancouverBoard}
-        />
-        <BoardSection
-          board="Calgary Board"
-          boardDescription="Est. 2020 | 28 members"
-          boardMembers={calgaryBoard}
-          align="right"
-        />
-        <BoardSection
-          board="Ottawa Board"
-          boardDescription="Est. 2021 | 5 Members"
-          boardMembers={ottawaBoard}
-        />
+        <PhotoCollageSectionWrapper
+          backgroundPath="/about/photo-collage-large.png"
+          mobilePath="/about/photo-collage-large.png"
+          mobileThreshold={1000}
+        >
+          <BoardWrapper>
+            <FourCardSectionWrapper
+              backgroundPath="/about/board-section-right-large.svg"
+              mobilePath="/resources/middle-background-mobile.svg"
+              mobileThreshold={1200}
+            >
+              <BoardSection
+                board="National Board"
+                boardDescription="Est. 2020 | 74 members"
+                boardMembers={nationalBoard}
+                breakpoint={2000}
+              />
+            </FourCardSectionWrapper>
+          </BoardWrapper>
+          <FourCardSectionWrapper
+            backgroundPath="/about/board-section-right-large.svg"
+            mobilePath="/resources/middle-background-mobile.svg"
+            mobileThreshold={1200}
+          >
+            <BoardSection
+              board="Toronto Board"
+              boardDescription="Est. 2018 | 50 members"
+              boardMembers={torontoBoard}
+              align="right"
+              breakpoint={1200}
+            />
+          </FourCardSectionWrapper>
+          <ThreeCardSectionWrapper
+            backgroundPath="/about/board-section-large.svg"
+            mobilePath="/resources/middle-background-mobile.svg"
+            mobileThreshold={1000}
+          >
+            <BoardSection
+              board="Vancouver Board"
+              boardDescription="Est. 2020 | 31 members"
+              boardMembers={vancouverBoard}
+              breakpoint={600}
+            />
+          </ThreeCardSectionWrapper>
+          <BoardWrapper>
+            <ThreeCardSectionWrapper
+              backgroundPath="/about/board-section-right-large.svg"
+              mobilePath="/resources/middle-background-mobile.svg"
+              mobileThreshold={1000}
+            >
+                <BoardSection
+                  board="Calgary Board"
+                  boardDescription="Est. 2020 | 28 members"
+                  boardMembers={calgaryBoard}
+                  align="right"
+                  breakpoint={600}
+                />
+            </ThreeCardSectionWrapper>
+          </BoardWrapper>
+          <BoardWrapper>
+            <ThreeCardSectionWrapper
+              backgroundPath="/about/board-section-large.svg"
+              mobilePath="/resources/middle-background-mobile.svg"
+              mobileThreshold={1000}
+            >
+            <BoardSection
+              board="Ottawa Board"
+              boardDescription="Est. 2021 | 5 Members"
+              boardMembers={ottawaBoard}
+              breakpoint={600}
+            />
+            </ThreeCardSectionWrapper>
+          </BoardWrapper>
+        </PhotoCollageSectionWrapper>
       </PageLayout>
     </div>
   );
 }
+
+const BoardWrapper = styled.div`
+  margin-top: 10%;
+`;
+const PhotoCollageSectionWrapper = styled(SectionWrapper)`
+  padding-top: 5%;
+  padding-bottom: 10%;
+  background-repeat: repeat;
+  border-top-left-radius: 64px;
+  border-top-right-radius: 64px;
+`;
+const ThreeCardSectionWrapper = styled(SectionWrapper)`
+  padding-top: 10%;
+  padding-bottom: 15%;
+  ${media(
+    1000,
+    `
+      padding-top: 17%;
+      padding-bottom: 7%;
+    `
+  )};
+`;
+const FourCardSectionWrapper = styled(SectionWrapper)`
+  padding-top: 15%;
+  padding-bottom: 10%;
+  ${media(
+    1200,
+    `
+      padding-top: 15%;
+      padding-bottom: 15%
+    `
+  )};
+`;

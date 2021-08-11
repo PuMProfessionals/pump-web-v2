@@ -86,7 +86,7 @@ export const ResourcesSection = () => {
           graphicWidth={resources[1].graphicWidth}
           graphicHeight={resources[1].graphicHeight}
           isGraphicLeft={resources[1].isGraphicLeft}
-          textColor={baseTheme.colors.yellow}
+          textColor={baseTheme.colors.white}
         />
       </SectionWrapper>
       <StudentResource

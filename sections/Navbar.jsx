@@ -119,7 +119,6 @@ const LogoContainer = styled.div`
 const Container = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 30px;
   ${media(
     "tablet",
     `
@@ -130,6 +129,7 @@ const Container = styled.div`
   // props does not work within media function
   @media only screen and (max-width: 900px) {
     display: ${(props) => (props.isHidden ? "flex" : "none")};
+    margin-top: ${(props) => (props.isHidden ? "30px" : "0")};
   }
 `;
 const PumpImg = styled(Image)`
