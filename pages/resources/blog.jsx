@@ -9,7 +9,7 @@ import { prisma } from "../../prisma/index";
 import { Input, Loading } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
-import { Title } from "../../components";
+import { Title, Author } from "../../components";
 import SpeechBubble from "../../public/blog/written-speech-bubble.svg";
 
 const customError = () => (
@@ -53,23 +53,24 @@ export default function Blog({ posts, ...props }) {
       <PageLayout>
         <ToastContainer />
         <Wrapper {...props}>
-            <Title
-              title="Welcome To PuMP Digest"
-              image={SpeechBubble}
-              imageWidth={150}
-              imageHeight={150}
-            />
-            <Input
-              placeholder="Search blog"
-              name="blog-name"
-              type="text"
-              value={searchParameter}
-              onChange={handleChange}
-            />
+          <Title
+            title="Welcome To PuMP Digest"
+            image={SpeechBubble}
+            imageWidth={150}
+            imageHeight={150}
+          />
+          <Input
+            placeholder="Search blog"
+            name="blog-name"
+            type="text"
+            value={searchParameter}
+            onChange={handleChange}
+          />
+          <Author />
           {isLoading ? (
-              <Loading color={baseTheme.colors.navy} />
-            ) : (
-              <>
+            <Loading color={baseTheme.colors.navy} />
+          ) : (
+            <>
               {!!blogPosts &&
                 blogPosts.map(({ title, slug }) => (
                   <div key={title}>
@@ -78,7 +79,7 @@ export default function Blog({ posts, ...props }) {
                     </Link>
                   </div>
                 ))}
-              </>
+            </>
           )}
         </Wrapper>
       </PageLayout>
