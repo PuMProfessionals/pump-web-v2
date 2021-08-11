@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Instagram from "../public/contact/ig-outline.svg";
 import Email from "../public/contact/email-outline.svg";
 import Facebook from "../public/contact/fb-outline.svg";
-import { Title, ContactForm, Text } from "../components";
+import { Title, ContactForm, Text, Button } from "../components";
 import { PageLayout } from "../sections/hoc";
 import { baseTheme } from "../theme";
 import { CONSTANTS, media } from "../utils";
@@ -57,6 +57,22 @@ export default function Contact() {
             title="Or, contact us directly!"
             descriptionText="A representative will reply back to your email within 24 hours. Feel free to contact us about our initiatives, joining the team, becoming a partner, or anything else you want to chat about!"
           />
+          <SponsorshipWrapper>
+              <SponsorshipText>
+              For sponsorships, email&nbsp;
+              <EmailText href="mailto:sponsorships@pumprofessionals.org">
+                sponsorships@pumprofessionals.org
+              </EmailText>
+              </SponsorshipText>
+              <SponsorshipText>
+                or
+              </SponsorshipText>
+              <div style={{ margin: "30px auto" }}>
+                <Button>
+                  Visit the Sponsors page
+                </Button>
+              </div>
+          </SponsorshipWrapper>
         </Wrapper>
       </PageLayout>
     </div>
@@ -64,7 +80,7 @@ export default function Contact() {
 }
 
 const Wrapper = styled.div`
-  padding: 5% 10%;
+  padding: 5% 10% 0 10%;
   margin-bottom: 5%;
   background: linear-gradient(180deg, rgba(142, 158, 194, 0.2) 50.72%, rgba(142, 158, 194, 0) 76.07%);
 `;
@@ -85,6 +101,31 @@ const InfoWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-bottom: 8%;
+`;
+const SponsorshipWrapper = styled.div`
+    display: flex;
+    padding-top: 8vh;
+    flex-direction: column;
+`;
+const SponsorshipText = styled(Text)`
+  font-weight: 900;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: -10px;
+  ${({ theme }) => `
+    font-family: ${theme.font.josefin};
+    {/* TODO: CHANGE TO WHITE WITH BLOB*/}
+    color: ${theme.colors.navy};
+  `}
+`;
+const EmailText = styled.a`
+  ${({ theme }) => `
+    color: ${theme.colors.yellow};
+    :hover {
+        color: ${theme.colors.gold};
+        transition: ${theme.transitions.cubicBezier};
+    }
+  `}
 `;
 const SText = styled(Text)`
   ${({ theme }) => `
