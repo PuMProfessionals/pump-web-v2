@@ -63,7 +63,7 @@ const nationalBoard = [
     position: "VP of Regional Operations",
     imageWidth: 240,
     imageHeight: 220,
-    cardHeight: 370
+    cardHeight: 370,
   },
   {
     name: "Richard Xi",
@@ -203,7 +203,7 @@ const ottawaBoard = [
     imageHeight: 220,
     cardHeight: 370,
     fontColor: baseTheme.colors.gold,
-  }
+  },
 ];
 
 export default function About() {

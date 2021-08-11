@@ -47,17 +47,19 @@ export const StudentResource = ({
           {buttons.map((button) => {
             if (button.external) {
               return (
-              <a key={button.text} href={button.link}>
-                <SButton backgroundColor={button.color}>{button.text}</SButton>
-              </a>
-            )} else {
+                <a key={button.text} href={button.link}>
+                  <SButton backgroundColor={button.color}>{button.text}</SButton>
+                </a>
+              );
+            } else {
               return (
                 <Link key={button.text} href={button.link}>
                   <a>
                     <SButton backgroundColor={button.color}>{button.text}</SButton>
                   </a>
                 </Link>
-            )} 
+              );
+            }
           })}
         </ButtonSection>
       )}

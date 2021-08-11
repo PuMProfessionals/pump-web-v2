@@ -42,13 +42,13 @@ const sponsors = [
     title: "Aroma Cafe Bar",
     image: AromaCafe,
     width: 120,
-    height: 120
+    height: 120,
   },
   {
     title: "Basil Box",
     image: BasilBox,
     width: 180,
-    height: 150
+    height: 150,
   },
   {
     title: "Brain Power",
@@ -60,139 +60,139 @@ const sponsors = [
     title: "Cetaphil",
     image: Cetaphil,
     width: 230,
-    height: 150
+    height: 150,
   },
   {
     title: "Chipotle",
     image: Chipotle,
     width: 180,
-    height: 180
+    height: 180,
   },
   {
     title: "CJAY Tea",
     image: CJAY,
     width: 200,
-    height: 180
+    height: 180,
   },
   {
     title: "CODEX",
     image: CODEX,
     width: 200,
-    height: 180
+    height: 180,
   },
   {
     title: "CutenSmol",
     image: CutenSmol,
     width: 180,
-    height: 180
+    height: 180,
   },
   {
     title: "Daan Go Lab",
     image: DaanGoLab,
     width: 180,
-    height: 180
+    height: 180,
   },
   {
     title: "DavidsTea",
     image: DavidsTea,
     width: 220,
-    height: 80
+    height: 80,
   },
   {
     title: "GingerCupcakeDesseerts",
     image: GingerCupcakeDesserts,
     width: 180,
-    height: 120
+    height: 120,
   },
   {
     title: "Kelseys",
     image: Kelseys,
     width: 200,
-    height: 180
+    height: 180,
   },
   {
     title: "Maker",
     image: Maker,
     width: 180,
-    height: 180
+    height: 180,
   },
   {
     title: "MD Consultants",
     image: MDConsultants,
     width: 200,
-    height: 60
+    height: 60,
   },
   {
     title: "Mediclo",
     image: Mediclo,
     width: 180,
-    height: 180
+    height: 180,
   },
   {
     title: "Microbi",
     image: Microbi,
     width: 240,
-    height: 120
+    height: 120,
   },
   {
     title: "Morgan Crossing",
     image: MorganCrossing,
     width: 240,
-    height: 120
+    height: 120,
   },
   {
     title: "ND Next Door",
     image: NDNextDoor,
     width: 200,
-    height: 180
+    height: 180,
   },
   {
     title: "Reptilla",
     image: Reptilla,
     width: 200,
-    height: 180
+    height: 180,
   },
   {
     title: "ROM",
     image: ROM,
     width: 220,
-    height: 100
+    height: 100,
   },
   {
     title: "Smash",
     image: Smash,
     width: 180,
-    height: 180
+    height: 180,
   },
   {
     title: "Sticker Giant",
     image: StickerGiant,
     width: 180,
-    height: 130
+    height: 130,
   },
   {
     title: "Sticker Mule",
     image: StickerMule,
     width: 180,
-    height: 130
+    height: 130,
   },
   {
     title: "The Keg",
     image: TheKeg,
     width: 200,
-    height: 180
+    height: 180,
   },
   {
     title: "Yellofruit",
     image: Yellofruit,
     width: 200,
-    height: 80
+    height: 80,
   },
   {
     title: "YGOJuiceTea",
     image: YGOJuiceTea,
     width: 200,
-    height: 180
+    height: 180,
   },
 ];
 
@@ -201,7 +201,7 @@ const communityPartners = [
     title: "Leap",
     image: Leap,
     width: 160,
-    height: 150
+    height: 150,
   },
   {
     title: "STEM Fellowship",
@@ -213,9 +213,9 @@ const communityPartners = [
     title: "Students for Herd Immunity",
     image: StudentsForHerdImmunity,
     width: 230,
-    height: 100
-  }
-]
+    height: 100,
+  },
+];
 
 export default function Sponsors() {
   return (
@@ -228,32 +228,33 @@ export default function Sponsors() {
         <Wrapper>
           <ImpactSection style={{ paddingTop: "10vh" }} />
           <SponsorsWrapper>
-            <Subtitle>
-              A Thank You To Our Sponsors
-            </Subtitle>
+            <Subtitle>A Thank You To Our Sponsors</Subtitle>
             <Description>
-            As a growing organization, the support of local businesses and community members allows us to grow, reach out, and give back. PuMP is extremely grateful for these contributions, which have helped us truly realize the potential of medicine in the students of our communities through our various events and outreach efforts. To our sponsors – thank you.
+              As a growing organization, the support of local businesses and
+              community members allows us to grow, reach out, and give back. PuMP is
+              extremely grateful for these contributions, which have helped us truly
+              realize the potential of medicine in the students of our communities
+              through our various events and outreach efforts. To our sponsors –
+              thank you.
             </Description>
-            {sponsors.map(sponsor => (
+            {sponsors.map((sponsor) => (
               <ImageContainer key={`Sponsors__Logo__${sponsor.title}`}>
-                <Image 
-                  src={sponsor.image} 
-                  height={sponsor.height} 
+                <Image
+                  src={sponsor.image}
+                  height={sponsor.height}
                   width={sponsor.width}
                   alt={`Logo for ${sponsor.title}`}
                 />
               </ImageContainer>
             ))}
           </SponsorsWrapper>
-          <Subtitle>
-            And Our Community Partners
-          </Subtitle>
+          <Subtitle>And Our Community Partners</Subtitle>
           <SponsorsWrapper>
-            {communityPartners.map(partner => (
+            {communityPartners.map((partner) => (
               <ImageContainer key={`Partners__Logo__${partner.title}`}>
-                <Image 
-                  src={partner.image} 
-                  height={partner.height} 
+                <Image
+                  src={partner.image}
+                  height={partner.height}
                   width={partner.width}
                   alt={`Logo for ${partner.title}`}
                 />

@@ -15,7 +15,7 @@ const contactInfo = [
   {
     logo: Instagram,
     info: "@pumprofessionals",
-    link: CONSTANTS.instagram
+    link: CONSTANTS.instagram,
   },
   {
     logo: Email,
@@ -25,9 +25,9 @@ const contactInfo = [
   {
     logo: Facebook,
     info: "@pumprofessionals",
-    link: CONSTANTS.facebook
-  }
-]
+    link: CONSTANTS.facebook,
+  },
+];
 
 export default function Contact() {
   return (
@@ -36,14 +36,14 @@ export default function Contact() {
         <title>PuMP | Contact Us</title>
       </Head>
       <PageLayout>
-        <Title 
-            title="Contact Us" 
-            description="Whether you’re interested in partnerships or joining the team — or just curious about PuMP in general, feel free to reach out to us!"
-          />
+        <Title
+          title="Contact Us"
+          description="Whether you’re interested in partnerships or joining the team — or just curious about PuMP in general, feel free to reach out to us!"
+        />
         <Wrapper>
           <Subtitle>Get in touch!</Subtitle>
           <ContactWrapper>
-            {contactInfo.map(contact => (
+            {contactInfo.map((contact) => (
               <InfoWrapper key={`infoWrapper__contactInfo__${contact.link}`}>
                 <Image src={contact.logo} width={50} height={50} />
                 <SText>
@@ -59,24 +59,22 @@ export default function Contact() {
             descriptionText="A representative will reply back to your email within 24 hours. Feel free to contact us about our initiatives, joining the team, becoming a partner, or anything else you want to chat about!"
           />
           <SponsorshipWrapper>
-              <SponsorshipText>
+            <SponsorshipText>
               For sponsorships, email &nbsp;
               <EmailText href="mailto:sponsorships@pumprofessionals.org">
                 sponsorships@pumprofessionals.org
               </EmailText>
-              </SponsorshipText>
-              <SponsorshipText>
-                or
-              </SponsorshipText>
-              <div style={{ margin: "30px auto" }}>
-                <Button>
-                  <Link href="/sponsors">
+            </SponsorshipText>
+            <SponsorshipText>or</SponsorshipText>
+            <div style={{ margin: "30px auto" }}>
+              <Button>
+                <Link href="/sponsors">
                   <a style={{ color: baseTheme.colors.navy, fontWeight: "bold" }}>
                     Visit the Sponsors page
                   </a>
-                  </Link>
-                </Button>
-              </div>
+                </Link>
+              </Button>
+            </div>
           </SponsorshipWrapper>
         </Wrapper>
       </PageLayout>
@@ -87,7 +85,11 @@ export default function Contact() {
 const Wrapper = styled.div`
   padding: 5% 10% 0 10%;
   margin-bottom: 5%;
-  background: linear-gradient(180deg, rgba(142, 158, 194, 0.2) 50.72%, rgba(142, 158, 194, 0) 76.07%);
+  background: linear-gradient(
+    180deg,
+    rgba(142, 158, 194, 0.2) 50.72%,
+    rgba(142, 158, 194, 0) 76.07%
+  );
 `;
 const ContactWrapper = styled.div`
   margin: auto;
@@ -115,9 +117,9 @@ const InfoWrapper = styled.div`
   `};
 `;
 const SponsorshipWrapper = styled.div`
-    display: flex;
-    padding-top: 8vh;
-    flex-direction: column;
+  display: flex;
+  padding-top: 8vh;
+  flex-direction: column;
 `;
 const SponsorshipText = styled(Text)`
   font-weight: 900;

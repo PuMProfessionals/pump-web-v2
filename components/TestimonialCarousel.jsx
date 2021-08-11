@@ -6,10 +6,7 @@ import { Testimonial } from "./Testimonial";
 
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 
-export function TestimonialCarousel({
-  slides,
-  ...props
-}) {
+export function TestimonialCarousel({ slides, ...props }) {
   return (
     <div {...props}>
       <Swiper
@@ -28,10 +25,7 @@ export function TestimonialCarousel({
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={`${slide.author}__${index}__swiper__slide`}>
-            <STestimonial
-                testimonial={slide.testimonial}
-                author={slide.author}
-            />
+            <STestimonial testimonial={slide.testimonial} author={slide.author} />
           </SwiperSlide>
         ))}
       </Swiper>
