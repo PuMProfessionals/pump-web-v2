@@ -20,16 +20,27 @@ export default async (req, res) => {
       post.title.toLowerCase().includes(req.query.search.toLowerCase())
     );
   }
-  let allResults = []
+  let allResults = [];
   let filteredResults;
   if (req.query.tags) {
     for (let tag of req.query.tags.split(",")) {
       tag = tag.trim()
       filteredResults = results.filter((post) => post.tags.includes(tag));
-      allResults.push(filteredResults)
+      allResults.push(...filteredResults);
     }
     results = allResults
   }
+  allResults = [];
+  if (req.query.release) {
+    for(let release of req.query.release.split(",")) {
+      release = release.trim();
+      filteredResults = results.filter(
+        (post) => post.releaseBatch.replace(" ", "") === release
+      );
+      allResults.push(...filteredResults);
+    }
+    results = allResults
+}
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify({ results }));

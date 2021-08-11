@@ -236,6 +236,7 @@ export default function About() {
             {
               text: "Click to View",
               link: "https://www.flipsnack.com/pumprofessionals/impact-report-2020-2021.html",
+              external: true
             },
           ]}
         />
@@ -272,18 +273,20 @@ export default function About() {
               breakpoint={1200}
             />
           </FourCardSectionWrapper>
-          <ThreeCardSectionWrapper
-            backgroundPath="/about/board-section-large.svg"
-            mobilePath="/resources/middle-background-mobile.svg"
-            mobileThreshold={1000}
-          >
-            <BoardSection
-              board="Vancouver Board"
-              boardDescription="Est. 2020 | 31 members"
-              boardMembers={vancouverBoard}
-              breakpoint={600}
-            />
+          <BoardWrapper>
+            <ThreeCardSectionWrapper
+              backgroundPath="/about/board-section-large.svg"
+              mobilePath="/resources/middle-background-mobile.svg"
+              mobileThreshold={1000}
+            >
+              <BoardSection
+                board="Vancouver Board"
+                boardDescription="Est. 2020 | 31 members"
+                boardMembers={vancouverBoard}
+                breakpoint={600}
+              />
           </ThreeCardSectionWrapper>
+          </BoardWrapper>
           <BoardWrapper>
             <ThreeCardSectionWrapper
               backgroundPath="/about/board-section-right-large.svg"
@@ -347,7 +350,6 @@ const FourCardSectionWrapper = styled(SectionWrapper)`
     1200,
     `
       padding-top: 15%;
-      padding-bottom: 15%
     `
   )};
 `;

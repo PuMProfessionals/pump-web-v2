@@ -50,13 +50,23 @@ export const LeftImageTextLayout = ({
         </div>
         {!!buttons && (
           <ButtonSection>
-            {buttons.map((button) => (
-              <Link key={button.link} href={button.link}>
-                <a>
-                  <SButton backgroundColor={button.color}>{button.text}</SButton>
-                </a>
-              </Link>
-            ))}
+            {buttons.map((button) => {
+              if (button.external) {
+                return (
+                  <a key={button.text} href={button.link} target="_blank" rel="noopener noreferrer">
+                    <SButton backgroundColor={button.color}>{button.text}</SButton>
+                  </a>
+                );
+              } else {
+                return (
+                  <Link key={button.text} href={button.link}>
+                    <a>
+                      <SButton backgroundColor={button.color}>{button.text}</SButton>
+                    </a>
+                  </Link>
+                );
+              }
+          })}
           </ButtonSection>
         )}
       </Description>
