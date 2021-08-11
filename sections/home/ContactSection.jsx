@@ -26,16 +26,15 @@ export const ContactSection = () => {
 };
 
 const Wrapper = styled.div`
-  padding: 0 5%;
+  padding: 5%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 10%;
   ${media(
     "tablet",
     `
         flex-direction: column;
-        margin-bottom: 20%;
+        padding-bottom: 15%;
         `
   )};
 `;

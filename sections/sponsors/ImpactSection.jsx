@@ -10,7 +10,7 @@ import { baseTheme } from "../../theme";
 
 export const ImpactSection = ({ ...props }) => {
   return (
-    <Wrapper {...props}>
+    <div {...props}>
       <TopWrapper>
         <Title size={baseTheme.size.h1} bold="true">
           Our Impact
@@ -43,19 +43,10 @@ export const ImpactSection = ({ ...props }) => {
           textColour={baseTheme.colors.navy}
         />
       </ImpactWrapper>
-    </Wrapper>
+    </div>
   );
 };
 
-const Wrapper = styled.div`
-  padding: 0 2%;
-  ${media(
-    1400,
-    `   
-            padding: 0 6%;
-        `
-  )};
-`;
 const ImpactWrapper = styled.div`
   padding: 0 5%;
   margin-bottom: 8%;

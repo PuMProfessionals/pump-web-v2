@@ -2,7 +2,7 @@ import { LeftImageTextLayout } from "../../../components";
 import SampleGraphic from "../../../public/home/top-section-graphic.svg";
 
 export const UASLayout = () => (
-  <div>
+  <div style={{ marginTop: "5%" }}>
     <LeftImageTextLayout
       titleText="What is UAS?"
       descriptions={[

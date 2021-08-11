@@ -33,17 +33,16 @@ const SIframe = styled.iframe`
     750,
     `
       width: 80%;
-      height: 65vh;
+      height: 50vw;
     `
   )};
 `;
 const Wrapper = styled.div`
-  padding: 2vh 0;
-  margin-bottom: 15vh;
+  padding: 2% 0 10% 0;
   ${media(
     750,
     `
-      margin-bottom: 25vh;
+      padding-bottom: 12%;
     `
   )};
 `;
@@ -53,7 +52,7 @@ const Title = styled(Text)`
       text-align: center;
   `};
 `;
-const InfoSection = styled.text`
+const InfoSection = styled(Text)`
   display: flex;
   text-align: center;
   font-size: 1rem;
