@@ -99,4 +99,10 @@ const Board = styled.div`
 const SCard = styled(Card)`
   margin: 0 5px;
   margin-bottom: 5vh;
+  ${media(
+    500,
+    `
+            margin: 5vh auto;
+        `
+  )};
 `;
