@@ -34,7 +34,7 @@ export const UAS3Step = () => (
     />
     <div>
       <a href="https://discord.com/invite/vpyF7nCtkm">
-          <Button>Join our Community of 800+ Students!</Button>
+        <Button>Join our Community of 800+ Students!</Button>
       </a>
     </div>
   </Wrapper>

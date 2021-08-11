@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/Link";
+import Link from "next/link";
 import styled from "styled-components";
 
 import Instagram from "../public/contact/ig-outline.svg";
@@ -60,7 +60,8 @@ export default function Contact() {
           />
           <SponsorshipWrapper>
             <SponsorshipText>
-              For sponsorships, email &nbsp;
+              For sponsorships, email&nbsp;
+              <SponsorshipsBreak />
               <EmailText href="mailto:sponsorships@pumprofessionals.org">
                 sponsorships@pumprofessionals.org
               </EmailText>
@@ -133,7 +134,6 @@ const SponsorshipText = styled(Text)`
   `}
 `;
 const EmailText = styled.a`
-  margin-left: -1%;
   ${({ theme }) => `
     color: ${theme.colors.yellow};
     :hover {
@@ -146,6 +146,15 @@ const SText = styled(Text)`
   ${({ theme }) => `
     font-family: ${theme.font.josefin};
   `}
+`;
+const SponsorshipsBreak = styled.br`
+  display: none;
+  ${media(
+    "tablet",
+    `
+      display: inline-block;
+    `
+  )};
 `;
 const Subtitle = styled.h2`
   ${({ theme }) => `
