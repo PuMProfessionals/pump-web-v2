@@ -41,13 +41,13 @@ export const getStaticProps = async ({ params }) => {
 };
 //must look over everything under hereeeeee
 export const getStaticPaths = async () => {
-    let opportunityPaths;
-    try {
-      opportunityPaths = await prisma.posting.findMany();
-    } catch (e) {
-      opportunityPaths = opportunities;
-    }
-  
+  let opportunityPaths;
+  try {
+    opportunityPaths = await prisma.posting.findMany();
+  } catch (e) {
+    opportunityPaths = opportunities;
+  }
+
   const paths = opportunityPaths.map((opp) => ({
     params: {
       slug: opp.slug,
