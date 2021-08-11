@@ -49,7 +49,12 @@ export const StudentResource = ({
           {buttons.map((button) => {
             if (button.external) {
               return (
-                <a key={button.text} href={button.link} target="_blank" rel="noreferrer noopener">
+                <a
+                  key={button.text}
+                  href={button.link}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
                   <SButton backgroundColor={button.color}>{button.text}</SButton>
                 </a>
               );

@@ -15,11 +15,11 @@ export const ImpactSection = ({ ...props }) => {
           Our Impact
         </Title>
         <Button>
-          <a 
+          <a
             href="https://www.flipsnack.com/pumprofessionals/impact-report-2020-2021.html"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: baseTheme.colors.navy }} 
+            style={{ color: baseTheme.colors.navy }}
           >
             View More
           </a>

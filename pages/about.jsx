@@ -236,7 +236,7 @@ export default function About() {
             {
               text: "Click to View",
               link: "https://www.flipsnack.com/pumprofessionals/impact-report-2020-2021.html",
-              external: true
+              external: true,
             },
           ]}
         />
@@ -285,7 +285,7 @@ export default function About() {
                 boardMembers={vancouverBoard}
                 breakpoint={600}
               />
-          </ThreeCardSectionWrapper>
+            </ThreeCardSectionWrapper>
           </BoardWrapper>
           <BoardWrapper>
             <ThreeCardSectionWrapper
@@ -293,13 +293,13 @@ export default function About() {
               mobilePath="/resources/middle-background-mobile.svg"
               mobileThreshold={1000}
             >
-                <BoardSection
-                  board="Calgary Board"
-                  boardDescription="Est. 2020 | 28 members"
-                  boardMembers={calgaryBoard}
-                  align="right"
-                  breakpoint={600}
-                />
+              <BoardSection
+                board="Calgary Board"
+                boardDescription="Est. 2020 | 28 members"
+                boardMembers={calgaryBoard}
+                align="right"
+                breakpoint={600}
+              />
             </ThreeCardSectionWrapper>
           </BoardWrapper>
           <BoardWrapper>
@@ -308,12 +308,12 @@ export default function About() {
               mobilePath="/resources/middle-background-mobile.svg"
               mobileThreshold={1000}
             >
-            <BoardSection
-              board="Ottawa Board"
-              boardDescription="Est. 2021 | 5 Members"
-              boardMembers={ottawaBoard}
-              breakpoint={600}
-            />
+              <BoardSection
+                board="Ottawa Board"
+                boardDescription="Est. 2021 | 5 Members"
+                boardMembers={ottawaBoard}
+                breakpoint={600}
+              />
             </ThreeCardSectionWrapper>
           </BoardWrapper>
         </PhotoCollageSectionWrapper>

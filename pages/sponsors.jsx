@@ -229,10 +229,16 @@ export default function Sponsors() {
         <Wrapper>
           <Subtitle style={{ marginTop: "10vh" }}>Why Sponsor PuMP</Subtitle>
           <Description>
-          Aside from medical-related learning opportunities, youth reaching out to PuMP are on the lookout for resources that local businesses can help provide. Your support will enable us to continue offering out platform for real world connections.
+            Aside from medical-related learning opportunities, youth reaching out to
+            PuMP are on the lookout for resources that local businesses can help
+            provide. Your support will enable us to continue offering out platform
+            for real world connections.
           </Description>
           <Description>
-            At PuMP, donations will go towards a variety of key initiatives in our operations, making local businesses’ support a critical resource. In-kind donations such as gift baskets, gift cards and coupons can be featured at our events through booths and banners. 
+            At PuMP, donations will go towards a variety of key initiatives in our
+            operations, making local businesses’ support a critical resource. In-kind
+            donations such as gift baskets, gift cards and coupons can be featured at
+            our events through booths and banners.
           </Description>
           <ImpactSection style={{ paddingTop: "5%" }} />
           <TopWrapper>
@@ -248,15 +254,15 @@ export default function Sponsors() {
                 {
                   text: "View our Sponsorship Package",
                   link: "/sponsors/PuMPSponsorshipPackage.pdf",
-                  external: true
+                  external: true,
                 },
               ]}
             />
           </TopWrapper>
           <div style={{ margin: "10% 5% 0 5%" }}>
             <ContactForm
-                title="Become a sponsor"
-                descriptionText="A representative will reply back to your email within 24 hours."
+              title="Become a sponsor"
+              descriptionText="A representative will reply back to your email within 24 hours."
             />
           </div>
           <SponsorsWrapper>

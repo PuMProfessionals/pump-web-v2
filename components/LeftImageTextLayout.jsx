@@ -53,7 +53,12 @@ export const LeftImageTextLayout = ({
             {buttons.map((button) => {
               if (button.external) {
                 return (
-                  <a key={button.text} href={button.link} target="_blank" rel="noopener noreferrer">
+                  <a
+                    key={button.text}
+                    href={button.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <SButton backgroundColor={button.color}>{button.text}</SButton>
                   </a>
                 );
@@ -66,7 +71,7 @@ export const LeftImageTextLayout = ({
                   </Link>
                 );
               }
-          })}
+            })}
           </ButtonSection>
         )}
       </Description>
