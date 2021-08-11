@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import Image from "next/image";
+
 import { Text } from "./Text";
 import { media } from "../utils";
+import { baseTheme } from "../theme";
 
 /*
     Example:
@@ -18,7 +20,7 @@ export const ImpactCard = ({
   isImageTop = true,
   cardTitle,
   description,
-  textColour,
+  textColour = baseTheme.colors.navy,
   titleSize = 3.5,
   imageHeight = 200,
   imageWidth = 300,
@@ -47,7 +49,6 @@ export const ImpactCard = ({
 
 const Wrapper = styled.div`
   margin-left: 20px;
-  margin-bottom: 30px;
   width: 50%;
   ${({ cardHeight }) => `
     height: ${cardHeight}px;

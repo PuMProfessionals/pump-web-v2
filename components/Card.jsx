@@ -17,31 +17,49 @@ import { media } from "../utils";
 export function Card({
   thumbnail,
   title,
+  component, // optional component to replace in content
   description,
   imageHeight = 200,
-  imageWidth = 300,
-  cardHeight = 470,
+  imageWidth = 320,
+  cardHeight = 490,
+  contentPadding,
+  date,
+  buttonText,
+  linkTo,
   ...props
 }) {
   return (
     <Wrapper imageWidth={imageWidth} cardHeight={cardHeight} {...props}>
       <Section>
         <ImageWrapper>
-          <Image
+          <SImage
             alt={`Card image for ${title}`}
             src={thumbnail}
             height={imageHeight}
             width={imageWidth}
           />
         </ImageWrapper>
-        <Content>
-          <Title>{title}</Title>
-          <p style={{ marginBottom: "20px" }}>{description}</p>
-          <Button>
-            <Link href="/">
-              <a style={{ color: baseTheme.colors.navy }}>Learn More</a>
-            </Link>
-          </Button>
+        <Content contentpadding={contentPadding}>
+          <div>
+            {component ? (
+              component
+            ) : (
+              <>
+                <Title>{title}</Title>
+                <p style={{ marginBottom: "20px" }}>
+                  <strong>{date ? date : ""}</strong>
+                  {description}
+                </p>
+              </>
+            )}
+          </div>
+          {!!buttonText && (
+            <Button>
+              <Link href={linkTo}>
+                <a style={{ color: baseTheme.colors.navy }}>{buttonText}</a>
+              </Link>
+            </Button>
+          )}
         </Content>
       </Section>
     </Wrapper>
@@ -53,6 +71,7 @@ const Wrapper = styled.div`
   margin-top: 20px;
   border-radius: 44px;
   margin-bottom: 30px;
+  background-color: white;
   box-shadow: 2px 8px 8px rgba(0, 0, 0, 0.25);
   ${({ theme, cardHeight, imageWidth }) => `
         height: ${cardHeight}px;
@@ -77,10 +96,18 @@ const Section = styled.div`
   flex-direction: column;
 `;
 const Content = styled.div`
-  padding: 15px 25px 35px 35px;
+  ${({ contentpadding }) => `
+    padding: ${contentpadding ? contentpadding : "15px 25px 35px 35px"};
+  `};
   color: black;
   border-top-right-radius: 44px;
   border-bottom-right-radius: 44px;
+  ${media(
+    500,
+    `
+      padding: 10px 20px 25px 25px;
+    `
+  )};
 `;
 const Title = styled.h3`
   ${({ theme }) => `
@@ -90,8 +117,10 @@ const Title = styled.h3`
   font-weight: bold;
 `;
 const ImageWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  border-top-left-radius: 44px;
-  border-top-right-radius: 44px;
+  border-top-left-radius: 44px !important;
+  border-top-right-radius: 44px !important;
+`;
+const SImage = styled(Image)`
+  border-top-left-radius: 44px !important;
+  border-top-right-radius: 44px !important;
 `;

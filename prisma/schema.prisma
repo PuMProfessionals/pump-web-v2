@@ -31,19 +31,19 @@ model Author {
   about    String?
 }
 
-model Opportunity {
+model Posting {
   id            Int      @id @default(autoincrement())
   slug          String   @unique
   postingName   String   @map("posting_name")
   orgImages     String   @map("org_images")
   orgName       String   @map("org_name")
-  lat           Decimal  @default(-1000)
-  long          Decimal  @default(-1000)
+  lat           String  @default("-1000")
+  long          String  @default("-1000")
   address       String
   tags          String[]
   published     Boolean  @default(true)
   archived      Boolean  @default(false)
   postedDate    String   @map("posted_date")
 
-  @@map("opportunity")
+  @@map("posting")
 }

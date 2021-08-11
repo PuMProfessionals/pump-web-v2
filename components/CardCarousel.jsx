@@ -3,14 +3,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay, Pagination } from "swiper/core";
 
 import { Card } from "./Card";
+import { media } from "../utils";
 
 SwiperCore.use([Navigation, Autoplay, Pagination]);
 
-export function CardCarousel({ slides, ...props }) {
+export function CardCarousel({
+  slides,
+  cardHeight,
+  cardWidth,
+  component,
+  ...props
+}) {
   return (
     <div {...props}>
       <Swiper
-        id="swiper-replace"
         slidesPerView={1}
         spaceBetween={30}
         loop={true}
@@ -41,7 +47,13 @@ export function CardCarousel({ slides, ...props }) {
               title={slide.title}
               description={slide.description}
               thumbnail={slide.thumbnail}
+              buttonText={slide.buttonText}
+              linkTo={slide.linkTo}
               style={{ marginBottom: "50px" }}
+              cardHeight={cardHeight}
+              cardWidth={cardWidth}
+              component={component}
+              date={slide.date}
             />
           </SwiperSlide>
         ))}
@@ -52,4 +64,10 @@ export function CardCarousel({ slides, ...props }) {
 
 const SCard = styled(Card)`
   margin: 0 15% 50px 15%;
+  ${media(
+    1400,
+    `   
+            margin: auto;
+        `
+  )};
 `;
