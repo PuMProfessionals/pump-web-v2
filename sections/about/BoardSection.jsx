@@ -87,8 +87,8 @@ const Board = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin-top: 5vh;
+  justify-content: space-evenly;
   ${media(
     500,
     `

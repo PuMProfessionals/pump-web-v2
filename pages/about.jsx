@@ -16,11 +16,10 @@ import Joshua from "../public/members/joshua-cheruvathur.png";
 import Bryan from "../public/members/bryan-liu.jpg";
 import Emily from "../public/members/emily-hu.jpg";
 import PlaceholderGraphic from "../public/home/impact-section-graphic-3.svg";
-import { Title } from "../components";
+import { Title, LeftImageTextLayout } from "../components";
 import { PageLayout } from "../sections/hoc";
-import { ValueSection, BoardSection, QuickFacts } from "../sections/about";
+import { ValueSection, BoardSection, QuickFacts, OurStory } from "../sections/about";
 import { baseTheme } from "../theme";
-import { LeftImageTextLayout } from "../components";
 import ImpactReport from "../public/about/impact-report.svg";
 
 const nationalBoard = [
@@ -113,8 +112,8 @@ const torontoBoard = [
     name: "Emily Hu",
     avatar: Emily,
     position: "Secretary",
-    imageWidth: 225,
-    imageHeight: 260,
+    imageWidth: 215,
+    imageHeight: 250,
     cardHeight: 370,
     fontColor: baseTheme.colors.turquoise,
   },
@@ -171,8 +170,8 @@ const calgaryBoard = [
     name: "Camille Eamon",
     avatar: Camille,
     position: "Vice President",
-    imageWidth: 260,
-    imageHeight: 210,
+    imageWidth: 250,
+    imageHeight: 200,
     cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
   },
@@ -219,6 +218,7 @@ export default function About() {
           description="Get to know the PuMP family."
           image={PlaceholderGraphic}
         />
+        <OurStory />
         <ValueSection />
         <LeftImageTextLayout
           titleText="Our Impact Report"
@@ -250,12 +250,12 @@ export default function About() {
         />
         <BoardSection
           board="Vancouver Board"
-          boardDescription="Est. 2020 | 30 members"
+          boardDescription="Est. 2020 | 31 members"
           boardMembers={vancouverBoard}
         />
         <BoardSection
           board="Calgary Board"
-          boardDescription="Est. 2020 | 50 members"
+          boardDescription="Est. 2020 | 28 members"
           boardMembers={calgaryBoard}
           align="right"
         />

@@ -65,7 +65,7 @@ export const LeftImageTextLayout = ({
 );
 
 const Wrapper = styled.div`
-  padding: 8vh 0;
+  padding: 0 5% 5% 5%;
 `;
 
 const Title = styled(Text)`
@@ -110,13 +110,12 @@ const Graphic = styled(Image)`
 `;
 
 const TitleSection = styled.div`
-  margin: 5% 5% 0%;
+  margin: 2% 0;
 `;
 
 const InfoSection = styled.div`
   display: flex;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 0 5%;
   align-items: center;
   ${media(
     800,
