@@ -3,8 +3,10 @@ import styled from "styled-components";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 
+import { prisma } from "../../../prisma/index";
 import { Title } from "../../components";
 import { PageLayout } from "../../sections/hoc";
+import { opportunities } from "../../../cache/cache";
 import { getSlug, getOpportunitySlugs } from "../../utils/markdownUtils";
 
 const OpportunitiesPage = ({ source, frontMatter }) => {
@@ -40,9 +42,13 @@ export const getStaticProps = async ({ params }) => {
 };
 //must look over everything under hereeeeee
 export const getStaticPaths = async () => {
-  const opportunityPaths = getOpportunitySlugs();
-  //everything above this should be looked over, the things underneath can be
-  //left alone? maybe...?
+  let opportunityPaths;
+  try {
+    opportunityPaths = await prisma.posting.findMany();
+  } catch (e) {
+    opportunityPaths = opportunities;
+  }
+
   const paths = opportunityPaths.map((opp) => ({
     params: {
       slug: opp.slug,

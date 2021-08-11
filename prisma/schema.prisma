@@ -39,6 +39,8 @@ model Posting {
   orgName       String   @map("org_name")
   lat           String  @default("-1000")
   long          String  @default("-1000")
+  linkTo        String  @default("")
+  city          String  @default("Anywhere")
   address       String
   tags          String[]
   published     Boolean  @default(true)

@@ -5,10 +5,15 @@ import Asma from "../public/members/asma-khamis.png";
 import Shiro from "../public/members/shiro-puwa.png";
 import RachelLin from "../public/members/rachel-lin.png";
 import Dhruv from "../public/members/dhruv-dhall.png";
+import Kaya from "../public/members/kaya-januszewska.png";
+import Aneeya from "../public/members/aneeya-johal.jpg";
 import MarkShort from "../public/members/mark-short.png";
 import Brooklyn from "../public/members/brooklyn-wiggins.png";
 import YiAn from "../public/members/yi-an-wang.jpeg";
 import Camille from "../public/members/camille-eamon.jpeg";
+import Ashley from "../public/members/ashley-lam.jpeg";
+import Joshua from "../public/members/joshua-cheruvathur.png";
+import Bryan from "../public/members/bryan-liu.jpg";
 import PlaceholderGraphic from "../public/home/impact-section-graphic-3.svg";
 import { Title } from "../components";
 import { PageLayout } from "../sections/hoc";
@@ -29,7 +34,7 @@ const nationalBoard = [
   {
     name: "Asma Khamis",
     avatar: Asma,
-    position: "VP of Operations",
+    position: "VP of Community",
     imageWidth: 240,
     imageHeight: 220,
     cardHeight: 340,
@@ -38,7 +43,7 @@ const nationalBoard = [
   {
     name: "Shiro Puwa",
     avatar: Shiro,
-    position: "VP of Human Resources",
+    position: "VP of National Ops",
     imageWidth: 240,
     imageHeight: 220,
     cardHeight: 340,
@@ -47,11 +52,34 @@ const nationalBoard = [
   {
     name: "Rachel Lin",
     avatar: RachelLin,
-    position: "VP of Communications",
+    position: "VP of Promotions",
     imageWidth: 240,
     imageHeight: 220,
     cardHeight: 340,
     fontColor: baseTheme.colors.turquoise,
+  },
+  {
+    name: "Ellie Tiliakou",
+    position: "VP of Western Reg. Ops",
+    imageWidth: 240,
+    imageHeight: 220,
+    cardHeight: 340,
+  },
+  {
+    name: "Richard Xi",
+    position: "VP of Eastern Reg. Ops",
+    imageWidth: 240,
+    imageHeight: 220,
+    cardHeight: 340,
+    fontColor: baseTheme.colors.yellow,
+  },
+  {
+    name: "Angela Yang",
+    position: "VP of Corporate Affairs",
+    imageWidth: 240,
+    imageHeight: 220,
+    cardHeight: 340,
+    fontColor: baseTheme.colors.brightBlue,
   },
 ];
 
@@ -93,13 +121,15 @@ const torontoBoard = [
 const vancouverBoard = [
   {
     name: "Aneeya Johal",
+    avatar: Aneeya,
     position: "President",
     imageWidth: 240,
-    imageHeight: 220,
+    imageHeight: 240,
     cardHeight: 340,
   },
   {
     name: "Kaya Januszewska",
+    avatar: Kaya,
     position: "VP of External Affairs",
     imageWidth: 250,
     imageHeight: 220,
@@ -148,27 +178,30 @@ const calgaryBoard = [
 
 const ottawaBoard = [
   {
-    name: "Ashley Lam",
-    position: "Senior Board",
-    imageWidth: 240,
-    imageHeight: 220,
-    cardHeight: 340,
-  },
-  {
-    name: "Richard Xi",
-    position: "Senior Board",
-    imageWidth: 250,
-    imageHeight: 220,
-    cardHeight: 340,
-    fontColor: baseTheme.colors.gold,
-  },
-  {
     name: "Joshua Cheruvathur",
+    avatar: Joshua,
     position: "Senior Board",
-    imageWidth: 260,
+    imageWidth: 230,
     imageHeight: 210,
     cardHeight: 340,
     fontColor: baseTheme.colors.brightBlue,
+  },
+  {
+    name: "Ashley Lam",
+    avatar: Ashley,
+    position: "VP of Internal Affairs",
+    imageWidth: 245,
+    imageHeight: 190,
+    cardHeight: 340,
+  },
+  {
+    name: "Bryan Liu",
+    avatar: Bryan,
+    position: "VP of External Affairs",
+    imageWidth: 210,
+    imageHeight: 220,
+    cardHeight: 340,
+    fontColor: baseTheme.colors.gold,
   },
 ];
 

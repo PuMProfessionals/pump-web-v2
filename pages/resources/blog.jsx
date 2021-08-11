@@ -6,7 +6,7 @@ import { toast, ToastContainer } from "react-toastify";
 import styled from "styled-components";
 
 import { prisma } from "../../prisma/index";
-import { Input } from "../../components";
+import { Input, Loading } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
 import { Title } from "../../components";
@@ -25,23 +25,25 @@ const customError = () => (
 export default function Blog({ posts, ...props }) {
   const [searchParameter, setSearchParameter] = useState("");
   const [blogPosts, setBlogPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     posts.sort((post1, post2) => (post1.date > post2.date ? 1 : -1));
     setBlogPosts(posts);
+    setIsLoading(false);
   }, []);
 
   const handleChange = (e) => {
     setSearchParameter(e.target.value);
-    if (searchParameter.length >= 2) {
-      axios
-        .get(`/api/blog?search=${e.target.value}`)
-        .then((res) => {
-          setBlogPosts(res.data.results);
-        })
-        .catch(() => {
-          toast.error(customError);
-        });
-    }
+    setIsLoading(true);
+    axios
+      .get(`/api/blog?search=${e.target.value}`)
+      .then((res) => {
+        setBlogPosts(res.data.results);
+        setIsLoading(false);
+      })
+      .catch(() => {
+        toast.error(customError);
+      });
   };
   return (
     <div>
@@ -64,14 +66,20 @@ export default function Blog({ posts, ...props }) {
             value={searchParameter}
             onChange={handleChange}
           />
-          {!!blogPosts &&
-            blogPosts.map(({ title, slug }) => (
-              <div key={title}>
-                <Link href={`/resources/blog/${slug}`}>
-                  <a style={{ color: baseTheme.colors.navy }}>{title}</a>
-                </Link>
-              </div>
-            ))}
+          {isLoading ? (
+            <Loading color={baseTheme.colors.navy} />
+          ) : (
+            <>
+              {!!blogPosts &&
+                blogPosts.map(({ title, slug }) => (
+                  <div key={title}>
+                    <Link href={`/resources/blog/${slug}`}>
+                      <a style={{ color: baseTheme.colors.navy }}>{title}</a>
+                    </Link>
+                  </div>
+                ))}
+            </>
+          )}
         </Wrapper>
       </PageLayout>
     </div>
@@ -81,8 +89,12 @@ export default function Blog({ posts, ...props }) {
 const Wrapper = styled.div``;
 
 export async function getStaticProps() {
-  let posts = await prisma.post.findMany();
-  posts = posts.sort((post1, post2) => (post1.date > post2.date ? 1 : -1));
+  let posts;
+  try {
+    posts = await prisma.post.findMany();
+  } catch (e) {
+    posts = posts.sort((post1, post2) => (post1.date > post2.date ? 1 : -1));
+  }
 
   return {
     props: { posts },
