@@ -34,7 +34,7 @@ export const TopSection = ({ ...props }) => (
 );
 
 const MainContainer = styled.div`
-	display: flex;
+  display: flex;
   padding: 7% 12%;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -44,7 +44,7 @@ const MainContainer = styled.div`
     800,
     `
         padding: 5%;
-        margin: 0 7% 7% 7%;
+        margin: 0 7& 7& 7%;
         `
   )};
   ${media(
@@ -52,13 +52,13 @@ const MainContainer = styled.div`
     `
         flex-direction: column-reverse;
         `
-  )};{*/
+  )};
   ${media(
     500,
     `
         margin: 0 12% 12% 12%;
         `
-  )};*/}
+  )};
 `;
 
 const SText = styled(Text)`
