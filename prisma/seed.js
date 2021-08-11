@@ -11,10 +11,10 @@ const OPPORTUNITIES_PATHS = path.join(process.cwd(), "_direct");
 const main = async () => {
   const posts = getPosts();
   const authors = getAuthors();
-  const opportunities = getOpportunities();
+  const postings = getPostings();
   await insertPost(posts);
   await insertAuthor(authors);
-  await insertOpportunity(opportunities);
+  await insertPosting(postings);
 };
 
 /*
@@ -76,7 +76,7 @@ function getAuthors() {
   Get all file opporunities paths for filtering and building cache
   @returns array of all opportunities in _direct folder
 */
-function getOpportunities() {
+function getPostings() {
   const allOpportunitiesPath = fs.readdirSync(OPPORTUNITIES_PATHS);
   const opportunities = allOpportunitiesPath.map((opp) => {
     const oppPath = path.join(OPPORTUNITIES_PATHS, opp);
@@ -89,8 +89,8 @@ function getOpportunities() {
       orgImages: matterResult.data.orgImages,
       orgName: matterResult.data.orgName,
       address: matterResult.data.address,
-      lat: matterResult.data.lat ? matterResult.data.lat : -1000,
-      long: matterResult.data.lon ? matterResult.data.long : -1000,
+      lat: matterResult.data.lat ? matterResult.data.lat : "-1000",
+      long: matterResult.data.lon ? matterResult.data.long : "-1000",
       tags: matterResult.data.tags,
       published: matterResult.data.published ? matterResult.data.published : true,
       archived: matterResult.data.archived ? matterResult.data.archived : false,
@@ -140,11 +140,11 @@ const insertAuthor = async (authors) => {
  * Upsert opportunities
  * @param opportunities - Opportunities to upsert
  */
-const insertOpportunity = async (opportunities) => {
+const insertPosting = async (opportunities) => {
   const oppUpserts = [];
   for (let opp of opportunities) {
     const { slug, ...rest } = opp;
-    const oppUpsert = await prisma.opportunity.upsert({
+    const oppUpsert = await prisma.posting.upsert({
       where: { slug: slug },
       update: { ...rest },
       create: { slug, ...rest },

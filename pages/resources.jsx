@@ -1,14 +1,16 @@
 import Head from "next/head";
 import { PageLayout } from "../sections/hoc";
 import { ResourcesSection } from "../sections/resources";
+import { Title } from "../components";
 
-export default function About({ ...props }) {
+export default function Resources({ ...props }) {
   return (
     <div {...props}>
       <Head>
-        <title>PuMP</title>
+        <title>PuMP | Resources</title>
       </Head>
       <PageLayout>
+        <Title title="Student Resources" />
         <ResourcesSection />
       </PageLayout>
     </div>

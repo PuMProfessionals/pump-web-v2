@@ -26,7 +26,7 @@ export const ResourcesSection = () => {
         {
           color: "yellow",
           text: "Join our Community of 800+ Students",
-          link: "/resources/uas",
+          link: "resources/" /* TODO: change to Discord server invite link */,
         },
         {
           color: "white",
@@ -53,16 +53,18 @@ export const ResourcesSection = () => {
     },
   ];
 
-  return resources.map((resource) => (
-    <StudentResource
-      key={resource.titleText}
-      titleText={resource.titleText}
-      descriptionText={resource.descriptionText}
-      buttons={resource.buttons}
-      graphic={resource.graphic}
-      graphicWidth={resource.graphicWidth}
-      graphicHeight={resource.graphicHeight}
-      isGraphicLeft={resource.isGraphicLeft}
-    />
-  ));
+  return resources.map(
+    (resource /* TODO: add wrapper to increase margin around resources */) => (
+      <StudentResource
+        key={resource.titleText}
+        titleText={resource.titleText}
+        descriptionText={resource.descriptionText}
+        buttons={resource.buttons}
+        graphic={resource.graphic}
+        graphicWidth={resource.graphicWidth}
+        graphicHeight={resource.graphicHeight}
+        isGraphicLeft={resource.isGraphicLeft}
+      />
+    )
+  );
 };

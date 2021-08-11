@@ -7,28 +7,42 @@ import { Text } from "./Text";
 import { Button } from "./Button";
 import { media } from "../utils";
 
+/**
+ *
+ * Student Resource Component
+ * @prop {string} titleText - resource title
+ * @prop {string} descriptionText - resource description
+ * @prop {array} buttons - array of buttons with resource relevant links
+ * |- each button element should have text and link keys
+ * @prop {object} graphic - resource graphic
+ * @prop {number} graphicWidth - width of resource graphic, default 400
+ * @prop {number} graphicHeight - height of resource graphic, default 350
+ * @prop {boolean} isGraphicLeft - specify the location of the resource graphic
+ * |- default true (image on left, text on right)
+ * @prop {boolean} isCard - should the text + buttons look like a card, default false
+ * |- box shadow and rounded borders
+ */
+
 export const StudentResource = ({
   titleText,
   descriptionText,
   buttons,
   graphic,
-  graphicWidth = 500,
+  graphicWidth = 400,
   graphicHeight = 350,
   isGraphicLeft = true,
+  isCard = false,
   ...props
 }) => (
-  <Wrapper isGraphicLeft={isGraphicLeft} {...props}>
-    <Graphic
-      src={graphic}
-      width={graphicWidth}
-      height={graphicHeight}
-      isGraphicLeft={isGraphicLeft}
-    />
-    <InfoSection isGraphicLeft={isGraphicLeft}>
+  <Wrapper isgraphicleft={isGraphicLeft} iscard={isCard} {...props}>
+    <Graphic isgraphicleft={isGraphicLeft ? 1 : 0}>
+      <Image src={graphic} width={graphicWidth} height={graphicHeight} />
+    </Graphic>
+    <InfoSection isgraphicleft={isGraphicLeft} iscard={isCard}>
       <Title>{titleText}</Title>
       <Text>{descriptionText}</Text>
       {!!buttons && (
-        <ButtonSection isGraphicLeft={isGraphicLeft}>
+        <ButtonSection isgraphicleft={isGraphicLeft}>
           {buttons.map((button) => (
             <Link key={button.text} href={button.link}>
               <a>
@@ -46,33 +60,33 @@ const Title = styled.h2`
   ${({ theme }) => `
       font-family: ${theme.font.josefin};
       color: ${theme.colors.black};
-  `};
-  margin: 0;
+      `};
+  margin: 3% 0 0;
 `;
 
-const Graphic = styled(Image)`
+const Graphic = styled.div`
   /* TODO: curved border ? */
-  ${({ isGraphicLeft }) => `
-    ${isGraphicLeft ? "margin-left: 5%;" : "margin-right: 5%;"}
-  `};
+  ${({ isgraphicleft }) => `
+      ${isgraphicleft ? "margin-right: 5%;" : "margin-left: 5%;"}
+      `};
   ${media(
-    "800",
+    "tablet",
     `
-      width: 70%;
+      margin: 0;
     `
   )}
 `;
 
 const Wrapper = styled.div`
-  padding: 8vh 0;
+  padding: 4vh 0;
   display: flex;
-  ${({ isGraphicLeft }) => `
-    flex-direction: ${isGraphicLeft ? "row" : "row-reverse"}
-  `};
+  ${({ isgraphicleft }) => `
+      flex-direction: ${isgraphicleft ? "row" : "row-reverse"}
+      `};
   align-items: center;
   justify-content: center;
   ${media(
-    800,
+    "tablet",
     `
       flex-direction: column;
     `
@@ -83,28 +97,34 @@ const InfoSection = styled.div`
   width: 35%;
   display: flex;
   flex-direction: column;
-  ${({ isGraphicLeft }) => `
-    text-align: ${isGraphicLeft ? "left" : "right"};
-  `};
-  margin: 0% 5%;
+  ${({ isgraphicleft, iscard, theme }) => `
+      text-align: ${isgraphicleft ? "left" : "right"};
+      box-shadow: ${iscard ? `${theme.boxShadow.topBottom}` : "none"};
+      border-radius: ${theme.radius.border};
+      `};
+  padding: 3%;
   ${media(
-    800,
+    "tablet",
     `
       text-align: center;
-      margin: 5% 0 0;
       width: 85%;
+      margin: 1rem 0 0;
     `
-  )}/* TODO: change text color based on background */
+  )};
+   {
+    /* TODO: change text color based on background */
+  }
 `;
 
 const ButtonSection = styled.div`
   display: flex;
-  ${({ isGraphicLeft }) => `
-    justify-content: ${isGraphicLeft ? "flex-start" : "flex-end"}
-  `};
+  ${({ isgraphicleft }) =>
+    `
+      justify-content: ${isgraphicleft ? "flex-start" : "flex-end"}
+    `};
   flex-flow: row wrap;
   ${media(
-    800,
+    "tablet",
     `
       justify-content: center;
     `
@@ -123,4 +143,5 @@ StudentResource.propTypes = {
   graphicWidth: PropTypes.number,
   graphicHeight: PropTypes.number,
   isGraphicLeft: PropTypes.bool,
+  isCard: PropTypes.bool,
 };
