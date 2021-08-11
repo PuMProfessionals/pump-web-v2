@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { StudentResource, SectionWrapper } from "../../components";
 import SampleGraphic from "../../public/home/top-section-graphic.svg";
 import { media } from "../../utils";
+import { baseTheme } from "../../theme";
 
 /* TODO-2022: Edit Resources to fit SectionWrapper */
 export const ResourcesSection = () => {
@@ -85,7 +86,7 @@ export const ResourcesSection = () => {
           graphicWidth={resources[1].graphicWidth}
           graphicHeight={resources[1].graphicHeight}
           isGraphicLeft={resources[1].isGraphicLeft}
-          textColor="white"
+          textColor={baseTheme.colors.yellow}
         />
       </SectionWrapper>
       <StudentResource

@@ -59,6 +59,7 @@ export default function Contact() {
             descriptionText="A representative will reply back to your email within 24 hours. Feel free to contact us about our initiatives, joining the team, becoming a partner, or anything else you want to chat about!"
           />
         </Wrapper>
+        {/* TODO: change mobilePath and threshold once blobcs are available */}
         <SectionWrapper
           backgroundPath="/contact/contact-sponsorships-large.svg"
           mobilePath="/contact/contact-sponsorships-large.svg"
@@ -146,6 +147,12 @@ const EmailText = styled.a`
         transition: ${theme.transitions.cubicBezier};
     }
   `}
+  ${media(
+    500,
+    `
+      font-size: 1rem;
+    `
+  )};
 `;
 const SText = styled(Text)`
   ${({ theme }) => `

@@ -115,7 +115,7 @@ const TitleSection = styled.div`
 
 const InfoSection = styled.div`
   display: flex;
-  padding-left: 0 5%;
+  padding: 0 5%;
   align-items: center;
   ${media(
     800,

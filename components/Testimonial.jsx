@@ -15,7 +15,7 @@ export const Testimonial = ({ testimonial, author, ...props }) => {
 
 const Wrapper = styled.div`
   width: 60%;
-  padding: 5%;
+  padding: 3%;
   border-radius: 44px;
   display: flex;
   flex-direction: column;
@@ -25,10 +25,21 @@ const Wrapper = styled.div`
         background-color: ${theme.colors.navy};
     `}
   ${media(
+    1000,
+    `
+            padding: 7%;
+        `
+  )};
+  ${media(
     500,
     `
             width: 80%;
-            padding: 8%;
+        `
+  )};
+  ${media(
+    400,
+    `
+            padding: 12%;
         `
   )};
 `;

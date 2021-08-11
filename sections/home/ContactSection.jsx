@@ -26,7 +26,7 @@ export const ContactSection = () => {
 };
 
 const Wrapper = styled.div`
-  padding: 5% 5% 5% 5%;
+  padding: 5%;
   display: flex;
   flex-direction: row;
   align-items: center;

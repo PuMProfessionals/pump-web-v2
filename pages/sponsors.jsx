@@ -14,7 +14,7 @@ import DaanGoLab from "../public/sponsors/DaanGoLab.png";
 import DavidsTea from "../public/sponsors/DavidsTea.png";
 import GingerCupcakeDesserts from "../public/sponsors/GingerCupcakeDesserts.png";
 import Kelseys from "../public/sponsors/Kelseys.png";
-import Maker from "../public/sponsors/maker.png";
+import Maker from "../public/sponsors/Maker.png";
 import MDConsultants from "../public/sponsors/MDConsultants.png";
 import Mediclo from "../public/sponsors/Mediclo.png";
 import Microbi from "../public/sponsors/Microbi.png";
