@@ -47,9 +47,9 @@ export default function Home() {
           style={{ padding: "0 5vh 10vh 5vh" }}
         />
         <SectionWrapper
-            backgroundPath="/home/contact-section-large.svg"
-            mobilePath="/home/contact-section-mobile.svg"
-            mobileThreshold={1000}
+          backgroundPath="/home/contact-section-large.svg"
+          mobilePath="/home/contact-section-mobile.svg"
+          mobileThreshold={1000}
         >
           <ContactSection />
         </SectionWrapper>

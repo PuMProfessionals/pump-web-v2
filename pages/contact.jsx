@@ -60,29 +60,29 @@ export default function Contact() {
           />
         </Wrapper>
         <SectionWrapper
-            backgroundPath="/contact/contact-sponsorships-large.svg"
-            mobilePath="/contact/contact-sponsorships-large.svg"
-            mobileThreshold={1000}
-          >
-            <SponsorshipWrapper>
-              <SponsorshipText>
-                For sponsorships, email&nbsp;
-                <SponsorshipsBreak />
-                <EmailText href="mailto:sponsorships@pumprofessionals.org">
-                  sponsorships@pumprofessionals.org
-                </EmailText>
-              </SponsorshipText>
-              <SponsorshipText>or</SponsorshipText>
-              <div style={{ margin: "30px auto" }}>
-                <Button>
-                  <Link href="/sponsors">
-                    <a style={{ color: baseTheme.colors.navy, fontWeight: "bold" }}>
-                      Visit the Sponsors page
-                    </a>
-                  </Link>
-                </Button>
-              </div>
-            </SponsorshipWrapper>
+          backgroundPath="/contact/contact-sponsorships-large.svg"
+          mobilePath="/contact/contact-sponsorships-large.svg"
+          mobileThreshold={1000}
+        >
+          <SponsorshipWrapper>
+            <SponsorshipText>
+              For sponsorships, email&nbsp;
+              <SponsorshipsBreak />
+              <EmailText href="mailto:sponsorships@pumprofessionals.org">
+                sponsorships@pumprofessionals.org
+              </EmailText>
+            </SponsorshipText>
+            <SponsorshipText>or</SponsorshipText>
+            <div style={{ margin: "30px auto" }}>
+              <Button>
+                <Link href="/sponsors">
+                  <a style={{ color: baseTheme.colors.navy, fontWeight: "bold" }}>
+                    Visit the Sponsors page
+                  </a>
+                </Link>
+              </Button>
+            </div>
+          </SponsorshipWrapper>
         </SectionWrapper>
       </PageLayout>
     </div>
