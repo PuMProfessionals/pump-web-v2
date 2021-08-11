@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Instagram from "../public/contact/ig-outline.svg";
 import Email from "../public/contact/email-outline.svg";
 import Facebook from "../public/contact/fb-outline.svg";
-import { Title, ContactForm, Text, Button } from "../components";
+import { Title, ContactForm, Text, Button, SectionWrapper } from "../components";
 import { PageLayout } from "../sections/hoc";
 import { baseTheme } from "../theme";
 import { CONSTANTS, media } from "../utils";
@@ -58,26 +58,32 @@ export default function Contact() {
             title="Or, contact us directly!"
             descriptionText="A representative will reply back to your email within 24 hours. Feel free to contact us about our initiatives, joining the team, becoming a partner, or anything else you want to chat about!"
           />
-          <SponsorshipWrapper>
-            <SponsorshipText>
-              For sponsorships, email&nbsp;
-              <SponsorshipsBreak />
-              <EmailText href="mailto:sponsorships@pumprofessionals.org">
-                sponsorships@pumprofessionals.org
-              </EmailText>
-            </SponsorshipText>
-            <SponsorshipText>or</SponsorshipText>
-            <div style={{ margin: "30px auto" }}>
-              <Button>
-                <Link href="/sponsors">
-                  <a style={{ color: baseTheme.colors.navy, fontWeight: "bold" }}>
-                    Visit the Sponsors page
-                  </a>
-                </Link>
-              </Button>
-            </div>
-          </SponsorshipWrapper>
         </Wrapper>
+        <SectionWrapper
+            backgroundPath="/contact/contact-sponsorships-large.svg"
+            mobilePath="/contact/contact-sponsorships-large.svg"
+            mobileThreshold={1000}
+          >
+            <SponsorshipWrapper>
+              <SponsorshipText>
+                For sponsorships, email&nbsp;
+                <SponsorshipsBreak />
+                <EmailText href="mailto:sponsorships@pumprofessionals.org">
+                  sponsorships@pumprofessionals.org
+                </EmailText>
+              </SponsorshipText>
+              <SponsorshipText>or</SponsorshipText>
+              <div style={{ margin: "30px auto" }}>
+                <Button>
+                  <Link href="/sponsors">
+                    <a style={{ color: baseTheme.colors.navy, fontWeight: "bold" }}>
+                      Visit the Sponsors page
+                    </a>
+                  </Link>
+                </Button>
+              </div>
+            </SponsorshipWrapper>
+        </SectionWrapper>
       </PageLayout>
     </div>
   );
@@ -119,7 +125,7 @@ const InfoWrapper = styled.div`
 `;
 const SponsorshipWrapper = styled.div`
   display: flex;
-  padding-top: 8vh;
+  padding: 12% 0 5% 0;
   flex-direction: column;
 `;
 const SponsorshipText = styled(Text)`
@@ -129,8 +135,7 @@ const SponsorshipText = styled(Text)`
   margin-bottom: -10px;
   ${({ theme }) => `
     font-family: ${theme.font.josefin};
-    {/* TODO: CHANGE TO WHITE WITH BLOB*/}
-    color: ${theme.colors.navy};
+    color: ${theme.colors.white};
   `}
 `;
 const EmailText = styled.a`

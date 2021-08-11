@@ -119,6 +119,7 @@ const LogoContainer = styled.div`
 const Container = styled.div`
   display: flex;
   align-items: center;
+  margin-top: 30px;
   ${media(
     "tablet",
     `

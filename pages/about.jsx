@@ -113,8 +113,8 @@ const torontoBoard = [
     avatar: Emily,
     position: "Secretary",
     imageWidth: 215,
-    imageHeight: 250,
-    cardHeight: 370,
+    imageHeight: 260,
+    cardHeight: 380,
     fontColor: baseTheme.colors.turquoise,
   },
 ];

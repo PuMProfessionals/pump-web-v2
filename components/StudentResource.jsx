@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import { Text } from "./Text";
 import { Button } from "./Button";
 import { media } from "../utils";
+import { baseTheme } from "../theme";
 
 /**
  *
@@ -33,6 +34,7 @@ export const StudentResource = ({
   graphicHeight = 350,
   isGraphicLeft = true,
   isCard = false,
+  textColor = baseTheme.colors.navy,
   ...props
 }) => (
   <Wrapper isgraphicleft={isGraphicLeft} iscard={isCard} {...props}>
@@ -40,8 +42,8 @@ export const StudentResource = ({
       <Image src={graphic} width={graphicWidth} height={graphicHeight} />
     </Graphic>
     <InfoSection isgraphicleft={isGraphicLeft} iscard={isCard}>
-      <Title>{titleText}</Title>
-      <Text>{descriptionText}</Text>
+      <Title textcolor={textColor}>{titleText}</Title>
+      <SText textcolor={textColor}>{descriptionText}</SText>
       {!!buttons && (
         <ButtonSection isgraphicleft={isGraphicLeft}>
           {buttons.map((button) => {
@@ -68,13 +70,17 @@ export const StudentResource = ({
 );
 
 const Title = styled.h2`
-  ${({ theme }) => `
+  ${({ theme, textcolor }) => `
       font-family: ${theme.font.josefin};
-      color: ${theme.colors.black};
+      color: ${textcolor};
       `};
   margin: 3% 0 0;
 `;
-
+const SText = styled(Text)`
+  ${({ textcolor }) => `
+      color: ${textcolor};
+      `};
+`;
 const Graphic = styled.div`
   /* TODO: curved border ? */
   ${({ isgraphicleft }) => `

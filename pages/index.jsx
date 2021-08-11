@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styled from "styled-components";
 
-import { Video, TestimonialCarousel, Text } from "../components";
+import { Video, TestimonialCarousel, Text, SectionWrapper } from "../components";
 import { PageLayout } from "../sections/hoc";
 import { TopSection, WhatsHappening, ContactSection } from "../sections/home";
 import { baseTheme } from "../theme";
@@ -46,7 +46,13 @@ export default function Home() {
           slides={testimonials}
           style={{ padding: "0 5vh 10vh 5vh" }}
         />
-        <ContactSection />
+        <SectionWrapper
+            backgroundPath="/home/contact-section-large.svg"
+            mobilePath="/home/contact-section-mobile.svg"
+            mobileThreshold={1000}
+        >
+          <ContactSection />
+        </SectionWrapper>
       </PageLayout>
     </div>
   );

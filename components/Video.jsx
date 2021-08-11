@@ -38,12 +38,11 @@ const SIframe = styled.iframe`
   )};
 `;
 const Wrapper = styled.div`
-  padding: 2vh 0;
-  margin-bottom: 10vh;
+  padding: 2% 0 10% 0;
   ${media(
     750,
     `
-      margin-bottom: 12vh;
+      padding-bottom: 12%;
     `
   )};
 `;
