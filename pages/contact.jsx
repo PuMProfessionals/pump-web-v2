@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/Link";
 import styled from "styled-components";
 
 import Instagram from "../public/contact/ig-outline.svg";
@@ -59,7 +60,7 @@ export default function Contact() {
           />
           <SponsorshipWrapper>
               <SponsorshipText>
-              For sponsorships, email&nbsp;
+              For sponsorships, email &nbsp;
               <EmailText href="mailto:sponsorships@pumprofessionals.org">
                 sponsorships@pumprofessionals.org
               </EmailText>
@@ -69,7 +70,11 @@ export default function Contact() {
               </SponsorshipText>
               <div style={{ margin: "30px auto" }}>
                 <Button>
-                  Visit the Sponsors page
+                  <Link href="/sponsors">
+                  <a style={{ color: baseTheme.colors.navy, fontWeight: "bold" }}>
+                    Visit the Sponsors page
+                  </a>
+                  </Link>
                 </Button>
               </div>
           </SponsorshipWrapper>
@@ -90,7 +95,7 @@ const ContactWrapper = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   ${media(
-    500,
+    "tablet",
     `
       flex-direction: column;
     `
@@ -101,6 +106,13 @@ const InfoWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-bottom: 8%;
+  text-align: center;
+  ${({ theme }) => `
+    :hover {
+          transform: scale(1.1);
+          transition: ${theme.transitions.cubicBezier};
+    }
+  `};
 `;
 const SponsorshipWrapper = styled.div`
     display: flex;
@@ -119,6 +131,7 @@ const SponsorshipText = styled(Text)`
   `}
 `;
 const EmailText = styled.a`
+  margin-left: -1%;
   ${({ theme }) => `
     color: ${theme.colors.yellow};
     :hover {
@@ -130,11 +143,6 @@ const EmailText = styled.a`
 const SText = styled(Text)`
   ${({ theme }) => `
     font-family: ${theme.font.josefin};
-    :hover {
-        transform: scale(1.1);
-        font-weight: 600;
-        transition: ${theme.transitions.cubicBezier};
-    }
   `}
 `;
 const Subtitle = styled.h2`
