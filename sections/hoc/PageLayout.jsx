@@ -22,6 +22,9 @@ export const PageLayout = ({ children, ...props }) => {
 };
 
 const Wrapper = styled.div`
+  margin: 0;
+  padding: 0;
+  background-position: 0 -4vh;
   @media only screen and (min-width: 2000px) {
     max-width: 1600px;
     margin: auto;

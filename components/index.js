@@ -13,3 +13,4 @@ export { Loading } from "./Loading";
 export { ImageCard } from "./ImageCard";
 export { ImageCardCarousel } from "./ImageCardCarousel.jsx";
 export { Title } from "./Title";
+export { SectionWrapper } from "./SectionWrapper";
