@@ -27,7 +27,7 @@ export const ResourcesSection = () => {
           color: "yellow",
           text: "Join our Community of 800+ Students",
           link: "https://discord.com/invite/vpyF7nCtkm",
-          external: true
+          external: true,
         },
         {
           color: "white",
