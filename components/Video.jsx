@@ -33,17 +33,17 @@ const SIframe = styled.iframe`
     750,
     `
       width: 80%;
-      height: 65vh;
+      height: 50vw;
     `
   )};
 `;
 const Wrapper = styled.div`
   padding: 2vh 0;
-  margin-bottom: 15vh;
+  margin-bottom: 10vh;
   ${media(
     750,
     `
-      margin-bottom: 25vh;
+      margin-bottom: 12vh;
     `
   )};
 `;

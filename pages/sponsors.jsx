@@ -34,6 +34,7 @@ import StudentsForHerdImmunity from "../public/sponsors/StudentsForHerdImmunity.
 
 import { Title, Text } from "../components";
 import { PageLayout } from "../sections/hoc";
+import { ImpactSection } from "../sections/sponsors";
 import { media } from "../utils";
 
 const sponsors = [
@@ -225,6 +226,7 @@ export default function Sponsors() {
       <PageLayout>
         <Title title="Sponsors" />
         <Wrapper>
+          <ImpactSection style={{ paddingTop: "10vh" }} />
           <SponsorsWrapper>
             <Subtitle>
               A Thank You To Our Sponsors
@@ -267,7 +269,7 @@ export default function Sponsors() {
 const Wrapper = styled.div`
   padding: 0 2%;
   ${media(
-    1400,
+    "tablet",
     `   
             padding: 0 6%;
         `
