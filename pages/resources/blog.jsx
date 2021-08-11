@@ -89,12 +89,12 @@ export default function Blog({ blogs, ...props }) {
 const Wrapper = styled.div``;
 
 export async function getStaticProps() {
-  let blogs;
-  try {
+let blogs;
+try {
     blogs = await prisma.post.findMany();
   } catch (e) {
     blogs = posts.sort((post1, post2) => (post1.date > post2.date ? 1 : -1));
-  }
+}
 
   return {
     props: { blogs },
