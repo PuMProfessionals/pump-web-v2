@@ -5,6 +5,7 @@ import Lucy from "../public/members/lucy-zhao.png";
 import Asma from "../public/members/asma-khamis.png";
 import Shiro from "../public/members/shiro-puwa.png";
 import RachelLin from "../public/members/rachel-lin.png";
+import Ellie from "../public/members/ellie-tiliakou.jpg";
 import Dhruv from "../public/members/dhruv-dhall.png";
 import Kaya from "../public/members/kaya-januszewska.png";
 import Aneeya from "../public/members/aneeya-johal.jpg";
@@ -63,6 +64,7 @@ const nationalBoard = [
   },
   {
     name: "Ellie Tiliakou",
+    avatar: Ellie,
     position: "VP of Regional Operations",
     imageWidth: 240,
     imageHeight: 220,

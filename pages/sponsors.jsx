@@ -213,7 +213,7 @@ const communityPartners = [
   {
     title: "Students for Herd Immunity",
     image: StudentsForHerdImmunity,
-    width: 230,
+    width: 250,
     height: 100,
   },
 ];
@@ -227,7 +227,7 @@ export default function Sponsors() {
       <PageLayout>
         <Title title="Sponsors" />
         <Wrapper>
-          <Subtitle style={{ marginTop: "10vh" }}>Why Sponsor PuMP</Subtitle>
+          <Subtitle style={{ marginTop: "5%" }}>Why Sponsor PuMP</Subtitle>
           <Description>
             Aside from medical-related learning opportunities, youth reaching out to
             PuMP are on the lookout for resources that local businesses can help
@@ -259,7 +259,7 @@ export default function Sponsors() {
               ]}
             />
           </TopWrapper>
-          <div style={{ margin: "10% 5% 0 5%" }}>
+          <div style={{ margin: "8% 5% 0 5%" }}>
             <ContactForm
               title="Become a sponsor"
               descriptionText="A representative will reply back to your email within 24 hours."
@@ -307,10 +307,17 @@ export default function Sponsors() {
 
 const Wrapper = styled.div`
   padding: 0 2%;
+  margin-top: 5%;
   ${media(
     "tablet",
     `   
             padding: 0 6%;
+        `
+  )};
+  ${media(
+    500,
+    `   
+            margin-top: 10%;
         `
   )};
 `;
@@ -318,9 +325,15 @@ const SponsorsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 10% 0;
+  margin: 5% 0;
   justify-content: space-evenly;
   align-items: center;
+  ${media(
+    500,
+    `   
+            margin: 10% 0;
+        `
+  )};
 `;
 const TopWrapper = styled.div`
   margin-top: 10%;

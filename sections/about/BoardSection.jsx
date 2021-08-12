@@ -12,7 +12,9 @@ import { media } from "../../utils";
  * @prop {string} board - Board name
  * @prop {string} boardDescription - Board description: established year and no. of members
  * @prop {string} align - Alignment of the board description (left or right)
- */
+ * @prop {string} textColor - Color of text
+ * @prop {breakpoint} breakpoint - Breakpoint at which background color appears
+*/
 export const BoardSection = ({
   board,
   boardDescription,
@@ -58,6 +60,8 @@ const Wrapper = styled.div`
   ${({ theme, breakpoint }) => `
   		@media (max-width: ${breakpoint}px) {
         background-color: ${theme.colors.greyBlue};
+        border-bottom-right-radius: 72px;
+        border-bottom-left-radius: 72px;
       }
   `};
 `;
