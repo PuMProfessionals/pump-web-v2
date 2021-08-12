@@ -93,9 +93,11 @@ export async function getStaticProps() {
   try {
     blogs = await prisma.post.findMany();
   } catch (e) {
-    blogs = posts
+    blogs = posts;
   }
-  blogs = blogs.sort((post1, post2) => (post1.date > post2.date ? 1 : -1)).filter(post => post.published);
+  blogs = blogs
+    .sort((post1, post2) => (post1.date > post2.date ? 1 : -1))
+    .filter((post) => post.published);
 
   return {
     props: { blogs },
