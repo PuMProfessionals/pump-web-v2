@@ -3,36 +3,58 @@ import { opportunities } from "../../cache/cache";
 
 /*
     params: 
-    - search = search directly for opportunity (posted name)
+    - search = search directly for opportunity (posted name/posting)
+    - city = city this opportunity is found in 
     - posted_date = posted date
-    - address = address (location of opportunity) --> should this be added?
     - tags = tags to filter
 */
 export default async (req, res) => {
   let results;
   try {
-    results = await prisma.posting.findMany(); //good
+    results = await prisma.posting.findMany();
   } catch (e) {
-    results = opportunities; //good
+    results = opportunities;
   }
 
   if (req.query.search) {
     results = results.filter((opp) =>
-      opp.posting_name.toLowerCase().includes(req.query.search)
+      opp.postingName.toLowerCase().includes(req.query.search.toLowerCase())
     );
   }
-  if (req.query.posted_date) {
-    results = results.filter((opp) => opp.posted_date === req.query.posted_date);
-  }
-  if (req.query.address) {
-    results = results.filter((opp) =>
-      opp.address.toLowerCase().includes(req.query.address)
-    );
-  }
+
+  let allResults = [];
+  let filteredResults;
   if (req.query.tags) {
     for (let tag of req.query.tags.split(",")) {
-      results = results.filter((opp) => opp.tags.includes(tag));
+      tag = tag.trim();
+      filteredResults = results.filter((opp) => opp.tags.includes(tag));
+      allResults.push(...filteredResults);
     }
+    results = allResults;
+  }
+
+  allResults = [];
+  if (req.query.city) { //include the option of anywhere???
+    for (let city of req.query.city.split(",")) {
+      city = city.trim().toLowerCase();
+      filteredResults = results.filter((opp) =>
+        opp.address.toLowerCase().includes(city) || opp.address.toLowerCase() === "anywhere"
+      );
+      allResults.push(...filteredResults);
+    }
+    results = allResults;
+  }
+
+  allResults = [];
+  if (req.query.posted_date) {
+    for (let posted_date of req.query.posted_date.split(",")) {
+      posted_date = posted_date.trim();
+      filteredResults = results.filter(
+        (opp) => opp.postedDate.replace(" ", "") === posted_date
+      );
+      allResults.push(...filteredResults);
+    }
+    results = allResults;
   }
 
   res.statusCode = 200;
