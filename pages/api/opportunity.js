@@ -60,6 +60,8 @@ export default async (req, res) => {
     results = allResults;
   }
 
+  results = results.filter((opp) => opp.published == true);
+
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify({ results }));
