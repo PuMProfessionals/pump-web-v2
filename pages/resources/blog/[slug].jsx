@@ -1,11 +1,10 @@
 import Head from "next/head";
-import styled from "styled-components";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 
 import { prisma } from "../../../prisma/index";
 import { posts } from "../../../cache/cache";
-import { Title } from "../../../components";
+import { Title, MDXWrapper } from "../../../components";
 import { PageLayout } from "../../../sections/hoc";
 import { getSlug } from "../../../utils/markdownUtils";
 
@@ -17,9 +16,9 @@ const BlogsPage = ({ source, frontMatter }) => {
       </Head>
       <PageLayout>
         <Title title={frontMatter.title} />
-        <Wrapper>
+        <MDXWrapper>
           <MDXRemote {...source} />
-        </Wrapper>
+        </MDXWrapper>
       </PageLayout>
     </div>
   );
@@ -60,5 +59,3 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
-
-const Wrapper = styled.div``;

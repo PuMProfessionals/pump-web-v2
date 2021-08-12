@@ -16,3 +16,4 @@ export { Title } from "./Title";
 export { Testimonial } from "./Testimonial";
 export { TestimonialCarousel } from "./TestimonialCarousel";
 export { SectionWrapper } from "./SectionWrapper";
+export { MDXWrapper } from "./MDXWrapper";
