@@ -5,7 +5,7 @@ import Lucy from "../public/members/lucy-zhao.png";
 import Asma from "../public/members/asma-khamis.png";
 import Shiro from "../public/members/shiro-puwa.png";
 import RachelLin from "../public/members/rachel-lin.png";
-import Ellie from "../public/members/ellie-tiliakou.jpg";
+import Ellie from "../public/members/ellie-tiliakou.png";
 import Dhruv from "../public/members/dhruv-dhall.png";
 import Kaya from "../public/members/kaya-januszewska.png";
 import Aneeya from "../public/members/aneeya-johal.jpg";
@@ -49,8 +49,8 @@ const nationalBoard = [
     avatar: Shiro,
     position: "VP of National Operations",
     imageWidth: 240,
-    imageHeight: 220,
-    cardHeight: 370,
+    imageHeight: 230,
+    cardHeight: 380,
     fontColor: baseTheme.colors.brightBlue,
   },
   {
