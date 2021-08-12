@@ -14,7 +14,7 @@ import { media } from "../../utils";
  * @prop {string} align - Alignment of the board description (left or right)
  * @prop {string} textColor - Color of text
  * @prop {breakpoint} breakpoint - Breakpoint at which background color appears
-*/
+ */
 export const BoardSection = ({
   board,
   boardDescription,
