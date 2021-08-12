@@ -6,7 +6,7 @@ import { toast, ToastContainer } from "react-toastify";
 import styled from "styled-components";
 
 import { prisma } from "../../prisma/index";
-import { Input } from "../../components";
+import { Input, Loading } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
 import { Title } from "../../components";
@@ -25,28 +25,30 @@ const customError = () => (
 export default function Opportunities({ opps, ...props }) {
   const [searchParameter, setSearchParameter] = useState("");
   const [oppPosts, setOppPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    opps.sort((opp1, opp2) => (opp1.date > opp2.date ? 1 : -1));
+    opps.sort((opp1, opp2) => (opp1.postedDate > opp2.postedDate ? 1 : -1));
     setOppPosts(opps);
+    setIsLoading(false);
   }, []);
 
   const handleChange = (e) => {
     setSearchParameter(e.target.value);
-    if (searchParameter.length >= 2) {
-      axios
-        .get(`/api/opportunity?search=${e.target.value}`)
-        .then((res) => {
-          setOppPosts(res.data.results);
-        })
-        .catch(() => {
-          toast.error(customError);
-        });
-    }
+    setIsLoading(true);
+    axios
+      .get(`/api/opportunity?search=${e.target.value}`)
+      .then((res) => {
+        setOppPosts(res.data.results);
+        setIsLoading(false);
+      })
+      .catch(() => {
+        toast.error(customError);
+      });
   };
   return (
     <div>
       <Head>
-        <title>PuMP | Direct</title>
+        <title>PuMP Opportunities</title>
       </Head>
       <PageLayout>
         <ToastContainer />
@@ -64,14 +66,20 @@ export default function Opportunities({ opps, ...props }) {
             value={searchParameter}
             onChange={handleChange}
           />
-          {!!oppPosts &&
-            oppPosts.map(({ postingName, slug }) => (
-              <div key={postingName}>
-                <Link href={`/resources/opportunity/${slug}`}>
-                  <a style={{ color: baseTheme.colors.navy }}>{postingName}</a>
-                </Link>
-              </div>
-            ))}
+          {isLoading ? (
+            <Loading color={baseTheme.colors.navy} />
+          ) : (
+            <>
+              {!!oppPosts &&
+                oppPosts.map(({ postingName, slug }) => (
+                  <div key={postingName}>
+                    <Link href={`/resources/opportunities/${slug}`}>
+                      <a style={{ color: baseTheme.colors.navy }}>{postingName}</a>
+                    </Link>
+                  </div>
+                ))}
+            </>
+          )}
         </Wrapper>
       </PageLayout>
     </div>
@@ -81,8 +89,12 @@ export default function Opportunities({ opps, ...props }) {
 const Wrapper = styled.div``;
 
 export async function getStaticProps() {
-  let opps = await prisma.posting.findMany();
-  opps = opps.sort((opp1, opp2) => (opp1.postedDate > opp2.postedDate ? 1 : -1));
+  let opps;
+  try {
+    opps = await prisma.posting.findMany();
+  } catch (e) {
+    opps = opps.sort((opp1, opp2) => (opp1.postedDate > opp2.postedDate ? 1 : -1));
+  }
 
   return {
     props: { opps },

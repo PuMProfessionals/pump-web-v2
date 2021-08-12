@@ -34,11 +34,14 @@ export default async (req, res) => {
   }
 
   allResults = [];
-  if (req.query.city) { //include the option of anywhere???
+  if (req.query.city) {
+    //include the option of anywhere???
     for (let city of req.query.city.split(",")) {
       city = city.trim().toLowerCase();
-      filteredResults = results.filter((opp) =>
-        opp.address.toLowerCase().includes(city) || opp.address.toLowerCase() === "anywhere"
+      filteredResults = results.filter(
+        (opp) =>
+          opp.address.toLowerCase().includes(city) ||
+          opp.address.toLowerCase() === "anywhere"
       );
       allResults.push(...filteredResults);
     }

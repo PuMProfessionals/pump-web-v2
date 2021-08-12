@@ -4,10 +4,10 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 
 import { prisma } from "../../../prisma/index";
-import { Title } from "../../components";
-import { PageLayout } from "../../sections/hoc";
+import { Title } from "../../../components";
+import { PageLayout } from "../../../sections/hoc";
 import { opportunities } from "../../../cache/cache";
-import { getSlug } from "../../utils/markdownUtils";
+import { getSlug } from "../../../utils/markdownUtils";
 
 const OpportunitiesPage = ({ source, frontMatter }) => {
   return (
