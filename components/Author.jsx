@@ -1,23 +1,41 @@
 import Image from "next/image";
 import styled from "styled-components";
 
-import ProfilePicture from "../public/blog/pfp.svg";
+import { Text } from "../components";
+import { media } from "../utils";
 
-export const Author = () => (
+export const Author = ({ avatar, names }) => (
   <Wrapper>
-    <Image src={ProfilePicture} /> {/* margin between text and profile picture */}
-    <p>
-      author&apos;s name, author&apos;s name, author&apos;s name, author&apos;s name
-    </p>
-    {/* Change author text to Text component*/}
+    <Avatar>
+      <Image src={avatar} width={50} height={50} />
+    </Avatar>
+    <Names>
+      {names.length == 1 ? (
+        <Text>{names}</Text>
+      ) : (
+        <Text>{names.join(", ").toString()}</Text>
+      )}
+    </Names>
   </Wrapper>
 );
 
 const Wrapper = styled.div`
   display: flex;
-  background-color: lightblue;
-   {
-    /* margin around section*/
-  }
-  width: 20%;
+  align-items: center;
+  width: 25%;
+  padding: 0.5rem;
+  ${media(
+    "700",
+    `
+      width: 60%;
+      `
+  )};
+`;
+
+const Avatar = styled.div`
+  margin: 2%;
+`;
+
+const Names = styled.div`
+  word-break: break-work;
 `;
