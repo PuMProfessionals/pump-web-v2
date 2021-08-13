@@ -86,7 +86,7 @@ const TitleSection = styled.div`
   ${media(
     600,
     `
-      width: 80%;
+      width: 70%;
     `
   )}
 `;
