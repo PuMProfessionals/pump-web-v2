@@ -74,7 +74,7 @@ const BackArrow = styled.div`
     600,
     `
       left: 8%;
-      top: 80px;
+      // top: 80px;
     `
   )}
 `;
