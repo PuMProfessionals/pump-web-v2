@@ -48,6 +48,8 @@ export const getStaticPaths = async () => {
     postPaths = posts;
   }
 
+  postPaths = postPaths.filter(postPath => postPath.published);
+
   const paths = postPaths.map((post) => ({
     params: {
       slug: post.slug,
