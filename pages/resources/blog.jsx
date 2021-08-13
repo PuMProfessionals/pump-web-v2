@@ -11,7 +11,7 @@ import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
 import { Title, Author } from "../../components";
 import SpeechBubble from "../../public/blog/written-speech-bubble.svg";
-import ProfilePicture from "../../public/blog/pfp.svg";
+import DefaultProfile from "../../public/about/tiedye-rect.png"; 
 
 const customError = () => (
   <div>
@@ -67,7 +67,7 @@ export default function Blog({ posts, ...props }) {
             value={searchParameter}
             onChange={handleChange}
           />
-          <Author avatar={ProfilePicture} names={["Helen Yin", "Jocelyn Liu"]} />
+          <Author avatar={DefaultProfile} names={["Helen Yin", "Jocelyn Liu"]} />
           {isLoading ? (
             <Loading color={baseTheme.colors.navy} />
           ) : (

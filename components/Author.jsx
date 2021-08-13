@@ -16,11 +16,11 @@ import { media } from "../utils";
 
 export const Author = ({ avatar, names }) => (
   <Wrapper>
-    <Avatar>
-      <Image src={avatar} width={50} height={50} />
-    </Avatar>
+    <AvatarSection>
+      <Avatar src={avatar} width={50} height={50} />
+    </AvatarSection>
     <Names>
-      {names.length == 1 ? (
+      {names.length === 1 ? (
         <Text>{names}</Text>
       ) : (
         <Text>{names.join(", ").toString()}</Text>
@@ -42,8 +42,12 @@ const Wrapper = styled.div`
   )};
 `;
 
-const Avatar = styled.div`
+const AvatarSection = styled.div`
   margin: 2%;
+`;
+
+const Avatar = styled(Image)`
+  border-radius: 50%;
 `;
 
 const Names = styled.div`
