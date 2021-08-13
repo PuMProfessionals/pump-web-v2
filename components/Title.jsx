@@ -73,7 +73,7 @@ const BackArrow = styled.div`
   ${media(
     600,
     `
-      left: 8%;
+      left: 6%;
       // top: 80px;
     `
   )}
