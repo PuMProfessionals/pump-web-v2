@@ -15,7 +15,6 @@ const main = async () => {
   await insertPost(posts);
   await insertAuthor(authors);
   await insertPosting(postings);
-  console.log("hello");
 };
 
 /*

@@ -5,7 +5,6 @@ import { opportunities } from "../../cache/cache";
     params: 
     - search = search directly for opportunity (posted name/posting)
     - city = city this opportunity is found in 
-    - posted_date = posted date
     - tags = tags to filter
 */
 export default async (req, res) => {
@@ -35,32 +34,21 @@ export default async (req, res) => {
 
   allResults = [];
   if (req.query.city) {
-    //include the option of anywhere???
+    filteredResults = results.filter(
+      (opp) => opp.address.toLowerCase() === "anywhere"
+    );
+    allResults.push(...filteredResults);
     for (let city of req.query.city.split(",")) {
       city = city.trim().toLowerCase();
-      filteredResults = results.filter(
-        (opp) =>
-          opp.address.toLowerCase().includes(city) ||
-          opp.address.toLowerCase() === "anywhere"
+      filteredResults = results.filter((opp) =>
+        opp.address.toLowerCase().includes(city)
       );
       allResults.push(...filteredResults);
     }
     results = allResults;
   }
 
-  allResults = [];
-  if (req.query.posted_date) {
-    for (let posted_date of req.query.posted_date.split(",")) {
-      posted_date = posted_date.trim();
-      filteredResults = results.filter(
-        (opp) => opp.postedDate.replace(" ", "") === posted_date
-      );
-      allResults.push(...filteredResults);
-    }
-    results = allResults;
-  }
-
-  results = results.filter((opp) => opp.published == true);
+  results = results.filter((opp) => opp.published);
 
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");

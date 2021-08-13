@@ -40,7 +40,7 @@ export const getStaticProps = async ({ params }) => {
     },
   };
 };
-//must look over everything under hereeeeee
+
 export const getStaticPaths = async () => {
   let opportunityPaths;
   try {
@@ -48,6 +48,7 @@ export const getStaticPaths = async () => {
   } catch (e) {
     opportunityPaths = opportunities;
   }
+  opportunityPaths.filter((opp) => opp.published);
 
   const paths = opportunityPaths.map((opp) => ({
     params: {

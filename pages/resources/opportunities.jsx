@@ -6,6 +6,7 @@ import { toast, ToastContainer } from "react-toastify";
 import styled from "styled-components";
 
 import { prisma } from "../../prisma/index";
+import { opportunities } from "../../cache/cache";
 import { Input, Loading } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
@@ -27,7 +28,6 @@ export default function Opportunities({ opps, ...props }) {
   const [oppPosts, setOppPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    opps.sort((opp1, opp2) => (opp1.postedDate > opp2.postedDate ? 1 : -1));
     setOppPosts(opps);
     setIsLoading(false);
   }, []);
@@ -48,7 +48,7 @@ export default function Opportunities({ opps, ...props }) {
   return (
     <div>
       <Head>
-        <title>PuMP Opportunities</title>
+        <title>PuMP | Direct</title>
       </Head>
       <PageLayout>
         <ToastContainer />
@@ -93,8 +93,10 @@ export async function getStaticProps() {
   try {
     opps = await prisma.posting.findMany();
   } catch (e) {
-    opps = opps.sort((opp1, opp2) => (opp1.postedDate > opp2.postedDate ? 1 : -1));
+    opps = opportunities;
   }
+  opps = opps.sort((opp1, opp2) => (opp1.postedDate > opp2.postedDate ? 1 : -1));
+  opps = opps.filter((opp) => opp.published);
 
   return {
     props: { opps },
