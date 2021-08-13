@@ -17,20 +17,30 @@ export default async (req, res) => {
 
   if (req.query.search) {
     results = results.filter((post) =>
-      post.title.toLowerCase().includes(req.query.search)
+      post.title.toLowerCase().includes(req.query.search.toLowerCase())
     );
   }
-  if (req.query.release) {
-    results = results.filter(
-      (post) => post.release_batch.replace(" ", "") === req.query.release
-    );
-  }
+  let allResults = [];
+  let filteredResults;
   if (req.query.tags) {
     for (let tag of req.query.tags.split(",")) {
-      results = results.filter((post) => post.tags.includes(tag));
+      tag = tag.trim();
+      filteredResults = results.filter((post) => post.tags.includes(tag));
+      allResults.push(...filteredResults);
     }
+    results = allResults;
   }
-
+  allResults = [];
+  if (req.query.release) {
+    for (let release of req.query.release.split(",")) {
+      release = release.trim();
+      filteredResults = results.filter(
+        (post) => post.releaseBatch.replace(" ", "") === release
+      );
+      allResults.push(...filteredResults);
+    }
+    results = allResults;
+  }
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify({ results }));

@@ -41,15 +41,10 @@ const MainContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   ${media(
-    800,
+    "tablet",
     `
         padding: 5%;
-        margin: 0 7& 7& 7%;
-        `
-  )};
-  ${media(
-    700,
-    `
+        margin: 0 7% 7% 7%;
         flex-direction: column-reverse;
         `
   )};
@@ -104,9 +99,9 @@ const Graphic = styled(Image)`
         `
   )};
   ${media(
-    600,
+    "tablet",
     `
-        max-width: 300px;
+        max-width: 200px;
         `
   )};
 `;
@@ -132,12 +127,6 @@ const SecondColumn = styled.div`
   )};
   ${media(
     "tablet",
-    `
-        padding-left: 2em;
-        `
-  )};
-  ${media(
-    700,
     `
         padding: 0 0 0 0;
         `

@@ -16,7 +16,7 @@ export const ValueSection = ({ ...props }) => {
           PuMP looks to make a difference by connecting student with learning
           opportunities, while also encouraging community involvement by providing
           resources, local events and conferences. By creating transparency between
-          studetns and this ever-changing, competitive field, the organization looks
+          students and this ever-changing, competitive field, the organization looks
           to empower youth to continue exploring possible careers in medicine.
         </Description>
       </TopWrapper>
@@ -67,7 +67,7 @@ const Title = styled(Text)`
 const TopWrapper = styled.div`
   padding: 0 5% 60px 5%;
 `;
-const Description = styled.text`
+const Description = styled(Text)`
   display: flex;
   text-align: center;
   font-size: 1rem;

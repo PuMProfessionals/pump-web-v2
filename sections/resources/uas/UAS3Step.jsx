@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Link from "next/link";
 
 import { StudentResource, Button } from "../../../components";
 import SampleGraphic from "../../../public/home/top-section-graphic.svg";
@@ -34,12 +33,13 @@ export const UAS3Step = () => (
       isCard={true}
     />
     <div>
-      <Link href="reources/uas">
-        <a>
-          {/* TODO: change to discord server link */}
-          <Button>Join our Community of 800+ Students!</Button>
-        </a>
-      </Link>
+      <a
+        href="https://discord.com/invite/vpyF7nCtkm"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        <Button>Join our Community of 800+ Students!</Button>
+      </a>
     </div>
   </Wrapper>
 );

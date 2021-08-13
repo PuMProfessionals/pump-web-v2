@@ -13,3 +13,6 @@ export { Loading } from "./Loading";
 export { ImageCard } from "./ImageCard";
 export { ImageCardCarousel } from "./ImageCardCarousel.jsx";
 export { Title } from "./Title";
+export { Testimonial } from "./Testimonial";
+export { TestimonialCarousel } from "./TestimonialCarousel";
+export { SectionWrapper } from "./SectionWrapper";

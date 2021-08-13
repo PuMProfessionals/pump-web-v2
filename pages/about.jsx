@@ -1,9 +1,11 @@
 import Head from "next/head";
+import styled from "styled-components";
 
 import Lucy from "../public/members/lucy-zhao.png";
 import Asma from "../public/members/asma-khamis.png";
 import Shiro from "../public/members/shiro-puwa.png";
 import RachelLin from "../public/members/rachel-lin.png";
+import Ellie from "../public/members/ellie-tiliakou.png";
 import Dhruv from "../public/members/dhruv-dhall.png";
 import Kaya from "../public/members/kaya-januszewska.png";
 import Aneeya from "../public/members/aneeya-johal.jpg";
@@ -14,13 +16,15 @@ import Camille from "../public/members/camille-eamon.jpeg";
 import Ashley from "../public/members/ashley-lam.jpeg";
 import Joshua from "../public/members/joshua-cheruvathur.png";
 import Bryan from "../public/members/bryan-liu.jpg";
+import Emily from "../public/members/emily-hu.jpg";
 import PlaceholderGraphic from "../public/home/impact-section-graphic-3.svg";
-import { Title } from "../components";
-import { PageLayout } from "../sections/hoc";
-import { ValueSection, BoardSection, QuickFacts } from "../sections/about";
-import { baseTheme } from "../theme";
-import { LeftImageTextLayout } from "../components";
 import ImpactReport from "../public/about/impact-report.svg";
+
+import { Title, LeftImageTextLayout, SectionWrapper } from "../components";
+import { PageLayout } from "../sections/hoc";
+import { ValueSection, BoardSection, QuickFacts, OurStory } from "../sections/about";
+import { baseTheme } from "../theme";
+import { media } from "../utils";
 
 const nationalBoard = [
   {
@@ -29,7 +33,7 @@ const nationalBoard = [
     position: "Founder & President",
     imageWidth: 240,
     imageHeight: 220,
-    cardHeight: 340,
+    cardHeight: 370,
   },
   {
     name: "Asma Khamis",
@@ -37,16 +41,16 @@ const nationalBoard = [
     position: "VP of Community",
     imageWidth: 240,
     imageHeight: 220,
-    cardHeight: 340,
+    cardHeight: 370,
     fontColor: baseTheme.colors.yellow,
   },
   {
     name: "Shiro Puwa",
     avatar: Shiro,
-    position: "VP of National Ops",
+    position: "VP of National Operations",
     imageWidth: 240,
-    imageHeight: 220,
-    cardHeight: 340,
+    imageHeight: 230,
+    cardHeight: 380,
     fontColor: baseTheme.colors.brightBlue,
   },
   {
@@ -55,22 +59,23 @@ const nationalBoard = [
     position: "VP of Promotions",
     imageWidth: 240,
     imageHeight: 220,
-    cardHeight: 340,
+    cardHeight: 370,
     fontColor: baseTheme.colors.turquoise,
   },
   {
     name: "Ellie Tiliakou",
-    position: "VP of Western Reg. Ops",
+    avatar: Ellie,
+    position: "VP of Regional Operations",
     imageWidth: 240,
     imageHeight: 220,
-    cardHeight: 340,
+    cardHeight: 370,
   },
   {
     name: "Richard Xi",
-    position: "VP of Eastern Reg. Ops",
+    position: "VP of Regional Operations",
     imageWidth: 240,
     imageHeight: 220,
-    cardHeight: 340,
+    cardHeight: 370,
     fontColor: baseTheme.colors.yellow,
   },
   {
@@ -78,7 +83,7 @@ const nationalBoard = [
     position: "VP of Corporate Affairs",
     imageWidth: 240,
     imageHeight: 220,
-    cardHeight: 340,
+    cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
   },
 ];
@@ -88,32 +93,33 @@ const torontoBoard = [
     name: "Dhruv Dhall",
     avatar: Dhruv,
     position: "President",
-    imageWidth: 240,
-    imageHeight: 220,
-    cardHeight: 340,
+    imageWidth: 260,
+    imageHeight: 240,
+    cardHeight: 370,
   },
   {
     name: "Andreea Murariu",
     position: "VP of External Affairs",
     imageWidth: 240,
-    imageHeight: 220,
-    cardHeight: 340,
+    imageHeight: 240,
+    cardHeight: 370,
     fontColor: baseTheme.colors.yellow,
   },
   {
     name: "Helen Yin",
     position: "VP of Internal Affairs",
     imageWidth: 240,
-    imageHeight: 220,
-    cardHeight: 340,
+    imageHeight: 240,
+    cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
   },
   {
     name: "Emily Hu",
+    avatar: Emily,
     position: "Secretary",
-    imageWidth: 240,
-    imageHeight: 220,
-    cardHeight: 340,
+    imageWidth: 215,
+    imageHeight: 260,
+    cardHeight: 380,
     fontColor: baseTheme.colors.turquoise,
   },
 ];
@@ -125,7 +131,7 @@ const vancouverBoard = [
     position: "President",
     imageWidth: 240,
     imageHeight: 240,
-    cardHeight: 340,
+    cardHeight: 370,
   },
   {
     name: "Kaya Januszewska",
@@ -133,7 +139,7 @@ const vancouverBoard = [
     position: "VP of External Affairs",
     imageWidth: 250,
     imageHeight: 220,
-    cardHeight: 340,
+    cardHeight: 370,
     fontColor: baseTheme.colors.gold,
   },
   {
@@ -142,7 +148,7 @@ const vancouverBoard = [
     position: "VP of Internal Affairs",
     imageWidth: 260,
     imageHeight: 230,
-    cardHeight: 340,
+    cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
   },
 ];
@@ -154,24 +160,24 @@ const calgaryBoard = [
     position: "President",
     imageWidth: 240,
     imageHeight: 220,
-    cardHeight: 340,
+    cardHeight: 370,
   },
   {
     name: "Yi An (Annie) Wang",
     avatar: YiAn,
     position: "Vice President",
     imageWidth: 250,
-    imageHeight: 220,
-    cardHeight: 340,
+    imageHeight: 210,
+    cardHeight: 370,
     fontColor: baseTheme.colors.gold,
   },
   {
     name: "Camille Eamon",
     avatar: Camille,
     position: "Vice President",
-    imageWidth: 260,
-    imageHeight: 210,
-    cardHeight: 340,
+    imageWidth: 250,
+    imageHeight: 190,
+    cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
   },
 ];
@@ -181,9 +187,9 @@ const ottawaBoard = [
     name: "Joshua Cheruvathur",
     avatar: Joshua,
     position: "Senior Board",
-    imageWidth: 230,
-    imageHeight: 210,
-    cardHeight: 340,
+    imageWidth: 240,
+    imageHeight: 220,
+    cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
   },
   {
@@ -192,15 +198,15 @@ const ottawaBoard = [
     position: "VP of Internal Affairs",
     imageWidth: 245,
     imageHeight: 190,
-    cardHeight: 340,
+    cardHeight: 370,
   },
   {
     name: "Bryan Liu",
     avatar: Bryan,
     position: "VP of External Affairs",
     imageWidth: 210,
-    imageHeight: 220,
-    cardHeight: 340,
+    imageHeight: 240,
+    cardHeight: 370,
     fontColor: baseTheme.colors.gold,
   },
 ];
@@ -217,6 +223,7 @@ export default function About() {
           description="Get to know the PuMP family."
           image={PlaceholderGraphic}
         />
+        <OurStory />
         <ValueSection />
         <LeftImageTextLayout
           titleText="Our Impact Report"
@@ -231,38 +238,120 @@ export default function About() {
             {
               text: "Click to View",
               link: "https://www.flipsnack.com/pumprofessionals/impact-report-2020-2021.html",
+              external: true,
             },
           ]}
         />
         <QuickFacts />
-        <BoardSection
-          board="National Board"
-          boardDescription="Est. 2020 | 74 members"
-          boardMembers={nationalBoard}
-        />
-        <BoardSection
-          board="Toronto Board"
-          boardDescription="Est. 2018 | 50 members"
-          boardMembers={torontoBoard}
-          align="right"
-        />
-        <BoardSection
-          board="Vancouver Board"
-          boardDescription="Est. 2020 | 30 members"
-          boardMembers={vancouverBoard}
-        />
-        <BoardSection
-          board="Calgary Board"
-          boardDescription="Est. 2020 | 50 members"
-          boardMembers={calgaryBoard}
-          align="right"
-        />
-        <BoardSection
-          board="Ottawa Board"
-          boardDescription="Est. 2021 | 5 Members"
-          boardMembers={ottawaBoard}
-        />
+        <PhotoCollageSectionWrapper
+          backgroundPath="/about/photo-collage-large.png"
+          mobilePath="/about/photo-collage-large.png"
+          mobileThreshold={1000}
+        >
+          <BoardWrapper>
+            <FourCardSectionWrapper
+              backgroundPath="/about/board-section-right-large.svg"
+              mobilePath="/resources/middle-background-mobile.svg"
+              mobileThreshold={1200}
+            >
+              <BoardSection
+                board="National Board"
+                boardDescription="Est. 2020 | 74 members"
+                boardMembers={nationalBoard}
+                breakpoint={2000}
+              />
+            </FourCardSectionWrapper>
+          </BoardWrapper>
+          <FourCardSectionWrapper
+            backgroundPath="/about/board-section-right-large.svg"
+            mobilePath="/resources/middle-background-mobile.svg"
+            mobileThreshold={1200}
+          >
+            <BoardSection
+              board="Toronto Board"
+              boardDescription="Est. 2018 | 50 members"
+              boardMembers={torontoBoard}
+              align="right"
+              breakpoint={1200}
+            />
+          </FourCardSectionWrapper>
+          <BoardWrapper>
+            <ThreeCardSectionWrapper
+              backgroundPath="/about/board-section-large.svg"
+              mobilePath="/resources/middle-background-mobile.svg"
+              mobileThreshold={1000}
+            >
+              <BoardSection
+                board="Vancouver Board"
+                boardDescription="Est. 2020 | 31 members"
+                boardMembers={vancouverBoard}
+                breakpoint={600}
+              />
+            </ThreeCardSectionWrapper>
+          </BoardWrapper>
+          <BoardWrapper>
+            <ThreeCardSectionWrapper
+              backgroundPath="/about/board-section-right-large.svg"
+              mobilePath="/resources/middle-background-mobile.svg"
+              mobileThreshold={1000}
+            >
+              <BoardSection
+                board="Calgary Board"
+                boardDescription="Est. 2020 | 28 members"
+                boardMembers={calgaryBoard}
+                align="right"
+                breakpoint={600}
+              />
+            </ThreeCardSectionWrapper>
+          </BoardWrapper>
+          <BoardWrapper>
+            <ThreeCardSectionWrapper
+              backgroundPath="/about/board-section-large.svg"
+              mobilePath="/resources/middle-background-mobile.svg"
+              mobileThreshold={1000}
+            >
+              <BoardSection
+                board="Ottawa Board"
+                boardDescription="Est. 2021 | 5 Members"
+                boardMembers={ottawaBoard}
+                breakpoint={600}
+              />
+            </ThreeCardSectionWrapper>
+          </BoardWrapper>
+        </PhotoCollageSectionWrapper>
       </PageLayout>
     </div>
   );
 }
+
+const BoardWrapper = styled.div`
+  margin-top: 10%;
+`;
+const PhotoCollageSectionWrapper = styled(SectionWrapper)`
+  padding-top: 5%;
+  padding-bottom: 10%;
+  background-repeat: repeat;
+  border-top-left-radius: 64px;
+  border-top-right-radius: 64px;
+`;
+const ThreeCardSectionWrapper = styled(SectionWrapper)`
+  padding-top: 10%;
+  padding-bottom: 15%;
+  ${media(
+    1000,
+    `
+      padding-top: 17%;
+      padding-bottom: 7%;
+    `
+  )};
+`;
+const FourCardSectionWrapper = styled(SectionWrapper)`
+  padding-top: 15%;
+  padding-bottom: 10%;
+  ${media(
+    1200,
+    `
+      padding-top: 15%;
+    `
+  )};
+`;

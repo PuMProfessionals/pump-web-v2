@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import { Text } from "./Text";
 import { Button } from "./Button";
 import { media } from "../utils";
+import { baseTheme } from "../theme";
 
 /**
  *
@@ -14,6 +15,7 @@ import { media } from "../utils";
  * @prop {string} descriptionText - resource description
  * @prop {array} buttons - array of buttons with resource relevant links
  * |- each button element should have text and link keys
+ * |- button can have external property which means it is an external link rather than internal (link to another section of website)
  * @prop {object} graphic - resource graphic
  * @prop {number} graphicWidth - width of resource graphic, default 400
  * @prop {number} graphicHeight - height of resource graphic, default 350
@@ -32,6 +34,7 @@ export const StudentResource = ({
   graphicHeight = 350,
   isGraphicLeft = true,
   isCard = false,
+  textColor = baseTheme.colors.navy,
   ...props
 }) => (
   <Wrapper isgraphicleft={isGraphicLeft} iscard={isCard} {...props}>
@@ -39,17 +42,32 @@ export const StudentResource = ({
       <Image src={graphic} width={graphicWidth} height={graphicHeight} />
     </Graphic>
     <InfoSection isgraphicleft={isGraphicLeft} iscard={isCard}>
-      <Title>{titleText}</Title>
-      <Text>{descriptionText}</Text>
+      <Title textcolor={textColor}>{titleText}</Title>
+      <SText textcolor={textColor}>{descriptionText}</SText>
       {!!buttons && (
         <ButtonSection isgraphicleft={isGraphicLeft}>
-          {buttons.map((button) => (
-            <Link key={button.text} href={button.link}>
-              <a>
-                <SButton backgroundColor={button.color}>{button.text}</SButton>
-              </a>
-            </Link>
-          ))}
+          {buttons.map((button) => {
+            if (button.external) {
+              return (
+                <a
+                  key={button.text}
+                  href={button.link}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <SButton backgroundColor={button.color}>{button.text}</SButton>
+                </a>
+              );
+            } else {
+              return (
+                <Link key={button.text} href={button.link}>
+                  <a>
+                    <SButton backgroundColor={button.color}>{button.text}</SButton>
+                  </a>
+                </Link>
+              );
+            }
+          })}
         </ButtonSection>
       )}
     </InfoSection>
@@ -57,13 +75,17 @@ export const StudentResource = ({
 );
 
 const Title = styled.h2`
-  ${({ theme }) => `
+  ${({ theme, textcolor }) => `
       font-family: ${theme.font.josefin};
-      color: ${theme.colors.black};
+      color: ${textcolor};
       `};
   margin: 3% 0 0;
 `;
-
+const SText = styled(Text)`
+  ${({ textcolor }) => `
+      color: ${textcolor};
+      `};
+`;
 const Graphic = styled.div`
   /* TODO: curved border ? */
   ${({ isgraphicleft }) => `
