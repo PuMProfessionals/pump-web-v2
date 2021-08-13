@@ -95,7 +95,7 @@ function getPostings() {
       long: matterResult.data.long ? matterResult.data.long : "-1000",
       tags: matterResult.data.tags,
       published: matterResult.data.published === "Not" ? false : true,
-      archived: matterResult.data.archived === "Not" ? false : true,
+      archived: matterResult.data.archived === "Archived" ? true : false,
       postedDate: matterResult.data.postedDate,
     };
   });
