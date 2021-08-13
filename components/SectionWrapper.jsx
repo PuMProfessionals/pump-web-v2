@@ -45,7 +45,7 @@ const ContentWrapper = styled.div`
 			background-position: ${horizontalOffset} ${verticalOffset};
 		}
 		@media (max-width: ${mobileThreshold}px) {
-			background-image: url('${mobilePath}');
+			background-image: ${mobilePath ? `url('${mobilePath}')` : "none"};
 			background-position: ${mobileHorizontalOffset} ${mobileVerticalOffset};
 		}
 	`};
