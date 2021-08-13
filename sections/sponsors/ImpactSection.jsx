@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Link from "next/link";
 
 import ImpactGraphic1 from "../../public/home/impact-section-graphic-1.svg";
 import ImpactGraphic2 from "../../public/home/impact-section-graphic-2.svg";
@@ -16,11 +15,14 @@ export const ImpactSection = ({ ...props }) => {
           Our Impact
         </Title>
         <Button>
-          <Link href="/">
-            <a style={{ color: baseTheme.colors.navy }} alt="View More">
-              View More
-            </a>
-          </Link>
+          <a
+            href="https://www.flipsnack.com/pumprofessionals/impact-report-2020-2021.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: baseTheme.colors.navy }}
+          >
+            View More
+          </a>
         </Button>
       </TopWrapper>
       <ImpactWrapper>

@@ -33,7 +33,11 @@ export const UAS3Step = () => (
       isCard={true}
     />
     <div>
-      <a href="https://discord.com/invite/vpyF7nCtkm">
+      <a
+        href="https://discord.com/invite/vpyF7nCtkm"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
         <Button>Join our Community of 800+ Students!</Button>
       </a>
     </div>

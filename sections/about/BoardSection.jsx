@@ -12,19 +12,23 @@ import { media } from "../../utils";
  * @prop {string} board - Board name
  * @prop {string} boardDescription - Board description: established year and no. of members
  * @prop {string} align - Alignment of the board description (left or right)
+ * @prop {string} textColor - Color of text
+ * @prop {breakpoint} breakpoint - Breakpoint at which background color appears
  */
 export const BoardSection = ({
   board,
   boardDescription,
   boardMembers, // array
   align = "left", // align content left or right for board
+  textColor = baseTheme.colors.white,
+  breakpoint = 0,
   ...props
 }) => {
   return (
-    <Wrapper {...props}>
+    <Wrapper breakpoint={breakpoint} {...props}>
       <Info align={align}>
-        <Title>{board}</Title>
-        <p>{boardDescription}</p>
+        <Title textcolor={textColor}>{board}</Title>
+        <p style={{ color: textColor }}>{boardDescription}</p>
       </Info>
       <Board>
         {boardMembers.map((member) => (
@@ -52,6 +56,14 @@ export const BoardSection = ({
 const Wrapper = styled.div`
   padding: 0 7%;
   margin-bottom: 5vh;
+  background-color: transparent;
+  ${({ theme, breakpoint }) => `
+  		@media (max-width: ${breakpoint}px) {
+        background-color: ${theme.colors.greyBlue};
+        border-bottom-right-radius: 72px;
+        border-bottom-left-radius: 72px;
+      }
+  `};
 `;
 const Info = styled.div`
   ${({ align }) => `
@@ -59,9 +71,10 @@ const Info = styled.div`
     `};
 `;
 const Title = styled.h2`
-  ${({ theme }) => `
+  ${({ theme, textcolor }) => `
         font-family: ${theme.font.kumbh};
         font-weight: 700;
+        color: ${textcolor};
     `};
 `;
 const Name = styled.h3`
