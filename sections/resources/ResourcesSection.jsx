@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { StudentResource, SectionWrapper } from "../../components";
 import SampleGraphic from "../../public/home/top-section-graphic.svg";
+import UASLogo from "../../public/resources/uas-logo.png";
 import { media } from "../../utils";
 import { baseTheme } from "../../theme";
 
@@ -39,7 +40,9 @@ export const ResourcesSection = () => {
           link: "/resources/uas",
         },
       ],
-      graphic: SampleGraphic,
+      graphic: UASLogo,
+      graphicWidth: 300,
+      graphicHeight: 300
     },
     {
       titleText: "PuMP Digest",
@@ -74,7 +77,6 @@ export const ResourcesSection = () => {
       />
       <SectionWrapper
         backgroundPath="/resources/middle-background-large.svg"
-        mobilePath="/resources/middle-background-mobile.svg"
         mobileThreshold={1000}
       >
         <MiddleStudentResource
@@ -108,16 +110,15 @@ const MiddleStudentResource = styled(StudentResource)`
   padding: 15% 0;
   margin-bottom: 7%;
   ${media(
-    1000,
+    900,
     `
-      padding: 15vh 0 25vh 0;
-    `
-  )};
-  ${media(
-    500,
-    `
-      padding: 5vh 0 0;
-      margin-bottom: 0;
+      padding: 5% 0;
+      border-radius: 44px;
     `
   )};
+  	@media (max-width: 900px) {
+			${({ theme }) => `
+        background-color: ${theme.colors.greyBlue};
+      `};
+		}
 `;

@@ -10,6 +10,7 @@ import Dhruv from "../public/members/dhruv-dhall.png";
 import Kaya from "../public/members/kaya-januszewska.png";
 import Aneeya from "../public/members/aneeya-johal.jpg";
 import MarkShort from "../public/members/mark-short.png";
+import Catherine from "../public/members/catherine-jiang.png";
 import Brooklyn from "../public/members/brooklyn-wiggins.png";
 import YiAn from "../public/members/yi-an-wang.jpeg";
 import Camille from "../public/members/camille-eamon.jpeg";
@@ -129,16 +130,16 @@ const vancouverBoard = [
     name: "Aneeya Johal",
     avatar: Aneeya,
     position: "President",
-    imageWidth: 240,
-    imageHeight: 240,
+    imageWidth: 220,
+    imageHeight: 220,
     cardHeight: 370,
   },
   {
     name: "Kaya Januszewska",
     avatar: Kaya,
     position: "VP of External Affairs",
-    imageWidth: 250,
-    imageHeight: 220,
+    imageWidth: 230,
+    imageHeight: 210,
     cardHeight: 370,
     fontColor: baseTheme.colors.gold,
   },
@@ -146,10 +147,19 @@ const vancouverBoard = [
     name: "Mark Short",
     avatar: MarkShort,
     position: "VP of Internal Affairs",
-    imageWidth: 260,
-    imageHeight: 230,
+    imageWidth: 230,
+    imageHeight: 200,
     cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
+  },
+  {
+    name: "Catherine Jiang",
+    avatar: Catherine,
+    position: "Secretary",
+    imageWidth: 230,
+    imageHeight: 230,
+    cardHeight: 370,
+    fontColor: baseTheme.colors.turquoise,
   },
 ];
 
@@ -276,18 +286,18 @@ export default function About() {
             />
           </FourCardSectionWrapper>
           <BoardWrapper>
-            <ThreeCardSectionWrapper
+            <FourCardSectionWrapper
               backgroundPath="/about/board-section-large.svg"
               mobilePath="/resources/middle-background-mobile.svg"
-              mobileThreshold={1000}
+              mobileThreshold={1200}
             >
               <BoardSection
                 board="Vancouver Board"
                 boardDescription="Est. 2020 | 31 members"
                 boardMembers={vancouverBoard}
-                breakpoint={600}
+                breakpoint={1200}
               />
-            </ThreeCardSectionWrapper>
+            </FourCardSectionWrapper>
           </BoardWrapper>
           <BoardWrapper>
             <ThreeCardSectionWrapper
@@ -351,7 +361,7 @@ const FourCardSectionWrapper = styled(SectionWrapper)`
   ${media(
     1200,
     `
-      padding-top: 15%;
+      padding-bottom: 0;
     `
   )};
 `;

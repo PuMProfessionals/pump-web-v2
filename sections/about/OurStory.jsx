@@ -27,11 +27,17 @@ export const OurStory = ({ ...props }) => {
 };
 
 const Wrapper = styled.div`
-  padding: 5% 2% 8% 2%;
+  padding: 5% 2% 5% 2%;
+  margin-bottom: 5%;
+  ${({ theme }) => `
+      background-color: ${theme.colors.greyBlue};
+      border-bottom-left-radius: 72px;
+      border-bottom-right-radius: 72px;
+  `};
   ${media(
     1400,
     `   
-            padding: 5% 6% 8% 6%;
+            padding: 5% 6% 5% 6%;
         `
   )};
 `;
@@ -40,7 +46,7 @@ const Title = styled(Text)`
   text-align: center;
   ${({ theme }) => `
       font-family: ${theme.font.josefin};
-      color: ${theme.colors.navy};
+      color: ${theme.colors.white};
   `};
 `;
 
@@ -50,4 +56,7 @@ const Description = styled(Text)`
   font-size: 1rem;
   line-height: 1.5;
   padding: 0 5%;
+  ${({ theme }) => `
+      color: ${theme.colors.white};
+  `};
 `;
