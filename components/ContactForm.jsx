@@ -172,6 +172,7 @@ const Wrapper = styled.div`
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.25);
   border-radius: 44px;
   padding: 3% 6% 6% 6%;
+  background-color: white;
   ${media(
     "tablet",
     `

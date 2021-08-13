@@ -89,6 +89,8 @@ function getPostings() {
       orgImages: matterResult.data.orgImages,
       orgName: matterResult.data.orgName,
       address: matterResult.data.address,
+      linkTo: matterResult.data.linkTo ? matterResult.data.linkTo : "",
+      city: matterResult.data.linkTo ? matterResult.data.city : "Anywhere",
       lat: matterResult.data.lat ? matterResult.data.lat : "-1000",
       long: matterResult.data.lon ? matterResult.data.long : "-1000",
       tags: matterResult.data.tags,

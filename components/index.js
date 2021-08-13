@@ -14,3 +14,6 @@ export { ImageCard } from "./ImageCard";
 export { ImageCardCarousel } from "./ImageCardCarousel.jsx";
 export { Title } from "./Title";
 export { Author } from "./Author";
+export { Testimonial } from "./Testimonial";
+export { TestimonialCarousel } from "./TestimonialCarousel";
+export { SectionWrapper } from "./SectionWrapper";

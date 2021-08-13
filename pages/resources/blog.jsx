@@ -6,6 +6,7 @@ import { toast, ToastContainer } from "react-toastify";
 import styled from "styled-components";
 
 import { prisma } from "../../prisma/index";
+import { posts } from "../../cache/cache";
 import { Input, Loading } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
@@ -23,13 +24,12 @@ const customError = () => (
   </div>
 );
 
-export default function Blog({ posts, ...props }) {
+export default function Blog({ blogs, ...props }) {
   const [searchParameter, setSearchParameter] = useState("");
   const [blogPosts, setBlogPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    posts.sort((post1, post2) => (post1.date > post2.date ? 1 : -1));
-    setBlogPosts(posts);
+    setBlogPosts(blogs);
     setIsLoading(false);
   }, []);
 
@@ -91,14 +91,14 @@ export default function Blog({ posts, ...props }) {
 const Wrapper = styled.div``;
 
 export async function getStaticProps() {
-  let posts;
+  let blogs;
   try {
-    posts = await prisma.post.findMany();
+    blogs = await prisma.post.findMany();
   } catch (e) {
-    posts = posts.sort((post1, post2) => (post1.date > post2.date ? 1 : -1));
+    blogs = posts.sort((post1, post2) => (post1.date > post2.date ? 1 : -1));
   }
 
   return {
-    props: { posts },
+    props: { blogs },
   };
 }

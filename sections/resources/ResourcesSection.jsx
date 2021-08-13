@@ -1,6 +1,10 @@
-import { StudentResource } from "../../components";
+import styled from "styled-components";
+import { StudentResource, SectionWrapper } from "../../components";
 import SampleGraphic from "../../public/home/top-section-graphic.svg";
+import { media } from "../../utils";
+import { baseTheme } from "../../theme";
 
+/* TODO-2022: Edit Resources to fit SectionWrapper */
 export const ResourcesSection = () => {
   const resources = [
     {
@@ -24,12 +28,13 @@ export const ResourcesSection = () => {
         programs.`,
       buttons: [
         {
-          color: "yellow",
+          color: "white",
           text: "Join our Community of 800+ Students",
-          link: "resources/" /* TODO: change to Discord server invite link */,
+          link: "https://discord.com/invite/vpyF7nCtkm",
+          external: true,
         },
         {
-          color: "white",
+          color: "yellow",
           text: "Learn more",
           link: "/resources/uas",
         },
@@ -53,18 +58,66 @@ export const ResourcesSection = () => {
     },
   ];
 
-  return resources.map(
-    (resource /* TODO: add wrapper to increase margin around resources */) => (
+  /* TODO: add wrapper to increase margin around resources */
+  return (
+    <>
       <StudentResource
-        key={resource.titleText}
-        titleText={resource.titleText}
-        descriptionText={resource.descriptionText}
-        buttons={resource.buttons}
-        graphic={resource.graphic}
-        graphicWidth={resource.graphicWidth}
-        graphicHeight={resource.graphicHeight}
-        isGraphicLeft={resource.isGraphicLeft}
+        key={resources[0].titleText}
+        titleText={resources[0].titleText}
+        descriptionText={resources[0].descriptionText}
+        buttons={resources[0].buttons}
+        graphic={resources[0].graphic}
+        graphicWidth={resources[0].graphicWidth}
+        graphicHeight={resources[0].graphicHeight}
+        isGraphicLeft={resources[0].isGraphicLeft}
+        style={{ marginTop: "5%" }}
       />
-    )
+      <SectionWrapper
+        backgroundPath="/resources/middle-background-large.svg"
+        mobilePath="/resources/middle-background-mobile.svg"
+        mobileThreshold={1000}
+      >
+        <MiddleStudentResource
+          key={resources[1].titleText}
+          titleText={resources[1].titleText}
+          descriptionText={resources[1].descriptionText}
+          buttons={resources[1].buttons}
+          graphic={resources[1].graphic}
+          graphicWidth={resources[1].graphicWidth}
+          graphicHeight={resources[1].graphicHeight}
+          isGraphicLeft={resources[1].isGraphicLeft}
+          textColor={baseTheme.colors.white}
+        />
+      </SectionWrapper>
+      <StudentResource
+        key={resources[2].titleText}
+        titleText={resources[2].titleText}
+        descriptionText={resources[2].descriptionText}
+        buttons={resources[2].buttons}
+        graphic={resources[2].graphic}
+        graphicWidth={resources[2].graphicWidth}
+        graphicHeight={resources[2].graphicHeight}
+        isGraphicLeft={resources[2].isGraphicLeft}
+        style={{ marginTop: "5%" }}
+      />
+    </>
   );
 };
+
+const MiddleStudentResource = styled(StudentResource)`
+  padding: 15% 0;
+  margin-bottom: 7%;
+  ${media(
+    1000,
+    `
+      padding: 15vh 0 25vh 0;
+    `
+  )};
+  ${media(
+    500,
+    `
+      padding: 5vh 0 0;
+      margin-bottom: 0;
+    `
+  )};
+`;
