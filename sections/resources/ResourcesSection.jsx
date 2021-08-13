@@ -28,13 +28,13 @@ export const ResourcesSection = () => {
         programs.`,
       buttons: [
         {
-          color: "yellow",
+          color: "white",
           text: "Join our Community of 800+ Students",
           link: "https://discord.com/invite/vpyF7nCtkm",
           external: true,
         },
         {
-          color: "white",
+          color: "yellow",
           text: "Learn more",
           link: "/resources/uas",
         },
@@ -86,7 +86,7 @@ export const ResourcesSection = () => {
           graphicWidth={resources[1].graphicWidth}
           graphicHeight={resources[1].graphicHeight}
           isGraphicLeft={resources[1].isGraphicLeft}
-          textColor={baseTheme.colors.yellow}
+          textColor={baseTheme.colors.white}
         />
       </SectionWrapper>
       <StudentResource
@@ -110,7 +110,14 @@ const MiddleStudentResource = styled(StudentResource)`
   ${media(
     1000,
     `
-      padding: 12% 0;
+      padding: 15vh 0 25vh 0;
+    `
+  )};
+  ${media(
+    500,
+    `
+      padding: 5vh 0 0;
+      margin-bottom: 0;
     `
   )};
 `;

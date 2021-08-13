@@ -32,7 +32,8 @@ import Leap from "../public/sponsors/Leap.png";
 import STEMFellowship from "../public/sponsors/StemFellowship.png";
 import StudentsForHerdImmunity from "../public/sponsors/StudentsForHerdImmunity.png";
 
-import { Title, Text } from "../components";
+import SponsorshipGraphic from "../public/sponsors/sponsor-benefits.png";
+import { Title, Text, LeftImageTextLayout, ContactForm } from "../components";
 import { PageLayout } from "../sections/hoc";
 import { ImpactSection } from "../sections/sponsors";
 import { media } from "../utils";
@@ -212,7 +213,7 @@ const communityPartners = [
   {
     title: "Students for Herd Immunity",
     image: StudentsForHerdImmunity,
-    width: 230,
+    width: 250,
     height: 100,
   },
 ];
@@ -226,7 +227,44 @@ export default function Sponsors() {
       <PageLayout>
         <Title title="Sponsors" />
         <Wrapper>
-          <ImpactSection style={{ paddingTop: "10vh" }} />
+          <Subtitle style={{ marginTop: "5%" }}>Why Sponsor PuMP</Subtitle>
+          <Description>
+            Aside from medical-related learning opportunities, youth reaching out to
+            PuMP are on the lookout for resources that local businesses can help
+            provide. Your support will enable us to continue offering out platform
+            for real world connections.
+          </Description>
+          <Description>
+            At PuMP, donations will go towards a variety of key initiatives in our
+            operations, making local businesses’ support a critical resource. In-kind
+            donations such as gift baskets, gift cards and coupons can be featured at
+            our events through booths and banners.
+          </Description>
+          <ImpactSection style={{ paddingTop: "5%" }} />
+          <TopWrapper>
+            <LeftImageTextLayout
+              titleText="What We Offer"
+              graphic={SponsorshipGraphic}
+              imageWidth={300}
+              imageHeight={400}
+              descriptions={[
+                `In return, we offer a variety of ways to feature your business. Our online platforms on Instagram, Facebook and LinkedIn reach  more than 1000 youth across the GTA. The sponsorship rewards listed above aim to reflect our commitment to our sponsors as much as possible.`,
+              ]}
+              buttons={[
+                {
+                  text: "View our Sponsorship Package",
+                  link: "/sponsors/PuMPSponsorshipPackage.pdf",
+                  external: true,
+                },
+              ]}
+            />
+          </TopWrapper>
+          <div style={{ margin: "8% 5% 0 5%" }}>
+            <ContactForm
+              title="Become a sponsor"
+              descriptionText="A representative will reply back to your email within 24 hours."
+            />
+          </div>
           <SponsorsWrapper>
             <Subtitle>A Thank You To Our Sponsors</Subtitle>
             <Description>
@@ -269,10 +307,17 @@ export default function Sponsors() {
 
 const Wrapper = styled.div`
   padding: 0 2%;
+  margin-top: 5%;
   ${media(
     "tablet",
     `   
             padding: 0 6%;
+        `
+  )};
+  ${media(
+    500,
+    `   
+            margin-top: 10%;
         `
   )};
 `;
@@ -280,8 +325,20 @@ const SponsorsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 5vh 0;
+  margin: 5% 0;
   justify-content: space-evenly;
+  align-items: center;
+  ${media(
+    500,
+    `   
+            margin: 10% 0;
+        `
+  )};
+`;
+const TopWrapper = styled.div`
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 `;
 const ImageContainer = styled.div`
