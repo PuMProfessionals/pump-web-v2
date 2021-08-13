@@ -94,8 +94,8 @@ function getPostings() {
       lat: matterResult.data.lat ? matterResult.data.lat : "-1000",
       long: matterResult.data.long ? matterResult.data.long : "-1000",
       tags: matterResult.data.tags,
-      published: matterResult.data.published ? matterResult.data.published : true,
-      archived: matterResult.data.archived ? matterResult.data.archived : false,
+      published: matterResult.data.published === "Not" ? false : true,
+      archived: matterResult.data.archived === "Not" ? false : true,
       postedDate: matterResult.data.postedDate,
     };
   });
