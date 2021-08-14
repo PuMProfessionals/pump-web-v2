@@ -5,7 +5,7 @@ Our website is built with [Next.js](https://nextjs.org/).
 
 ## Getting Started
 
-You should clone the repository as described in the github-git-practice repository and install your node modules with ```npm install```. Afterwards go into you root project folder ```pump-web-v2``` and add the following ```.env``` file:
+You should clone the repository as described in the [github-git-practice](https://github.com/PuMProfessionals/github-git-practice) repository and install your node modules with ```npm install```. Afterwards go into you root project folder ```pump-web-v2``` and add the following ```.env``` file:
 
 ```
 NEXT_PUBLIC_SERVICE_ID=service_id
@@ -14,7 +14,7 @@ NEXT_PUBLIC_USER_ID=user_id
 DATABASE_URL="database_url"
 ```
 
-You will have to ask Sharon for the specific ids but these values should get you started so the server does not crash.
+You will have to ask Sharon for the specific ids to work on certain areas, granting you need these permissions, but these values should get you started so the server does not crash.
 
 Then, run the development server:
 
