@@ -21,7 +21,7 @@ import Ashley from "../public/members/ashley-lam.jpeg";
 import Joshua from "../public/members/joshua-cheruvathur.png";
 import Bryan from "../public/members/bryan-liu.jpg";
 import Emily from "../public/members/emily-hu.jpg";
-import PlaceholderGraphic from "../public/home/impact-section-graphic-3.svg";
+import AboutUs from "../public/about/AboutUs-Top.png";
 import ImpactReport from "../public/about/impact-report.svg";
 
 import { Title, LeftImageTextLayout, SectionWrapper } from "../components";
@@ -237,7 +237,7 @@ export default function About() {
         <Title
           title="About Us"
           description="Get to know the PuMP family."
-          image={PlaceholderGraphic}
+          image={AboutUs}
         />
         <OurStory />
         <ValueSection />

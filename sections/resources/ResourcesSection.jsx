@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { StudentResource, SectionWrapper } from "../../components";
-import SampleGraphic from "../../public/home/top-section-graphic.svg";
+import PuMPDirect from "../../public/resources/PuMPDirect.png";
+import PuMPDigest from "../../public/blog/written-speech-bubble.svg";
 import UASLogo from "../../public/resources/uas-logo.png";
 import { media } from "../../utils";
 import { baseTheme } from "../../theme";
@@ -19,7 +20,7 @@ export const ResourcesSection = () => {
           link: "/resources/opportunities",
         },
       ],
-      graphic: SampleGraphic,
+      graphic: PuMPDirect,
       isGraphicLeft: false,
     },
     {
@@ -42,7 +43,7 @@ export const ResourcesSection = () => {
       ],
       graphic: UASLogo,
       graphicWidth: 300,
-      graphicHeight: 300
+      graphicHeight: 300,
     },
     {
       titleText: "PuMP Digest",
@@ -56,8 +57,10 @@ export const ResourcesSection = () => {
           link: "/resources/blog",
         },
       ],
-      graphic: SampleGraphic,
+      graphic: PuMPDigest,
       isGraphicLeft: false,
+      graphicWidth: 250,
+      graphicHeight: 250
     },
   ];
 
@@ -100,7 +103,7 @@ export const ResourcesSection = () => {
         graphicWidth={resources[2].graphicWidth}
         graphicHeight={resources[2].graphicHeight}
         isGraphicLeft={resources[2].isGraphicLeft}
-        style={{ marginTop: "5%" }}
+        style={{ margin: "5% 0" }}
       />
     </>
   );
@@ -109,15 +112,16 @@ export const ResourcesSection = () => {
 const MiddleStudentResource = styled(StudentResource)`
   padding: 15% 0;
   ${media(
-    900,
+    1000,
     `
+      margin-top: 2%;
       padding: 5% 0;
       border-radius: 44px;
     `
   )};
-  	@media (max-width: 900px) {
-			${({ theme }) => `
+  @media (max-width: 1000px) {
+    ${({ theme }) => `
         background-color: ${theme.colors.greyBlue};
       `};
-		}
+  }
 `;
