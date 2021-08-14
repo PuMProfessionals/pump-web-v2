@@ -11,7 +11,7 @@ import { Input, Loading } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
 import { Title } from "../../components";
-import SpeechBubble from "../../public/blog/written-speech-bubble.svg";
+import PumpDirect from "../../public/resources/PuMPDirect.png";
 
 const customError = () => (
   <div>
@@ -54,8 +54,9 @@ export default function Opportunities({ opps, ...props }) {
         <ToastContainer />
         <Wrapper {...props}>
           <Title
-            title="Browse Opportunities"
-            image={SpeechBubble}
+            title="PuMP Direct"
+            description="Browse our opportunities."
+            image={PumpDirect}
             imageWidth={150}
             imageHeight={150}
           />

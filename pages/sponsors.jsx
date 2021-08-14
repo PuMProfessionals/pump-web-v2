@@ -336,7 +336,7 @@ const SponsorsWrapper = styled.div`
   )};
 `;
 const TopWrapper = styled.div`
-  margin-top: 10%;
+  padding-top: 8%;
   display: flex;
   flex-direction: column;
   align-items: center;
