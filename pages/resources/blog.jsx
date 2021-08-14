@@ -10,8 +10,9 @@ import { posts } from "../../cache/cache";
 import { Input, Loading } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
-import { Title } from "../../components";
+import { Title, Author } from "../../components";
 import SpeechBubble from "../../public/blog/written-speech-bubble.svg";
+import DefaultProfile from "../../public/about/tiedye-rect.png";
 
 const customError = () => (
   <div>
@@ -66,6 +67,7 @@ export default function Blog({ blogs, ...props }) {
             value={searchParameter}
             onChange={handleChange}
           />
+          <Author avatar={DefaultProfile} names={["Helen Yin", "Jocelyn Liu"]} />
           {isLoading ? (
             <Loading color={baseTheme.colors.navy} />
           ) : (
