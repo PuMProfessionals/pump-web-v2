@@ -60,7 +60,7 @@ export const ResourcesSection = () => {
       graphic: PuMPDigest,
       isGraphicLeft: false,
       graphicWidth: 250,
-      graphicHeight: 250
+      graphicHeight: 250,
     },
   ];
 
