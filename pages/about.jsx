@@ -6,13 +6,16 @@ import Asma from "../public/members/asma-khamis.png";
 import Shiro from "../public/members/shiro-puwa.png";
 import RachelLin from "../public/members/rachel-lin.png";
 import Ellie from "../public/members/ellie-tiliakou.png";
+import Angela from "../public/members/angela-yang.jpg";
 import Dhruv from "../public/members/dhruv-dhall.png";
+import Helen from "../public/members/helen-yin.png";
 import Kaya from "../public/members/kaya-januszewska.png";
+import Andreea from "../public/members/andreea-murariu.jpg";
 import Aneeya from "../public/members/aneeya-johal.jpg";
 import MarkShort from "../public/members/mark-short.png";
 import Catherine from "../public/members/catherine-jiang.png";
 import Brooklyn from "../public/members/brooklyn-wiggins.png";
-import YiAn from "../public/members/yi-an-wang.jpeg";
+import YiAn from "../public/members/yi-an-wang.png";
 import Camille from "../public/members/camille-eamon.jpeg";
 import Ashley from "../public/members/ashley-lam.jpeg";
 import Joshua from "../public/members/joshua-cheruvathur.png";
@@ -81,9 +84,10 @@ const nationalBoard = [
   },
   {
     name: "Angela Yang",
+    avatar: Angela,
     position: "VP of Corporate Affairs",
     imageWidth: 240,
-    imageHeight: 220,
+    imageHeight: 240,
     cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
   },
@@ -96,23 +100,25 @@ const torontoBoard = [
     position: "President",
     imageWidth: 260,
     imageHeight: 240,
-    cardHeight: 370,
-  },
-  {
-    name: "Andreea Murariu",
-    position: "VP of External Affairs",
-    imageWidth: 240,
-    imageHeight: 240,
-    cardHeight: 370,
-    fontColor: baseTheme.colors.yellow,
+    cardHeight: 380,
   },
   {
     name: "Helen Yin",
+    avatar: Helen,
     position: "VP of Internal Affairs",
-    imageWidth: 240,
-    imageHeight: 240,
-    cardHeight: 370,
+    imageWidth: 250,
+    imageHeight: 220,
+    cardHeight: 380,
     fontColor: baseTheme.colors.brightBlue,
+  },
+  {
+    name: "Andreea Murariu",
+    avatar: Andreea,
+    position: "VP of External Affairs",
+    imageWidth: 220,
+    imageHeight: 255,
+    cardHeight: 380,
+    fontColor: baseTheme.colors.yellow,
   },
   {
     name: "Emily Hu",
@@ -176,8 +182,8 @@ const calgaryBoard = [
     name: "Yi An (Annie) Wang",
     avatar: YiAn,
     position: "Vice President",
-    imageWidth: 250,
-    imageHeight: 210,
+    imageWidth: 240,
+    imageHeight: 230,
     cardHeight: 370,
     fontColor: baseTheme.colors.gold,
   },

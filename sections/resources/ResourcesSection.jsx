@@ -108,7 +108,6 @@ export const ResourcesSection = () => {
 
 const MiddleStudentResource = styled(StudentResource)`
   padding: 15% 0;
-  margin-bottom: 7%;
   ${media(
     900,
     `
