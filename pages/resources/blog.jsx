@@ -10,9 +10,8 @@ import { posts } from "../../cache/cache";
 import { Input, Loading } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
-import { Title, Author } from "../../components";
+import { Title } from "../../components";
 import SpeechBubble from "../../public/blog/written-speech-bubble.svg";
-import DefaultProfile from "../../public/about/tiedye-rect.png";
 
 const customError = () => (
   <div>
@@ -67,7 +66,6 @@ export default function Blog({ blogs, ...props }) {
             value={searchParameter}
             onChange={handleChange}
           />
-          <Author avatar={DefaultProfile} names={["Helen Yin", "Jocelyn Liu"]} />
           {isLoading ? (
             <Loading color={baseTheme.colors.navy} />
           ) : (
@@ -95,8 +93,11 @@ export async function getStaticProps() {
   try {
     blogs = await prisma.post.findMany();
   } catch (e) {
-    blogs = posts.sort((post1, post2) => (post1.date > post2.date ? 1 : -1));
+    blogs = posts;
   }
+  blogs = blogs
+    .sort((post1, post2) => (post1.date > post2.date ? 1 : -1))
+    .filter((post) => post.published);
 
   return {
     props: { blogs },

@@ -5,7 +5,7 @@ import { MDXRemote } from "next-mdx-remote";
 
 import { prisma } from "../../../prisma/index";
 import { posts } from "../../../cache/cache";
-import { Title } from "../../../components";
+import { Title, MDXWrapper, Author } from "../../../components";
 import { PageLayout } from "../../../sections/hoc";
 import { getSlug } from "../../../utils/markdownUtils";
 
@@ -17,9 +17,12 @@ const BlogsPage = ({ source, frontMatter }) => {
       </Head>
       <PageLayout>
         <Title title={frontMatter.title} />
-        <Wrapper>
+        <AuthorWrapper>
+          <Author names={frontMatter.authors} />
+        </AuthorWrapper>
+        <MDXWrapper>
           <MDXRemote {...source} />
-        </Wrapper>
+        </MDXWrapper>
       </PageLayout>
     </div>
   );
@@ -49,6 +52,8 @@ export const getStaticPaths = async () => {
     postPaths = posts;
   }
 
+  postPaths = postPaths.filter((postPath) => postPath.published);
+
   const paths = postPaths.map((post) => ({
     params: {
       slug: post.slug,
@@ -61,4 +66,8 @@ export const getStaticPaths = async () => {
   };
 };
 
-const Wrapper = styled.div``;
+const AuthorWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+`;

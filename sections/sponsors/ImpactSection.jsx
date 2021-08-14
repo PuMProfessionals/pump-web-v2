@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-import ImpactGraphic1 from "../../public/home/impact-section-graphic-1.svg";
-import ImpactGraphic2 from "../../public/home/impact-section-graphic-2.svg";
-import ImpactGraphic3 from "../../public/home/impact-section-graphic-3.svg";
+import ImpactGraphic1 from "../../public/sponsors/OurImpact1.png";
+import ImpactGraphic2 from "../../public/sponsors/OurImpact2.png";
+import ImpactGraphic3 from "../../public/sponsors/OurImpact3.png";
 import { ImpactCard, Text, Button } from "../../components";
 import { media } from "../../utils";
 import { baseTheme } from "../../theme";
 
 export const ImpactSection = ({ ...props }) => {
   return (
-    <div {...props}>
+    <Wrapper {...props}>
       <TopWrapper>
         <Title size={baseTheme.size.h1} bold="true">
           Our Impact
@@ -30,27 +30,38 @@ export const ImpactSection = ({ ...props }) => {
           thumbnail={ImpactGraphic1}
           cardTitle="30,000"
           description="Students reached directly through our services"
-          textColour={baseTheme.colors.navy}
+          textColour={baseTheme.colors.white}
+          cardHeight={300}
         />
         <ImpactCard
           thumbnail={ImpactGraphic2}
           cardTitle="3,000"
           description="Following our events across social media"
-          textColour={baseTheme.colors.navy}
+          textColour={baseTheme.colors.white}
+          cardHeight={300}
         />
         <ImpactCard
           thumbnail={ImpactGraphic3}
           cardTitle="70K"
           description="In total reached across Canada"
-          textColour={baseTheme.colors.navy}
+          textColour={baseTheme.colors.white}
+          cardHeight={300}
         />
       </ImpactWrapper>
-    </div>
+    </Wrapper>
   );
 };
 
+const Wrapper = styled.div`
+  padding-bottom: 10%;
+  margin-top: 5%;
+  ${({ theme }) => `
+      background-color: ${theme.colors.greyBlue};
+      border-radius: 44px;
+  `};
+`;
 const ImpactWrapper = styled.div`
-  padding: 0 5%;
+  padding: 3% 5%;
   margin-bottom: 8%;
   display: flex;
   flex-direction: row;
@@ -59,7 +70,7 @@ const ImpactWrapper = styled.div`
     "tablet",
     `
       flex-direction: column;
-      margin-bottom: 12%;
+      margin-bottom: 10%;
       `
   )};
 `;
@@ -67,9 +78,9 @@ const Title = styled(Text)`
   margin-bottom: 20px;
   ${({ theme }) => `
       font-family: ${theme.font.josefin};
-      color: ${theme.colors.navy};
+      color: ${theme.colors.white};
   `};
 `;
 const TopWrapper = styled.div`
-  padding: 0 5% 60px 5%;
+  padding: 0 5%;
 `;

@@ -39,6 +39,7 @@ function getPosts() {
         date: matterResult.data.date,
         authors: matterResult.data.authors,
         releaseBatch: matterResult.data.releaseBatch,
+        published: matterResult.data.published === "Not" ? false : true,
         tags: matterResult.data.tags,
       };
     });
