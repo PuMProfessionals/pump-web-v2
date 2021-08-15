@@ -171,7 +171,7 @@ const vancouverBoard = [
 
 const calgaryBoard = [
   {
-    name: "Brookyln Wiggins",
+    name: "Brooklyn Wiggins",
     avatar: Brooklyn,
     position: "President",
     imageWidth: 240,
@@ -328,7 +328,7 @@ export default function About() {
             >
               <BoardSection
                 board="Ottawa Board"
-                boardDescription="Est. 2021 | 5 Members"
+                boardDescription="Est. 2021 | 19 Members"
                 boardMembers={ottawaBoard}
                 breakpoint={600}
               />
