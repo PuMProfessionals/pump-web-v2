@@ -25,7 +25,7 @@ import { baseTheme } from "../theme";
  * |- box shadow and rounded borders
  */
 
-export const ResourceImageLayout = ({
+export const ImageInfoLayout = ({
   titleText,
   descriptionText,
   buttons,
@@ -157,7 +157,7 @@ const SButton = styled(Button)`
   margin: 0.5rem;
 `;
 
-ResourceImageLayout.propTypes = {
+ImageInfoLayout.propTypes = {
   titleText: PropTypes.string,
   descriptionText: PropTypes.string,
   buttons: PropTypes.array,
