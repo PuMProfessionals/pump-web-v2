@@ -33,7 +33,6 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   width: 25%;
-  padding: 0.5rem;
   ${media(
     "700",
     `

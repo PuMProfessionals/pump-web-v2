@@ -10,15 +10,14 @@ import { posts } from "../../cache/cache";
 import { Input, Loading } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
-import { Title, Author } from "../../components";
+import { Title, BlogCard } from "../../components";
 import SpeechBubble from "../../public/blog/written-speech-bubble.svg";
-import DefaultProfile from "../../public/about/tiedye-rect.png";
 
 const customError = () => (
   <div>
     <span role="img" arial-label="waving-hand">
       👋
-    </span>{" "}
+    </span>
     Unfortunately, we could not reach our database due to an internal server error.
     We&apos;re doing our best to fix this for you soon. Sorry for the inconvenience!
   </div>
@@ -67,7 +66,8 @@ export default function Blog({ blogs, ...props }) {
             value={searchParameter}
             onChange={handleChange}
           />
-          <Author avatar={DefaultProfile} names={["Helen Yin", "Jocelyn Liu"]} />
+          <BlogCard />{" "}
+          {/* TODO: move blog card to blog section (BlogCard here to demonstrate) */}
           {isLoading ? (
             <Loading color={baseTheme.colors.navy} />
           ) : (
