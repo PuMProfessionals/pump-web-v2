@@ -41,6 +41,9 @@ export default async (req, res) => {
     }
     results = allResults;
   }
+
+  results = results.filter((result) => result.published);
+
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify({ results }));

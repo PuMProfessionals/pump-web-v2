@@ -6,11 +6,12 @@ import { toast, ToastContainer } from "react-toastify";
 import styled from "styled-components";
 
 import { prisma } from "../../prisma/index";
-import { Input } from "../../components";
+import { opportunities } from "../../cache/cache";
+import { Input, Loading } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
 import { Title } from "../../components";
-import SpeechBubble from "../../public/blog/written-speech-bubble.svg";
+import PumpDirect from "../../public/resources/PuMPDirect.png";
 
 const customError = () => (
   <div>
@@ -25,23 +26,24 @@ const customError = () => (
 export default function Opportunities({ opps, ...props }) {
   const [searchParameter, setSearchParameter] = useState("");
   const [oppPosts, setOppPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    opps.sort((opp1, opp2) => (opp1.date > opp2.date ? 1 : -1));
     setOppPosts(opps);
+    setIsLoading(false);
   }, []);
 
   const handleChange = (e) => {
     setSearchParameter(e.target.value);
-    if (searchParameter.length >= 2) {
-      axios
-        .get(`/api/opportunity?search=${e.target.value}`)
-        .then((res) => {
-          setOppPosts(res.data.results);
-        })
-        .catch(() => {
-          toast.error(customError);
-        });
-    }
+    setIsLoading(true);
+    axios
+      .get(`/api/opportunity?search=${e.target.value}`)
+      .then((res) => {
+        setOppPosts(res.data.results);
+        setIsLoading(false);
+      })
+      .catch(() => {
+        toast.error(customError);
+      });
   };
   return (
     <div>
@@ -52,8 +54,9 @@ export default function Opportunities({ opps, ...props }) {
         <ToastContainer />
         <Wrapper {...props}>
           <Title
-            title="Browse Opportunities"
-            image={SpeechBubble}
+            title="PuMP Direct"
+            description="Browse our opportunities."
+            image={PumpDirect}
             imageWidth={150}
             imageHeight={150}
           />
@@ -64,14 +67,20 @@ export default function Opportunities({ opps, ...props }) {
             value={searchParameter}
             onChange={handleChange}
           />
-          {!!oppPosts &&
-            oppPosts.map(({ postingName, slug }) => (
-              <div key={postingName}>
-                <Link href={`/resources/opportunity/${slug}`}>
-                  <a style={{ color: baseTheme.colors.navy }}>{postingName}</a>
-                </Link>
-              </div>
-            ))}
+          {isLoading ? (
+            <Loading color={baseTheme.colors.navy} />
+          ) : (
+            <>
+              {!!oppPosts &&
+                oppPosts.map(({ postingName, slug }) => (
+                  <div key={postingName}>
+                    <Link href={`/resources/opportunities/${slug}`}>
+                      <a style={{ color: baseTheme.colors.navy }}>{postingName}</a>
+                    </Link>
+                  </div>
+                ))}
+            </>
+          )}
         </Wrapper>
       </PageLayout>
     </div>
@@ -81,8 +90,14 @@ export default function Opportunities({ opps, ...props }) {
 const Wrapper = styled.div``;
 
 export async function getStaticProps() {
-  let opps = await prisma.posting.findMany();
+  let opps;
+  try {
+    opps = await prisma.posting.findMany();
+  } catch (e) {
+    opps = opportunities;
+  }
   opps = opps.sort((opp1, opp2) => (opp1.postedDate > opp2.postedDate ? 1 : -1));
+  opps = opps.filter((opp) => opp.published);
 
   return {
     props: { opps },

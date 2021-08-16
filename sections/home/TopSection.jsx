@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 
-import TitleGraphic from "../../public/home/top-section-graphic.svg";
+import MainGraphic from "../../public/home/MainGraphic.png";
 import { baseTheme } from "../../theme";
 import { media, CONSTANTS } from "../../utils";
 import { Text, Button } from "../../components";
@@ -16,16 +16,16 @@ export const TopSection = ({ ...props }) => (
       <SText size="default">{CONSTANTS.registered_charity_descr}</SText>
       <Button>
         <ButtonText size="default" bold="true">
-          <Link href="/donate">
-            <a style={{ color: baseTheme.colors.navy }}>Donate</a>
+          <Link href="/sponsors">
+            <a style={{ color: baseTheme.colors.navy }}>Sponsor</a>
           </Link>
         </ButtonText>
       </Button>
     </FirstColumn>
     <SecondColumn>
       <Graphic
-        src={TitleGraphic}
-        alt="Title graphic - person with book, stethoscope, pills and syringe"
+        src={MainGraphic}
+        alt="Title graphic - Doctor with stethoscope"
         height={450}
         width={450}
       />
