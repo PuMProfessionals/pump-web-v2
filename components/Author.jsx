@@ -3,7 +3,6 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import { Text } from "../components";
-import { media } from "../utils";
 
 /**
  * Blog author component
@@ -14,8 +13,8 @@ import { media } from "../utils";
  * see example on blog.jsx (line 70)
  */
 
-export const Author = ({ avatar, names }) => (
-  <Wrapper>
+export const Author = ({ avatar, names, ...props }) => (
+  <Wrapper {...props}>
     <AvatarSection>
       <Avatar src={avatar} width={50} height={50} />
     </AvatarSection>
@@ -32,13 +31,7 @@ export const Author = ({ avatar, names }) => (
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  width: 25%;
-  ${media(
-    "700",
-    `
-      width: 60%;
-      `
-  )};
+  width: 100%;
 `;
 
 const AvatarSection = styled.div`
@@ -50,7 +43,7 @@ const Avatar = styled(Image)`
 `;
 
 const Names = styled.div`
-  word-break: break-work;
+  width: 60%;
 `;
 
 Author.propTypes = {
