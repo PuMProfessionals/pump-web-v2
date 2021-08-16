@@ -7,18 +7,20 @@ import { baseTheme } from "../theme";
 export const BlogCard = () => (
   <Wrapper>
     <TopSection>
-      <div>
-        <h2>Blog Title</h2>
-      </div>
-      <div>
+      <LeftSection>
+        <h2>What Does Being a Doctor Look Like Around the World?</h2>
+      </LeftSection> 
+      <RightSection> 
         <p>tags</p>
-      </div>
+      </RightSection>
     </TopSection>
     <BottomSection>
-      <div>
+      <LeftSection> 
         <p>long paragraph </p>
-      </div>
+      </LeftSection>
+      <RightSection>
       <Author avatar={DefaultProfile} names={["author1"]} />{" "}
+      </RightSection> 
       {/* invisible box shadow? */}
     </BottomSection>
     <div>
@@ -42,3 +44,12 @@ const TopSection = styled.div`
 const BottomSection = styled.div`
   display: flex;
 `;
+
+const LeftSection = styled.div`
+  width: 60%;
+`; 
+
+const RightSection = styled.div`
+  width: 40%; 
+`; 
+
