@@ -1,55 +1,75 @@
 import styled from "styled-components";
 
-import { Author } from "../components";
+import { Author, Text } from "../components";
 import DefaultProfile from "../public/about/tiedye-rect.png";
-import { baseTheme } from "../theme";
 
 export const BlogCard = () => (
-  <Wrapper>
-    <TopSection>
+  <Wrapper> 
+    <Row position="top">
       <LeftSection>
-        <h2>What Does Being a Doctor Look Like Around the World?</h2>
-      </LeftSection> 
-      <RightSection> 
-        <p>tags</p>
-      </RightSection>
-    </TopSection>
-    <BottomSection>
-      <LeftSection> 
-        <p>long paragraph </p>
+        <BlogTitle>What Does Being a Doctor Look Like Around the World?</BlogTitle>
       </LeftSection>
       <RightSection>
-      <Author avatar={DefaultProfile} names={["author1"]} />{" "}
-      </RightSection> 
-      {/* invisible box shadow? */}
-    </BottomSection>
-    <div>
-      <p>July 28th, 2021</p>
-    </div>
+        <p>tags</p>
+      </RightSection>
+    </Row>
+    <Row>
+      <LeftSection>
+        <SText>
+          Around the world, the conditions and lifestyle that comes with being a
+          doctor heavily varies. There are over 190 different countries, each with
+          unique experiences and benefits to offer...
+        </SText>
+      </LeftSection>
+      <RightSection>
+        <Author
+          avatar={DefaultProfile}
+          names={["Helen Yin", "Jocelyn Liu"]}
+          width={50}
+        />
+        <DayInfo>
+          <SText>July 28th, 2021</SText>
+        </DayInfo>
+      </RightSection>
+    </Row>
   </Wrapper>
 );
 
 const Wrapper = styled.div`
   ${({ theme }) => `
-      box-shadow: ${baseTheme.boxShadow.topBottom}; 
+      box-shadow: ${theme.boxShadow.topBottom}; 
       border-radius: ${theme.radius.border}; 
   `};
   width: 50%;
 `;
 
-const TopSection = styled.div`
+const Row = styled.div`
   display: flex;
-`;
-
-const BottomSection = styled.div`
-  display: flex;
+  padding: 3%;
+  border-radius: 100px;
+  ${({ position }) => ` 
+      background-color: ${position === "top" ? "lightblue" : "red"}; 
+      border-radius: ${position === "top" ? "20px 20px 0 0" : "0 0 20px 20px"}; 
+  `};
 `;
 
 const LeftSection = styled.div`
-  width: 60%;
-`; 
+  width: 65%;
+  padding-right: 4rem; 
+`;
 
 const RightSection = styled.div`
-  width: 40%; 
-`; 
+  width: 35%;
+`;
 
+const BlogTitle = styled.h2`
+  margin: 0; 
+`; 
+const SText = styled(Text)`
+  margin: 0;
+`;
+
+const DayInfo = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
