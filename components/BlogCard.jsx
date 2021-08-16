@@ -2,10 +2,14 @@ import styled from "styled-components";
 
 import { Author, Text } from "../components";
 import DefaultProfile from "../public/about/tiedye-rect.png";
+import { baseTheme } from "../theme";
 
-export const BlogCard = () => (
-  <Wrapper> 
-    <Row position="top">
+export const BlogCard = ({
+  topBgColor = baseTheme.colors.greyBlue,
+  bottomBgColor = baseTheme.colors.white,
+}) => (
+  <Wrapper>
+    <Row position="top" topbgcolor={topBgColor} bottombgcolor={bottomBgColor}>
       <LeftSection>
         <BlogTitle>What Does Being a Doctor Look Like Around the World?</BlogTitle>
       </LeftSection>
@@ -45,17 +49,17 @@ const Wrapper = styled.div`
 
 const Row = styled.div`
   display: flex;
-  padding: 3%;
+  padding: 4%;
   border-radius: 100px;
-  ${({ position }) => ` 
-      background-color: ${position === "top" ? "lightblue" : "red"}; 
+  ${({ position, topbgcolor, bottombgcolor }) => ` 
+      background-color: ${position === "top" ? topbgcolor : bottombgcolor}; 
       border-radius: ${position === "top" ? "20px 20px 0 0" : "0 0 20px 20px"}; 
   `};
 `;
 
 const LeftSection = styled.div`
   width: 65%;
-  padding-right: 4rem; 
+  padding-right: 4rem;
 `;
 
 const RightSection = styled.div`
@@ -63,8 +67,12 @@ const RightSection = styled.div`
 `;
 
 const BlogTitle = styled.h2`
-  margin: 0; 
-`; 
+  margin: 0;
+  color: white;
+  ${({ theme }) => `
+    font-family: ${theme.font.josefin};
+  `};
+`;
 const SText = styled(Text)`
   margin: 0;
 `;
