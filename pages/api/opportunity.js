@@ -25,8 +25,11 @@ export default async (req, res) => {
   let filteredResults;
   if (req.query.tags) {
     for (let tag of req.query.tags.split(",")) {
-      tag = tag.trim();
-      filteredResults = results.filter((opp) => opp.tags.includes(tag));
+      tag = tag.trim().toLowerCase();
+      filteredResults = results.filter((opp) => {
+        opp.tags = opp.tags.map((oppTag) => oppTag.toLowerCase());
+        return opp.tags.toLowerCase().includes(tag);
+      });
       allResults.push(...filteredResults);
     }
     results = allResults;
