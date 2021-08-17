@@ -67,16 +67,15 @@ const STitle = styled.h1`
 const BackArrow = styled.div`
   position: absolute;
   top: 100px;
-  // ${({ isLeftAligned }) => `
-  //   left: 80px;
-  //   top: ${isLeftAligned ? "90px" : "150px"};
-  // `}
+  ${({ isLeftAligned }) => `
+    left: 80px;
+    top: ${isLeftAligned ? "90px" : "150px"};
+  `}
   ${media(
     600,
     `
-      // left: 6%;
-      // top: 21%;
-      top: 70px;
+    left: 47%;
+    top: 60px;
     `
   )}
 `;
