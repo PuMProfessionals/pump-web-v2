@@ -9,15 +9,22 @@ export const BlogCard = ({
   bottomBgColor = baseTheme.colors.white,
 }) => (
   <Wrapper>
-    <Row position="top" topbgcolor={topBgColor} bottombgcolor={bottomBgColor}>
+    <Row position="top" topbgcolor={topBgColor}>
       <LeftSection>
         <BlogTitle>What Does Being a Doctor Look Like Around the World?</BlogTitle>
       </LeftSection>
       <RightSection>
-        <p>tags</p>
+        <TagSection>
+          <Tag>
+            <Circle /> <SText>career</SText>
+          </Tag>
+          <Tag>
+            <Circle /> <SText>health sciences</SText>
+          </Tag>
+        </TagSection>
       </RightSection>
     </Row>
-    <Row>
+    <Row position="bottom" bottombgcolor={bottomBgColor}>
       <LeftSection>
         <SText>
           Around the world, the conditions and lifestyle that comes with being a
@@ -59,11 +66,15 @@ const Row = styled.div`
 
 const LeftSection = styled.div`
   width: 65%;
-  padding-right: 4rem;
+  padding-right: 2%;
+   {
+    /* TODO: thin white border */
+  }
 `;
 
 const RightSection = styled.div`
   width: 35%;
+  padding-left: 2%;
 `;
 
 const BlogTitle = styled.h2`
@@ -73,6 +84,37 @@ const BlogTitle = styled.h2`
     font-family: ${theme.font.josefin};
   `};
 `;
+
+const TagSection = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+`;
+
+const Tag = styled.div`
+  display: flex;
+  align-items: center;
+  text-align: right;
+  width: auto;
+  height: auto;
+  padding: 5px 10px;
+  margin: 0 0.5rem 0.5rem 0;
+  ${({ theme }) => `
+    border-radius: ${theme.radius.border};
+    background-color: ${theme.colors.yellow}; 
+  `};
+`;
+
+const Circle = styled.div`
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  ${({ theme }) => `
+    background-color: ${theme.colors.greyBlue}; 
+  `};
+`;
+
 const SText = styled(Text)`
   margin: 0;
 `;

@@ -31,11 +31,12 @@ export const Author = ({ avatar, names, ...props }) => (
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center; 
   width: 100%;
 `;
 
 const AvatarSection = styled.div`
-  margin: 2%;
+  margin-right: 1rem;
 `;
 
 const Avatar = styled(Image)`
