@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 import { prisma } from "../../prisma/index";
 import { posts } from "../../cache/cache";
-import { Input, Loading } from "../../components";
+import { Input, Loading, Button, Multiselector } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
 import { Title } from "../../components";
@@ -25,6 +25,7 @@ const customError = () => (
 
 export default function Blog({ blogs, ...props }) {
   const [searchParameter, setSearchParameter] = useState("");
+  const [tags, setTags] = useState("");
   const [blogPosts, setBlogPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -45,6 +46,22 @@ export default function Blog({ blogs, ...props }) {
         toast.error(customError);
       });
   };
+
+  const handleChangeTag = (e) => {
+    setTags(e.target.value);
+    setIsLoading(true);
+    axios
+      .get(`/api/blog?tags=${e.target.value}`)
+      .then((res) => {
+        setBlogPosts(res.data.results);
+        setIsLoading(false);
+      })
+      .catch(() => {
+        toast.error(customError);
+      });
+  };
+
+
   return (
     <div>
       <Head>
@@ -66,6 +83,21 @@ export default function Blog({ blogs, ...props }) {
             value={searchParameter}
             onChange={handleChange}
           />
+          <Input
+            placeholder="Search tags"
+            name="blog-name"
+            type="text"
+            value={tags}
+            onChange={handleChangeTag}
+          />
+          <Multiselector
+            options = {["Productivity","Student Life", "Extracurriculars", "High School"]}
+            displayValue="name"
+            placeholder="Filter by tag..."
+            filteredList={blogPosts}
+            setList={setBlogPosts}
+            customError={customError}
+          />
           {isLoading ? (
             <Loading color={baseTheme.colors.navy} />
           ) : (
@@ -80,6 +112,7 @@ export default function Blog({ blogs, ...props }) {
                 ))}
             </>
           )}
+          
         </Wrapper>
       </PageLayout>
     </div>

@@ -25,7 +25,7 @@ export default async (req, res) => {
   if (req.query.tags) {
     for (let tag of req.query.tags.split(",")) {
       tag = tag.trim();
-      filteredResults = results.filter((post) => post.tags.includes(tag));
+      filteredResults = results.filter((post) => {post.tags.includes(tag)});
       allResults.push(...filteredResults);
     }
     results = allResults;
