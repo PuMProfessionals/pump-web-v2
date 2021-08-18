@@ -14,6 +14,7 @@ const OpportunitiesPage = ({ source, frontMatter }) => {
     <div>
       <Head>
         <title>PuMP | {frontMatter.title}</title>
+        <meta name="description" content={`Opportunity posting for ${frontMatter.title}`} />
       </Head>
       <PageLayout>
         <Title title={frontMatter.title} />
