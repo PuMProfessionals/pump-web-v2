@@ -12,7 +12,10 @@ export default function Events() {
     <div>
       <Head>
         <title>PuMP | Events</title>
-        <meta name="description" content="Find out more about our events like MedHunt, MedVlogs, and more">
+        <meta
+          name="description"
+          content="Find out more about our events like MedHunt, MedVlogs, and more"
+        />
       </Head>
       <PageLayout>
         <Title title="Events" />
