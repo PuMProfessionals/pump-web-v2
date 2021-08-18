@@ -37,10 +37,7 @@ function MyApp({ Component, pageProps }) {
           property="og:description"
           content="A registered charity dedicated to connecting aspiring students to health sciences opportunities."
         />
-        <meta
-          property="og:image"
-          content="https://pumprofessionals.org/meta.png"
-        />
+        <meta property="og:image" content="https://pumprofessionals.org/meta.png" />
       </Head>
       <ThemeProvider theme={baseTheme}>
         <Component {...pageProps} />

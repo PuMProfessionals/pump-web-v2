@@ -49,6 +49,7 @@ export default function Opportunities({ opps, ...props }) {
     <div>
       <Head>
         <title>PuMP | Direct</title>
+        <meta property="description" content="Browse and filter our database of local opportunities in healthcare." />
       </Head>
       <PageLayout>
         <ToastContainer />
@@ -57,6 +58,7 @@ export default function Opportunities({ opps, ...props }) {
             title="PuMP Direct"
             description="Browse our opportunities."
             image={PumpDirect}
+            arrowLink="/resources"
             imageWidth={150}
             imageHeight={150}
           />
