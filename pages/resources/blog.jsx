@@ -12,6 +12,7 @@ import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
 import { Title } from "../../components";
 import SpeechBubble from "../../public/blog/written-speech-bubble.svg";
+import { render } from "nprogress";
 
 const customError = () => (
   <div>
@@ -26,6 +27,7 @@ const customError = () => (
 export default function Blog({ blogs, ...props }) {
   const [searchParameter, setSearchParameter] = useState("");
   const [tags, setTags] = useState("");
+  const [releaseBatch, setReleaseBatch] = useState("");
   const [blogPosts, setBlogPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -33,34 +35,23 @@ export default function Blog({ blogs, ...props }) {
     setIsLoading(false);
   }, []);
 
-  const handleChange = (e) => {
+  const handleChange = (searchValue, tagValues) => {
+    setIsLoading(true);
+    axios
+      .get(`/api/blog?search=${searchValue}&tags=${tagValues}`)
+      .then((res) => {
+        setBlogPosts(res.data.results);
+        setIsLoading(false);
+      })
+      .catch(() => {
+        toast.error(customError);
+      });
+  };
+
+  const handleSearch = (e) => {
     setSearchParameter(e.target.value);
-    setIsLoading(true);
-    axios
-      .get(`/api/blog?search=${e.target.value}`)
-      .then((res) => {
-        setBlogPosts(res.data.results);
-        setIsLoading(false);
-      })
-      .catch(() => {
-        toast.error(customError);
-      });
+    handleChange(e.target.value, tags, releaseBatch);
   };
-
-  const handleChangeTag = (e) => {
-    setTags(e.target.value);
-    setIsLoading(true);
-    axios
-      .get(`/api/blog?tags=${e.target.value}`)
-      .then((res) => {
-        setBlogPosts(res.data.results);
-        setIsLoading(false);
-      })
-      .catch(() => {
-        toast.error(customError);
-      });
-  };
-
 
   return (
     <div>
@@ -81,22 +72,45 @@ export default function Blog({ blogs, ...props }) {
             name="blog-name"
             type="text"
             value={searchParameter}
-            onChange={handleChange}
-          />
-          <Input
-            placeholder="Search tags"
-            name="blog-name"
-            type="text"
-            value={tags}
-            onChange={handleChangeTag}
+            onChange={handleSearch}
           />
           <Multiselector
-            options = {["Productivity","Student Life", "Extracurriculars", "High School"]}
+            options={["January 2021", "October 2020"]}
+            displayValue="date"
+            placeholder="Select Release Batches"
+            listType={releaseBatch}
+            setList={setReleaseBatch}
+            searchValue={searchParameter}
+            releaseValue={releaseBatch}
+            tagValue={tags}
+            handleChange={handleChange}
+          />
+          <Multiselector
+            options={[
+              "Productivity",
+              "Student Life",
+              "Extracurriculars",
+              "High School",
+              "Mental Health",
+              "Skills",
+              "Informative",
+              "Informational",
+              "Professions",
+              "Apps",
+              "Research",
+              "Postsecondary",
+              "Pathways",
+              "Interviews",
+              "Covid 19",
+            ]}
             displayValue="name"
             placeholder="Filter by tag..."
-            filteredList={blogPosts}
-            setList={setBlogPosts}
-            customError={customError}
+            listType={tags}
+            setList={setTags}
+            searchValue={searchParameter}
+            releaseValue={releaseBatch}
+            tagValue={tags}
+            handleChange={handleChange}
           />
           {isLoading ? (
             <Loading color={baseTheme.colors.navy} />
@@ -112,7 +126,6 @@ export default function Blog({ blogs, ...props }) {
                 ))}
             </>
           )}
-          
         </Wrapper>
       </PageLayout>
     </div>
