@@ -49,7 +49,10 @@ export default function Opportunities({ opps, ...props }) {
     <div>
       <Head>
         <title>PuMP | Direct</title>
-        <meta property="description" content="Browse and filter our database of local opportunities in healthcare." />
+        <meta
+          property="description"
+          content="Browse and filter our database of local opportunities in healthcare."
+        />
       </Head>
       <PageLayout>
         <ToastContainer />

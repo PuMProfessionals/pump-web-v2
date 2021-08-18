@@ -50,7 +50,10 @@ export default function Blog({ blogs, ...props }) {
     <div>
       <Head>
         <title>PuMP | Digest</title>
-        <meta property="description" content="Read advice about interview dos and don'ts, medical school tips, careers in health sciences, and much more. All under one roof!" />
+        <meta
+          property="description"
+          content="Read advice about interview dos and don'ts, medical school tips, careers in health sciences, and much more. All under one roof!"
+        />
       </Head>
       <PageLayout>
         <ToastContainer />
@@ -82,7 +85,7 @@ export default function Blog({ blogs, ...props }) {
                   </div>
                 ))}
             </>
-          )} 
+          )}
         </Wrapper>
       </PageLayout>
     </div>
