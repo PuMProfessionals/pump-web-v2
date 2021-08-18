@@ -8,20 +8,23 @@ import { baseTheme } from "../theme";
     - options = available items to choose from
     - displayValue = property name to display in the dropdown options
     - placeholder = placeholder in the input section
-    - listType = variable that holds all the tags
     - setList = function that will update the listType variable (holds all valid tags)
     - searchValue = current string of search field input
-    - releaseValue = releaseBatch dates selected (only valid for posts)
+    - tagValue = current array of selected tags
+    - otherValue = current array of selected values (blog --> releaseBatch, opp --> city)
     - handleChange = function in main jsx file that will execute every change 
+    - isFilterTag = boolean indicating if the filter is for tags or otherValue
 */
 export const Multiselector = ({
   options,
   displayValue,
   placeholder,
-  listType,
   setList,
   searchValue,
+  tagValue,
+  otherValue,
   handleChange,
+  isFilterTag = true,
   isObject = false,
   emptyRecordMsg = "No results found",
   avoidHighlightFirstOption = true,
@@ -29,14 +32,30 @@ export const Multiselector = ({
   ...props
 }) => {
   const multiselectRef = useRef([]);
-  const handleAdd = (e) => {
+  const handleAdd = () => {
     setList(multiselectRef.current.getSelectedItems());
-    handleChange(searchValue, multiselectRef.current.getSelectedItems());
+    if (isFilterTag) {
+      handleChange(
+        searchValue,
+        multiselectRef.current.getSelectedItems(),
+        otherValue
+      );
+    } else {
+      handleChange(searchValue, tagValue, multiselectRef.current.getSelectedItems());
+    }
   };
 
-  const handleRemove = (e) => {
+  const handleRemove = () => {
     setList(multiselectRef.current.getSelectedItems());
-    handleChange(searchValue, multiselectRef.current.getSelectedItems());
+    if (isFilterTag) {
+      handleChange(
+        searchValue,
+        multiselectRef.current.getSelectedItems(),
+        otherValue
+      );
+    } else {
+      handleChange(searchValue, tagValue, multiselectRef.current.getSelectedItems());
+    }
   };
 
   return (
@@ -45,10 +64,10 @@ export const Multiselector = ({
         options={options}
         displayValue={displayValue}
         placeholder={placeholder}
-        isObject={false}
+        isObject={isObject}
         emptyRecordMsg={emptyRecordMsg}
-        avoidHighlightFirstOption={true}
-        showArrow={true}
+        avoidHighlightFirstOption={avoidHighlightFirstOption}
+        showArrow={showArrow}
         onSelect={handleAdd}
         onRemove={handleRemove}
         ref={multiselectRef}
@@ -56,6 +75,10 @@ export const Multiselector = ({
           multiselectContainer: {
             width: "97%",
             padding: "20px",
+          },
+          inputField: {
+            "font-size": baseTheme.size.default,
+            "font-family": baseTheme.font.lato,
           },
           chips: {
             background: baseTheme.colors.yellow,

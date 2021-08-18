@@ -7,12 +7,11 @@ import styled from "styled-components";
 
 import { prisma } from "../../prisma/index";
 import { posts } from "../../cache/cache";
-import { Input, Loading, Button, Multiselector } from "../../components";
+import { Input, Loading, Multiselector, Title, Text } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
-import { Title } from "../../components";
 import SpeechBubble from "../../public/blog/written-speech-bubble.svg";
-import { render } from "nprogress";
+import { media } from "../../utils";
 
 const customError = () => (
   <div>
@@ -35,10 +34,12 @@ export default function Blog({ blogs, ...props }) {
     setIsLoading(false);
   }, []);
 
-  const handleChange = (searchValue, tagValues) => {
+  const handleChange = (searchValue, tagValues, releaseValues) => {
     setIsLoading(true);
     axios
-      .get(`/api/blog?search=${searchValue}&tags=${tagValues}`)
+      .get(
+        `/api/blog?search=${searchValue}&tags=${tagValues}&release=${releaseValues}`
+      )
       .then((res) => {
         setBlogPosts(res.data.results);
         setIsLoading(false);
@@ -67,65 +68,75 @@ export default function Blog({ blogs, ...props }) {
             imageWidth={150}
             imageHeight={150}
           />
-          <Input
-            placeholder="Search blog"
-            name="blog-name"
-            type="text"
-            value={searchParameter}
-            onChange={handleSearch}
-          />
-          <Multiselector
-            options={["January 2021", "October 2020"]}
-            displayValue="date"
-            placeholder="Select Release Batches"
-            listType={releaseBatch}
-            setList={setReleaseBatch}
-            searchValue={searchParameter}
-            releaseValue={releaseBatch}
-            tagValue={tags}
-            handleChange={handleChange}
-          />
-          <Multiselector
-            options={[
-              "Productivity",
-              "Student Life",
-              "Extracurriculars",
-              "High School",
-              "Mental Health",
-              "Skills",
-              "Informative",
-              "Informational",
-              "Professions",
-              "Apps",
-              "Research",
-              "Postsecondary",
-              "Pathways",
-              "Interviews",
-              "Covid 19",
-            ]}
-            displayValue="name"
-            placeholder="Filter by tag..."
-            listType={tags}
-            setList={setTags}
-            searchValue={searchParameter}
-            releaseValue={releaseBatch}
-            tagValue={tags}
-            handleChange={handleChange}
-          />
-          {isLoading ? (
-            <Loading color={baseTheme.colors.navy} />
-          ) : (
-            <>
-              {!!blogPosts &&
-                blogPosts.map(({ title, slug }) => (
-                  <div key={title}>
-                    <Link href={`/resources/blog/${slug}`}>
-                      <a style={{ color: baseTheme.colors.navy }}>{title}</a>
-                    </Link>
-                  </div>
-                ))}
-            </>
-          )}
+          <InputsWrapper>
+            <SInput
+              placeholder="Search blog"
+              name="blog-name"
+              type="text"
+              value={searchParameter}
+              onChange={handleSearch}
+            />
+          </InputsWrapper>
+          <BottomWrapper>
+            <FilterWrapper>
+              <FilterTitle size={baseTheme.size.h2} bold="true">
+                Filters
+              </FilterTitle>
+              <SMultiselector
+                options={["January 2021", "October 2020"]}
+                displayValue="name"
+                placeholder="Release Batch"
+                setList={setReleaseBatch}
+                searchValue={searchParameter}
+                tagValue={tags}
+                otherValue={releaseBatch}
+                handleChange={handleChange}
+                isFilterTag={false}
+              />
+              <SMultiselector
+                options={[
+                  "Productivity",
+                  "Student Life",
+                  "Extracurriculars",
+                  "High School",
+                  "Mental Health",
+                  "Skills",
+                  "Informative",
+                  "Informational",
+                  "Professions",
+                  "Apps",
+                  "Research",
+                  "Postsecondary",
+                  "Pathways",
+                  "Interviews",
+                  "Covid 19",
+                ]}
+                displayValue="name"
+                placeholder="Filter by tag..."
+                setList={setTags}
+                searchValue={searchParameter}
+                tagValue={tags}
+                otherValue={releaseBatch}
+                handleChange={handleChange}
+              />
+            </FilterWrapper>
+            <ResultsWrapper>
+              {isLoading ? (
+                <Loading color={baseTheme.colors.navy} />
+              ) : (
+                <>
+                  {!!blogPosts &&
+                    blogPosts.map(({ title, slug }) => (
+                      <div key={title}>
+                        <Link href={`/resources/blog/${slug}`}>
+                          <a style={{ color: baseTheme.colors.navy }}>{title}</a>
+                        </Link>
+                      </div>
+                    ))}
+                </>
+              )}
+            </ResultsWrapper>
+          </BottomWrapper>
         </Wrapper>
       </PageLayout>
     </div>
@@ -133,6 +144,96 @@ export default function Blog({ blogs, ...props }) {
 }
 
 const Wrapper = styled.div``;
+
+const InputsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  ${media(
+    "mobile",
+    `
+        margin-top: 20px;
+        `
+  )};
+`;
+
+const SInput = styled(Input)`
+  width: 80%;
+  margin-top: 10px;
+  @media only screen and (min-width: 1200px) {
+    width: 80%;
+  }
+  @media only screen and (min-width: 1600px) {
+    width: 60%;
+  }
+  ${media(
+    "tablet",
+    `
+        width: 60%;
+        margin-top: 0;
+        margin-bottom: 30px;
+        `
+  )};
+`;
+
+const FilterTitle = styled(Text)`
+  margin: ;
+  ${({ theme }) => `
+      font-family: ${theme.font.josefin};
+      color: ${theme.colors.navy};
+  `};
+`;
+
+const SMultiselector = styled(Multiselector)`
+  width: 80%;
+  margin-top: 10px;
+  @media only screen and (min-width: 1200px) {
+    width: 80%;
+  }
+  @media only screen and (min-width: 1600px) {
+    width: 60%;
+  }
+  ${media(
+    "tablet",
+    `
+      margin-top: 0;
+      margin-bottom: 30px;
+      `
+  )};
+`;
+
+const FilterWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 250px;
+  ${media(
+    "tablet",
+
+    `   flex-direction: row;
+        justify-content: center;
+          max-width 5000px:
+          `
+  )};
+`;
+
+const BottomWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  ${media(
+    "tablet",
+    `
+        margin-top: 20px;
+        flex-direction: column;
+        `
+  )};
+`;
+
+const ResultsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export async function getStaticProps() {
   let blogs;
