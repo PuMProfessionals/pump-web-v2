@@ -9,8 +9,6 @@ import { Text } from "../components";
  *
  * @prop {object} avatar - Profile picture image
  * @prop {array} names - list of author names
- *
- * see example on blog.jsx (line 70)
  */
 
 export const Author = ({ avatar, names, ...props }) => (
@@ -31,7 +29,6 @@ export const Author = ({ avatar, names, ...props }) => (
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center; 
   width: 100%;
 `;
 
