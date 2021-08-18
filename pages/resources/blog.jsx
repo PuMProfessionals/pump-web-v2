@@ -45,10 +45,15 @@ export default function Blog({ blogs, ...props }) {
         toast.error(customError);
       });
   };
+
   return (
     <div>
       <Head>
         <title>PuMP | Digest</title>
+        <meta
+          property="description"
+          content="Read advice about interview dos and don'ts, medical school tips, careers in health sciences, and much more. All under one roof!"
+        />
       </Head>
       <PageLayout>
         <ToastContainer />
@@ -56,6 +61,7 @@ export default function Blog({ blogs, ...props }) {
           <Title
             title="Welcome To PuMP Digest"
             image={SpeechBubble}
+            arrowLink="/resources"
             imageWidth={150}
             imageHeight={150}
           />

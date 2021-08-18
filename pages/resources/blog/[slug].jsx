@@ -14,9 +14,10 @@ const BlogsPage = ({ source, frontMatter }) => {
     <div>
       <Head>
         <title>PuMP | {frontMatter.title}</title>
+        <meta property="description" content={frontMatter.description} />
       </Head>
       <PageLayout>
-        <Title title={frontMatter.title} />
+        <Title title={frontMatter.title} arrowLink="/blog" />
         <AuthorWrapper>
           <Author names={frontMatter.authors} />
         </AuthorWrapper>
