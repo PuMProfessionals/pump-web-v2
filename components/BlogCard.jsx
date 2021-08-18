@@ -8,9 +8,10 @@ import { media } from "../utils";
 export const BlogCard = ({
   topBgColor = baseTheme.colors.greyBlue,
   bottomBgColor = baseTheme.colors.white,
+  ...props
 }) => (
-  <Wrapper>
-    <Row position="top" topbgcolor={topBgColor}>
+  <Wrapper {...props}>
+    <Row position="top" topbgcolor={topBgColor}> 
       <LeftSection>
         <BlogTitle>What Does Being a Doctor Look Like Around the World?</BlogTitle>
       </LeftSection>
@@ -54,11 +55,10 @@ const Wrapper = styled.div`
       box-shadow: ${theme.boxShadow.topBottom}; 
       border-radius: ${theme.radius.border}; 
   `};
-  width: 50%;
   ${media(
     "tablet",
     `
-      width: 80%; 
+      width: 90%; 
     `
   )};
 `;
@@ -76,6 +76,12 @@ const Row = styled.div`
     `
     display: flex; 
     flex-direction: column; 
+    padding: 1.5rem; 
+    `
+  )};
+  ${media(
+    "mobile",
+    `
     padding: 1rem;
     `
   )};

@@ -10,8 +10,9 @@ import { posts } from "../../cache/cache";
 import { Input, Loading } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
-import { Title, BlogCard } from "../../components";
+import { Title } from "../../components";
 import SpeechBubble from "../../public/blog/written-speech-bubble.svg";
+import { BlogSection } from "../../sections/resources/blog";
 
 const customError = () => (
   <div>
@@ -66,8 +67,9 @@ export default function Blog({ blogs, ...props }) {
             value={searchParameter}
             onChange={handleChange}
           />
-          <BlogCard />{" "}
-          {/* TODO: move blog card to blog section (BlogCard here to demonstrate) */}
+          <BlogWrapper> 
+          <BlogSection />
+          </BlogWrapper> 
           {isLoading ? (
             <Loading color={baseTheme.colors.navy} />
           ) : (
@@ -89,6 +91,13 @@ export default function Blog({ blogs, ...props }) {
 }
 
 const Wrapper = styled.div``;
+
+const BlogWrapper = styled.div`
+  display: flex; 
+  width: 85%; 
+  margin: 0 auto; 
+  justify-content: center; {/* should be removed/changed to accomodate filter section */} 
+`;
 
 export async function getStaticProps() {
   let blogs;
