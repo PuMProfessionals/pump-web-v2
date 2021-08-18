@@ -22,7 +22,7 @@ export const ImpactCard = ({
   description,
   textColour = baseTheme.colors.navy,
   titleSize = 3.5,
-  imageHeight = 200,
+  imageHeight = 280,
   imageWidth = 300,
   cardHeight = 370,
   ...props
@@ -40,7 +40,9 @@ export const ImpactCard = ({
         </ImageWrapper>
         <Content textColour={textColour} {...props}>
           <Title titleSize={titleSize}>{cardTitle}</Title>
-          {!!description && <Description>{description}</Description>}
+          {!!description && (
+            <Description textColour={textColour}>{description}</Description>
+          )}
         </Content>
       </Section>
     </Wrapper>
@@ -92,8 +94,9 @@ const Title = styled.h2`
 `;
 const Description = styled(Text)`
   display: flex;
-  ${({ theme }) => `
+  ${({ theme, textColour }) => `
         font-family: ${theme.font.josefin};
+        color: ${textColour};
     `};
   font-weight: 600;
   text-align: center;

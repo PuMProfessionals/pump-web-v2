@@ -14,7 +14,7 @@ const EventsPage = ({ source, frontMatter }) => {
         <title>PuMP | {frontMatter.title}</title>
       </Head>
       <PageLayout>
-        <Title title={frontMatter.title} />
+        <Title title={frontMatter.title} arrowLink="/events" />
         <Wrapper>
           <MDXRemote {...source} />
         </Wrapper>

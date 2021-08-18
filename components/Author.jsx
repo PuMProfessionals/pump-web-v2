@@ -7,7 +7,7 @@ import { Text } from "../components";
 /**
  * Blog author component
  *
- * @prop {object} avatar - Profile picture image
+ * @prop {object} avatar - Profile picture image (Future implementation)
  * @prop {array} names - list of author names
  */
 

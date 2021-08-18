@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-import placeholderImage from "../../public/home/impact-section-graphic-1.svg";
+import Connect from "../../public/about/AboutUs-Connect.png";
+import Involve from "../../public/about/AboutUs-Involve.png";
+import Empower from "../../public/about/AboutUs-Empower.png";
 import { ImpactCard, Text } from "../../components";
 import { media } from "../../utils";
 import { baseTheme } from "../../theme";
@@ -22,21 +24,21 @@ export const ValueSection = ({ ...props }) => {
       </TopWrapper>
       <ImpactWrapper>
         <ImpactCard
-          thumbnail={placeholderImage}
+          thumbnail={Connect}
           isImageTop={false}
           cardTitle="CONNECT"
           textColour={baseTheme.colors.yellow}
           titleSize={2.5}
         />
         <ImpactCard
-          thumbnail={placeholderImage}
+          thumbnail={Involve}
           isImageTop={false}
           cardTitle="INVOLVE"
           textColour={baseTheme.colors.brightBlue}
           titleSize={2.5}
         />
         <ImpactCard
-          thumbnail={placeholderImage}
+          thumbnail={Empower}
           isImageTop={false}
           cardTitle="EMPOWER"
           textColour={baseTheme.colors.turquoise}

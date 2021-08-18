@@ -11,7 +11,7 @@ import { Input, Loading } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
 import { Title } from "../../components";
-import SpeechBubble from "../../public/blog/written-speech-bubble.svg";
+import PumpDirect from "../../public/resources/PuMPDirect.png";
 
 const customError = () => (
   <div>
@@ -49,13 +49,19 @@ export default function Opportunities({ opps, ...props }) {
     <div>
       <Head>
         <title>PuMP | Direct</title>
+        <meta
+          property="description"
+          content="Browse and filter our database of local opportunities in healthcare."
+        />
       </Head>
       <PageLayout>
         <ToastContainer />
         <Wrapper {...props}>
           <Title
-            title="Browse Opportunities"
-            image={SpeechBubble}
+            title="PuMP Direct"
+            description="Browse our opportunities."
+            image={PumpDirect}
+            arrowLink="/resources"
             imageWidth={150}
             imageHeight={150}
           />

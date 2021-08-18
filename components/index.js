@@ -18,3 +18,4 @@ export { Testimonial } from "./Testimonial";
 export { TestimonialCarousel } from "./TestimonialCarousel";
 export { SectionWrapper } from "./SectionWrapper";
 export { BlogCard } from "./BlogCard";
+export { MDXWrapper } from "./MDXWrapper";
