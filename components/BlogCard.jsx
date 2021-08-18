@@ -1,11 +1,32 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 import { Author, Text } from "../components";
-import DefaultProfile from "../public/about/tiedye-rect.png";
 import { baseTheme } from "../theme";
 import { media } from "../utils";
 
+/**
+ *
+ * BlogCard component
+ * @prop {string} title - Blog title
+ * @prop {string} description - Blog description
+ * @prop {array} tags - Array of blog tags
+ * @prop {object} avatar - Author avatar
+ * @prop {number} avatarWith - Width of avatar, default is 50px
+ * @prop {array} authors - Array of blog authors
+ * @prop {string} publishedDate - Day blog was published
+ * @prop {string} topBgColor - Color of the top half of blog card
+ * @prop {string} bottomBgColor - Color of the bottom half of blog card
+ */
+
 export const BlogCard = ({
+  title,
+  description,
+  tags,
+  avatar,
+  avatarWidth = 50,
+  authors,
+  publishedDate,
   topBgColor = baseTheme.colors.greyBlue,
   bottomBgColor = baseTheme.colors.white,
   ...props
@@ -13,37 +34,30 @@ export const BlogCard = ({
   <Wrapper {...props}>
     <Row position="top" topbgcolor={topBgColor}>
       <LeftSection>
-        <BlogTitle>What Does Being a Doctor Look Like Around the World?</BlogTitle>
+        <BlogTitle>{title}</BlogTitle>
       </LeftSection>
       <RightSection>
-        <TagSection>
-          <Tag>
-            <Circle /> <SText>career</SText>
-          </Tag>
-          <Tag>
-            <Circle /> <SText>health sciences</SText>
-          </Tag>
+        <TagSection tags={tags}>
+          {!!tags &&
+            tags.map((tag) => (
+              <Tag key={tag}>
+                <Circle />
+                <SText>{tag}</SText>
+              </Tag>
+            ))}
         </TagSection>
       </RightSection>
     </Row>
     <Row position="bottom" bottombgcolor={bottomBgColor}>
       <LeftSection>
-        <SText>
-          Around the world, the conditions and lifestyle that comes with being a
-          doctor heavily varies. There are over 190 different countries, each with
-          unique experiences and benefits to offer...
-        </SText>
+        <SText>{description}</SText>
       </LeftSection>
       <RightSection>
         <AuthorSection>
-          <Author
-            avatar={DefaultProfile}
-            names={["Helen Yin", "Jocelyn Liu"]}
-            width={50}
-          />
+          <Author avatar={avatar} names={authors} width={avatarWidth} />
         </AuthorSection>
         <DayInfo>
-          <SText>July 28th, 2021</SText>
+          <SText>{publishedDate}</SText>
         </DayInfo>
       </RightSection>
     </Row>
@@ -178,3 +192,15 @@ const DayInfo = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
+
+BlogCard.proptypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  tags: PropTypes.array,
+  avatar: PropTypes.object,
+  avatarWidth: PropTypes.number,
+  authors: PropTypes.array,
+  publishedDate: PropTypes.string,
+  togBgColor: PropTypes.string,
+  bottomBgColor: PropTypes.string,
+};
