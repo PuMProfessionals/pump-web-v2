@@ -11,7 +11,7 @@ export const BlogCard = ({
   ...props
 }) => (
   <Wrapper {...props}>
-    <Row position="top" topbgcolor={topBgColor}> 
+    <Row position="top" topbgcolor={topBgColor}>
       <LeftSection>
         <BlogTitle>What Does Being a Doctor Look Like Around the World?</BlogTitle>
       </LeftSection>

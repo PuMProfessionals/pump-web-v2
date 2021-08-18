@@ -67,9 +67,9 @@ export default function Blog({ blogs, ...props }) {
             value={searchParameter}
             onChange={handleChange}
           />
-          <BlogWrapper> 
-          <BlogSection />
-          </BlogWrapper> 
+          <BlogWrapper>
+            <BlogSection />
+          </BlogWrapper>
           {isLoading ? (
             <Loading color={baseTheme.colors.navy} />
           ) : (
@@ -93,10 +93,13 @@ export default function Blog({ blogs, ...props }) {
 const Wrapper = styled.div``;
 
 const BlogWrapper = styled.div`
-  display: flex; 
-  width: 85%; 
-  margin: 0 auto; 
-  justify-content: center; {/* should be removed/changed to accomodate filter section */} 
+  display: flex;
+  width: 85%;
+  margin: 0 auto;
+  justify-content: center;
+   {
+    /* should be removed/changed to accomodate filter section */
+  }
 `;
 
 export async function getStaticProps() {

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { BlogCard } from "../../../components";
-import { media } from "../../../utils"; 
+import { media } from "../../../utils";
 
 export const BlogSection = () => (
   <Wrapper>
@@ -16,13 +16,13 @@ const Wrapper = styled.div`
   align-items: center;
   width: 70%;
   ${media(
-    "tablet", 
+    "tablet",
     `
       width: auto; 
     `
-  )}; 
+  )};
 `;
 
 const SBlogCard = styled(BlogCard)`
   margin: 2rem 0;
-`; 
+`;
