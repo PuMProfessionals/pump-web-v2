@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 import { prisma } from "../../prisma/index";
 import { opportunities } from "../../cache/cache";
-import { Input, Loading } from "../../components";
+import { Input, Loading, Multiselector } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
 import { Title } from "../../components";
@@ -25,6 +25,8 @@ const customError = () => (
 
 export default function Opportunities({ opps, ...props }) {
   const [searchParameter, setSearchParameter] = useState("");
+  const [tags, setTags] = useState("");
+  const [cities, setCity] = useState("");
   const [oppPosts, setOppPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -32,11 +34,12 @@ export default function Opportunities({ opps, ...props }) {
     setIsLoading(false);
   }, []);
 
-  const handleChange = (e) => {
-    setSearchParameter(e.target.value);
+  const handleChange = (searchValue, tagValues, cityValues) => {
     setIsLoading(true);
     axios
-      .get(`/api/opportunity?search=${e.target.value}`)
+      .get(
+        `/api/opportunity?search=${searchValue}&tags=${tagValues}&city=${cityValues}`
+      )
       .then((res) => {
         setOppPosts(res.data.results);
         setIsLoading(false);
@@ -45,6 +48,12 @@ export default function Opportunities({ opps, ...props }) {
         toast.error(customError);
       });
   };
+
+  const handleSearch = (e) => {
+    setSearchParameter(e.target.value);
+    handleChange(e.target.value, tags, cities);
+  };
+
   return (
     <div>
       <Head>
@@ -65,7 +74,33 @@ export default function Opportunities({ opps, ...props }) {
             name="opportunity-name"
             type="text"
             value={searchParameter}
-            onChange={handleChange}
+            onChange={handleSearch}
+          />
+          <Multiselector
+            options={["North York", "Los Angeles", "Toronto", "Scarborough"]}
+            displayValue="name"
+            placeholder="Search by City"
+            setList={setCity}
+            searchValue={searchParameter}
+            tagValue={tags}
+            otherValue={cities}
+            handleChange={handleChange}
+            isFilterTag={false}
+          />
+          <Multiselector
+            options={[
+              "Volunteering",
+              "Summer Program",
+              "Shadowing",
+              "Internship (Unpaid)",
+            ]}
+            displayValue="name"
+            placeholder="Filter by tag..."
+            setList={setTags}
+            searchValue={searchParameter}
+            tagValue={tags}
+            otherValue={cities}
+            handleChange={handleChange}
           />
           {isLoading ? (
             <Loading color={baseTheme.colors.navy} />
