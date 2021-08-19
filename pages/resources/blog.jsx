@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Head from "next/head";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
@@ -74,22 +73,12 @@ export default function Blog({ blogs, ...props }) {
             onChange={handleChange}
           />
           <BlogWrapper>
-            <BlogSection />
+            {isLoading ? (
+              <Loading color={baseTheme.colors.navy} />
+            ) : (
+              <BlogSection blogPosts={blogPosts} />
+            )}
           </BlogWrapper>
-          {isLoading ? (
-            <Loading color={baseTheme.colors.navy} />
-          ) : (
-            <>
-              {!!blogPosts &&
-                blogPosts.map(({ title, slug }) => (
-                  <div key={title}>
-                    <Link href={`/resources/blog/${slug}`}>
-                      <a style={{ color: baseTheme.colors.navy }}>{title}</a>
-                    </Link>
-                  </div>
-                ))}
-            </>
-          )}
         </Wrapper>
       </PageLayout>
     </div>

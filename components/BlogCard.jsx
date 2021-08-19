@@ -74,10 +74,11 @@ const Wrapper = styled.div`
     "tablet",
     `
       width: 90%; 
+      margin: auto; 
     `
   )};
   &:hover {
-    transform: scale(1.01);
+    transform: scale(0.99);
     outline: none;
   }
 `;
@@ -125,6 +126,9 @@ const LeftSection = styled.div`
 const RightSection = styled.div`
   width: 35%;
   padding-left: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   ${media(
     "tablet",
     `
