@@ -72,7 +72,7 @@ const TopSection = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 70%;
+  width: 60%;
   ${media(
     "tablet",
     `
