@@ -68,6 +68,7 @@ const Wrapper = styled.div`
   ${({ theme }) => `
       box-shadow: ${theme.boxShadow.topBottom}; 
       border-radius: ${theme.radius.border}; 
+      transition: ${theme.transitions.cubicBezier};
   `};
   ${media(
     "tablet",
@@ -75,12 +76,15 @@ const Wrapper = styled.div`
       width: 90%; 
     `
   )};
+  &:hover {
+    transform: scale(1.01);
+    outline: none;
+  }
 `;
 
 const Row = styled.div`
   display: flex;
   padding: 2rem;
-  border-radius: 100px;
   ${({ position, topbgcolor, bottombgcolor }) => ` 
       background-color: ${position === "top" ? topbgcolor : bottombgcolor}; 
       border-radius: ${position === "top" ? "20px 20px 0 0" : "0 0 20px 20px"}; 
@@ -125,7 +129,7 @@ const RightSection = styled.div`
     "tablet",
     `
     width: auto; 
-    padding: 3% 0 0; 
+    padding: 2% 0 0; 
     `
   )};
 `;
@@ -178,19 +182,17 @@ const SText = styled(Text)`
 `;
 
 const AuthorSection = styled.div`
-  width: auto;
+  width: 90%;
   ${media(
     "tablet",
     `
-    display: flex; 
-    justify-content: center; 
+    margin-bottom: 0.5rem; 
     `
   )};
 `;
 
 const DayInfo = styled.div`
   display: flex;
-  justify-content: flex-end;
 `;
 
 BlogCard.proptypes = {
