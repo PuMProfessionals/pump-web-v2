@@ -37,17 +37,19 @@ export const Title = ({
     backgroundColor={backgroundColor}
     isLeftAligned={isLeftAligned}
     {...props}
-  > <TopSection>
-    {!!arrowLink && (
-    <Link href={arrowLink}>
-        <a>
-          <Image src={LeftArrow} width={25} />
-        </a>
-      </Link>
-    )}
-    <TitleSection>
-      <STitle>{title}</STitle>
-      {!!description && <Text color="white">{description}</Text>}
+  >
+    {" "}
+    <TopSection>
+      {!!arrowLink && (
+        <Link href={arrowLink}>
+          <a>
+            <Image src={LeftArrow} width={25} />
+          </a>
+        </Link>
+      )}
+      <TitleSection>
+        <STitle>{title}</STitle>
+        {!!description && <Text color="white">{description}</Text>}
       </TitleSection>
     </TopSection>
     {!!image && <Image src={image} width={imageWidth} height={imageHeight} />}
