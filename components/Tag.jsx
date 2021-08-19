@@ -1,14 +1,13 @@
-import styled from "styled-components"; 
+import styled from "styled-components";
 
 import { Text } from "../components/";
 
-export const Tag = ({label}) => (
-   <Wrapper>
-      <Circle /> 
-      <SText>{label}</SText>
-   </Wrapper> 
-); 
-
+export const Tag = ({ label }) => (
+  <Wrapper>
+    <Circle />
+    <SText>{label}</SText>
+  </Wrapper>
+);
 
 const Wrapper = styled.div`
   display: flex;
@@ -33,5 +32,5 @@ const Circle = styled.div`
 `;
 
 const SText = styled(Text)`
-  margin:0; 
+  margin: 0;
 `;

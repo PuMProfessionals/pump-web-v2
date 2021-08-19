@@ -38,10 +38,7 @@ export const BlogCard = ({
       </LeftSection>
       <RightSection>
         <TagSection tags={tags}>
-          {!!tags &&
-            tags.map((tag) => (
-              <Tag key={tag} label={tag} /> 
-            ))}
+          {!!tags && tags.map((tag) => <Tag key={tag} label={tag} />)}
         </TagSection>
       </RightSection>
     </Row>
