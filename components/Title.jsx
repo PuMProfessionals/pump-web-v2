@@ -37,20 +37,19 @@ export const Title = ({
     backgroundColor={backgroundColor}
     isLeftAligned={isLeftAligned}
     {...props}
-  >
+  > <TopSection>
     {!!arrowLink && (
-      <BackArrow isLeftAligned={isLeftAligned}>
-        <Link href={arrowLink}>
-          <a>
-            <Image src={LeftArrow} width={25} />
-          </a>
-        </Link>
-      </BackArrow>
+    <Link href={arrowLink}>
+        <a>
+          <Image src={LeftArrow} width={25} />
+        </a>
+      </Link>
     )}
     <TitleSection>
       <STitle>{title}</STitle>
       {!!description && <Text color="white">{description}</Text>}
-    </TitleSection>
+      </TitleSection>
+    </TopSection>
     {!!image && <Image src={image} width={imageWidth} height={imageHeight} />}
   </Wrapper>
 );
@@ -67,30 +66,27 @@ const STitle = styled.h1`
   )}
 `;
 
-const BackArrow = styled.div`
-  position: absolute;
-  top: 100px;
-  ${({ isLeftAligned }) => `
-    left: 80px;
-    top: ${isLeftAligned ? "90px" : "150px"};
-  `}
+const TopSection = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 70%;
   ${media(
-    600,
+    "tablet",
     `
-    left: 47%;
-    top: 60px;
+    flex-direction: column;
     `
   )}
 `;
 
 const TitleSection = styled.div`
-  width: 60%;
   display: flex;
   flex-direction: column;
+  margin-left: 5%;
   ${media(
     600,
     `
-      width: 70%;
+      margin-left: 0;
     `
   )}
 `;
@@ -107,9 +103,9 @@ const Wrapper = styled.div`
     padding: ${isLeftAligned ? "0 4rem 2rem" : "0 0 2rem"};
   `}
   ${media(
-    600,
+    "tablet",
     `
-      flex-direction: column-reverse;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
