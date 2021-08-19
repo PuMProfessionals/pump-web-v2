@@ -119,7 +119,7 @@ export default function Blog({ blogs, ...props }) {
                   "Covid 19",
                 ]}
                 displayValue="name"
-                placeholder="Filter by tag..."
+                placeholder="Filter by Tag"
                 setList={setTags}
                 searchValue={searchParameter}
                 tagValue={tags}
@@ -195,7 +195,7 @@ const FilterTitle = styled(Text)`
 
 const FilterWrapper = styled.div`
   max-width: 250px;
-  margin: 10px 50px 0px 80px;
+  margin: 10px 50px 30px 80px;
   ${media(
     "tablet",
 
