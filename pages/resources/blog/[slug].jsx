@@ -18,7 +18,7 @@ const BlogsPage = ({ source, frontMatter }) => {
         <meta property="description" content={frontMatter.description} />
       </Head>
       <PageLayout>
-        <Title title={frontMatter.title} arrowLink="/blog" />
+        <Title title={frontMatter.title} arrowLink="/resources/blog" />
         <AuthorWrapper>
           <Author names={frontMatter.authors} avatar={DefaultProfile} />
         </AuthorWrapper>
