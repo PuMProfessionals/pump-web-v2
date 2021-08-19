@@ -82,7 +82,8 @@ export default function Blog({ blogs, ...props }) {
               <FilterTitle size={baseTheme.size.h2} bold="true">
                 Filters
               </FilterTitle>
-              <SMultiselector
+              <FilterTitle size={baseTheme.size.h3}>Release Batch</FilterTitle>
+              <Multiselector
                 options={["January 2021", "October 2020"]}
                 displayValue="name"
                 placeholder="Release Batch"
@@ -93,7 +94,8 @@ export default function Blog({ blogs, ...props }) {
                 handleChange={handleChange}
                 isFilterTag={false}
               />
-              <SMultiselector
+              <FilterTitle size={baseTheme.size.h3}>Tags</FilterTitle>
+              <Multiselector
                 options={[
                   "Productivity",
                   "Student Life",
@@ -159,18 +161,18 @@ const InputsWrapper = styled.div`
 `;
 
 const SInput = styled(Input)`
-  width: 80%;
+  width: 50%;
   margin-top: 10px;
   @media only screen and (min-width: 1200px) {
-    width: 80%;
+    width: 50%;
   }
   @media only screen and (min-width: 1600px) {
-    width: 60%;
+    width: 50%;
   }
   ${media(
     "tablet",
     `
-        width: 60%;
+        width: 80%;
         margin-top: 0;
         margin-bottom: 30px;
         `
@@ -178,43 +180,26 @@ const SInput = styled(Input)`
 `;
 
 const FilterTitle = styled(Text)`
-  margin: ;
+  padding: 20px;
+  margin: 0;
   ${({ theme }) => `
       font-family: ${theme.font.josefin};
       color: ${theme.colors.navy};
   `};
 `;
 
-const SMultiselector = styled(Multiselector)`
-  width: 80%;
-  margin-top: 10px;
-  @media only screen and (min-width: 1200px) {
-    width: 80%;
-  }
-  @media only screen and (min-width: 1600px) {
-    width: 60%;
-  }
-  ${media(
-    "tablet",
-    `
-      margin-top: 0;
-      margin-bottom: 30px;
-      `
-  )};
-`;
-
 const FilterWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   max-width: 250px;
+  margin: 10px 50px 0px 80px;
   ${media(
     "tablet",
 
-    `   flex-direction: row;
-        justify-content: center;
-          max-width 5000px:
-          `
+    `   
+      margin: 0 10px;
+      flex-direction: column;
+      justify-content: center;
+      min-width:100%;
+        `
   )};
 `;
 

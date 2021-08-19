@@ -97,6 +97,7 @@ export const Multiselector = ({
           },
           optionContainer: {
             width: "97%",
+            "border-radius": baseTheme.radius.border,
           },
           option: {
             width: "auto",
