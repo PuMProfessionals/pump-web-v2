@@ -8,24 +8,22 @@ import DefaultProfile from "../../../public/about/tiedye-rect.png";
 export const BlogSection = ({ blogPosts }) => (
   <Wrapper>
     {!!blogPosts &&
-      blogPosts.map(
-        ({ id, slug, title, date, summary, tags, authors }) => (
-          <Post key={id}>
-            <Link href={`/resources/blog/${slug}`}>
-              <a>
-                <BlogCard
-                  title={title}
-                  description={summary}
-                  tags={tags}
-                  avatar={DefaultProfile}
-                  authors={authors}
-                  publishedDate={date}
-                />
-              </a>
-            </Link>
-          </Post>
-        )
-      )}
+      blogPosts.map(({ id, slug, title, date, summary, tags, authors }) => (
+        <Post key={id}>
+          <Link href={`/resources/blog/${slug}`}>
+            <a>
+              <BlogCard
+                title={title}
+                description={summary}
+                tags={tags}
+                avatar={DefaultProfile}
+                authors={authors}
+                publishedDate={date}
+              />
+            </a>
+          </Link>
+        </Post>
+      ))}
   </Wrapper>
 );
 
