@@ -59,7 +59,7 @@ export const Multiselector = ({
   };
 
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       <Multiselect
         options={options}
         displayValue={displayValue}
