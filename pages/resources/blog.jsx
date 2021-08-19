@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Head from "next/head";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
@@ -12,12 +11,13 @@ import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
 import { Title } from "../../components";
 import SpeechBubble from "../../public/blog/written-speech-bubble.svg";
+import { BlogSection } from "../../sections/resources/blog";
 
 const customError = () => (
   <div>
     <span role="img" arial-label="waving-hand">
       👋
-    </span>{" "}
+    </span>
     Unfortunately, we could not reach our database due to an internal server error.
     We&apos;re doing our best to fix this for you soon. Sorry for the inconvenience!
   </div>
@@ -72,20 +72,13 @@ export default function Blog({ blogs, ...props }) {
             value={searchParameter}
             onChange={handleChange}
           />
-          {isLoading ? (
-            <Loading color={baseTheme.colors.navy} />
-          ) : (
-            <>
-              {!!blogPosts &&
-                blogPosts.map(({ title, slug }) => (
-                  <div key={title}>
-                    <Link href={`/resources/blog/${slug}`}>
-                      <a style={{ color: baseTheme.colors.navy }}>{title}</a>
-                    </Link>
-                  </div>
-                ))}
-            </>
-          )}
+          <BlogWrapper>
+            {isLoading ? (
+              <Loading color={baseTheme.colors.navy} />
+            ) : (
+              <BlogSection blogPosts={blogPosts} />
+            )}
+          </BlogWrapper>
         </Wrapper>
       </PageLayout>
     </div>
@@ -93,6 +86,16 @@ export default function Blog({ blogs, ...props }) {
 }
 
 const Wrapper = styled.div``;
+
+const BlogWrapper = styled.div`
+  display: flex;
+  width: 85%;
+  margin: 0 auto;
+  justify-content: center;
+   {
+    /* should be removed/changed to accomodate filter section */
+  }
+`;
 
 export async function getStaticProps() {
   let blogs;
