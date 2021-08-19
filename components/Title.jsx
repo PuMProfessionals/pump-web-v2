@@ -76,8 +76,8 @@ const BackArrow = styled.div`
   ${media(
     600,
     `
-      left: 8%;
-      top: 80px;
+      left: 6%;
+      top: 33%;
     `
   )}
 `;
@@ -89,7 +89,7 @@ const TitleSection = styled.div`
   ${media(
     600,
     `
-      width: 80%;
+      width: 70%;
     `
   )}
 `;
