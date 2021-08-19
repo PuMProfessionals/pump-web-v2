@@ -34,6 +34,10 @@ export default function Contact() {
     <div>
       <Head>
         <title>PuMP | Contact Us</title>
+        <meta
+          name="description"
+          content="Interested in joining PuMP, want to partner, or curious about PuMP? Reach out to us!"
+        />
       </Head>
       <PageLayout>
         <Title
