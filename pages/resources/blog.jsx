@@ -75,7 +75,7 @@ export default function Blog({ blogs, ...props }) {
           />
           <InputsWrapper>
             <SInput
-              placeholder="Search blog"
+              placeholder="Search by Title"
               name="blog-name"
               type="text"
               value={searchParameter}
@@ -149,9 +149,9 @@ const InputsWrapper = styled.div`
   align-items: center;
   margin: 20px 0;
   ${media(
-    "mobile",
+    "tablet",
     `
-        margin-top: 20px;
+        margin-top: 40px;
         `
   )};
 `;
@@ -165,14 +165,11 @@ const SInput = styled(Input)`
   @media only screen and (min-width: 1600px) {
     width: 50%;
   }
-  ${media(
-    "tablet",
-    `
-        width: 80%;
-        margin-top: 0;
-        margin-bottom: 30px;
-        `
-  )};
+  @media only screen and (max-width: 1050px) {
+    width: 80%;
+    margin-top: 5%;
+    margin-bottom: 30px;
+  }
 `;
 
 const FilterTitle = styled(Text)`
@@ -187,28 +184,21 @@ const FilterTitle = styled(Text)`
 const FilterWrapper = styled.div`
   max-width: 250px;
   margin: 10px 50px 30px 80px;
-  ${media(
-    "tablet",
-
-    `   
-      margin: 0 10px;
-      flex-direction: column;
-      justify-content: center;
-      min-width:100%;
-        `
-  )};
+  @media only screen and (max-width: 1050px) {
+    margin: 0 10px;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 100%;
+  }
 `;
 
 const BottomWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  ${media(
-    "tablet",
-    `
-        margin-top: 20px;
-        flex-direction: column;
-        `
-  )};
+  @media only screen and (max-width: 1050px) {
+    margin-top: 20px;
+    flex-direction: column;
+  }
 `;
 
 const BlogWrapper = styled.div`
