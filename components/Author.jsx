@@ -2,28 +2,19 @@ import Image from "next/image";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import DefaultProfile from "../public/about/tiedye-rect.png";
 import { Text } from "../components";
-import { media } from "../utils";
 
 /**
  * Blog author component
  *
  * @prop {object} avatar - Profile picture image (Future implementation)
  * @prop {array} names - list of author names
- *
- * see example on blog.jsx (line 70)
  */
 
-export const Author = ({ names }) => (
-  <Wrapper>
+export const Author = ({ avatar, names, ...props }) => (
+  <Wrapper {...props}>
     <AvatarSection>
-      <Avatar src={DefaultProfile} width={50} height={50} />
-      {/* {names.length === 1 ? (
-        <Avatar src={avatar} width={50} height={50} />
-      ) : (
-        <Avatar src={DefaultProfile} width={50} height={50} />
-      )} */}
+      <Avatar src={avatar} width={50} height={50} />
     </AvatarSection>
     <Names>
       {names.length === 1 ? (
@@ -38,18 +29,11 @@ export const Author = ({ names }) => (
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  width: 25%;
-  padding: 0.5rem;
-  ${media(
-    "700",
-    `
-      width: 60%;
-      `
-  )};
+  width: 100%;
 `;
 
 const AvatarSection = styled.div`
-  margin: 2%;
+  margin-right: 1rem;
 `;
 
 const Avatar = styled(Image)`
@@ -57,7 +41,7 @@ const Avatar = styled(Image)`
 `;
 
 const Names = styled.div`
-  word-break: break-work;
+  width: 60%;
 `;
 
 Author.propTypes = {

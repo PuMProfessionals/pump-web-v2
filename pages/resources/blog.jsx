@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Head from "next/head";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
@@ -12,12 +11,13 @@ import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
 import SpeechBubble from "../../public/blog/written-speech-bubble.svg";
 import { media } from "../../utils";
+import { BlogSection } from "../../sections/resources/blog";
 
 const customError = () => (
   <div>
     <span role="img" arial-label="waving-hand">
       👋
-    </span>{" "}
+    </span>
     Unfortunately, we could not reach our database due to an internal server error.
     We&apos;re doing our best to fix this for you soon. Sorry for the inconvenience!
   </div>
@@ -127,22 +127,13 @@ export default function Blog({ blogs, ...props }) {
                 handleChange={handleChange}
               />
             </FilterWrapper>
-            <ResultsWrapper>
+            <BlogWrapper>
               {isLoading ? (
                 <Loading color={baseTheme.colors.navy} />
               ) : (
-                <>
-                  {!!blogPosts &&
-                    blogPosts.map(({ title, slug }) => (
-                      <div key={title}>
-                        <Link href={`/resources/blog/${slug}`}>
-                          <a style={{ color: baseTheme.colors.navy }}>{title}</a>
-                        </Link>
-                      </div>
-                    ))}
-                </>
+                <BlogSection blogPosts={blogPosts} />
               )}
-            </ResultsWrapper>
+            </BlogWrapper>
           </BottomWrapper>
         </Wrapper>
       </PageLayout>
@@ -220,9 +211,14 @@ const BottomWrapper = styled.div`
   )};
 `;
 
-const ResultsWrapper = styled.div`
+const BlogWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  width: 85%;
+  margin: 0 auto;
+  justify-content: center;
+   {
+    /* should be removed/changed to accomodate filter section */
+  }
 `;
 
 export async function getStaticProps() {
