@@ -66,7 +66,7 @@ export default function Opportunities({ opps, ...props }) {
       </Head>
       <PageLayout>
         <ToastContainer />
-        <Wrapper {...props}>
+        <div {...props}>
           <Title
             title="PuMP Direct"
             description="Browse our opportunities."
@@ -137,13 +137,11 @@ export default function Opportunities({ opps, ...props }) {
               )}
             </ResultsWrapper>
           </BottomWrapper>
-        </Wrapper>
+        </div>
       </PageLayout>
     </div>
   );
 }
-
-const Wrapper = styled.div``;
 
 const InputsWrapper = styled.div`
   display: flex;

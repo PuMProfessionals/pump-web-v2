@@ -65,7 +65,7 @@ export default function Blog({ blogs, ...props }) {
       </Head>
       <PageLayout>
         <ToastContainer />
-        <Wrapper {...props}>
+        <div {...props}>
           <Title
             title="Welcome To PuMP Digest"
             image={SpeechBubble}
@@ -135,13 +135,11 @@ export default function Blog({ blogs, ...props }) {
               )}
             </BlogWrapper>
           </BottomWrapper>
-        </Wrapper>
+        </div>
       </PageLayout>
     </div>
   );
 }
-
-const Wrapper = styled.div``;
 
 const InputsWrapper = styled.div`
   display: flex;
@@ -185,7 +183,7 @@ const FilterWrapper = styled.div`
   max-width: 250px;
   margin: 10px 50px 30px 80px;
   @media only screen and (max-width: 1050px) {
-    margin: 0 10px;
+    margin: 0 3%;
     flex-direction: column;
     justify-content: center;
     min-width: 100%;
