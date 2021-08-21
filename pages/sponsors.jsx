@@ -223,6 +223,10 @@ export default function Sponsors() {
     <div>
       <Head>
         <title>PuMP | Sponsors</title>
+        <meta
+          name="description"
+          content="Find out why you should sponsor PuMP today."
+        />
       </Head>
       <PageLayout>
         <Title title="Sponsors" />

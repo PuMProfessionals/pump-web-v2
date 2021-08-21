@@ -8,6 +8,10 @@ export default function UAS() {
     <div>
       <Head>
         <title>PuMP | UAS</title>
+        <meta
+          name="description"
+          content="Join a Discord comunity for high school and undergraduate students to learn more about diverse medical university programs."
+        />
       </Head>
       <PageLayout>
         <Title title="University Admissions Server (UAS)" arrowLink="/resources" />

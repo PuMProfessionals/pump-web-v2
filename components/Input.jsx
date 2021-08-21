@@ -13,7 +13,7 @@ export const Input = ({
   <SInput
     placeholder={placeholder}
     name={name}
-    tyle={type}
+    type={type}
     value={value}
     required={required}
     {...props}

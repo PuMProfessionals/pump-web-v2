@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Head from "next/head";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
@@ -7,17 +6,18 @@ import styled from "styled-components";
 
 import { prisma } from "../../prisma/index";
 import { posts } from "../../cache/cache";
-import { Input, Loading } from "../../components";
+import { Input, Loading, Multiselector, Title, Text } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
-import { Title } from "../../components";
 import SpeechBubble from "../../public/blog/written-speech-bubble.svg";
+import { media } from "../../utils";
+import { BlogSection } from "../../sections/resources/blog";
 
 const customError = () => (
   <div>
     <span role="img" arial-label="waving-hand">
       👋
-    </span>{" "}
+    </span>
     Unfortunately, we could not reach our database due to an internal server error.
     We&apos;re doing our best to fix this for you soon. Sorry for the inconvenience!
   </div>
@@ -25,6 +25,8 @@ const customError = () => (
 
 export default function Blog({ blogs, ...props }) {
   const [searchParameter, setSearchParameter] = useState("");
+  const [tags, setTags] = useState("");
+  const [releaseBatch, setReleaseBatch] = useState("");
   const [blogPosts, setBlogPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -32,11 +34,12 @@ export default function Blog({ blogs, ...props }) {
     setIsLoading(false);
   }, []);
 
-  const handleChange = (e) => {
-    setSearchParameter(e.target.value);
+  const handleChange = (searchValue, tagValues, releaseValues) => {
     setIsLoading(true);
     axios
-      .get(`/api/blog?search=${e.target.value}`)
+      .get(
+        `/api/blog?search=${searchValue}&tags=${tagValues}&release=${releaseValues}`
+      )
       .then((res) => {
         setBlogPosts(res.data.results);
         setIsLoading(false);
@@ -45,48 +48,166 @@ export default function Blog({ blogs, ...props }) {
         toast.error(customError);
       });
   };
+
+  const handleSearch = (e) => {
+    setSearchParameter(e.target.value);
+    handleChange(e.target.value, tags, releaseBatch);
+  };
+
   return (
     <div>
       <Head>
         <title>PuMP | Digest</title>
+        <meta
+          property="description"
+          content="Read advice about interview dos and don'ts, medical school tips, careers in health sciences, and much more. All under one roof!"
+        />
       </Head>
       <PageLayout>
         <ToastContainer />
-        <Wrapper {...props}>
+        <div {...props}>
           <Title
             title="Welcome To PuMP Digest"
             image={SpeechBubble}
+            arrowLink="/resources"
             imageWidth={150}
             imageHeight={150}
           />
-          <Input
-            placeholder="Search blog"
-            name="blog-name"
-            type="text"
-            value={searchParameter}
-            onChange={handleChange}
-          />
-          {isLoading ? (
-            <Loading color={baseTheme.colors.navy} />
-          ) : (
-            <>
-              {!!blogPosts &&
-                blogPosts.map(({ title, slug }) => (
-                  <div key={title}>
-                    <Link href={`/resources/blog/${slug}`}>
-                      <a style={{ color: baseTheme.colors.navy }}>{title}</a>
-                    </Link>
-                  </div>
-                ))}
-            </>
-          )}
-        </Wrapper>
+          <InputsWrapper>
+            <SInput
+              placeholder="Search by Title"
+              name="blog-name"
+              type="text"
+              value={searchParameter}
+              onChange={handleSearch}
+            />
+          </InputsWrapper>
+          <BottomWrapper>
+            <FilterWrapper>
+              <FilterTitle size={baseTheme.size.h2} bold="true">
+                Filters
+              </FilterTitle>
+              <FilterTitle size={baseTheme.size.h3}>Release Batch</FilterTitle>
+              <Multiselector
+                options={["January 2021", "October 2020"]}
+                displayValue="name"
+                placeholder="Release Batch"
+                setList={setReleaseBatch}
+                searchValue={searchParameter}
+                tagValue={tags}
+                otherValue={releaseBatch}
+                handleChange={handleChange}
+                isFilterTag={false}
+              />
+              <FilterTitle size={baseTheme.size.h3}>Tags</FilterTitle>
+              <Multiselector
+                options={[
+                  "Productivity",
+                  "Student Life",
+                  "Extracurriculars",
+                  "High School",
+                  "Mental Health",
+                  "Skills",
+                  "Informative",
+                  "Informational",
+                  "Professions",
+                  "Apps",
+                  "Research",
+                  "Postsecondary",
+                  "Pathways",
+                  "Interviews",
+                  "Covid 19",
+                ]}
+                displayValue="name"
+                placeholder="Filter by Tag"
+                setList={setTags}
+                searchValue={searchParameter}
+                tagValue={tags}
+                otherValue={releaseBatch}
+                handleChange={handleChange}
+              />
+            </FilterWrapper>
+            <BlogWrapper>
+              {isLoading ? (
+                <Loading color={baseTheme.colors.navy} />
+              ) : (
+                <BlogSection blogPosts={blogPosts} />
+              )}
+            </BlogWrapper>
+          </BottomWrapper>
+        </div>
       </PageLayout>
     </div>
   );
 }
 
-const Wrapper = styled.div``;
+const InputsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  ${media(
+    "tablet",
+    `
+        margin-top: 40px;
+        `
+  )};
+`;
+
+const SInput = styled(Input)`
+  width: 50%;
+  margin-top: 10px;
+  @media only screen and (min-width: 1200px) {
+    width: 50%;
+  }
+  @media only screen and (min-width: 1600px) {
+    width: 50%;
+  }
+  @media only screen and (max-width: 1050px) {
+    width: 80%;
+    margin-top: 5%;
+    margin-bottom: 30px;
+  }
+`;
+
+const FilterTitle = styled(Text)`
+  padding: 20px;
+  margin: 0;
+  ${({ theme }) => `
+      font-family: ${theme.font.josefin};
+      color: ${theme.colors.navy};
+  `};
+`;
+
+const FilterWrapper = styled.div`
+  max-width: 250px;
+  margin: 10px 50px 30px 80px;
+  @media only screen and (max-width: 1050px) {
+    margin: 0 3%;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 100%;
+  }
+`;
+
+const BottomWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  @media only screen and (max-width: 1050px) {
+    margin-top: 20px;
+    flex-direction: column;
+  }
+`;
+
+const BlogWrapper = styled.div`
+  display: flex;
+  width: 85%;
+  margin: 0 auto;
+  justify-content: center;
+   {
+    /* should be removed/changed to accomodate filter section */
+  }
+`;
 
 export async function getStaticProps() {
   let blogs;
