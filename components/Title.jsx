@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import Image from "next/image";
+import Link from "next/link";
 
 import LeftArrow from "../public/LeftArrow-NoCircle.svg";
 import { baseTheme } from "../theme";
@@ -39,9 +40,11 @@ export const Title = ({
   >
     {!!arrowLink && (
       <BackArrow isLeftAligned={isLeftAligned}>
-        <a href={arrowLink}>
-          <Image src={LeftArrow} width={25} />
-        </a>
+        <Link href={arrowLink}>
+          <a>
+            <Image src={LeftArrow} width={25} />
+          </a>
+        </Link>
       </BackArrow>
     )}
     <TitleSection>
@@ -73,8 +76,8 @@ const BackArrow = styled.div`
   ${media(
     600,
     `
-      left: 8%;
-      top: 80px;
+      left: 6%;
+      top: 33%;
     `
   )}
 `;
@@ -86,7 +89,7 @@ const TitleSection = styled.div`
   ${media(
     600,
     `
-      width: 80%;
+      width: 70%;
     `
   )}
 `;

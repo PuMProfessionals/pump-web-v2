@@ -8,17 +8,19 @@ import { posts } from "../../../cache/cache";
 import { Title, MDXWrapper, Author } from "../../../components";
 import { PageLayout } from "../../../sections/hoc";
 import { getSlug } from "../../../utils/markdownUtils";
+import DefaultProfile from "../../../public/about/tiedye-rect.png";
 
 const BlogsPage = ({ source, frontMatter }) => {
   return (
     <div>
       <Head>
         <title>PuMP | {frontMatter.title}</title>
+        <meta property="description" content={frontMatter.description} />
       </Head>
       <PageLayout>
-        <Title title={frontMatter.title} />
+        <Title title={frontMatter.title} arrowLink="/resources/blog" />
         <AuthorWrapper>
-          <Author names={frontMatter.authors} />
+          <Author names={frontMatter.authors} avatar={DefaultProfile} />
         </AuthorWrapper>
         <MDXWrapper>
           <MDXRemote {...source} />

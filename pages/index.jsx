@@ -29,6 +29,10 @@ export default function Home() {
     <div>
       <Head>
         <title>PuMP | Home</title>
+        <meta
+          property="description"
+          content="A registered charity dedicated to connecting aspiring students to health sciences opportunities."
+        />
       </Head>
       <PageLayout>
         <TopSection />
