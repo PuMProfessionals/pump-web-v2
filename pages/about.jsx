@@ -298,7 +298,6 @@ export default function About() {
   );
 }
 
-
 const PhotoCollageSectionWrapper = styled(SectionWrapper)`
   padding-top: 5%;
   padding-bottom: 10%;

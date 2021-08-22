@@ -76,7 +76,7 @@ export default function Events() {
                 title: "MedVlogs",
                 description:
                   "Social media features of medical students where they share a day in the life, study tips, internship experiences, and more.",
-                thumbnail: PumpDigest
+                thumbnail: PumpDigest,
               },
             ]}
           />
@@ -103,7 +103,7 @@ export default function Events() {
                 title: "URECS",
                 description:
                   "Partnered with The STEM Fellowship, high school students are paired with university students where they can talk about scholarships, post-secondary applications, or university life.",
-                thumbnail: PumpDigest
+                thumbnail: PumpDigest,
               },
             ]}
           />
