@@ -2,6 +2,8 @@ import Head from "next/head";
 import styled from "styled-components";
 
 import PumpDigest from "../public/resources/pump-digest.png";
+import PumpPlus from "../public/events/pump-plus.png";
+import PowerUp from "../public/events/power-up.png";
 import { Title } from "../components";
 import { EventsCarousel } from "../sections/events";
 import { PageLayout } from "../sections/hoc";
@@ -24,31 +26,37 @@ export default function Events() {
             title="Annual Events"
             description="Opportunities that assist high school students with career planning, relieve stress, and connect with others."
             backgroundColor={baseTheme.colors.pastelNavy}
+            cardHeight={580}
             slides={[
               {
                 title: "PuMP+",
+                date: "April 2021 ",
+                tags: ["All boards"],
                 description:
-                  "Connecting high school students to a variety of opportunities. Meet institutions such as the Sanofi Biogenius Challenge, Vex Robotics, and The Knowledge Society! Join 500+ students and 20+ booths!",
-                thumbnail: PumpDigest,
+                  "| Connecting high school students to a variety of opportunities. Meet institutions such as the Sanofi Biogenius Challenge, Vex Robotics, and The Knowledge Society! Join 500+ students and 20+ booths!",
+                thumbnail: PumpPlus,
                 buttonText: "Learn More",
                 linkTo: "/events/pump-plus",
               },
               {
                 title: "MedHunt",
+                tags: ["National"],
+                date: "Aug. 2021 ",
                 description:
-                  "MedHunt is a virtual scavenger hunt where teams can participate to win some cool prizes! Participants will work in teams of 1 to 3 to solve puzzles! The team who completes the scavenger hunt first are the victors!",
+                  "| MedHunt is a virtual scavenger hunt where teams can participate to win some cool prizes! Participants will work in teams of 1 to 3 to solve puzzles! The team who completes the scavenger hunt first are the victors!",
                 thumbnail: PumpDigest,
                 buttonText: "Learn More",
                 linkTo: "/events/med-hunt",
               },
               {
                 title: "PowerUp Mentorship Program",
-                date: "Sept. 2020 - Jan. 2021 ",
+                tags: ["National"],
+                date: "Ongoing ",
                 description:
                   "| Partnered with The STEM Fellowship, high school students are paired with university students where they can talk about scholarships, post-secondary applications, or university life.",
-                thumbnail: PumpDigest,
+                thumbnail: PowerUp,
                 buttonText: "Learn More",
-                linkTo: "/",
+                linkTo: "/power-up",
               },
             ]}
           />

@@ -3,6 +3,7 @@ import Image from "next/image";
 import styled from "styled-components";
 
 import { Button } from "./Button";
+import { Tag } from "./Tag";
 import { baseTheme } from "../theme";
 import { media } from "../utils";
 
@@ -17,6 +18,7 @@ import { media } from "../utils";
 export function Card({
   thumbnail,
   title,
+  tags,
   component, // optional component to replace in content
   description,
   imageHeight = 200,
@@ -45,6 +47,16 @@ export function Card({
               component
             ) : (
               <>
+                {tags && (
+                  <TagWrapper>
+                  {tags.map(tag => (
+                    <Tag 
+                      key={`${title}__${description}__${tag}`}
+                      label={tag}
+                    />            
+                  ))}
+                  </TagWrapper>
+                )}
                 <Title>{title}</Title>
                 <p style={{ marginBottom: "20px" }}>
                   <strong>{date ? date : ""}</strong>
@@ -90,6 +102,12 @@ const Wrapper = styled.div`
       padding-bottom: 20px;
     `
   )};
+`;
+const TagWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 2%;
 `;
 const Section = styled.div`
   display: flex;

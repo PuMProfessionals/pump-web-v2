@@ -38,7 +38,6 @@ export const Title = ({
     isLeftAligned={isLeftAligned}
     {...props}
   >
-    {" "}
     <TopSection>
       {!!arrowLink && (
         <Link href={arrowLink}>
