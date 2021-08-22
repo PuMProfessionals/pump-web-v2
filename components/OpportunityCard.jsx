@@ -8,13 +8,14 @@ export const OpportunityCard = ({
   organization,
   postingDate,
   logo,
+	link,
   ...props
 }) => {
   return (
     <Wrapper {...props}>
       <Logo src={logo} />
       <InfoContainer>
-        <Name>{name}</Name>
+        <Name href={link}>{name}</Name>
         <Organization>{organization}</Organization>
         <Category>{category}</Category>
         <BottomText>
@@ -38,7 +39,7 @@ const Wrapper = styled.div`
   padding: 10px;
   margin: 10px;
   align-items: center;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     height: 100px;
     padding: 5px;
   }
@@ -52,7 +53,7 @@ const BottomText = styled.div`
   justify-content: space-between;
 `;
 
-const Name = styled(Text)`
+const Name = styled.a`
   ${({ theme }) => `
 		font-family: ${theme.font.lato};
 		color: ${theme.colors.navy};
@@ -60,7 +61,7 @@ const Name = styled(Text)`
 	`};
   font-weight: bold;
   margin: 0;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     ${({ theme }) => `
 			font-size: ${theme.size.default};
 		`};
@@ -74,7 +75,7 @@ const Organization = styled(Text)`
 	`};
   color: #868e9f;
   margin: 0;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     ${({ theme }) => `
 			font-size: ${theme.size.small};
 		`};
@@ -89,7 +90,7 @@ const Category = styled(Text)`
   font-size: 1.2rem;
   text-align: right;
   margin: 0;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     ${({ theme }) => `
 			font-size: ${theme.size.small};
 		`};
@@ -104,7 +105,7 @@ const Location = styled(Text)`
   font-size: 1.2rem;
   color: #868e9f;
   margin: 0;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     ${({ theme }) => `
 			font-size: ${theme.size.small};
 		`};
@@ -119,7 +120,7 @@ const PostingDate = styled(Text)`
   color: #868e9f;
   text-align: right;
   margin: 0;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     ${({ theme }) => `
 			font-size: ${theme.size.small};
 		`};
@@ -133,7 +134,7 @@ const Logo = styled.img`
   aspect-ratio: 1 / 1;
   margin: 10px;
   border-radius: 10px;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     height: 90px;
     margin: 5px;
   }
