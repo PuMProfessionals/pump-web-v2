@@ -24,15 +24,15 @@ const OpportunitiesPage = ({ source, frontMatter }) => {
         <Title title={frontMatter.postingName} arrowLink="/opportunities" />
         <TopWrapper>
           <TagWrapper>
-              {frontMatter.tags.map((tag) => (
-                <Tag key={`${frontMatter.title}__${tag}`} label={tag} />
-              ))}
+            {frontMatter.tags.map((tag) => (
+              <Tag key={`${frontMatter.title}__${tag}`} label={tag} />
+            ))}
           </TagWrapper>
           <Text>{frontMatter.postedDate}</Text>
         </TopWrapper>
         <ImageWrapper>
           <Image
-            src={frontMatter.orgImages} 
+            src={frontMatter.orgImages}
             alt={`Logo for ${frontMatter.orgName}`}
             height={frontMatter.height ? frontMatter.height : 200}
             width={frontMatter.width ? frontMatter.width : 200}
@@ -42,14 +42,8 @@ const OpportunitiesPage = ({ source, frontMatter }) => {
           <MDXRemote {...source} />
         </MDXWrapper>
         <ImageWrapper style={{ marginBottom: "5%" }}>
-          <a 
-            href={frontMatter.linkTo} 
-            target="_blank" 
-            rel="noreferrer nofollower"
-          >
-              <Button>
-                View More
-              </Button>
+          <a href={frontMatter.linkTo} target="_blank" rel="noreferrer nofollower">
+            <Button>View More</Button>
           </a>
         </ImageWrapper>
       </PageLayout>
