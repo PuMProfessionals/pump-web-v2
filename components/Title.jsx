@@ -77,6 +77,7 @@ const TopSection = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 2%;
   ${({ isLeftAligned }) => `
     width: ${isLeftAligned ? "60%" : "100%"};
     justify-content: ${isLeftAligned ? "flex-start" : "center"};
