@@ -65,24 +65,18 @@ export default function Events() {
                 description:
                   "| Social media features by university students sharing their day-to-day life and answering questions about their programs.",
                 thumbnail: PumpDigest,
-                buttonText: "Learn More",
-                linkTo: "/",
               },
               {
                 title: "Connect U",
                 description:
                   "Panel of medical and health science students answering questions about school and providing the must-knows.",
                 thumbnail: PumpDigest,
-                buttonText: "Learn More",
-                linkTo: "/",
               },
               {
                 title: "MedVlogs",
                 description:
                   "Social media features of medical students where they share a day in the life, study tips, internship experiences, and more.",
-                thumbnail: PumpDigest,
-                buttonText: "Learn More",
-                linkTo: "/",
+                thumbnail: PumpDigest
               },
             ]}
           />
@@ -96,8 +90,6 @@ export default function Events() {
                 description:
                   "| Connecting high school students to a variety of opportunities. Meet institutions such as the Sanofi Biogenius Challenge, Vex Robotics, and The Knowledge Society! Join 500+ students and 20+ booths!",
                 thumbnail: PumpDigest,
-                buttonText: "Learn More",
-                linkTo: "/",
               },
               {
                 title: "LaboraStory",
@@ -111,9 +103,7 @@ export default function Events() {
                 title: "URECS",
                 description:
                   "Partnered with The STEM Fellowship, high school students are paired with university students where they can talk about scholarships, post-secondary applications, or university life.",
-                thumbnail: PumpDigest,
-                buttonText: "Learn More",
-                linkTo: "/",
+                thumbnail: PumpDigest
               },
             ]}
           />
