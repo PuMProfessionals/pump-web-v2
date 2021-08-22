@@ -45,6 +45,7 @@ export function CardCarousel({
             <SCard
               key={slide.title}
               title={slide.title}
+              tags={slide.tags}
               description={slide.description}
               thumbnail={slide.thumbnail}
               buttonText={slide.buttonText}

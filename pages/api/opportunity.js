@@ -25,8 +25,7 @@ export default async (req, res) => {
   let filteredResults;
   if (req.query.tags) {
     for (let tag of req.query.tags.split(",")) {
-      tag = tag.trim();
-      filteredResults = results.filter((opp) => opp.tags.includes(tag));
+      filteredResults = results.filter((post) => post.tags.includes(tag));
       allResults.push(...filteredResults);
     }
     results = allResults;
@@ -34,15 +33,10 @@ export default async (req, res) => {
 
   allResults = [];
   if (req.query.city) {
-    filteredResults = results.filter(
-      (opp) => opp.address.toLowerCase() === "anywhere"
-    );
+    filteredResults = results.filter((opp) => opp.city === "Anywhere");
     allResults.push(...filteredResults);
     for (let city of req.query.city.split(",")) {
-      city = city.trim().toLowerCase();
-      filteredResults = results.filter((opp) =>
-        opp.address.toLowerCase().includes(city)
-      );
+      filteredResults = results.filter((opp) => opp.city.includes(city));
       allResults.push(...filteredResults);
     }
     results = allResults;
