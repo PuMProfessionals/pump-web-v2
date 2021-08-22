@@ -77,57 +77,65 @@ export default function Events() {
                 title: "University Admissions Server",
                 tags: ["Ongoing", "National"],
                 date: "Ongoing ",
-                description: "| A Discord community where high school students network and learn about undergraduate programs in health sciences by directly chatting with mentors.",
+                description:
+                  "| A Discord community where high school students network and learn about undergraduate programs in health sciences by directly chatting with mentors.",
                 buttonText: "Learn More",
-                linkTo: "/resources/uas"
+                linkTo: "/resources/uas",
               },
               {
                 title: "PuMP Digest",
                 tags: ["Ongoing", "National"],
                 date: "Ongoing ",
                 thumbnail: PumpDigest,
-                description: "| A student blog with seasonal releases on topics ranging from novel biomedical research to student life to post-secondary journeys.",
+                description:
+                  "| A student blog with seasonal releases on topics ranging from novel biomedical research to student life to post-secondary journeys.",
                 buttonText: "Learn More",
-                linkTo: "/resources/blog"
+                linkTo: "/resources/blog",
               },
               {
                 title: "PuMP Direct",
                 tags: ["Ongoing", "National"],
                 date: "Ongoing ",
-                description: "| A database of STEM opportunities throughout Canada, from hospital volunteer positions to science competitions and programs.",
+                description:
+                  "| A database of STEM opportunities throughout Canada, from hospital volunteer positions to science competitions and programs.",
                 buttonText: "Learn More",
-                linkTo: "/resources/opportunities"
+                linkTo: "/resources/opportunities",
               },
               {
                 title: "MedSpecs",
                 tags: ["Calgary"],
                 date: "Dec. 2020 ",
-                description: "| A webinar series exposing students to the lives of doctors, researchers and various other medical professionals, where panelists shared their path in medicine."
+                description:
+                  "| A webinar series exposing students to the lives of doctors, researchers and various other medical professionals, where panelists shared their path in medicine.",
               },
               {
                 title: "On Diseases and Disorders",
                 tags: ["Calgary"],
                 date: "Mar. 2021 ",
-                description: "| A social media series where guest speakers share insight into challenges with diagnosis and treatment of Parkinson’s disease to raise awareness."
+                description:
+                  "| A social media series where guest speakers share insight into challenges with diagnosis and treatment of Parkinson’s disease to raise awareness.",
               },
               {
                 title: "MedWeb",
                 tags: ["Toronto"],
                 date: "Oct. 2020 - Dec. 2020 ",
-                description: "| A webinar series featuring 6 speakers working in neuroscience, pharmacology and pediatrics, exposing students to their respective fields."
-              },  
+                description:
+                  "| A webinar series featuring 6 speakers working in neuroscience, pharmacology and pediatrics, exposing students to their respective fields.",
+              },
               {
                 title: "Pathways in Medicine",
                 tags: ["Vancouver"],
                 date: "July 2020 ",
-                description: "| A webinar-style series featuring speakers in healthcare specialties ranging from exercise medicine to clinical care."
+                description:
+                  "| A webinar-style series featuring speakers in healthcare specialties ranging from exercise medicine to clinical care.",
               },
               {
                 title: "MedChat",
                 tags: ["Vancouver"],
                 date: "Sept. 2020",
-                description: "| A social media Q&A where students submitted questions to panelists regarding various topics from extracurriculars to medical school."
-              }
+                description:
+                  "| A social media Q&A where students submitted questions to panelists regarding various topics from extracurriculars to medical school.",
+              },
             ]}
           />
           <SEventsCarousel
@@ -139,37 +147,40 @@ export default function Events() {
                 tags: ["National"],
                 date: "Nov. 2020 ",
                 description:
-                  "| Connecting high school students to a variety of opportunities. Meet institutions such as the Sanofi Biogenius Challenge, Vex Robotics, and The Knowledge Society! Join 500+ students and 20+ booths!"
+                  "| Connecting high school students to a variety of opportunities. Meet institutions such as the Sanofi Biogenius Challenge, Vex Robotics, and The Knowledge Society! Join 500+ students and 20+ booths!",
               },
               {
                 title: "LaboraStory",
                 date: "July 2021",
                 description:
-                  "MedHunt is a virtual scavenger hunt where teams can participate to win some cool prizes! Participants will work in teams of 1 to 3 to solve puzzles! The team who completes the scavenger hunt first are the victors!"
+                  "MedHunt is a virtual scavenger hunt where teams can participate to win some cool prizes! Participants will work in teams of 1 to 3 to solve puzzles! The team who completes the scavenger hunt first are the victors!",
               },
               {
                 title: "URECS",
                 date: "April 2019",
                 description:
-                  "| A workshop for students to explore the software COBWEB and learn about research models from high school and university students."
+                  "| A workshop for students to explore the software COBWEB and learn about research models from high school and university students.",
               },
               {
                 title: "COVID-19 Support",
                 tags: ["Toronto"],
                 date: "June 2020 - Aug. 2020 ",
-                description: "| With the help of TakingItGlobal and Rising Youth, PuMP donated $1500 worth of groceries and essential goods to various shelters and long term care homes."
+                description:
+                  "| With the help of TakingItGlobal and Rising Youth, PuMP donated $1500 worth of groceries and essential goods to various shelters and long term care homes.",
               },
               {
                 title: "Crack the Case",
                 tags: ["Vancouver"],
                 date: "Nov. 2020 ",
-                description: "| A medical case study challenge where teams raced to submit answers after analyzing the cases."
+                description:
+                  "| A medical case study challenge where teams raced to submit answers after analyzing the cases.",
               },
               {
                 title: "PuMP Spark",
                 date: "July 2019 ",
-                description: "| An interactive workshop featuring 3 guest speakers from the medical field, held at Richvale Library."
-              }
+                description:
+                  "| An interactive workshop featuring 3 guest speakers from the medical field, held at Richvale Library.",
+              },
             ]}
           />
         </Wrapper>

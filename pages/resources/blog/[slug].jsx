@@ -21,15 +21,13 @@ const BlogsPage = ({ source, frontMatter }) => {
         <Title title={frontMatter.title} arrowLink="/resources/blog" />
         <InfoWrapper>
           <TagWrapper>
-            {frontMatter.tags.map(tag => (
+            {frontMatter.tags.map((tag) => (
               <Tag key={`${frontMatter.title}__${tag}`} label={tag} />
             ))}
           </TagWrapper>
           <AuthorWrapper>
             <Author names={frontMatter.authors} avatar={DefaultProfile} />
-            <Text>
-              {frontMatter.date}
-            </Text>
+            <Text>{frontMatter.date}</Text>
           </AuthorWrapper>
         </InfoWrapper>
         <MDXWrapper>
