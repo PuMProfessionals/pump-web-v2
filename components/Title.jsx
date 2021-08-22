@@ -38,7 +38,7 @@ export const Title = ({
     isLeftAligned={isLeftAligned}
     {...props}
   >
-    <TopSection>
+    <TopSection isLeftAligned={isLeftAligned}>
       {!!arrowLink && (
         <Link href={arrowLink}>
           <a>
@@ -62,7 +62,13 @@ const STitle = styled.h1`
   ${media(
     "tablet",
     `
-      font-size: 2rem;
+      font-size: 1.5rem;
+    `
+  )};
+  ${media(
+    "mobile",
+    `
+      font-size: 1.2rem;
     `
   )}
 `;
@@ -71,7 +77,10 @@ const TopSection = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 60%;
+  ${({ isLeftAligned }) => `
+    width: ${isLeftAligned ? "60%" : "100%"};
+    justify-content: ${isLeftAligned ? "flex-start" : "center"};
+  `}
   ${media(
     "tablet",
     `
@@ -83,6 +92,7 @@ const TopSection = styled.div`
 const TitleSection = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin-left: 5%;
   ${media(
     600,

@@ -6,6 +6,7 @@ import { Button } from "./Button";
 import { Tag } from "./Tag";
 import { baseTheme } from "../theme";
 import { media } from "../utils";
+import DefaultAvatar from "../public/members/card-fill.png";
 
 /* 
     Example:
@@ -33,14 +34,12 @@ export function Card({
   return (
     <Wrapper imageWidth={imageWidth} cardHeight={cardHeight} {...props}>
       <Section>
-        <ImageWrapper>
-          <SImage
-            alt={`Card image for ${title}`}
-            src={thumbnail}
-            height={imageHeight}
-            width={imageWidth}
-          />
-        </ImageWrapper>
+        <SImage
+          alt={`Card image for ${title}`}
+          src={thumbnail ? thumbnail : DefaultAvatar}
+          height={imageHeight}
+          width={imageWidth}
+        />
         <Content contentpadding={contentPadding}>
           <div>
             {component ? (
@@ -49,12 +48,9 @@ export function Card({
               <>
                 {tags && (
                   <TagWrapper>
-                  {tags.map(tag => (
-                    <Tag 
-                      key={`${title}__${description}__${tag}`}
-                      label={tag}
-                    />            
-                  ))}
+                    {tags.map((tag) => (
+                      <Tag key={`${title}__${description}__${tag}`} label={tag} />
+                    ))}
                   </TagWrapper>
                 )}
                 <Title>{title}</Title>
@@ -133,10 +129,6 @@ const Title = styled.h3`
         font-size: ${theme.size.defaultLarger};
     `};
   font-weight: bold;
-`;
-const ImageWrapper = styled.div`
-  border-top-left-radius: 44px !important;
-  border-top-right-radius: 44px !important;
 `;
 const SImage = styled(Image)`
   border-top-left-radius: 44px !important;
