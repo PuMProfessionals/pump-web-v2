@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 import { prisma } from "../../prisma/index";
 import { opportunities } from "../../cache/cache";
-import { Input, Loading, Multiselector, Text } from "../../components";
+import { Input, Loading, Multiselector, OpportunityCard, Text } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
 import { Title } from "../../components";
@@ -124,13 +124,17 @@ export default function Opportunities({ opps, ...props }) {
               ) : (
                 <>
                   {!!oppPosts &&
-                    oppPosts.map(({ postingName, slug }) => (
+                    oppPosts.map(({ postingName, orgImages, orgName, city, postedDate, slug }) => (
                       <div key={postingName}>
-                        <Link href={`/resources/opportunities/${slug}`}>
-                          <a style={{ color: baseTheme.colors.navy }}>
-                            {postingName}
-                          </a>
-                        </Link>
+												<OpportunityCard
+													name={postingName}
+													link={`/resources/opportunities/${slug}`}
+													organization={orgName}
+													location={city}
+													category="placeholder"
+													postingDate={postedDate}
+													logo={orgImages}
+												/>
                       </div>
                     ))}
                 </>

@@ -19,5 +19,6 @@ export { TestimonialCarousel } from "./TestimonialCarousel";
 export { SectionWrapper } from "./SectionWrapper";
 export { BlogCard } from "./BlogCard";
 export { MDXWrapper } from "./MDXWrapper";
+export { OpportunityCard } from "./OpportunityCard";
 export { Multiselector } from "./Multiselector";
 export { Tag } from "./Tag";
