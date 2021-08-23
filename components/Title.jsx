@@ -77,15 +77,11 @@ const TopSection = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-<<<<<<< HEAD
-  width: 60%;
-=======
   padding: 2%;
   ${({ isLeftAligned }) => `
     width: ${isLeftAligned ? "60%" : "100%"};
     justify-content: ${isLeftAligned ? "flex-start" : "center"};
   `}
->>>>>>> 75bf2e8d94c3259df1e86e984976fdec439adedd
   ${media(
     "tablet",
     `
@@ -97,10 +93,7 @@ const TopSection = styled.div`
 const TitleSection = styled.div`
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
-=======
   justify-content: center;
->>>>>>> 75bf2e8d94c3259df1e86e984976fdec439adedd
   margin-left: 5%;
   ${media(
     600,
