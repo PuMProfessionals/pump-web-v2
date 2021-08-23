@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { StudentResource, SectionWrapper } from "../../components";
+import { StudentResource } from "../../components";
 import PuMPDirect from "../../public/resources/PuMPDirect.png";
 import PuMPDigest from "../../public/blog/written-speech-bubble.svg";
 import UASLogo from "../../public/resources/uas-logo.png";
-import { media } from "../../utils";
 import { baseTheme } from "../../theme";
 
 /* TODO-2022: Edit Resources to fit SectionWrapper */
@@ -78,22 +77,17 @@ export const ResourcesSection = () => {
         isGraphicLeft={resources[0].isGraphicLeft}
         style={{ marginTop: "5%" }}
       />
-      <SectionWrapper
-        backgroundPath="/resources/middle-background-large.svg"
-        mobileThreshold={1000}
-      >
-        <MiddleStudentResource
-          key={resources[1].titleText}
-          titleText={resources[1].titleText}
-          descriptionText={resources[1].descriptionText}
-          buttons={resources[1].buttons}
-          graphic={resources[1].graphic}
-          graphicWidth={resources[1].graphicWidth}
-          graphicHeight={resources[1].graphicHeight}
-          isGraphicLeft={resources[1].isGraphicLeft}
-          textColor={baseTheme.colors.white}
-        />
-      </SectionWrapper>
+      <MiddleStudentResource
+        key={resources[1].titleText}
+        titleText={resources[1].titleText}
+        descriptionText={resources[1].descriptionText}
+        buttons={resources[1].buttons}
+        graphic={resources[1].graphic}
+        graphicWidth={resources[1].graphicWidth}
+        graphicHeight={resources[1].graphicHeight}
+        isGraphicLeft={resources[1].isGraphicLeft}
+        textColor={baseTheme.colors.white}
+      />
       <StudentResource
         key={resources[2].titleText}
         titleText={resources[2].titleText}
@@ -110,18 +104,10 @@ export const ResourcesSection = () => {
 };
 
 const MiddleStudentResource = styled(StudentResource)`
-  padding: 15% 0;
-  ${media(
-    1000,
-    `
-      margin-top: 2%;
-      padding: 5% 0;
-      border-radius: 44px;
-    `
-  )};
-  @media (max-width: 1000px) {
-    ${({ theme }) => `
-        background-color: ${theme.colors.greyBlue};
-      `};
-  }
+  padding: 5%;
+  margin: 5%;
+  border-radius: 72px;
+  ${({ theme }) => `
+    background-color: ${theme.colors.greyBlue};
+  `};
 `;

@@ -56,14 +56,6 @@ export const BoardSection = ({
 const Wrapper = styled.div`
   padding: 0 7%;
   margin-bottom: 5vh;
-  background-color: transparent;
-  ${({ theme, breakpoint }) => `
-  		@media (max-width: ${breakpoint}px) {
-        background-color: ${theme.colors.greyBlue};
-        border-bottom-right-radius: 72px;
-        border-bottom-left-radius: 72px;
-      }
-  `};
 `;
 const Info = styled.div`
   ${({ align }) => `
