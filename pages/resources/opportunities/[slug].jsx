@@ -21,7 +21,10 @@ const OpportunitiesPage = ({ source, frontMatter }) => {
         />
       </Head>
       <PageLayout>
-        <Title title={frontMatter.postingName} arrowLink="/opportunities" />
+        <Title
+          title={frontMatter.postingName}
+          arrowLink="/resources/opportunities"
+        />
         <TopWrapper>
           <TagWrapper>
             {frontMatter.tags.map((tag) => (
