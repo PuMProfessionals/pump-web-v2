@@ -55,7 +55,7 @@ export default function Events() {
                   "| Partnered with The STEM Fellowship, high school students are paired with university students where they can talk about scholarships, post-secondary applications, or university life.",
                 thumbnail: PowerUp,
                 buttonText: "Learn More",
-                linkTo: "/power-up",
+                linkTo: "/events/power-up",
               },
             ]}
           />
