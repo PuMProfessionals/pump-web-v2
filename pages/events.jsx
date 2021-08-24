@@ -153,7 +153,7 @@ export default function Events() {
                 title: "LaboraStory",
                 date: "July 2021",
                 description:
-                  "MedHunt is a virtual scavenger hunt where teams can participate to win some cool prizes! Participants will work in teams of 1 to 3 to solve puzzles! The team who completes the scavenger hunt first are the victors!",
+                  "| MedHunt is a virtual scavenger hunt where teams can participate to win some cool prizes! Participants will work in teams of 1 to 3 to solve puzzles! The team who completes the scavenger hunt first are the victors!",
               },
               {
                 title: "URECS",
