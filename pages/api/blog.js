@@ -24,7 +24,6 @@ export default async (req, res) => {
   let filteredResults;
   if (req.query.tags) {
     for (let tag of req.query.tags.split(",")) {
-      tag = tag.trim();
       filteredResults = results.filter((post) => post.tags.includes(tag));
       allResults.push(...filteredResults);
     }
@@ -33,14 +32,14 @@ export default async (req, res) => {
   allResults = [];
   if (req.query.release) {
     for (let release of req.query.release.split(",")) {
-      release = release.trim();
-      filteredResults = results.filter(
-        (post) => post.releaseBatch.replace(" ", "") === release
-      );
+      filteredResults = results.filter((post) => post.releaseBatch === release);
       allResults.push(...filteredResults);
     }
     results = allResults;
   }
+
+  results = results.filter((result) => result.published);
+
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify({ results }));

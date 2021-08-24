@@ -223,6 +223,10 @@ export default function Sponsors() {
     <div>
       <Head>
         <title>PuMP | Sponsors</title>
+        <meta
+          name="description"
+          content="Find out why you should sponsor PuMP today."
+        />
       </Head>
       <PageLayout>
         <Title title="Sponsors" />
@@ -336,7 +340,7 @@ const SponsorsWrapper = styled.div`
   )};
 `;
 const TopWrapper = styled.div`
-  margin-top: 10%;
+  padding-top: 8%;
   display: flex;
   flex-direction: column;
   align-items: center;

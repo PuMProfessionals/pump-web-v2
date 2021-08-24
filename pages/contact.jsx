@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Instagram from "../public/contact/ig-outline.svg";
 import Email from "../public/contact/email-outline.svg";
 import Facebook from "../public/contact/fb-outline.svg";
-import { Title, ContactForm, Text, Button, SectionWrapper } from "../components";
+import { Title, ContactForm, Text, Button } from "../components";
 import { PageLayout } from "../sections/hoc";
 import { baseTheme } from "../theme";
 import { CONSTANTS, media } from "../utils";
@@ -34,6 +34,10 @@ export default function Contact() {
     <div>
       <Head>
         <title>PuMP | Contact Us</title>
+        <meta
+          name="description"
+          content="Interested in joining PuMP, want to partner, or curious about PuMP? Reach out to us!"
+        />
       </Head>
       <PageLayout>
         <Title
@@ -59,32 +63,25 @@ export default function Contact() {
             descriptionText="A representative will reply back to your email within 24 hours. Feel free to contact us about our initiatives, joining the team, becoming a partner, or anything else you want to chat about!"
           />
         </Wrapper>
-        {/* TODO: change mobilePath and threshold once blobcs are available */}
-        <SectionWrapper
-          backgroundPath="/contact/contact-sponsorships-large.svg"
-          mobilePath="/contact/contact-sponsorships-large.svg"
-          mobileThreshold={1000}
-        >
-          <SponsorshipWrapper>
-            <SponsorshipText>
-              For sponsorships, email&nbsp;
-              <SponsorshipsBreak />
-              <EmailText href="mailto:sponsorships@pumprofessionals.org">
-                sponsorships@pumprofessionals.org
-              </EmailText>
-            </SponsorshipText>
-            <SponsorshipText>or</SponsorshipText>
-            <div style={{ margin: "30px auto" }}>
-              <Button>
-                <Link href="/sponsors">
-                  <a style={{ color: baseTheme.colors.navy, fontWeight: "bold" }}>
-                    Visit the Sponsors page
-                  </a>
-                </Link>
-              </Button>
-            </div>
-          </SponsorshipWrapper>
-        </SectionWrapper>
+        <SponsorshipWrapper>
+          <SponsorshipText>
+            For sponsorships, email&nbsp;
+            <SponsorshipsBreak />
+            <EmailText href="mailto:sponsorships@pumprofessionals.org">
+              sponsorships@pumprofessionals.org
+            </EmailText>
+          </SponsorshipText>
+          <SponsorshipText>or</SponsorshipText>
+          <div style={{ margin: "30px auto" }}>
+            <Button>
+              <Link href="/sponsors">
+                <a style={{ color: baseTheme.colors.navy, fontWeight: "bold" }}>
+                  Visit the Sponsors page
+                </a>
+              </Link>
+            </Button>
+          </div>
+        </SponsorshipWrapper>
       </PageLayout>
     </div>
   );
@@ -128,6 +125,11 @@ const SponsorshipWrapper = styled.div`
   display: flex;
   padding: 12% 0 5% 0;
   flex-direction: column;
+  ${({ theme }) => `
+    background-color: ${theme.colors.greyBlue};
+    border-top-left-radius: 44px;
+    border-top-right-radius: 44px;
+  `}
 `;
 const SponsorshipText = styled(Text)`
   font-weight: 900;
