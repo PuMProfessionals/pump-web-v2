@@ -58,27 +58,31 @@ const PowerUp = () => {
         </CarouselWrapper>
         <div>
           <p>
-          Partnered with the STEM Fellowship, this free annual program pairs high school students who are interested in pursuing the biological sciences with an undergraduate mentor. Through one-to-one calls, PowerUp offers a tailored mentorship where mentees can learn about how to fund their education, applying to post-secondary programs, preparing for campus life, and more. PowerUp strives to support disadvantaged youth and last year, connected with the Children’s Aid Society and Indigenous community organizations to support traditionally underrepresented communities in STEM. 
+            Partnered with the STEM Fellowship, this free annual program pairs high
+            school students who are interested in pursuing the biological sciences
+            with an undergraduate mentor. Through one-to-one calls, PowerUp offers a
+            tailored mentorship where mentees can learn about how to fund their
+            education, applying to post-secondary programs, preparing for campus
+            life, and more. PowerUp strives to support disadvantaged youth and last
+            year, connected with the Children’s Aid Society and Indigenous community
+            organizations to support traditionally underrepresented communities in
+            STEM.
           </p>
         </div>
         <ImageWrapper>
-            <Image src={PowerImage} alt="Power Up photo" width={300} height={220}/>
+          <Image src={PowerImage} alt="Power Up photo" width={300} height={220} />
         </ImageWrapper>
         <ButtonWrapper>
-            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSc7DeXtxbPpKQLj-MowdDOXYuXIHjRdErKo0S_fgRmAhLN28Q/viewform">
-                <a>
-                    <Button style={{ marginRight: "3%" }}>
-                        Apply to be a Mentor
-                    </Button>
-                </a>
-            </Link>
-            <Link href="https://forms.gle/rGj32Go4jdYsrzsL8">
-                <a>
-                    <Button style={{ marginLeft: "3%"}}>
-                        Apply to be a Mentee
-                    </Button>
-                </a>
-            </Link>
+          <Link href="https://docs.google.com/forms/d/e/1FAIpQLSc7DeXtxbPpKQLj-MowdDOXYuXIHjRdErKo0S_fgRmAhLN28Q/viewform">
+            <a>
+              <Button style={{ marginRight: "3%" }}>Apply to be a Mentor</Button>
+            </a>
+          </Link>
+          <Link href="https://forms.gle/rGj32Go4jdYsrzsL8">
+            <a>
+              <Button style={{ marginLeft: "3%" }}>Apply to be a Mentee</Button>
+            </a>
+          </Link>
         </ButtonWrapper>
       </Wrapper>
     </PageLayout>
@@ -98,8 +102,8 @@ const ImageWrapper = styled.div`
   justify-content: center;
 `;
 const ButtonWrapper = styled.div`
-    display: flex;
-    flex-flow: row-wrap;
-    justify-content: center;
-    padding: 5%;
+  display: flex;
+  flex-flow: row-wrap;
+  justify-content: center;
+  padding: 5%;
 `;
