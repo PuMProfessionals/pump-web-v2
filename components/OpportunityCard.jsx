@@ -8,14 +8,13 @@ export const OpportunityCard = ({
   organization,
   postingDate,
   logo,
-	link,
   ...props
 }) => {
   return (
     <Wrapper {...props}>
       <Logo src={logo} />
       <InfoContainer>
-        <Name href={link}>{name}</Name>
+        <Name>{name}</Name>
         <Organization>{organization}</Organization>
         <Category>{category}</Category>
         <BottomText>
@@ -53,7 +52,7 @@ const BottomText = styled.div`
   justify-content: space-between;
 `;
 
-const Name = styled.a`
+const Name = styled(Text)`
   ${({ theme }) => `
 		font-family: ${theme.font.lato};
 		color: ${theme.colors.navy};
