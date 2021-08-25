@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StudentResource } from "../../components";
+import { ImageInfoLayout, SectionWrapper } from "../../components";
 import PuMPDirect from "../../public/resources/PuMPDirect.png";
 import PuMPDigest from "../../public/blog/written-speech-bubble.svg";
 import UASLogo from "../../public/resources/uas-logo.png";
@@ -66,7 +66,7 @@ export const ResourcesSection = () => {
   /* TODO: add wrapper to increase margin around resources */
   return (
     <>
-      <StudentResource
+      <ImageInfoLayout
         key={resources[0].titleText}
         titleText={resources[0].titleText}
         descriptionText={resources[0].descriptionText}
@@ -77,18 +77,23 @@ export const ResourcesSection = () => {
         isGraphicLeft={resources[0].isGraphicLeft}
         style={{ marginTop: "5%" }}
       />
-      <MiddleStudentResource
-        key={resources[1].titleText}
-        titleText={resources[1].titleText}
-        descriptionText={resources[1].descriptionText}
-        buttons={resources[1].buttons}
-        graphic={resources[1].graphic}
-        graphicWidth={resources[1].graphicWidth}
-        graphicHeight={resources[1].graphicHeight}
-        isGraphicLeft={resources[1].isGraphicLeft}
-        textColor={baseTheme.colors.white}
-      />
-      <StudentResource
+      <SectionWrapper
+        backgroundPath="/resources/middle-background-large.svg"
+        mobileThreshold={1000}
+      >
+        <MiddleImageInfoLayout
+          key={resources[1].titleText}
+          titleText={resources[1].titleText}
+          descriptionText={resources[1].descriptionText}
+          buttons={resources[1].buttons}
+          graphic={resources[1].graphic}
+          graphicWidth={resources[1].graphicWidth}
+          graphicHeight={resources[1].graphicHeight}
+          isGraphicLeft={resources[1].isGraphicLeft}
+          textColor={baseTheme.colors.white}
+        />
+      </SectionWrapper>
+      <ImageInfoLayout
         key={resources[2].titleText}
         titleText={resources[2].titleText}
         descriptionText={resources[2].descriptionText}
@@ -103,11 +108,19 @@ export const ResourcesSection = () => {
   );
 };
 
-const MiddleStudentResource = styled(StudentResource)`
-  padding: 5%;
-  margin: 5%;
-  border-radius: 72px;
-  ${({ theme }) => `
-    background-color: ${theme.colors.greyBlue};
-  `};
+const MiddleImageInfoLayout = styled(ImageInfoLayout)`
+  padding: 15% 0;
+  ${media(
+    1000,
+    `
+      margin-top: 2%;
+      padding: 5% 0;
+      border-radius: 44px;
+    `
+  )};
+  @media (max-width: 1000px) {
+    ${({ theme }) => `
+        background-color: ${theme.colors.greyBlue};
+      `};
+  }
 `;
