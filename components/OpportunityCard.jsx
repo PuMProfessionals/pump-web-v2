@@ -46,10 +46,13 @@ const Wrapper = styled.div`
   padding: 0;
   margin: 10px;
   align-items: center;
-  @media only screen and (max-width: 600px) {
-    height: 140px;
-		border-radius: 10px;
-  }
+	${media (
+		600, 
+		`
+			height: 140px;
+			border-radius: 10px;
+		`
+	)}; 
 `;
 
 const BottomText = styled.div`
@@ -141,9 +144,12 @@ const Logo = styled.img`
   height: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 20px 0 0 20px;
-	@media only screen and (max-width: 600px) {
-    border-radius: 10px 0 0 10px;
-  }
+	${media (
+		600, 
+		`
+			border-radius: 10px 0 0 10px;
+		`
+	)}; 
 `;
 
 const InfoContainer = styled.div`
