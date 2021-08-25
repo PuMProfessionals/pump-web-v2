@@ -8,7 +8,7 @@ import { baseTheme } from "../../theme";
 const MedHunt = () => {
   return (
     <PageLayout>
-      <Title title="MedHunt" />
+      <Title title="MedHunt" arrowLink="/events" />
       <Wrapper>
         <CarouselWrapper>
           <ImageCardCarousel
