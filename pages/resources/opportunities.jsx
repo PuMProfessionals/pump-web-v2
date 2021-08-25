@@ -124,7 +124,7 @@ export default function Opportunities({ opps, ...props }) {
               ) : (
                 <>
                   {!!oppPosts &&
-                    oppPosts.map(({ postingName, orgImages, orgName, city, postedDate, slug }) => (
+                    oppPosts.map(({ tags, postingName, orgImages, orgName, city, postedDate, slug }) => (
                       <div key={postingName}>
 												<Link href={`/resources/opportunities/${slug}`}>
 													<a>
@@ -132,7 +132,7 @@ export default function Opportunities({ opps, ...props }) {
 															name={postingName}
 															organization={orgName}
 															location={city}
-															category="placeholder"
+															category={tags}
 															postingDate={postedDate}
 															logo={orgImages}
 														/>

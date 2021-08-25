@@ -42,12 +42,13 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
 	width: calc(100%-40px);
-  height: 180px;
+  height: 190px;
   padding: 0;
   margin: 10px;
   align-items: center;
   @media only screen and (max-width: 600px) {
     height: 140px;
+		border-radius: 10px;
   }
 `;
 
@@ -77,8 +78,8 @@ const Name = styled.h2`
 const Organization = styled(Text)`
   ${({ theme }) => `
 		font-family: ${theme.font.lato};
+		font-size: ${theme.size.defaultLarger};
 	`};
-	font-size: 1.2rem;
   color: #868e9f;
   margin: 0;
   @media only screen and (max-width: 600px) {
@@ -134,11 +135,15 @@ const PostingDate = styled(Text)`
 `;
 
 const Logo = styled.img`
-  object-fit: cover;
+	box-shadow: 0px 0 5px -2px #888;
+	object-fit: contain;
   display: flex;
   height: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 20px 0 0 20px;
+	@media only screen and (max-width: 600px) {
+    border-radius: 10px 0 0 10px;
+  }
 `;
 
 const InfoContainer = styled.div`
