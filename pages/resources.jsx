@@ -8,6 +8,10 @@ export default function Resources({ ...props }) {
     <div {...props}>
       <Head>
         <title>PuMP | Resources</title>
+        <meta
+          name="description"
+          content="Learn more about our resources including University Admissions Server, blog, and opportunities"
+        />
       </Head>
       <PageLayout>
         <Title title="Student Resources" />

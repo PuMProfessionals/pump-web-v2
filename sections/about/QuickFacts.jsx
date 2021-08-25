@@ -21,8 +21,8 @@ export const QuickFacts = ({ ...props }) => (
             description: "YEAR FOUNDED",
             textColour: baseTheme.colors.yellow,
             opacity: 0.95,
-            titleSize: 5.5,
-            descriptionSize: 1.3,
+            titleSize: 5,
+            descriptionSize: 1.1,
           },
           {
             image: TieDye,
@@ -30,8 +30,8 @@ export const QuickFacts = ({ ...props }) => (
             description: "STUDENTS INVOLVED",
             textColour: baseTheme.colors.yellow,
             opacity: 0.95,
-            titleSize: 5.5,
-            descriptionSize: 1.3,
+            titleSize: 5,
+            descriptionSize: 1.1,
           },
           {
             image: Navy,
@@ -39,8 +39,8 @@ export const QuickFacts = ({ ...props }) => (
             description: "BOARDS ACROSS CANADA",
             textColour: baseTheme.colors.yellow,
             opacity: 0.95,
-            titleSize: 5.5,
-            descriptionSize: 1.3,
+            titleSize: 5,
+            descriptionSize: 1.1,
           },
           {
             image: TieDye,
@@ -48,8 +48,8 @@ export const QuickFacts = ({ ...props }) => (
             description: "PROJECTS SINCE 2018",
             textColour: baseTheme.colors.yellow,
             opacity: 0.95,
-            titleSize: 5.5,
-            descriptionSize: 1.3,
+            titleSize: 5,
+            descriptionSize: 1.1,
           },
         ]}
       />

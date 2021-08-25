@@ -28,7 +28,6 @@ import { Title, LeftImageTextLayout, SectionWrapper } from "../components";
 import { PageLayout } from "../sections/hoc";
 import { ValueSection, BoardSection, QuickFacts, OurStory } from "../sections/about";
 import { baseTheme } from "../theme";
-import { media } from "../utils";
 
 const nationalBoard = [
   {
@@ -43,7 +42,7 @@ const nationalBoard = [
     name: "Asma Khamis",
     avatar: Asma,
     position: "VP of Community",
-    imageWidth: 240,
+    imageWidth: 230,
     imageHeight: 220,
     cardHeight: 370,
     fontColor: baseTheme.colors.yellow,
@@ -52,18 +51,18 @@ const nationalBoard = [
     name: "Shiro Puwa",
     avatar: Shiro,
     position: "VP of National Operations",
-    imageWidth: 240,
-    imageHeight: 230,
-    cardHeight: 380,
+    imageWidth: 230,
+    imageHeight: 220,
+    cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
   },
   {
     name: "Rachel Lin",
     avatar: RachelLin,
     position: "VP of Promotions",
-    imageWidth: 240,
-    imageHeight: 220,
-    cardHeight: 370,
+    imageWidth: 250,
+    imageHeight: 200,
+    cardHeight: 360,
     fontColor: baseTheme.colors.turquoise,
   },
   {
@@ -232,6 +231,7 @@ export default function About() {
     <div>
       <Head>
         <title>PuMP | About Us</title>
+        <meta name="description" content="Get to know the PuMP family" />
       </Head>
       <PageLayout>
         <Title
@@ -257,6 +257,7 @@ export default function About() {
               external: true,
             },
           ]}
+          style={{ marginTop: "5%" }}
         />
         <QuickFacts />
         <PhotoCollageSectionWrapper
@@ -264,85 +265,39 @@ export default function About() {
           mobilePath="/about/photo-collage-large.png"
           mobileThreshold={1000}
         >
-          <BoardWrapper>
-            <FourCardSectionWrapper
-              backgroundPath="/about/board-section-right-large.svg"
-              mobilePath="/resources/middle-background-mobile.svg"
-              mobileThreshold={1200}
-            >
-              <BoardSection
-                board="National Board"
-                boardDescription="Est. 2020 | 74 members"
-                boardMembers={nationalBoard}
-                breakpoint={2000}
-              />
-            </FourCardSectionWrapper>
-          </BoardWrapper>
-          <FourCardSectionWrapper
-            backgroundPath="/about/board-section-right-large.svg"
-            mobilePath="/resources/middle-background-mobile.svg"
-            mobileThreshold={1200}
-          >
-            <BoardSection
-              board="Toronto Board"
-              boardDescription="Est. 2018 | 50 members"
-              boardMembers={torontoBoard}
-              align="right"
-              breakpoint={1200}
-            />
-          </FourCardSectionWrapper>
-          <BoardWrapper>
-            <FourCardSectionWrapper
-              backgroundPath="/about/board-section-large.svg"
-              mobilePath="/resources/middle-background-mobile.svg"
-              mobileThreshold={1200}
-            >
-              <BoardSection
-                board="Vancouver Board"
-                boardDescription="Est. 2020 | 31 members"
-                boardMembers={vancouverBoard}
-                breakpoint={1200}
-              />
-            </FourCardSectionWrapper>
-          </BoardWrapper>
-          <BoardWrapper>
-            <ThreeCardSectionWrapper
-              backgroundPath="/about/board-section-right-large.svg"
-              mobilePath="/resources/middle-background-mobile.svg"
-              mobileThreshold={1000}
-            >
-              <BoardSection
-                board="Calgary Board"
-                boardDescription="Est. 2020 | 28 members"
-                boardMembers={calgaryBoard}
-                align="right"
-                breakpoint={600}
-              />
-            </ThreeCardSectionWrapper>
-          </BoardWrapper>
-          <BoardWrapper>
-            <ThreeCardSectionWrapper
-              backgroundPath="/about/board-section-large.svg"
-              mobilePath="/resources/middle-background-mobile.svg"
-              mobileThreshold={1000}
-            >
-              <BoardSection
-                board="Ottawa Board"
-                boardDescription="Est. 2021 | 5 Members"
-                boardMembers={ottawaBoard}
-                breakpoint={600}
-              />
-            </ThreeCardSectionWrapper>
-          </BoardWrapper>
+          <SBoardSection
+            board="National Board"
+            boardDescription="Est. 2020 | 74 members"
+            boardMembers={nationalBoard}
+          />
+          <SBoardSection
+            board="Toronto Board"
+            boardDescription="Est. 2018 | 50 members"
+            boardMembers={torontoBoard}
+            align="right"
+          />
+          <SBoardSection
+            board="Vancouver Board"
+            boardDescription="Est. 2020 | 31 members"
+            boardMembers={vancouverBoard}
+          />
+          <SBoardSection
+            board="Calgary Board"
+            boardDescription="Est. 2020 | 28 members"
+            boardMembers={calgaryBoard}
+            align="right"
+          />
+          <SBoardSection
+            board="Ottawa Board"
+            boardDescription="Est. 2021 | 5 Members"
+            boardMembers={ottawaBoard}
+          />
         </PhotoCollageSectionWrapper>
       </PageLayout>
     </div>
   );
 }
 
-const BoardWrapper = styled.div`
-  margin-top: 10%;
-`;
 const PhotoCollageSectionWrapper = styled(SectionWrapper)`
   padding-top: 5%;
   padding-bottom: 10%;
@@ -350,24 +305,11 @@ const PhotoCollageSectionWrapper = styled(SectionWrapper)`
   border-top-left-radius: 64px;
   border-top-right-radius: 64px;
 `;
-const ThreeCardSectionWrapper = styled(SectionWrapper)`
-  padding-top: 10%;
-  padding-bottom: 15%;
-  ${media(
-    1000,
-    `
-      padding-top: 17%;
-      padding-bottom: 7%;
-    `
-  )};
-`;
-const FourCardSectionWrapper = styled(SectionWrapper)`
-  padding-top: 15%;
-  padding-bottom: 10%;
-  ${media(
-    1200,
-    `
-      padding-bottom: 0;
-    `
-  )};
+const SBoardSection = styled(BoardSection)`
+  ${({ theme }) => `
+      background-color: ${theme.colors.greyBlue};
+      border-radius: 72px;
+      padding: 5%;
+      margin: 3%;
+  `};
 `;

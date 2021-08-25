@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import Image from "next/image";
+import Link from "next/link";
 
 import LeftArrow from "../public/LeftArrow-NoCircle.svg";
 import { baseTheme } from "../theme";
@@ -37,17 +38,19 @@ export const Title = ({
     isLeftAligned={isLeftAligned}
     {...props}
   >
-    {!!arrowLink && (
-      <BackArrow isLeftAligned={isLeftAligned}>
-        <a href={arrowLink}>
-          <Image src={LeftArrow} width={25} />
-        </a>
-      </BackArrow>
-    )}
-    <TitleSection>
-      <STitle>{title}</STitle>
-      {!!description && <Text color="white">{description}</Text>}
-    </TitleSection>
+    <TopSection isLeftAligned={isLeftAligned}>
+      {!!arrowLink && (
+        <Link href={arrowLink}>
+          <a>
+            <Image src={LeftArrow} width={25} />
+          </a>
+        </Link>
+      )}
+      <TitleSection>
+        <STitle>{title}</STitle>
+        {!!description && <Text color="white">{description}</Text>}
+      </TitleSection>
+    </TopSection>
     {!!image && <Image src={image} width={imageWidth} height={imageHeight} />}
   </Wrapper>
 );
@@ -59,34 +62,43 @@ const STitle = styled.h1`
   ${media(
     "tablet",
     `
-      font-size: 2rem;
+      font-size: 1.5rem;
+    `
+  )};
+  ${media(
+    "mobile",
+    `
+      font-size: 1.2rem;
     `
   )}
 `;
 
-const BackArrow = styled.div`
-  position: absolute;
+const TopSection = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2%;
   ${({ isLeftAligned }) => `
-    left: 80px;
-    top: ${isLeftAligned ? "90px" : "150px"};
+    width: ${isLeftAligned ? "60%" : "100%"};
+    justify-content: ${isLeftAligned ? "flex-start" : "center"};
   `}
   ${media(
-    600,
+    "tablet",
     `
-      left: 8%;
-      top: 80px;
+    flex-direction: column;
     `
   )}
 `;
 
 const TitleSection = styled.div`
-  width: 60%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin-left: 5%;
   ${media(
     600,
     `
-      width: 80%;
+      margin-left: 0;
     `
   )}
 `;
@@ -103,9 +115,9 @@ const Wrapper = styled.div`
     padding: ${isLeftAligned ? "0 4rem 2rem" : "0 0 2rem"};
   `}
   ${media(
-    600,
+    "tablet",
     `
-      flex-direction: column-reverse;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;

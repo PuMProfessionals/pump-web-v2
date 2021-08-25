@@ -3,7 +3,6 @@ import { ImageInfoLayout, SectionWrapper } from "../../components";
 import PuMPDirect from "../../public/resources/PuMPDirect.png";
 import PuMPDigest from "../../public/blog/written-speech-bubble.svg";
 import UASLogo from "../../public/resources/uas-logo.png";
-import { media } from "../../utils";
 import { baseTheme } from "../../theme";
 
 /* TODO-2022: Edit Resources to fit SectionWrapper */

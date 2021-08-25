@@ -26,6 +26,7 @@
     "axios": "^0.21.1",
     "emailjs-com": "^3.2.0",
     "gray-matter": "^4.0.3",
+    "multiselect-react-dropdown": "^2.0.5",
     "next": "11.1.0",
     "next-mdx-remote": "^3.0.4",
     "nprogress": "^0.2.0",
@@ -37,7 +38,7 @@
     "react-loader-spinner": "^4.0.0",
     "react-toastify": "^7.0.4",
     "styled-components": "^5.3.0",
-    "swiper": "^6.8.1"
+    "swiper": "^6.8.3"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.13.2",
@@ -45,7 +46,7 @@
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-next": "11.1.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-react": "^7.24.0",
     "husky": "^4.3.8",
     "lint-staged": "^11.1.2",

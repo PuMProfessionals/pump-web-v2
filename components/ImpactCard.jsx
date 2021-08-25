@@ -24,7 +24,7 @@ export const ImpactCard = ({
   titleSize = 3.5,
   imageHeight = 280,
   imageWidth = 300,
-  cardHeight = 370,
+  cardHeight = 400,
   ...props
 }) => {
   return (
