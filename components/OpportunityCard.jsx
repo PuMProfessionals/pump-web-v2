@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Text } from "./Text";
+import { media } from "../utils";
 
 export const OpportunityCard = ({
   name,
