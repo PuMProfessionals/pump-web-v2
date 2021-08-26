@@ -8,7 +8,7 @@ export { TextArea } from "./TextArea";
 export { ImpactCard } from "./ImpactCard";
 export { LeftImageTextLayout } from "./LeftImageTextLayout";
 export { Video } from "./Video";
-export { StudentResource } from "./StudentResource";
+export { ImageInfoLayout } from "./ImageInfoLayout";
 export { Loading } from "./Loading";
 export { ImageCard } from "./ImageCard";
 export { ImageCardCarousel } from "./ImageCardCarousel.jsx";
