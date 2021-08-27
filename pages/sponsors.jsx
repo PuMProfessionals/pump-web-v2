@@ -274,8 +274,8 @@ export default function Sponsors() {
             <Description>
               As a growing organization, the support of local businesses and
               community members allows us to grow, reach out, and give back. PuMP is
-              extremely grateful for these contributions. To our sponsors –
-              thank you.
+              extremely grateful for these contributions. To our sponsors – thank
+              you.
             </Description>
             {sponsors.map((sponsor) => (
               <ImageContainer key={`Sponsors__Logo__${sponsor.title}`}>

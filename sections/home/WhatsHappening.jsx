@@ -39,7 +39,7 @@ export const WhatsHappening = ({ ...props }) => (
             thumbnail: PowerUp,
             buttonText: "Learn More",
             linkTo: "/power-up",
-          }
+          },
         ]}
       />
     </CarouselWrapper>
