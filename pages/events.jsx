@@ -16,7 +16,7 @@ export default function Events() {
         <title>PuMP | Events</title>
         <meta
           name="description"
-          content="Find out more about our events like MedHunt, MedVlogs, and more"
+          content="Whether it's career planning, questions about post-secondary education, or networking in the science community, PuMP has got you covered!"
         />
       </Head>
       <PageLayout>
@@ -31,7 +31,7 @@ export default function Events() {
               {
                 title: "PuMP+",
                 date: "April 2021 ",
-                tags: ["All boards"],
+                tags: ["All regional boards"],
                 description:
                   "| Connecting high school students to a variety of opportunities. Meet institutions such as the Sanofi Biogenius Challenge, Vex Robotics, and The Knowledge Society! Join 500+ students and 20+ booths!",
                 thumbnail: PumpPlus,
@@ -43,9 +43,7 @@ export default function Events() {
                 tags: ["National"],
                 date: "Aug. 2021 ",
                 description:
-                  "| MedHunt is a virtual scavenger hunt where teams can participate to win some cool prizes! Participants will work in teams of 1 to 3 to solve puzzles! The team who completes the scavenger hunt first are the victors!",
-                buttonText: "Learn More",
-                linkTo: "/events/medhunt",
+                  "| MedHunt is a virtual scavenger hunt where teams can participate to win some cool prizes! Participants will work in teams of 1 to 3 to solve puzzles! The team who completes the scavenger hunt first are the victors!"
               },
               {
                 title: "PowerUp Mentorship Program",
@@ -140,7 +138,7 @@ export default function Events() {
           />
           <SEventsCarousel
             title="Past Events"
-            description="Opportunities that assist high school students with career planning, relieve stress, and connect with others."
+            description="Curious about what else we've been up to? Check out our past events here."
             slides={[
               {
                 title: "Doc Talks",

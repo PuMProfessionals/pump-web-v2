@@ -10,8 +10,7 @@ export const ResourcesSection = () => {
   const resources = [
     {
       titleText: "PuMP Direct",
-      descriptionText: `Browse and filter our database of local opportunities in
-        healthcare`,
+      descriptionText: `Browse and filter through our database of volunteering, research, and leadership opportunities near you.`,
       buttons: [
         {
           color: "yellow",
@@ -29,8 +28,8 @@ export const ResourcesSection = () => {
         programs.`,
       buttons: [
         {
-          color: "white",
-          text: "Join our Community of 800+ Students",
+          color: "yellow",
+          text: "Join our community of 900+ students",
           link: "https://discord.com/invite/vpyF7nCtkm",
           external: true,
         },

@@ -9,9 +9,8 @@ export const ContactSection = () => {
   return (
     <Wrapper>
       <SContactForm
-        title="Feeling Inspired?"
-        descriptionText="Contact us about our initiatives, joining the team, becoming a partner, 
-                or anything else you want to chat about!"
+        title="Contact Us"
+        descriptionText="Want to join our team, sign up for an event, or partner with us? Send us your questions and comments below."
       />
       <ImageContainer>
         <Image

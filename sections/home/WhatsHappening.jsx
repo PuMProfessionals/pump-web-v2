@@ -27,7 +27,7 @@ export const WhatsHappening = ({ ...props }) => (
           {
             title: "Impact Report",
             description:
-              "We are heading into our third year of operations! Read about our projects from the 2020-21 fiscal year in our first ever impact report.",
+              "We are heading into our third year of operations! Read about our projects and accomplishments from the 2020-21 fiscal year in our first ever impact report.",
             thumbnail: ImpactReport,
             buttonText: "Learn More",
             linkTo: "/",
@@ -38,24 +38,8 @@ export const WhatsHappening = ({ ...props }) => (
               "Explore articles on research, student life, PuMP has partnered up with The STEM Fellowship to launch our mentorship program, PowerUp!",
             thumbnail: PowerUp,
             buttonText: "Learn More",
-            linkTo: "/",
-          },
-          {
-            title: "PuMP Digest 2",
-            description:
-              "Check out our blog to explore our articles on research, student life, post-secondary education, careers in medicine, and more!",
-            thumbnail: PumpDigest,
-            buttonText: "Learn More",
-            linkTo: "/",
-          },
-          {
-            title: "Impact Report 2",
-            description:
-              "We are heading into our third year of operations! Read about our projects from the 2020-21 fiscal year in our first ever impact report.",
-            thumbnail: ImpactReport,
-            buttonText: "Learn More",
-            linkTo: "/",
-          },
+            linkTo: "/power-up",
+          }
         ]}
       />
     </CarouselWrapper>

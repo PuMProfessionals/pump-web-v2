@@ -265,8 +265,8 @@ export default function Sponsors() {
           </TopWrapper>
           <div style={{ margin: "8% 5% 0 5%" }}>
             <ContactForm
-              title="Become a sponsor"
-              descriptionText="A representative will reply back to your email within 24 hours."
+              title="Partner with us!"
+              descriptionText="A representative will reply back to your email within 3-5 business days."
             />
           </div>
           <SponsorsWrapper>
@@ -274,9 +274,7 @@ export default function Sponsors() {
             <Description>
               As a growing organization, the support of local businesses and
               community members allows us to grow, reach out, and give back. PuMP is
-              extremely grateful for these contributions, which have helped us truly
-              realize the potential of medicine in the students of our communities
-              through our various events and outreach efforts. To our sponsors –
+              extremely grateful for these contributions. To our sponsors –
               thank you.
             </Description>
             {sponsors.map((sponsor) => (

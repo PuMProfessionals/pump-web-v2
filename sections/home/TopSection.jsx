@@ -17,7 +17,7 @@ export const TopSection = ({ ...props }) => (
       <Button>
         <ButtonText size="default" bold="true">
           <Link href="/sponsors">
-            <a style={{ color: baseTheme.colors.navy }}>Sponsor</a>
+            <a style={{ color: baseTheme.colors.navy }}>About Us</a>
           </Link>
         </ButtonText>
       </Button>
