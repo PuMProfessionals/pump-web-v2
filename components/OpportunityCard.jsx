@@ -53,6 +53,13 @@ const Wrapper = styled.div`
 			height: 140px;
 			border-radius: 10px;
 		`
+	)};
+	${media (
+		400, 
+		`
+			height: 95px;
+			border-radius: 5px;
+		`
 	)}; 
 `;
 
@@ -91,6 +98,11 @@ const Organization = styled(Text)`
 			font-size: ${theme.size.small};
 		`};
   }
+	@media only screen and (max-width: 400px) {
+    ${({ theme }) => `
+			font-size: ${theme.size.small};
+		`};
+  }
 `;
 
 const Category = styled(Text)`
@@ -107,6 +119,11 @@ const Category = styled(Text)`
 		`};
     margin-top: 5px;
   }
+	@media only screen and (max-width: 400px) {
+    ${({ theme }) => `
+			font-size: ${theme.size.small};
+		`};
+  }
 `;
 
 const Location = styled(Text)`
@@ -117,6 +134,11 @@ const Location = styled(Text)`
   color: #868e9f;
   margin: 0;
   @media only screen and (max-width: 600px) {
+    ${({ theme }) => `
+			font-size: ${theme.size.small};
+		`};
+  }
+	@media only screen and (max-width: 400px) {
     ${({ theme }) => `
 			font-size: ${theme.size.small};
 		`};
@@ -136,6 +158,11 @@ const PostingDate = styled(Text)`
 			font-size: ${theme.size.small};
 		`};
   }
+	@media only screen and (max-width: 400px) {
+    ${({ theme }) => `
+			font-size: ${theme.size.small};
+		`};
+  }
 `;
 
 const Logo = styled.img`
@@ -150,6 +177,12 @@ const Logo = styled.img`
 		`
 			border-radius: 10px 0 0 10px;
 		`
+	)};
+	${media (
+		400, 
+		`
+			border-radius: 5px 0 0 5px;
+		`
 	)}; 
 `;
 
@@ -159,10 +192,18 @@ const InfoContainer = styled.div`
 	flex-direction: column;
   justify-content: space-between;
 	height: 100%;
+	flex-flow: column wrap;
+	overflow: hidden;
 `;
 
 const RightContainer = styled.div`
 	width: 100%;
 	height: 100%;
 	padding: 2%;
+	${media (
+		400, 
+		`
+			padding: 5px;
+		`
+	)}; 
 `;
