@@ -7,7 +7,13 @@ import styled from "styled-components";
 
 import { prisma } from "../../prisma/index";
 import { opportunities } from "../../cache/cache";
-import { Input, Loading, Multiselector, OpportunityCard, Text } from "../../components";
+import {
+  Input,
+  Loading,
+  Multiselector,
+  OpportunityCard,
+  Text,
+} from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
 import { Title } from "../../components";
@@ -124,22 +130,32 @@ export default function Opportunities({ opps, ...props }) {
               ) : (
                 <>
                   {!!oppPosts &&
-                    oppPosts.map(({ tags, postingName, orgImages, orgName, city, postedDate, slug }) => (
-                      <div key={postingName}>
-												<Link href={`/resources/opportunities/${slug}`}>
-													<a>
-														<OpportunityCard
-															name={postingName}
-															organization={orgName}
-															location={city}
-															category={tags}
-															postingDate={postedDate}
-															logo={orgImages}
-														/>
-													</a> 
-												</Link>
-                      </div>
-                    ))}
+                    oppPosts.map(
+                      ({
+                        tags,
+                        postingName,
+                        orgImages,
+                        orgName,
+                        city,
+                        postedDate,
+                        slug,
+                      }) => (
+                        <div key={postingName}>
+                          <Link href={`/resources/opportunities/${slug}`}>
+                            <a>
+                              <OpportunityCard
+                                name={postingName}
+                                organization={orgName}
+                                location={city}
+                                category={tags}
+                                postingDate={postedDate}
+                                logo={orgImages}
+                              />
+                            </a>
+                          </Link>
+                        </div>
+                      )
+                    )}
                 </>
               )}
             </ResultsWrapper>
@@ -211,7 +227,8 @@ const BottomWrapper = styled.div`
 const ResultsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-	width: 100%;
+  width: 100%;
+  padding: 0 5%;
 `;
 
 export async function getStaticProps() {
@@ -221,8 +238,9 @@ export async function getStaticProps() {
   } catch (e) {
     opps = opportunities;
   }
-  opps = opps.sort((opp1, opp2) => (opp1.postedDate > opp2.postedDate ? 1 : -1));
-  opps = opps.filter((opp) => opp.published);
+  opps = opps
+    .sort((opp1, opp2) => (opp1.postedDate > opp2.postedDate ? 1 : -1))
+    .filter((opp) => opp.published);
 
   return {
     props: { opps },

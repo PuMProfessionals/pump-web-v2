@@ -97,7 +97,7 @@ export default function Events() {
                 date: "June 2020 - Aug. 2020 ",
                 description:
                   "| With the help of TakingItGlobal and Rising Youth, PuMP donated $1500 worth of groceries and essential goods to various shelters and long term care homes.",
-              }
+              },
             ]}
           />
           <SEventsCarousel
@@ -112,7 +112,8 @@ export default function Events() {
                 description:
                   "| A career pathways webinar series featuring physicians and academics. Learn about specialties like emergency medicine, craniofacial surgery, internal medicine, anesthesiology, and ophthalmology through our Youtube recordings",
                 buttonText: "Learn More",
-                linkTo: "https://www.youtube.com/watch?v=RKq2up1o6fE&list=PL-0XD-IS_2MKIPyRF3NHlTErIS-_Cch-o",
+                linkTo:
+                  "https://www.youtube.com/watch?v=RKq2up1o6fE&list=PL-0XD-IS_2MKIPyRF3NHlTErIS-_Cch-o",
               },
               {
                 title: "On Diseases and Disorders",
@@ -121,7 +122,8 @@ export default function Events() {
                 description:
                   "| A social media series where guest speakers share insight into challenges with diagnosis and treatment of Parkinson’s disease to raise awareness. Watch on our Youtube!",
                 buttonText: "Learn More",
-                linkTo: "https://www.youtube.com/watch?v=59Vjzrfv67o&list=PL-0XD-IS_2MLljU5Qy1Tmy5F-IEGbWWsQ"
+                linkTo:
+                  "https://www.youtube.com/watch?v=59Vjzrfv67o&list=PL-0XD-IS_2MLljU5Qy1Tmy5F-IEGbWWsQ",
               },
               {
                 title: "MedSpecs",
@@ -130,7 +132,7 @@ export default function Events() {
                 description:
                   "| A webinar series giving students a behind-the-scenes view to the lives of doctors, researchers and various other medical professionals, where panelists shared their path in medicine.",
                 buttonText: "Learn More",
-                linkTo: "https://www.youtube.com/watch?v=-pIdQ61IOm4"
+                linkTo: "https://www.youtube.com/watch?v=-pIdQ61IOm4",
               },
               {
                 title: "LaboraStory",

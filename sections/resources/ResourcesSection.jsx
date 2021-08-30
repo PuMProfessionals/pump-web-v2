@@ -4,6 +4,7 @@ import PuMPDirect from "../../public/resources/PuMPDirect.png";
 import PuMPDigest from "../../public/home/MainGraphic.png";
 import UASLogo from "../../public/resources/uas-logo.png";
 import { baseTheme } from "../../theme";
+import { media } from "../../utils";
 
 /* TODO-2022: Edit Resources to fit SectionWrapper */
 export const ResourcesSection = () => {

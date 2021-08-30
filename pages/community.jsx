@@ -242,7 +242,7 @@ const supporters = [
     title: "Google Ads",
     image: GoogleAds,
     width: 250,
-    height: 120,
+    height: 80,
   },
   {
     title: "Government of Canada",
@@ -253,7 +253,7 @@ const supporters = [
   {
     title: "GSuite",
     image: GSuite,
-    width: 220,
+    width: 250,
     height: 80,
   },
   {
@@ -261,7 +261,7 @@ const supporters = [
     image: TakingItGlobal,
     width: 250,
     height: 100,
-  }
+  },
 ];
 
 export default function Community() {
@@ -302,12 +302,13 @@ export default function Community() {
               descriptionText="A representative will reply back to your email within 3-5 business days."
             />
           </div>
-          <Subtitle style={{ marginTop: "8%" }}>A Thank You To Our Community</Subtitle>
+          <Subtitle style={{ marginTop: "8%" }}>
+            A Thank You To Our Community
+          </Subtitle>
           <Description>
-            As a growing organization, the support of local businesses and
-            community members allows us to grow, reach out, and give back. PuMP is
-            extremely grateful for these contributions. To our sponsors – thank
-            you.
+            As a growing organization, the support of local businesses and community
+            members allows us to grow, reach out, and give back. PuMP is extremely
+            grateful for these contributions. To our sponsors – thank you.
           </Description>
           <Subtitle style={{ marginTop: "5%" }}>Our Community Partners</Subtitle>
           <SponsorsWrapper>
@@ -324,30 +325,30 @@ export default function Community() {
           </SponsorsWrapper>
           <Subtitle>Our Supporters</Subtitle>
           <SponsorsWrapper>
-          {supporters.map((sponsor) => (
-            <ImageContainer key={`supporters__Logo__${sponsor.title}`}>
-              <Image
-                src={sponsor.image}
-                height={sponsor.height}
-                width={sponsor.width}
-                alt={`Logo for ${sponsor.title}`}
-              />
-            </ImageContainer>
-          ))}
-        </SponsorsWrapper>
+            {supporters.map((sponsor) => (
+              <ImageContainer key={`supporters__Logo__${sponsor.title}`}>
+                <Image
+                  src={sponsor.image}
+                  height={sponsor.height}
+                  width={sponsor.width}
+                  alt={`Logo for ${sponsor.title}`}
+                />
+              </ImageContainer>
+            ))}
+          </SponsorsWrapper>
           <Subtitle>Our Sponsors</Subtitle>
           <SponsorsWrapper>
-          {sponsors.map((sponsor) => (
-            <ImageContainer key={`Sponsors__Logo__${sponsor.title}`}>
-              <Image
-                src={sponsor.image}
-                height={sponsor.height}
-                width={sponsor.width}
-                alt={`Logo for ${sponsor.title}`}
-              />
-            </ImageContainer>
-          ))}
-        </SponsorsWrapper>
+            {sponsors.map((sponsor) => (
+              <ImageContainer key={`Sponsors__Logo__${sponsor.title}`}>
+                <Image
+                  src={sponsor.image}
+                  height={sponsor.height}
+                  width={sponsor.width}
+                  alt={`Logo for ${sponsor.title}`}
+                />
+              </ImageContainer>
+            ))}
+          </SponsorsWrapper>
         </Wrapper>
       </PageLayout>
     </div>
