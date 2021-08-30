@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { StudentResource } from "../../components";
 import PuMPDirect from "../../public/resources/PuMPDirect.png";
-import PuMPDigest from "../../public/blog/written-speech-bubble.svg";
+import PuMPDigest from "../../public/home/MainGraphic.png";
 import UASLogo from "../../public/resources/uas-logo.png";
 import { baseTheme } from "../../theme";
 

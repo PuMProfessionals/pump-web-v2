@@ -32,6 +32,13 @@ import Leap from "../public/sponsors/Leap.png";
 import STEMFellowship from "../public/sponsors/StemFellowship.png";
 import StudentsForHerdImmunity from "../public/sponsors/StudentsForHerdImmunity.png";
 
+import CST from "../public/sponsors/CST.jpeg";
+import CTVNews from "../public/sponsors/CTVNews.png";
+import GoogleAds from "../public/sponsors/GoogleAds.png";
+import GovernmentOfCanada from "../public/sponsors/GovernmentOfCanada.png";
+import GSuite from "../public/sponsors/GSuite.png";
+import TakingItGlobal from "../public/sponsors/Taking-It-Global-Rising-Logo.png";
+
 import SponsorshipGraphic from "../public/sponsors/sponsor-benefits.png";
 import { Title, Text, LeftImageTextLayout, ContactForm } from "../components";
 import { PageLayout } from "../sections/hoc";
@@ -218,32 +225,55 @@ const communityPartners = [
   },
 ];
 
+const supporters = [
+  {
+    title: "CST",
+    image: CST,
+    width: 220,
+    height: 100,
+  },
+  {
+    title: "CTV News",
+    image: CTVNews,
+    width: 250,
+    height: 140,
+  },
+  {
+    title: "Google Ads",
+    image: GoogleAds,
+    width: 250,
+    height: 120,
+  },
+  {
+    title: "Government of Canada",
+    image: GovernmentOfCanada,
+    width: 250,
+    height: 100,
+  },
+  {
+    title: "GSuite",
+    image: GSuite,
+    width: 220,
+    height: 80,
+  },
+  {
+    title: "TakingItGlobal",
+    image: TakingItGlobal,
+    width: 250,
+    height: 100,
+  }
+];
+
 export default function Community() {
   return (
     <div>
       <Head>
         <title>PuMP | Community</title>
-        <meta
-          name="description"
-          content="Find out more about PuMP's community."
-        />
+        <meta name="description" content="Find out more about PuMP's community." />
       </Head>
       <PageLayout>
-        <Title title="Sponsors" />
+        <Title title="Community" />
         <Wrapper>
-          <Subtitle style={{ marginTop: "5%" }}>Why Sponsor PuMP</Subtitle>
-          <Description>
-            Aside from medical-related learning opportunities, youth reaching out to
-            PuMP are on the lookout for resources that local businesses can help
-            provide. Your support will enable us to continue offering out platform
-            for real world connections.
-          </Description>
-          <Description>
-            At PuMP, donations will go towards a variety of key initiatives in our
-            operations, making local businesses’ support a critical resource. In-kind
-            donations such as gift baskets, gift cards and coupons can be featured at
-            our events through booths and banners.
-          </Description>
           <ImpactSection style={{ paddingTop: "5%" }} />
           <TopWrapper>
             <LeftImageTextLayout
@@ -252,7 +282,10 @@ export default function Community() {
               imageWidth={300}
               imageHeight={400}
               descriptions={[
-                `In return, we offer a variety of ways to feature your business. Our online platforms on Instagram, Facebook and LinkedIn reach  more than 1000 youth across the GTA. The sponsorship rewards listed above aim to reflect our commitment to our sponsors as much as possible. Email us for a copy of our sponsorship package.`,
+                `At PuMP, donations will go towards a variety of key initiatives in our
+                operations, making local businesses’ support a critical resource. In-kind
+                donations such as gift baskets, gift cards and coupons can be featured at
+                our events through booths and banners. The sponsorship rewards listed above aim to reflect our commitment to our sponsors as much as possible. Email us for a copy of our sponsorship package.`,
               ]}
               buttons={[
                 {
@@ -269,26 +302,14 @@ export default function Community() {
               descriptionText="A representative will reply back to your email within 3-5 business days."
             />
           </div>
-          <SponsorsWrapper>
-            <Subtitle>A Thank You To Our Sponsors</Subtitle>
-            <Description>
-              As a growing organization, the support of local businesses and
-              community members allows us to grow, reach out, and give back. PuMP is
-              extremely grateful for these contributions. To our sponsors – thank
-              you.
-            </Description>
-            {sponsors.map((sponsor) => (
-              <ImageContainer key={`Sponsors__Logo__${sponsor.title}`}>
-                <Image
-                  src={sponsor.image}
-                  height={sponsor.height}
-                  width={sponsor.width}
-                  alt={`Logo for ${sponsor.title}`}
-                />
-              </ImageContainer>
-            ))}
-          </SponsorsWrapper>
-          <Subtitle>And Our Community Partners</Subtitle>
+          <Subtitle style={{ marginTop: "8%" }}>A Thank You To Our Community</Subtitle>
+          <Description>
+            As a growing organization, the support of local businesses and
+            community members allows us to grow, reach out, and give back. PuMP is
+            extremely grateful for these contributions. To our sponsors – thank
+            you.
+          </Description>
+          <Subtitle style={{ marginTop: "5%" }}>Our Community Partners</Subtitle>
           <SponsorsWrapper>
             {communityPartners.map((partner) => (
               <ImageContainer key={`Partners__Logo__${partner.title}`}>
@@ -301,6 +322,32 @@ export default function Community() {
               </ImageContainer>
             ))}
           </SponsorsWrapper>
+          <Subtitle>Our Supporters</Subtitle>
+          <SponsorsWrapper>
+          {supporters.map((sponsor) => (
+            <ImageContainer key={`supporters__Logo__${sponsor.title}`}>
+              <Image
+                src={sponsor.image}
+                height={sponsor.height}
+                width={sponsor.width}
+                alt={`Logo for ${sponsor.title}`}
+              />
+            </ImageContainer>
+          ))}
+        </SponsorsWrapper>
+          <Subtitle>Our Sponsors</Subtitle>
+          <SponsorsWrapper>
+          {sponsors.map((sponsor) => (
+            <ImageContainer key={`Sponsors__Logo__${sponsor.title}`}>
+              <Image
+                src={sponsor.image}
+                height={sponsor.height}
+                width={sponsor.width}
+                alt={`Logo for ${sponsor.title}`}
+              />
+            </ImageContainer>
+          ))}
+        </SponsorsWrapper>
         </Wrapper>
       </PageLayout>
     </div>

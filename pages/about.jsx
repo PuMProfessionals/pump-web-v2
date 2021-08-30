@@ -240,6 +240,7 @@ export default function About() {
           image={AboutUs}
         />
         <OurStory />
+        <QuickFacts />
         <ValueSection />
         <LeftImageTextLayout
           id="impact-report"
@@ -260,7 +261,6 @@ export default function About() {
           ]}
           style={{ marginTop: "5%" }}
         />
-        <QuickFacts />
         <PhotoCollageSectionWrapper
           backgroundPath="/about/photo-collage-large.png"
           mobilePath="/about/photo-collage-large.png"
