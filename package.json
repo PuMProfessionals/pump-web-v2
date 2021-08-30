@@ -38,7 +38,7 @@
     "react-loader-spinner": "^4.0.0",
     "react-toastify": "^8.0.1",
     "styled-components": "^5.3.1",
-    "swiper": "^7.0.1"
+    "swiper": "^6.8.3"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.13.2",
