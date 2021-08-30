@@ -218,6 +218,7 @@ const FilterWrapper = styled.div`
 const BottomWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  margin-bottom: 5%;
   @media only screen and (max-width: 1050px) {
     margin-top: 20px;
     flex-direction: column;

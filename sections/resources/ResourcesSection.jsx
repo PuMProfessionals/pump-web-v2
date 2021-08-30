@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import { ImageInfoLayout, SectionWrapper } from "../../components";
+import { ImageInfoLayout } from "../../components";
 import PuMPDirect from "../../public/resources/PuMPDirect.png";
 import PuMPDigest from "../../public/home/MainGraphic.png";
 import UASLogo from "../../public/resources/uas-logo.png";
 import { baseTheme } from "../../theme";
-import { media } from "../../utils";
 
 /* TODO-2022: Edit Resources to fit SectionWrapper */
 export const ResourcesSection = () => {
@@ -63,7 +62,6 @@ export const ResourcesSection = () => {
     },
   ];
 
-  /* TODO: add wrapper to increase margin around resources */
   return (
     <>
       <ImageInfoLayout
@@ -77,22 +75,17 @@ export const ResourcesSection = () => {
         isGraphicLeft={resources[0].isGraphicLeft}
         style={{ marginTop: "5%" }}
       />
-      <SectionWrapper
-        backgroundPath="/resources/middle-background-large.svg"
-        mobileThreshold={1000}
-      >
-        <MiddleImageInfoLayout
-          key={resources[1].titleText}
-          titleText={resources[1].titleText}
-          descriptionText={resources[1].descriptionText}
-          buttons={resources[1].buttons}
-          graphic={resources[1].graphic}
-          graphicWidth={resources[1].graphicWidth}
-          graphicHeight={resources[1].graphicHeight}
-          isGraphicLeft={resources[1].isGraphicLeft}
-          textColor={baseTheme.colors.white}
-        />
-      </SectionWrapper>
+      <MiddleImageInfoLayout
+        key={resources[1].titleText}
+        titleText={resources[1].titleText}
+        descriptionText={resources[1].descriptionText}
+        buttons={resources[1].buttons}
+        graphic={resources[1].graphic}
+        graphicWidth={resources[1].graphicWidth}
+        graphicHeight={resources[1].graphicHeight}
+        isGraphicLeft={resources[1].isGraphicLeft}
+        textColor={baseTheme.colors.white}
+      />
       <ImageInfoLayout
         key={resources[2].titleText}
         titleText={resources[2].titleText}
@@ -109,18 +102,9 @@ export const ResourcesSection = () => {
 };
 
 const MiddleImageInfoLayout = styled(ImageInfoLayout)`
-  padding: 15% 0;
-  ${media(
-    1000,
-    `
-      margin-top: 2%;
-      padding: 5% 0;
-      border-radius: 44px;
-    `
-  )};
-  @media (max-width: 1000px) {
-    ${({ theme }) => `
-        background-color: ${theme.colors.greyBlue};
-      `};
-  }
+  ${({ theme }) => `
+    background-color: ${theme.colors.greyBlue};
+    border-radius: 44px;
+    margin: 0 3%;
+  `};
 `;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import PumpPlus from "../public/events/pump-plus.png";
 import PowerUp from "../public/events/power-up.png";
-import { Title } from "../components";
+import { Title, Text } from "../components";
 import { EventsCarousel } from "../sections/events";
 import { PageLayout } from "../sections/hoc";
 import { baseTheme } from "../theme";
@@ -58,7 +58,23 @@ export default function Events() {
           />
           <SEventsCarousel
             title="Digital Events"
-            description="Opportunities that assist high school students with career planning, relieve stress, and connect with others."
+            component={
+              <>
+                <Description size={baseTheme.size.h4} color={baseTheme.colors.navy}>
+                  Opportunities that are accessible to students all-year round. Check
+                  it out on our social media, and watch the recordings on our&nbsp;
+                  <a
+                    href="https://www.youtube.com/channel/UCkfxszq-xngSW5TKuyK4Aqg"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    style={{ color: baseTheme.colors.navy, fontWeight: "bold" }}
+                  >
+                    Youtube
+                  </a>
+                  !
+                </Description>
+              </>
+            }
             backgroundColor={baseTheme.colors.yellow}
             textColor={baseTheme.colors.navy}
             cardHeight={580}
@@ -175,4 +191,7 @@ const Wrapper = styled.div`
 `;
 const SEventsCarousel = styled(EventsCarousel)`
   margin-bottom: 10vh;
+`;
+const Description = styled(Text)`
+  padding: 0 5% 3% 5%;
 `;
