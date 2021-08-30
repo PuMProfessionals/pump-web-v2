@@ -67,8 +67,8 @@ export default function Contact() {
           <SponsorshipText>
             For sponsorships, email&nbsp;
             <SponsorshipsBreak />
-            <EmailText href="mailto:sponsorships@pumprofessionals.org">
-              sponsorships@pumprofessionals.org
+            <EmailText href="mailto:community@pumprofessionals.org">
+              community@pumprofessionals.org
             </EmailText>
           </SponsorshipText>
           <SponsorshipText>or</SponsorshipText>

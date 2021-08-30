@@ -40,7 +40,7 @@ export default function Home() {
         <Video
           embedId="f5jsJWl5WS0"
           titleText="Who Are We?"
-          descriptionText="Founded in March 2018, Prospective Medical Professionals or PuMP for short is a Canadian charity founded by youth, led by youth. Our objective is to help aspiring life and health sciences students better prepare for a future in the biology by connecting them to real life experiences."
+          descriptionText="Founded in 2018, Prospective Medical Professionals is a registered Canadian charity that promote youth engagement in the health, life, and biological sciences. Through career talks, workshops, and educational resources, PuMP equips high school and undergraduate students with the experiences needed to become the next generation of leaders in health."
         />
         <Title size={baseTheme.size.h1} bold="true">
           Our Testimonials

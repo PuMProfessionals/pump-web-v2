@@ -1,3 +1,4 @@
+import Head from "next/head";
 import styled from "styled-components";
 import { Title, ImageCardCarousel, TestimonialCarousel } from "../../components";
 import { PageLayout } from "../../sections/hoc";
@@ -17,66 +18,78 @@ const PumpPlus = () => {
     },
   ];
   return (
-    <PageLayout>
-      <Title title="PuMP+" arrowLink="/events" />
-      <Wrapper>
-        <CarouselWrapper>
-          <ImageCardCarousel
-            id="quick-facts"
-            slides={[
-              {
-                image: Navy,
-                cardTitle: "1600",
-                description: "Total Attendees",
-                textColour: baseTheme.colors.yellow,
-                opacity: 0.95,
-                titleSize: 5.5,
-                descriptionSize: 1.3,
-              },
-              {
-                image: TieDye,
-                cardTitle: "80",
-                description: "Different Booths",
-                textColour: baseTheme.colors.yellow,
-                opacity: 0.95,
-                titleSize: 5.0,
-                descriptionSize: 1.3,
-              },
-              {
-                image: Navy,
-                cardTitle: "20+",
-                description: "Sponsors",
-                textColour: baseTheme.colors.yellow,
-                opacity: 0.95,
-                titleSize: 5.5,
-                descriptionSize: 1.3,
-              },
-            ]}
-          />
-        </CarouselWrapper>
-        <div>
-          <p>
-            PuMP+ is our annual STEM fair connecting high school students to various
-            opportunities within the health sciences, from research to volunteering.
-            Our first PuMP+ held in Toronto in February 2020, featured over 20 booths
-            and had over 500 student attendees. Various institutions like Sanofi
-            Biogenius Challenge, Vex Robotics, The Knowledge Society (TKS), and
-            countless others.
-          </p>
+    <>
+      <Head>
+        <title>PuMP | PuMP+ </title>
+        <meta
+          name="description"
+          content="A fair where organizations host booths to share opportunities for students to engage in STEM."
+        />
+      </Head>
+      <PageLayout>
+        <Title title="PuMP+" arrowLink="/events" />
+        <Wrapper>
+          <CarouselWrapper>
+            <ImageCardCarousel
+              id="quick-facts"
+              slides={[
+                {
+                  image: Navy,
+                  cardTitle: "1600",
+                  description: "Total Attendees",
+                  textColour: baseTheme.colors.yellow,
+                  opacity: 0.95,
+                  titleSize: 5.5,
+                  descriptionSize: 1.3,
+                },
+                {
+                  image: TieDye,
+                  cardTitle: "80",
+                  description: "Different Booths",
+                  textColour: baseTheme.colors.yellow,
+                  opacity: 0.95,
+                  titleSize: 5.0,
+                  descriptionSize: 1.3,
+                },
+                {
+                  image: Navy,
+                  cardTitle: "20+",
+                  description: "Sponsors",
+                  textColour: baseTheme.colors.yellow,
+                  opacity: 0.95,
+                  titleSize: 5.5,
+                  descriptionSize: 1.3,
+                },
+              ]}
+            />
+          </CarouselWrapper>
+          <div>
+            <p>
+              PuMP+ is our annual STEM fair connecting high school students to
+              various opportunities within the health sciences, from research to
+              volunteering. Our first PuMP+ held in Toronto in February 2020,
+              featured over 20 booths and had over 500 student attendees. Various
+              institutions like Sanofi Biogenius Challenge, Vex Robotics, The
+              Knowledge Society (TKS), and countless others.
+            </p>
 
-          <p>
-            In 2021, with the challenges posed by the pandemic, we brought PuMP+ to
-            Zoom, sharing opportunities in 3 different cities; Toronto, Vancouver and
-            Calgary. Through interactive activities, live Q&As and presentations,
-            organizations shared opportunities for students to engage in research,
-            social advocacy, volunteering and leadership.
-          </p>
-        </div>
-        <CarouselWrapper>
-          <TestimonialCarousel slides={testimonials} className="regular-carousel" />
-        </CarouselWrapper>
-      </Wrapper>
-    </PageLayout>
+            <p>
+              In 2021, with the challenges posed by the pandemic, we brought PuMP+ to
+              Zoom, sharing opportunities in 3 different cities; Toronto, Vancouver
+              and Calgary. Through interactive activities, live Q&As and
+              presentations, organizations shared opportunities for students to
+              engage in research, social advocacy, volunteering and leadership.
+            </p>
+          </div>
+          <CarouselWrapper>
+            <TestimonialCarousel
+              slides={testimonials}
+              className="regular-carousel"
+            />
+          </CarouselWrapper>
+        </Wrapper>
+      </PageLayout>
+    </>
   );
 };
 

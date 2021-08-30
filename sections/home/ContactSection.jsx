@@ -9,9 +9,8 @@ export const ContactSection = () => {
   return (
     <Wrapper>
       <SContactForm
-        title="Feeling Inspired?"
-        descriptionText="Contact us about our initiatives, joining the team, becoming a partner, 
-                or anything else you want to chat about!"
+        title="Contact Us"
+        descriptionText="Want to join our team, sign up for an event, or partner with us? Send us your questions and comments below."
       />
       <ImageContainer>
         <Image
@@ -31,7 +30,7 @@ const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
   ${media(
-    "tablet",
+    1000,
     `
         flex-direction: column;
         padding-bottom: 15%;
@@ -42,7 +41,7 @@ const SContactForm = styled(ContactForm)`
   width: 60%;
   margin-right: 5%;
   ${media(
-    "tablet",
+    1000,
     `
         margin-right: 0%;
         width: 70%;
@@ -51,7 +50,7 @@ const SContactForm = styled(ContactForm)`
 `;
 const ImageContainer = styled.div`
   ${media(
-    "tablet",
+    1000,
     `
             display: none;
         `

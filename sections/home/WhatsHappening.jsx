@@ -19,7 +19,7 @@ export const WhatsHappening = ({ ...props }) => (
           {
             title: "PuMP Digest",
             description:
-              "Check out our blog to explore our articles on research, student life, post-secondary education, careers in medicine, and more!",
+              "A student blog with seasonal releases on topics ranging from novel biomedical research to study tips to post-secondary advice.",
             thumbnail: PumpDigest,
             buttonText: "Learn More",
             linkTo: "/resources/blog",
@@ -27,36 +27,21 @@ export const WhatsHappening = ({ ...props }) => (
           {
             title: "Impact Report",
             description:
-              "We are heading into our third year of operations! Read about our projects from the 2020-21 fiscal year in our first ever impact report.",
+              "We are heading into our third year of operations! Read about our projects and accomplishments from the 2020-21 fiscal year in our first ever impact report.",
             thumbnail: ImpactReport,
             buttonText: "Learn More",
-            linkTo: "/",
+            linkTo: "/about#impact-report",
           },
           {
             title: "PowerUp Mentorship",
             description:
-              "Explore articles on research, student life, PuMP has partnered up with The STEM Fellowship to launch our mentorship program, PowerUp!",
+              "PowerUp pairs high school students to undergraduate mentors studying the health, life, or biological sciences.",
             thumbnail: PowerUp,
             buttonText: "Learn More",
-            linkTo: "/",
-          },
-          {
-            title: "PuMP Digest 2",
-            description:
-              "Check out our blog to explore our articles on research, student life, post-secondary education, careers in medicine, and more!",
-            thumbnail: PumpDigest,
-            buttonText: "Learn More",
-            linkTo: "/",
-          },
-          {
-            title: "Impact Report 2",
-            description:
-              "We are heading into our third year of operations! Read about our projects from the 2020-21 fiscal year in our first ever impact report.",
-            thumbnail: ImpactReport,
-            buttonText: "Learn More",
-            linkTo: "/",
+            linkTo: "/resources/power-up",
           },
         ]}
+        cardHeight={500}
       />
     </CarouselWrapper>
   </Wrapper>

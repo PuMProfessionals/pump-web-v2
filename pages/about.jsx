@@ -175,24 +175,24 @@ const calgaryBoard = [
     position: "President",
     imageWidth: 240,
     imageHeight: 220,
-    cardHeight: 370,
+    cardHeight: 380,
   },
   {
     name: "Yi An (Annie) Wang",
     avatar: YiAn,
-    position: "Vice President",
+    position: "VP of External Affairs",
     imageWidth: 240,
     imageHeight: 230,
-    cardHeight: 370,
+    cardHeight: 380,
     fontColor: baseTheme.colors.gold,
   },
   {
     name: "Camille Eamon",
     avatar: Camille,
-    position: "Vice President",
+    position: "VP of Internal Affairs",
     imageWidth: 250,
     imageHeight: 190,
-    cardHeight: 370,
+    cardHeight: 380,
     fontColor: baseTheme.colors.brightBlue,
   },
 ];
@@ -236,12 +236,14 @@ export default function About() {
       <PageLayout>
         <Title
           title="About Us"
-          description="Get to know the PuMP family."
+          description="Get to know the PuMP family!"
           image={AboutUs}
         />
         <OurStory />
+        <QuickFacts />
         <ValueSection />
         <LeftImageTextLayout
+          id="impact-report"
           titleText="Our Impact Report"
           graphic={ImpactReport}
           imageWidth={400}
@@ -259,7 +261,6 @@ export default function About() {
           ]}
           style={{ marginTop: "5%" }}
         />
-        <QuickFacts />
         <PhotoCollageSectionWrapper
           backgroundPath="/about/photo-collage-large.png"
           mobilePath="/about/photo-collage-large.png"

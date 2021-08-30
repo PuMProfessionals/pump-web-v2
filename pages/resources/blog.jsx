@@ -9,7 +9,7 @@ import { posts } from "../../cache/cache";
 import { Input, Loading, Multiselector, Title, Text } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import { baseTheme } from "../../theme";
-import SpeechBubble from "../../public/blog/written-speech-bubble.svg";
+import PuMPDigest from "../../public/home/MainGraphic.png";
 import { media } from "../../utils";
 import { BlogSection } from "../../sections/resources/blog";
 
@@ -68,9 +68,9 @@ export default function Blog({ blogs, ...props }) {
         <div {...props}>
           <Title
             title="Welcome To PuMP Digest"
-            image={SpeechBubble}
+            image={PuMPDigest}
             arrowLink="/resources"
-            imageWidth={150}
+            imageWidth={230}
             imageHeight={150}
           />
           <InputsWrapper>

@@ -222,7 +222,7 @@ const FirstInputWrapper = styled.div`
   justify-content: space-between;
   margin-bottom: 30px;
   ${media(
-    "tablet",
+    1000,
     `
         flex-direction: column;
         margin-bottom: 0;
@@ -230,16 +230,16 @@ const FirstInputWrapper = styled.div`
   )};
 `;
 const SInput = styled(Input)`
-  width: 35%;
+  width: 37%;
   margin-top: 10px;
   @media only screen and (min-width: 1200px) {
-    width: 39%;
-  }
-  @media only screen and (min-width: 1600px) {
     width: 41%;
   }
+  @media only screen and (min-width: 1600px) {
+    width: 43%;
+  }
   ${media(
-    "tablet",
+    1000,
     `
         width: auto;
         margin-top: 0;

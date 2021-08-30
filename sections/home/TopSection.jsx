@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 
-import MainGraphic from "../../public/home/MainGraphic.png";
+import MainGraphic from "../../public/about/navy-rect.png";
 import { baseTheme } from "../../theme";
 import { media, CONSTANTS } from "../../utils";
 import { Text, Button } from "../../components";
@@ -17,7 +17,7 @@ export const TopSection = ({ ...props }) => (
       <Button>
         <ButtonText size="default" bold="true">
           <Link href="/sponsors">
-            <a style={{ color: baseTheme.colors.navy }}>Sponsor</a>
+            <a style={{ color: baseTheme.colors.navy }}>About Us</a>
           </Link>
         </ButtonText>
       </Button>

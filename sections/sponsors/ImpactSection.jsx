@@ -28,14 +28,14 @@ export const ImpactSection = ({ ...props }) => {
       <ImpactWrapper>
         <ImpactCard
           thumbnail={ImpactGraphic1}
-          cardTitle="30,000"
+          cardTitle="3,000"
           description="Students reached directly through our services"
           textColour={baseTheme.colors.white}
           cardHeight={300}
         />
         <ImpactCard
           thumbnail={ImpactGraphic2}
-          cardTitle="3,000"
+          cardTitle="5,000"
           description="Following our events across social media"
           textColour={baseTheme.colors.white}
           cardHeight={300}
@@ -43,7 +43,7 @@ export const ImpactSection = ({ ...props }) => {
         <ImpactCard
           thumbnail={ImpactGraphic3}
           cardTitle="70K"
-          description="In total reached across Canada"
+          description="Reached across Canada"
           textColour={baseTheme.colors.white}
           cardHeight={300}
         />
