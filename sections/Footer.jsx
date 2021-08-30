@@ -8,7 +8,7 @@ import InstagramLogo from "../public/instagram.svg";
 import { CONSTANTS, media } from "../utils";
 import { Text } from "../components";
 
-const PATHS = ["", "about", "resources", "events", "contact", "sponsors"];
+const PATHS = ["", "about", "resources", "events", "community", "contact"];
 
 export const Footer = ({ path, ...props }) => (
   <FooterContainer {...props}>

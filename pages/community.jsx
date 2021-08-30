@@ -218,14 +218,14 @@ const communityPartners = [
   },
 ];
 
-export default function Sponsors() {
+export default function Community() {
   return (
     <div>
       <Head>
-        <title>PuMP | Sponsors</title>
+        <title>PuMP | Community</title>
         <meta
           name="description"
-          content="Find out why you should sponsor PuMP today."
+          content="Find out more about PuMP's community."
         />
       </Head>
       <PageLayout>
@@ -252,12 +252,12 @@ export default function Sponsors() {
               imageWidth={300}
               imageHeight={400}
               descriptions={[
-                `In return, we offer a variety of ways to feature your business. Our online platforms on Instagram, Facebook and LinkedIn reach  more than 1000 youth across the GTA. The sponsorship rewards listed above aim to reflect our commitment to our sponsors as much as possible.`,
+                `In return, we offer a variety of ways to feature your business. Our online platforms on Instagram, Facebook and LinkedIn reach  more than 1000 youth across the GTA. The sponsorship rewards listed above aim to reflect our commitment to our sponsors as much as possible. Email us for a copy of our sponsorship package.`,
               ]}
               buttons={[
                 {
-                  text: "View our Sponsorship Package",
-                  link: "/sponsors/PuMPSponsorshipPackage.pdf",
+                  text: "Email Us",
+                  link: `mailto:community@pumprofessionals.org`,
                   external: true,
                 },
               ]}

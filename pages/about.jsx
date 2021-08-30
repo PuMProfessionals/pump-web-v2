@@ -242,6 +242,7 @@ export default function About() {
         <OurStory />
         <ValueSection />
         <LeftImageTextLayout
+          id="impact-report"
           titleText="Our Impact Report"
           graphic={ImpactReport}
           imageWidth={400}
