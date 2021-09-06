@@ -15,16 +15,20 @@ export const OurStory = ({ ...props }) => {
           Prospective Medical Professionals, known as PuMP for short, is a federally
           registered charity on a mission to help Canadian high school and
           post-secondary students understand different career pathways in life and
-          health sciences. Our goals are to: 
+          health sciences. Our goals are to:
         </Description>
         <ul>
-          <li>Increase the transparency of the entry
-          process into medical career paths.</li>
-          <li>Make learning experiences in the
-          healthcare industry more accessible for high school and post-secondary
-          students.</li>
-          <li>Promote equal opportunity for all youth, regardless of
-          socioeconomic status, gender, religion or race.</li>
+          <li>
+            Increase the transparency of the entry process into medical career paths.
+          </li>
+          <li>
+            Make learning experiences in the healthcare industry more accessible for
+            high school and post-secondary students.
+          </li>
+          <li>
+            Promote equal opportunity for all youth, regardless of socioeconomic
+            status, gender, religion or race.
+          </li>
         </ul>
       </BulletPointWrapper>
     </Wrapper>

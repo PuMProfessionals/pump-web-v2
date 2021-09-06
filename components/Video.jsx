@@ -14,9 +14,7 @@ export const Video = ({ embedId, titleText, descriptionText, ...props }) => {
           </Title>
         </TitleSection>
       )}
-      {!!descriptionText && (
-        <InfoSection>{descriptionText}</InfoSection>
-      )}
+      {!!descriptionText && <InfoSection>{descriptionText}</InfoSection>}
       <VideoSection>
         <SIframe
           width="560"

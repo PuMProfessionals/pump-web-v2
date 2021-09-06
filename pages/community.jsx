@@ -274,7 +274,11 @@ export default function Community() {
         <Title title="Community" />
         <Wrapper>
           <Description>
-          At PuMP, donations go directly into supporting our operations. As a growing organization, the support of local businesses and community members allows us to grow, reach out, and give back. PuMP is incredibly grateful to have an amazing network of community partners and sponsors without which our impact would not be possible - thank you.
+            At PuMP, donations go directly into supporting our operations. As a
+            growing organization, the support of local businesses and community
+            members allows us to grow, reach out, and give back. PuMP is incredibly
+            grateful to have an amazing network of community partners and sponsors
+            without which our impact would not be possible - thank you.
           </Description>
           <ImpactSection style={{ paddingTop: "5%" }} />
           {/* <TopWrapper>
