@@ -7,12 +7,14 @@ import { media } from "../utils";
 export const Video = ({ embedId, titleText, descriptionText, ...props }) => {
   return (
     <Wrapper {...props}>
-      <TitleSection>
-        <Title size={baseTheme.size.h2} bold="true">
-          {titleText}
-        </Title>
-      </TitleSection>
-      <InfoSection>{descriptionText}</InfoSection>
+      {!!titleText && (
+        <TitleSection>
+          <Title size={baseTheme.size.h2} bold="true">
+            {titleText}
+          </Title>
+        </TitleSection>
+      )}
+      {!!descriptionText && <InfoSection>{descriptionText}</InfoSection>}
       <VideoSection>
         <SIframe
           width="560"
@@ -38,7 +40,7 @@ const SIframe = styled.iframe`
   )};
 `;
 const Wrapper = styled.div`
-  padding: 2% 0 10% 0;
+  padding: 2% 0;
   ${media(
     750,
     `

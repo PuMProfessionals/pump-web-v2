@@ -39,8 +39,7 @@ import GovernmentOfCanada from "../public/sponsors/GovernmentOfCanada.png";
 import GSuite from "../public/sponsors/GSuite.png";
 import TakingItGlobal from "../public/sponsors/Taking-It-Global-Rising-Logo.png";
 
-import SponsorshipGraphic from "../public/sponsors/sponsor-benefits.png";
-import { Title, Text, LeftImageTextLayout, ContactForm } from "../components";
+import { Title, Text, ContactForm } from "../components";
 import { PageLayout } from "../sections/hoc";
 import { ImpactSection } from "../sections/sponsors";
 import { media } from "../utils";
@@ -274,8 +273,15 @@ export default function Community() {
       <PageLayout>
         <Title title="Community" />
         <Wrapper>
+          <Description>
+            At PuMP, donations go directly into supporting our operations. As a
+            growing organization, the support of local businesses and community
+            members allows us to grow, reach out, and give back. PuMP is incredibly
+            grateful to have an amazing network of community partners and sponsors
+            without which our impact would not be possible - thank you.
+          </Description>
           <ImpactSection style={{ paddingTop: "5%" }} />
-          <TopWrapper>
+          {/* <TopWrapper>
             <LeftImageTextLayout
               titleText="What We Offer"
               graphic={SponsorshipGraphic}
@@ -295,21 +301,13 @@ export default function Community() {
                 },
               ]}
             />
-          </TopWrapper>
+          </TopWrapper> */}
           <div style={{ margin: "8% 5% 0 5%" }}>
             <ContactForm
               title="Partner with us!"
               descriptionText="A representative will reply back to your email within 3-5 business days."
             />
           </div>
-          <Subtitle style={{ marginTop: "8%" }}>
-            A Thank You To Our Community
-          </Subtitle>
-          <Description>
-            As a growing organization, the support of local businesses and community
-            members allows us to grow, reach out, and give back. PuMP is extremely
-            grateful for these contributions. To our sponsors – thank you.
-          </Description>
           <Subtitle style={{ marginTop: "5%" }}>Our Community Partners</Subtitle>
           <SponsorsWrapper>
             {communityPartners.map((partner) => (
@@ -384,12 +382,6 @@ const SponsorsWrapper = styled.div`
             margin: 10% 0;
         `
   )};
-`;
-const TopWrapper = styled.div`
-  padding-top: 8%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 `;
 const ImageContainer = styled.div`
   margin: 2% 2% 0 0;
