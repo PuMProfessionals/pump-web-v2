@@ -21,13 +21,13 @@
     ]
   },
   "dependencies": {
-    "@prisma/client": "^2.30.0",
+    "@prisma/client": "^2.30.3",
     "@styled-icons/bootstrap": "^10.34.0",
-    "axios": "^0.21.1",
+    "axios": ">=0.21.2",
     "emailjs-com": "^3.2.0",
     "gray-matter": "^4.0.3",
-    "multiselect-react-dropdown": "^2.0.5",
-    "next": "11.1.0",
+    "multiselect-react-dropdown": "^2.0.6",
+    "next": ">=11.1.1",
     "next-mdx-remote": "^3.0.4",
     "nprogress": "^0.2.0",
     "prettier": "^2.3.2",
@@ -36,20 +36,20 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-loader-spinner": "^4.0.0",
-    "react-toastify": "^8.0.1",
+    "react-toastify": "^8.0.2",
     "styled-components": "^5.3.1",
-    "swiper": "^6.8.3"
+    "swiper": "^7.0.3"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.13.2",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-next": "11.1.0",
+    "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.1",
-    "eslint-plugin-react": "^7.25.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.25.1",
     "husky": "^4.3.8",
     "lint-staged": "^11.1.2",
-    "prisma": "^2.30.0"
+    "prisma": "^2.30.3"
   }
 }

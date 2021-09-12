@@ -63,6 +63,7 @@ const Description = styled(Text)`
   justify-content: center;
   line-height: 1.5;
   padding: 0 5%;
+  line-height: 1.5;
   ${({ theme }) => `
       color: ${theme.colors.white};
   `};

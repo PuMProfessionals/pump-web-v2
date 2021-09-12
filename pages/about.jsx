@@ -6,21 +6,21 @@ import Asma from "../public/members/asma-khamis.png";
 import Shiro from "../public/members/shiro-puwa.png";
 import RachelLin from "../public/members/rachel-lin.png";
 import Ellie from "../public/members/ellie-tiliakou.png";
-import Angela from "../public/members/angela-yang.jpg";
+import Angela from "../public/members/angela-yang.png";
 import Dhruv from "../public/members/dhruv-dhall.png";
 import Helen from "../public/members/helen-yin.png";
 import Kaya from "../public/members/kaya-januszewska.png";
-import Andreea from "../public/members/andreea-murariu.jpg";
-import Aneeya from "../public/members/aneeya-johal.jpg";
+import Andreea from "../public/members/andreea-murariu.png";
+import Aneeya from "../public/members/aneeya-johal.png";
 import MarkShort from "../public/members/mark-short.png";
 import Catherine from "../public/members/catherine-jiang.png";
 import Brooklyn from "../public/members/brooklyn-wiggins.png";
 import YiAn from "../public/members/yi-an-wang.png";
-import Camille from "../public/members/camille-eamon.jpeg";
-import Ashley from "../public/members/ashley-lam.jpeg";
+import Camille from "../public/members/camille-eamon.png";
+import Ashley from "../public/members/ashley-lam.png";
 import Joshua from "../public/members/joshua-cheruvathur.png";
-import Bryan from "../public/members/bryan-liu.jpg";
-import Emily from "../public/members/emily-hu.jpg";
+import Bryan from "../public/members/bryan-liu.png";
+import Emily from "../public/members/emily-hu.png";
 import AboutUs from "../public/about/AboutUs-Top.png";
 import ImpactReport from "../public/about/impact-report.svg";
 
@@ -34,16 +34,12 @@ const nationalBoard = [
     name: "Lucy Zhao",
     avatar: Lucy,
     position: "Founder & President",
-    imageWidth: 240,
-    imageHeight: 220,
     cardHeight: 370,
   },
   {
     name: "Asma Khamis",
     avatar: Asma,
     position: "VP of Community",
-    imageWidth: 230,
-    imageHeight: 220,
     cardHeight: 370,
     fontColor: baseTheme.colors.yellow,
   },
@@ -51,8 +47,6 @@ const nationalBoard = [
     name: "Shiro Puwa",
     avatar: Shiro,
     position: "VP of National Operations",
-    imageWidth: 230,
-    imageHeight: 220,
     cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
   },
@@ -60,24 +54,18 @@ const nationalBoard = [
     name: "Rachel Lin",
     avatar: RachelLin,
     position: "VP of Promotions",
-    imageWidth: 250,
-    imageHeight: 200,
-    cardHeight: 360,
+    cardHeight: 370,
     fontColor: baseTheme.colors.turquoise,
   },
   {
     name: "Ellie Tiliakou",
     avatar: Ellie,
     position: "VP of Regional Operations",
-    imageWidth: 240,
-    imageHeight: 220,
     cardHeight: 370,
   },
   {
     name: "Richard Xi",
     position: "VP of Regional Operations",
-    imageWidth: 240,
-    imageHeight: 220,
     cardHeight: 370,
     fontColor: baseTheme.colors.yellow,
   },
@@ -85,8 +73,6 @@ const nationalBoard = [
     name: "Angela Yang",
     avatar: Angela,
     position: "VP of Corporate Affairs",
-    imageWidth: 240,
-    imageHeight: 240,
     cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
   },
@@ -97,35 +83,27 @@ const torontoBoard = [
     name: "Dhruv Dhall",
     avatar: Dhruv,
     position: "President",
-    imageWidth: 260,
-    imageHeight: 240,
-    cardHeight: 380,
+    cardHeight: 370,
   },
   {
     name: "Helen Yin",
     avatar: Helen,
     position: "VP of Internal Affairs",
-    imageWidth: 250,
-    imageHeight: 220,
-    cardHeight: 380,
+    cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
   },
   {
     name: "Andreea Murariu",
     avatar: Andreea,
     position: "VP of External Affairs",
-    imageWidth: 220,
-    imageHeight: 255,
-    cardHeight: 380,
+    cardHeight: 370,
     fontColor: baseTheme.colors.yellow,
   },
   {
     name: "Emily Hu",
     avatar: Emily,
     position: "Secretary",
-    imageWidth: 215,
-    imageHeight: 260,
-    cardHeight: 380,
+    cardHeight: 370,
     fontColor: baseTheme.colors.turquoise,
   },
 ];
@@ -135,16 +113,12 @@ const vancouverBoard = [
     name: "Aneeya Johal",
     avatar: Aneeya,
     position: "President",
-    imageWidth: 220,
-    imageHeight: 220,
     cardHeight: 370,
   },
   {
     name: "Kaya Januszewska",
     avatar: Kaya,
     position: "VP of External Affairs",
-    imageWidth: 230,
-    imageHeight: 210,
     cardHeight: 370,
     fontColor: baseTheme.colors.gold,
   },
@@ -152,8 +126,6 @@ const vancouverBoard = [
     name: "Mark Short",
     avatar: MarkShort,
     position: "VP of Internal Affairs",
-    imageWidth: 230,
-    imageHeight: 200,
     cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
   },
@@ -161,8 +133,6 @@ const vancouverBoard = [
     name: "Catherine Jiang",
     avatar: Catherine,
     position: "Secretary",
-    imageWidth: 230,
-    imageHeight: 230,
     cardHeight: 370,
     fontColor: baseTheme.colors.turquoise,
   },
@@ -175,24 +145,20 @@ const calgaryBoard = [
     position: "President",
     imageWidth: 240,
     imageHeight: 220,
-    cardHeight: 380,
+    cardHeight: 370,
   },
   {
     name: "Yi An (Annie) Wang",
     avatar: YiAn,
     position: "VP of External Affairs",
-    imageWidth: 240,
-    imageHeight: 230,
-    cardHeight: 380,
+    cardHeight: 370,
     fontColor: baseTheme.colors.gold,
   },
   {
     name: "Camille Eamon",
     avatar: Camille,
     position: "VP of Internal Affairs",
-    imageWidth: 250,
-    imageHeight: 190,
-    cardHeight: 380,
+    cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
   },
 ];
@@ -202,8 +168,6 @@ const ottawaBoard = [
     name: "Joshua Cheruvathur",
     avatar: Joshua,
     position: "Senior Board",
-    imageWidth: 240,
-    imageHeight: 220,
     cardHeight: 370,
     fontColor: baseTheme.colors.brightBlue,
   },
@@ -211,16 +175,12 @@ const ottawaBoard = [
     name: "Ashley Lam",
     avatar: Ashley,
     position: "VP of Internal Affairs",
-    imageWidth: 245,
-    imageHeight: 190,
     cardHeight: 370,
   },
   {
     name: "Bryan Liu",
     avatar: Bryan,
     position: "VP of External Affairs",
-    imageWidth: 210,
-    imageHeight: 240,
     cardHeight: 370,
     fontColor: baseTheme.colors.gold,
   },
