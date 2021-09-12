@@ -23,11 +23,11 @@
   "dependencies": {
     "@prisma/client": "^2.30.3",
     "@styled-icons/bootstrap": "^10.34.0",
-    "axios": "^0.21.3",
+    "axios": ">=0.21.2",
     "emailjs-com": "^3.2.0",
     "gray-matter": "^4.0.3",
     "multiselect-react-dropdown": "^2.0.6",
-    "next": "11.1.2",
+    "next": ">=11.1.1",
     "next-mdx-remote": "^3.0.4",
     "nprogress": "^0.2.0",
     "prettier": "^2.3.2",
