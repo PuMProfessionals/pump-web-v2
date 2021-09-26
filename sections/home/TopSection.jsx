@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 
-import MainGraphic from "../../public/about/navy-rect.png";
+import MainGraphic from "../../public/home/TopGraphic.png";
 import { baseTheme } from "../../theme";
 import { media, CONSTANTS } from "../../utils";
 import { Text, Button } from "../../components";
