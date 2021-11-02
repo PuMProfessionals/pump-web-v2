@@ -74,9 +74,9 @@ export default function Contact() {
           <SponsorshipText>or</SponsorshipText>
           <div style={{ margin: "30px auto" }}>
             <Button>
-              <Link href="/sponsors">
+              <Link href="/community">
                 <a style={{ color: baseTheme.colors.navy, fontWeight: "bold" }}>
-                  Visit the Sponsors page
+                  Visit the Community page
                 </a>
               </Link>
             </Button>
