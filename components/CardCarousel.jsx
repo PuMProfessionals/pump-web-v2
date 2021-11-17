@@ -11,6 +11,8 @@ export function CardCarousel({
   slides,
   cardHeight,
   cardWidth,
+  imageHeight,
+  imageWidth,
   component,
   ...props
 }) {
@@ -53,6 +55,8 @@ export function CardCarousel({
               style={{ marginBottom: "50px" }}
               cardHeight={cardHeight}
               cardWidth={cardWidth}
+              imageHeight={imageHeight ?? imageHeight}
+              imageWidth={imageWidth ?? imageWidth}
               component={component}
               date={slide.date}
             />
