@@ -44,7 +44,7 @@ const SContactForm = styled(ContactForm)`
     1000,
     `
         margin-right: 0%;
-        width: 70%;
+        width: 90%;
         `
   )};
 `;
