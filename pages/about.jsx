@@ -7,6 +7,7 @@ import Shiro from "../public/members/shiro-puwa.png";
 import RachelLin from "../public/members/rachel-lin.png";
 import Ellie from "../public/members/ellie-tiliakou.png";
 import Angela from "../public/members/angela-yang.png";
+import Richard from "../public/members/richard-xi.png";
 import Dhruv from "../public/members/dhruv-dhall.png";
 import Helen from "../public/members/helen-yin.png";
 import Kaya from "../public/members/kaya-januszewska.png";
@@ -65,6 +66,7 @@ const nationalBoard = [
   },
   {
     name: "Richard Xi",
+    avatar: Richard,
     position: "VP of Regional Operations",
     cardHeight: 370,
     fontColor: baseTheme.colors.yellow,

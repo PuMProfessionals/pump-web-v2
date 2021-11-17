@@ -22,7 +22,9 @@ export function EventsCarousel({
   description,
   backgroundColor = baseTheme.colors.greyBlue,
   textColor = baseTheme.colors.white,
-  cardWidth = 230,
+  cardWidth = 300,
+  imageHeight = 300,
+  imageWidth = 300,
   cardHeight = 520,
   ...props
 }) {
@@ -42,6 +44,8 @@ export function EventsCarousel({
           <CardCarousel
             cardHeight={cardHeight}
             cardWidth={cardWidth}
+            imageHeight={imageHeight}
+            imageWidth={imageWidth}
             slides={slides}
           />
         </CarouselWrapper>
