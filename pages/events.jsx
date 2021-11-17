@@ -38,8 +38,7 @@ export default function Events() {
             title="Annual Events"
             description="Opportunities that assist high school students with career planning, relieve stress, and connect with others."
             backgroundColor={baseTheme.colors.pastelNavy}
-            cardHeight={650}
-            imageHeight={250}
+            cardHeight={750}
             slides={[
               {
                 title: "PuMP+",
