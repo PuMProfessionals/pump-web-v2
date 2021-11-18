@@ -70,7 +70,6 @@ const Description = styled(Text)`
 `;
 
 const List = styled.ul`
-  text-align: center;
   ${({ theme }) => `
       color: ${theme.colors.white};
   `};

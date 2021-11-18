@@ -62,13 +62,13 @@ const STitle = styled.h1`
   ${media(
     "tablet",
     `
-      font-size: 1.5rem;
+      font-size: 2.0rem;
     `
   )};
   ${media(
     "mobile",
     `
-      font-size: 1.2rem;
+      font-size: 1.7rem;
     `
   )}
 `;

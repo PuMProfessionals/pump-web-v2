@@ -71,7 +71,7 @@ export default function Blog({ blogs, ...props }) {
             image={PuMPDigest}
             arrowLink="/resources"
             imageWidth={230}
-            imageHeight={150}
+            imageHeight={210}
           />
           <InputsWrapper>
             <SInput

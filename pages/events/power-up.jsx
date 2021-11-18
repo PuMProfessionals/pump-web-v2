@@ -76,12 +76,20 @@ const PowerUp = () => {
             </p>
           </div>
           <ButtonWrapper>
-            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSc7DeXtxbPpKQLj-MowdDOXYuXIHjRdErKo0S_fgRmAhLN28Q/viewform">
+            <Link
+              href="https://forms.gle/rGj32Go4jdYsrzsL8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <a>
                 <Button style={{ marginRight: "3%" }}>Apply to be a Mentor</Button>
               </a>
             </Link>
-            <Link href="https://forms.gle/rGj32Go4jdYsrzsL8">
+            <Link
+              href="https://docs.google.com/forms/d/e/1FAIpQLSc7DeXtxbPpKQLj-MowdDOXYuXIHjRdErKo0S_fgRmAhLN28Q/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <a>
                 <Button style={{ marginLeft: "3%" }}>Apply to be a Mentee</Button>
               </a>

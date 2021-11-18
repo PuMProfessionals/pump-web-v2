@@ -14,7 +14,7 @@ import { CONSTANTS, media } from "../utils";
 const contactInfo = [
   {
     logo: Instagram,
-    info: "@pumprofessionals",
+    info: "@pumpprofessionals",
     link: CONSTANTS.instagram,
   },
   {

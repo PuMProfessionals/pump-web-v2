@@ -36,7 +36,7 @@ import CST from "../public/sponsors/CST.jpeg";
 import CTVNews from "../public/sponsors/CTVNews.png";
 import GoogleAds from "../public/sponsors/GoogleAds.png";
 import GovernmentOfCanada from "../public/sponsors/GovernmentOfCanada.png";
-import GSuite from "../public/sponsors/GSuite.png";
+// import GSuite from "../public/sponsors/GSuite.png";
 import TakingItGlobal from "../public/sponsors/Taking-It-Global-Rising-Logo.png";
 
 import { Title, Text, ContactForm } from "../components";
@@ -248,12 +248,6 @@ const supporters = [
     image: GovernmentOfCanada,
     width: 250,
     height: 100,
-  },
-  {
-    title: "GSuite",
-    image: GSuite,
-    width: 250,
-    height: 80,
   },
   {
     title: "TakingItGlobal",
