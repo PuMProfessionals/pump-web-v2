@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components";
-import { Title, ImageCardCarousel, TestimonialCarousel } from "../../components";
+import { Title, ImageCardCarousel, TestimonialCarousel, Button } from "../../components";
 import { PageLayout } from "../../sections/hoc";
 import TieDye from "../../public/about/tiedye-rect.png";
 import Navy from "../../public/about/navy-rect.png";
@@ -63,6 +63,9 @@ const PumpPlus = () => {
               ]}
             />
           </CarouselWrapper>
+          <h2>
+              Want to learn more about opportunities in STEM and how to get involved in your community?
+          </h2>
           <div>
             <p>
               PuMP+ is our annual STEM fair connecting high school students to
@@ -72,7 +75,6 @@ const PumpPlus = () => {
               institutions like Sanofi Biogenius Challenge, Vex Robotics, The
               Knowledge Society (TKS), and countless others.
             </p>
-
             <p>
               In 2021, with the challenges posed by the pandemic, we brought PuMP+ to
               Zoom, sharing opportunities in 3 different cities; Toronto, Vancouver
@@ -80,7 +82,24 @@ const PumpPlus = () => {
               presentations, organizations shared opportunities for students to
               engage in research, social advocacy, volunteering and leadership.
             </p>
+            <p>
+              We are excited to announce <b>PuMP’s 3rd annual STEM fair</b>, PuMP+! 
+              Join our Toronto branch in February and hear from booths about
+              research opportunities, university programs, and much more! We’ll be raffling off lots of prizes, and the best part? It’s all free! Register today on the Eventbrite pages below - we’re looking forward to seeing you there.
+            </p>
           </div>
+          <ButtonWrapper>
+            <Button>
+              <a 
+                href="https://bit.ly/pumpplus22" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ color: baseTheme.colors.navy, fontWeight: "bold" }}
+              >  
+                  Sign up
+              </a>
+            </Button>
+          </ButtonWrapper>
           <CarouselWrapper>
             <TestimonialCarousel
               slides={testimonials}
@@ -98,7 +117,12 @@ export default PumpPlus;
 const Wrapper = styled.div`
   padding: 0 5%;
 `;
-
 const CarouselWrapper = styled.div`
   margin: 5%;
+`;
+const ButtonWrapper = styled.div`
+  display: flex;
+  flex-flow: row-wrap;
+  justify-content: center;
+  padding: 3%;
 `;
