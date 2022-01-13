@@ -133,6 +133,8 @@ Title.propTypes = {
   image: PropTypes.object,
   imageWidth: PropTypes.number,
   imageHeight: PropTypes.number,
+  mobileWidth: PropTypes.number,
+  mobileHeight: PropTypes.number,
   backgroundColor: PropTypes.string,
   isLeftAligned: PropTypes.bool,
 };
