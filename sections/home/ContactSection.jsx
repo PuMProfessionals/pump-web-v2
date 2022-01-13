@@ -33,7 +33,6 @@ const Wrapper = styled.div`
     1000,
     `
         flex-direction: column;
-        padding-bottom: 15%;
         `
   )};
 `;
@@ -44,7 +43,7 @@ const SContactForm = styled(ContactForm)`
     1000,
     `
         margin-right: 0%;
-        width: 90%;
+        width: 80%;
         `
   )};
 `;

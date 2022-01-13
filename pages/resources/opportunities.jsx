@@ -75,11 +75,12 @@ export default function Opportunities({ opps, ...props }) {
         <div {...props}>
           <Title
             title="PuMP Direct"
-            description="Browse our opportunities."
             image={PumpDirect}
             arrowLink="/resources"
             imageWidth={150}
             imageHeight={150}
+            description="Browse and filter through our database of volunteering, 
+              research, and leadership opportunities near you."
           />
           <InputsWrapper>
             <SInput
@@ -230,6 +231,9 @@ const ResultsWrapper = styled.div`
   flex-direction: column;
   width: 100%;
   padding: 0 5%;
+  @media only screen and (max-width: 1100px) {
+    width: 75%;
+  }
 `;
 
 export async function getStaticProps() {

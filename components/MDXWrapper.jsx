@@ -13,7 +13,6 @@ export const MDXWrapper = styled.div`
     "tablet",
     `
             padding: 5% 10%;
-            display: flex;
             justify-content: center;
             margin: auto;
         `

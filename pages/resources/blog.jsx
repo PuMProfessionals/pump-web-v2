@@ -70,8 +70,11 @@ export default function Blog({ blogs, ...props }) {
             title="Welcome To PuMP Digest"
             image={PuMPDigest}
             arrowLink="/resources"
-            imageWidth={230}
-            imageHeight={210}
+            imageWidth={300}
+            imageHeight={250}
+            description="Read advice about interview dos and don'ts, 
+              medical school tips, time management skills, careers in 
+              health sciences, and much more. All under one roof!"
           />
           <InputsWrapper>
             <SInput
@@ -164,7 +167,7 @@ const SInput = styled(Input)`
     width: 50%;
   }
   @media only screen and (max-width: 1050px) {
-    width: 80%;
+    width: 70%;
     margin-top: 5%;
     margin-bottom: 30px;
   }
