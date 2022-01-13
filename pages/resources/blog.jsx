@@ -167,7 +167,7 @@ const SInput = styled(Input)`
     width: 50%;
   }
   @media only screen and (max-width: 1050px) {
-    width: 80%;
+    width: 70%;
     margin-top: 5%;
     margin-bottom: 30px;
   }
