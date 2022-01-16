@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import { Navbar } from "../Navbar";
+import { Notification } from "../../components";
 import { Footer } from "../Footer";
 
 export const PageLayout = ({ children, ...props }) => {
@@ -14,8 +15,11 @@ export const PageLayout = ({ children, ...props }) => {
 
   return (
     <Wrapper {...props}>
+      <Notification path="/events/pump-plus" notif="Register now!">
+        PuMP+ registrations are now open.&nbsp;
+      </Notification>
       <Navbar path={mainPath} />
-      {children}
+        {children}
       <Footer path={mainPath} />
     </Wrapper>
   );
