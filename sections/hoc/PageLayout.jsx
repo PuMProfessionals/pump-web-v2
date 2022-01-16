@@ -19,7 +19,7 @@ export const PageLayout = ({ children, ...props }) => {
         PuMP+ registrations are now open.&nbsp;
       </Notification>
       <Navbar path={mainPath} />
-        {children}
+      {children}
       <Footer path={mainPath} />
     </Wrapper>
   );

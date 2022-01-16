@@ -21,18 +21,12 @@ export const Notification = ({
   return (
     <React.Fragment>
       {!isHidden && (
-        <Wrapper
-          backgroundColor={backgroundColor}
-          fontColor={fontColor}
-          {...props}
-        >
+        <Wrapper backgroundColor={backgroundColor} fontColor={fontColor} {...props}>
           <div style={{ margin: "auto" }}>
             {children}
             {!!notif && (
               <Link href={path}>
-                  <NotificationBox>
-                    {notif}
-                  </NotificationBox>
+                <NotificationBox>{notif}</NotificationBox>
               </Link>
             )}
           </div>
