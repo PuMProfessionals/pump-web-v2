@@ -39,7 +39,7 @@ export const WhatsHappening = ({ ...props }) => (
             thumbnail: PowerUp,
             buttonText: "Learn More",
             linkTo: "/events/power-up",
-            imageHeight: 250
+            imageHeight: 250,
           },
         ]}
         cardHeight={530}

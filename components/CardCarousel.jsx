@@ -44,25 +44,26 @@ export function CardCarousel({
       >
         {slides.map((slide) => {
           return (
-          <SwiperSlide key={`${slide.title}__swiper__slide`}>
-            <SCard
-              key={slide.title}
-              title={slide.title}
-              tags={slide.tags}
-              description={slide.description}
-              thumbnail={slide.thumbnail}
-              buttonText={slide.buttonText}
-              linkTo={slide.linkTo}
-              style={{ marginBottom: "50px" }}
-              cardHeight={cardHeight}
-              cardWidth={cardWidth}
-              imageHeight={imageHeight ? imageHeight : slide.imageHeight}
-              imageWidth={imageWidth ? imageWidth : slide.imageWidth}
-              component={component}
-              date={slide.date}
-            />
-          </SwiperSlide>
-        )})}
+            <SwiperSlide key={`${slide.title}__swiper__slide`}>
+              <SCard
+                key={slide.title}
+                title={slide.title}
+                tags={slide.tags}
+                description={slide.description}
+                thumbnail={slide.thumbnail}
+                buttonText={slide.buttonText}
+                linkTo={slide.linkTo}
+                style={{ marginBottom: "50px" }}
+                cardHeight={cardHeight}
+                cardWidth={cardWidth}
+                imageHeight={imageHeight ? imageHeight : slide.imageHeight}
+                imageWidth={imageWidth ? imageWidth : slide.imageWidth}
+                component={component}
+                date={slide.date}
+              />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </div>
   );
