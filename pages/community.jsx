@@ -296,13 +296,13 @@ export default function Community() {
               ]}
             />
           </TopWrapper> */}
-          <div style={{ margin: "8% 5% 0 5%" }}>
+          <div style={{ margin: "8% 5% 5% 5%" }}>
             <ContactForm
               title="Partner with us!"
               descriptionText="A representative will reply back to your email within 3-5 business days."
             />
           </div>
-          <Subtitle style={{ marginTop: "5%" }}>Our Community Partners</Subtitle>
+          <Subtitle style={{ marginTop: "7%" }}>Our Community Partners</Subtitle>
           <SponsorsWrapper>
             {communityPartners.map((partner) => (
               <ImageContainer key={`Partners__Logo__${partner.title}`}>
