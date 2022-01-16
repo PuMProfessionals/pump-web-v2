@@ -1,7 +1,13 @@
 import Head from "next/head";
 import styled from "styled-components";
 
-import { Video, TestimonialCarousel, Text, SectionWrapper } from "../components";
+import {
+  Video,
+  TestimonialCarousel,
+  Text,
+  SectionWrapper,
+  Notification,
+} from "../components";
 import { PageLayout } from "../sections/hoc";
 import { TopSection, WhatsHappening, ContactSection } from "../sections/home";
 import { baseTheme } from "../theme";
@@ -34,6 +40,9 @@ export default function Home() {
           content="A registered charity dedicated to connecting aspiring students to health sciences opportunities."
         />
       </Head>
+      <Notification path="/events/pump-plus" notif="Register now!">
+        PuMP+ registrations are now open.&nbsp;
+      </Notification>
       <PageLayout>
         <TopSection />
         <WhatsHappening />
