@@ -40,20 +40,34 @@ const PumpPlus = () => {
           </h2>
           <p style={{ lineHeight: "1.5rem" }}>
             We are excited to announce <b>PuMP’s 3rd annual STEM fair</b>, PuMP+!
-            Join our Toronto branch in February and hear from booths about research
-            opportunities, university programs, and much more! We’ll be raffling off
-            lots of prizes, and the best part? It’s all free! Register today on the
-            Eventbrite pages below - we’re looking forward to seeing you there.
+            Join our Toronto and Calgary branches in February and hear from booths
+            about research opportunities, university programs, and much more! We’ll
+            be raffling off lots of prizes, and the best part? It’s all free!
+            Register today on the Eventbrite pages below - we’re looking forward to
+            seeing you there.
           </p>
           <ButtonWrapper>
-            <Button>
+            <Button style={{ marginRight: 20 }}>
               <a
                 href="https://bit.ly/pumpplus22"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{
+                  color: baseTheme.colors.navy,
+                  fontWeight: "bold",
+                }}
+              >
+                Sign up (Toronto Branch)
+              </a>
+            </Button>
+            <Button>
+              <a
+                href="https://www.eventbrite.ca/e/pump-student-stem-fair-tickets-248417141357"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{ color: baseTheme.colors.navy, fontWeight: "bold" }}
               >
-                Sign up
+                Sign up (Calgary Branch)
               </a>
             </Button>
           </ButtonWrapper>
