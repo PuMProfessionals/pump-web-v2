@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import CardFill from "../../public/members/card-fill.png";
 import { Card } from "../../components";
 import { baseTheme } from "../../theme";
 import { media } from "../../utils";
@@ -11,28 +12,32 @@ import { media } from "../../utils";
  * @prop {string} board - Board name
  * @prop {string} boardDescription - Board description: established year and no. of members
  * @prop {string} align - Alignment of the board description (left or right)
+ * @prop {string} textColor - Color of text
+ * @prop {breakpoint} breakpoint - Breakpoint at which background color appears
  */
 export const BoardSection = ({
   board,
   boardDescription,
   boardMembers, // array
   align = "left", // align content left or right for board
+  textColor = baseTheme.colors.white,
+  breakpoint = 0,
   ...props
 }) => {
   return (
-    <Wrapper {...props}>
+    <Wrapper breakpoint={breakpoint} {...props}>
       <Info align={align}>
-        <Title>{board}</Title>
-        <p>{boardDescription}</p>
+        <Title textcolor={textColor}>{board}</Title>
+        <p style={{ color: textColor }}>{boardDescription}</p>
       </Info>
       <Board>
         {boardMembers.map((member) => (
           <SCard
             key={`About__Page__Card__${member.name}`}
-            thumbnail={member.avatar}
+            thumbnail={member.avatar ? member.avatar : CardFill}
             title={member.name}
-            imageWidth={member.imageWidth}
-            imageHeight={member.imageHeight}
+            imageWidth={member.imageWidth ? member.imageWidth : 230}
+            imageHeight={member.imageHeight ? member.imageHeight : 230}
             cardHeight={member.cardHeight}
             contentPadding={"5px"}
             component={
@@ -58,9 +63,10 @@ const Info = styled.div`
     `};
 `;
 const Title = styled.h2`
-  ${({ theme }) => `
+  ${({ theme, textcolor }) => `
         font-family: ${theme.font.kumbh};
         font-weight: 700;
+        color: ${textcolor};
     `};
 `;
 const Name = styled.h3`
@@ -86,8 +92,8 @@ const Board = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin-top: 5vh;
+  justify-content: space-evenly;
   ${media(
     500,
     `
@@ -98,4 +104,10 @@ const Board = styled.div`
 const SCard = styled(Card)`
   margin: 0 5px;
   margin-bottom: 5vh;
+  ${media(
+    500,
+    `
+            margin: 5vh auto;
+        `
+  )};
 `;

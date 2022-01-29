@@ -14,8 +14,8 @@ import { media } from "../utils";
 {
   /* TODO: Refactor into object? paths must be same as linked pages*/
 }
-const RESOURCES = ["Home", "About Us", "Resources", "Events"];
-const PATHS = ["", "about", "resources", "events"];
+const RESOURCES = ["Home", "About Us", "Resources", "Events", "Community"];
+const PATHS = ["", "about", "resources", "events", "community"];
 
 export const Navbar = ({
   backgroundColor = baseTheme.colors.navy,
@@ -71,8 +71,8 @@ export const Navbar = ({
             </Resource>
           ))}
           <SButton>
-            <Link href="/sponsors">
-              <a style={{ color: baseTheme.colors.navy }}>Sponsors</a>
+            <Link href="/contact">
+              <a style={{ color: baseTheme.colors.navy }}>Contact Us</a>
             </Link>
           </SButton>
         </ResourcesContainer>
@@ -129,6 +129,7 @@ const Container = styled.div`
   // props does not work within media function
   @media only screen and (max-width: 900px) {
     display: ${(props) => (props.isHidden ? "flex" : "none")};
+    margin-top: ${(props) => (props.isHidden ? "30px" : "0")};
   }
 `;
 const PumpImg = styled(Image)`

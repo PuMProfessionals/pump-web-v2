@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 
-import TitleGraphic from "../../public/home/top-section-graphic.svg";
+import MainGraphic from "../../public/home/TopGraphic.png";
 import { baseTheme } from "../../theme";
 import { media, CONSTANTS } from "../../utils";
 import { Text, Button } from "../../components";
@@ -16,16 +16,16 @@ export const TopSection = ({ ...props }) => (
       <SText size="default">{CONSTANTS.registered_charity_descr}</SText>
       <Button>
         <ButtonText size="default" bold="true">
-          <Link href="/donate">
-            <a style={{ color: baseTheme.colors.navy }}>Donate</a>
+          <Link href="/sponsors">
+            <a style={{ color: baseTheme.colors.navy }}>About Us</a>
           </Link>
         </ButtonText>
       </Button>
     </FirstColumn>
     <SecondColumn>
       <Graphic
-        src={TitleGraphic}
-        alt="Title graphic - person with book, stethoscope, pills and syringe"
+        src={MainGraphic}
+        alt="Title graphic - Doctor with stethoscope"
         height={450}
         width={450}
       />
@@ -41,22 +41,17 @@ const MainContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   ${media(
-    800,
+    "tablet",
     `
         padding: 5%;
-        margin: 7%;
-        `
-  )};
-  ${media(
-    700,
-    `
+        margin: 0 7% 7% 7%;
         flex-direction: column-reverse;
         `
   )};
   ${media(
     500,
     `
-        margin: 12%;
+        margin: 0 12% 12% 12%;
         `
   )};
 `;
@@ -66,11 +61,13 @@ const SText = styled(Text)`
     font-family: ${theme.font.lato};
     color: ${theme.colors.navy};
     margin-top: 0;
+		max-width: 25vw;
   `};
   ${media(
     "tablet",
     `
         line-height: 1.3;
+				max-width: 100vw;
         `
   )};
 `;
@@ -79,11 +76,13 @@ const JosefinTitle = styled(SText)`
   ${({ theme }) => `
     font-family: ${theme.font.josefin};
     margin: 1em 0 0 0;
+		max-width: 30vw;
   `};
   ${media(
     1200,
     `
         font-size: 2.5rem;
+				max-width: 100vw;
         `
   )};
 `;
@@ -100,9 +99,9 @@ const Graphic = styled(Image)`
         `
   )};
   ${media(
-    600,
+    "tablet",
     `
-        max-width: 300px;
+        max-width: 200px;
         `
   )};
 `;
@@ -128,12 +127,6 @@ const SecondColumn = styled.div`
   )};
   ${media(
     "tablet",
-    `
-        padding-left: 2em;
-        `
-  )};
-  ${media(
-    700,
     `
         padding: 0 0 0 0;
         `

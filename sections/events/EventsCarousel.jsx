@@ -18,10 +18,13 @@ import { baseTheme } from "../../theme";
 export function EventsCarousel({
   slides,
   title,
+  component,
   description,
   backgroundColor = baseTheme.colors.greyBlue,
   textColor = baseTheme.colors.white,
-  cardWidth = 230,
+  cardWidth = 300,
+  imageHeight = 300,
+  imageWidth = 300,
   cardHeight = 520,
   ...props
 }) {
@@ -31,13 +34,18 @@ export function EventsCarousel({
         <Title size={baseTheme.size.h1} color={textColor} bold="true">
           {title}
         </Title>
-        <Description size={baseTheme.size.h4} color={textColor}>
-          {description}
-        </Description>
+        {!!description && (
+          <Description size={baseTheme.size.h4} color={textColor}>
+            {description}
+          </Description>
+        )}
+        {!!component && component}
         <CarouselWrapper>
           <CardCarousel
             cardHeight={cardHeight}
             cardWidth={cardWidth}
+            imageHeight={imageHeight}
+            imageWidth={imageWidth}
             slides={slides}
           />
         </CarouselWrapper>

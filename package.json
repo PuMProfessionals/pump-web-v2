@@ -12,7 +12,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run cache-posts && git add cache/cache.js"
+      "pre-commit": "lint-staged && prettier --write sections components pages && npm run cache-posts && git add cache/cache.js"
     }
   },
   "lint-staged": {
@@ -21,32 +21,39 @@
     ]
   },
   "dependencies": {
-    "@prisma/client": "^2.28.0",
-    "axios": "^0.21.1",
+    "@prisma/client": "^3.8.0",
+    "@styled-icons/bootstrap": "^10.34.0",
+    "axios": "^0.24.0",
     "emailjs-com": "^3.2.0",
     "gray-matter": "^4.0.3",
-    "next": "11.0.1",
-    "next-mdx-remote": "^3.0.4",
+    "multiselect-react-dropdown": "^2.0.17",
+    "next": "^12.0.7",
+    "next-mdx-remote": "^3.0.8",
     "nprogress": "^0.2.0",
-    "prettier": "^2.3.2",
+    "prettier": "^2.5.1",
     "prettier-eslint": "^13.0.0",
     "prettier-eslint-cli": "^5.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-toastify": "^7.0.4",
-    "styled-components": "^5.3.0",
-    "swiper": "^6.8.0"
+    "react-loader-spinner": "^4.0.0",
+    "react-toastify": "^8.1.0",
+    "sharp": "^0.29.3",
+    "styled-components": "^5.3.3",
+    "swiper": "^7.4.1"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.13.2",
-    "eslint": "^7.31.0",
+    "babel-plugin-styled-components": "^1.13.3",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-next": "11.0.1",
+    "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
     "husky": "^4.3.8",
-    "lint-staged": "^11.1.1",
-    "prisma": "^2.28.0"
+    "lint-staged": "^11.2.6",
+    "prisma": "^3.8.0"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
   }
 }

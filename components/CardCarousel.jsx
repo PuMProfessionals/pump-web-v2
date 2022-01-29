@@ -11,6 +11,8 @@ export function CardCarousel({
   slides,
   cardHeight,
   cardWidth,
+  imageHeight,
+  imageWidth,
   component,
   ...props
 }) {
@@ -25,7 +27,7 @@ export function CardCarousel({
           clickable: true,
         }}
         autoplay={{
-          delay: 2000,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         navigation={true}
@@ -40,23 +42,28 @@ export function CardCarousel({
           },
         }}
       >
-        {slides.map((slide) => (
-          <SwiperSlide key={`${slide.title}__swiper__slide`}>
-            <SCard
-              key={slide.title}
-              title={slide.title}
-              description={slide.description}
-              thumbnail={slide.thumbnail}
-              buttonText={slide.buttonText}
-              linkTo={slide.linkTo}
-              style={{ marginBottom: "50px" }}
-              cardHeight={cardHeight}
-              cardWidth={cardWidth}
-              component={component}
-              date={slide.date}
-            />
-          </SwiperSlide>
-        ))}
+        {slides.map((slide) => {
+          return (
+            <SwiperSlide key={`${slide.title}__swiper__slide`}>
+              <SCard
+                key={slide.title}
+                title={slide.title}
+                tags={slide.tags}
+                description={slide.description}
+                thumbnail={slide.thumbnail}
+                buttonText={slide.buttonText}
+                linkTo={slide.linkTo}
+                style={{ marginBottom: "50px" }}
+                cardHeight={cardHeight}
+                cardWidth={cardWidth}
+                imageHeight={imageHeight ? imageHeight : slide.imageHeight}
+                imageWidth={imageWidth ? imageWidth : slide.imageWidth}
+                component={component}
+                date={slide.date}
+              />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </div>
   );

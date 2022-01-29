@@ -1,12 +1,16 @@
-import { StudentResource } from "../../components";
-import SampleGraphic from "../../public/home/top-section-graphic.svg";
+import styled from "styled-components";
+import { ImageInfoLayout } from "../../components";
+import PuMPDirect from "../../public/resources/PuMPDirect.png";
+import PuMPDigest from "../../public/home/MainGraphic.png";
+import UASLogo from "../../public/resources/uas-logo.png";
+import { baseTheme } from "../../theme";
 
+/* TODO-2022: Edit Resources to fit SectionWrapper */
 export const ResourcesSection = () => {
   const resources = [
     {
       titleText: "PuMP Direct",
-      descriptionText: `Browse and filter our database of local opportunities in
-        healthcare`,
+      descriptionText: `Browse and filter through our database of volunteering, research, and leadership opportunities near you.`,
       buttons: [
         {
           color: "yellow",
@@ -14,7 +18,7 @@ export const ResourcesSection = () => {
           link: "/resources/opportunities",
         },
       ],
-      graphic: SampleGraphic,
+      graphic: PuMPDirect,
       isGraphicLeft: false,
     },
     {
@@ -25,16 +29,19 @@ export const ResourcesSection = () => {
       buttons: [
         {
           color: "yellow",
-          text: "Join our Community of 800+ Students",
-          link: "/resources/uas" /* TODO: change to Discord server invite link */,
+          text: "Join our community of 900+ students",
+          link: "https://discord.com/invite/vpyF7nCtkm",
+          external: true,
         },
         {
-          color: "white",
+          color: "yellow",
           text: "Learn more",
           link: "/resources/uas",
         },
       ],
-      graphic: SampleGraphic,
+      graphic: UASLogo,
+      graphicWidth: 300,
+      graphicHeight: 300,
     },
     {
       titleText: "PuMP Digest",
@@ -48,21 +55,56 @@ export const ResourcesSection = () => {
           link: "/resources/blog",
         },
       ],
-      graphic: SampleGraphic,
+      graphic: PuMPDigest,
       isGraphicLeft: false,
+      graphicWidth: 250,
+      graphicHeight: 250,
     },
   ];
 
-  return resources.map((resource) => (
-    <StudentResource
-      key={resource.titleText}
-      titleText={resource.titleText}
-      descriptionText={resource.descriptionText}
-      buttons={resource.buttons}
-      graphic={resource.graphic}
-      graphicWidth={resource.graphicWidth}
-      graphicHeight={resource.graphicHeight}
-      isGraphicLeft={resource.isGraphicLeft}
-    />
-  ));
+  return (
+    <>
+      <ImageInfoLayout
+        key={resources[0].titleText}
+        titleText={resources[0].titleText}
+        descriptionText={resources[0].descriptionText}
+        buttons={resources[0].buttons}
+        graphic={resources[0].graphic}
+        graphicWidth={resources[0].graphicWidth}
+        graphicHeight={resources[0].graphicHeight}
+        isGraphicLeft={resources[0].isGraphicLeft}
+        style={{ marginTop: "5%" }}
+      />
+      <MiddleImageInfoLayout
+        key={resources[1].titleText}
+        titleText={resources[1].titleText}
+        descriptionText={resources[1].descriptionText}
+        buttons={resources[1].buttons}
+        graphic={resources[1].graphic}
+        graphicWidth={resources[1].graphicWidth}
+        graphicHeight={resources[1].graphicHeight}
+        isGraphicLeft={resources[1].isGraphicLeft}
+        textColor={baseTheme.colors.white}
+      />
+      <ImageInfoLayout
+        key={resources[2].titleText}
+        titleText={resources[2].titleText}
+        descriptionText={resources[2].descriptionText}
+        buttons={resources[2].buttons}
+        graphic={resources[2].graphic}
+        graphicWidth={resources[2].graphicWidth}
+        graphicHeight={resources[2].graphicHeight}
+        isGraphicLeft={resources[2].isGraphicLeft}
+        style={{ margin: "5% 0" }}
+      />
+    </>
+  );
 };
+
+const MiddleImageInfoLayout = styled(ImageInfoLayout)`
+  ${({ theme }) => `
+    background-color: ${theme.colors.greyBlue};
+    border-radius: 44px;
+    margin: 0 3%;
+  `};
+`;

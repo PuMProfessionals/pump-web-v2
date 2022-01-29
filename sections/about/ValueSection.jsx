@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-import placeholderImage from "../../public/home/impact-section-graphic-1.svg";
+import Connect from "../../public/about/AboutUs-Connect.png";
+import Involve from "../../public/about/AboutUs-Involve.png";
+import Empower from "../../public/about/AboutUs-Empower.png";
 import { ImpactCard, Text } from "../../components";
 import { media } from "../../utils";
 import { baseTheme } from "../../theme";
@@ -16,27 +18,27 @@ export const ValueSection = ({ ...props }) => {
           PuMP looks to make a difference by connecting student with learning
           opportunities, while also encouraging community involvement by providing
           resources, local events and conferences. By creating transparency between
-          studetns and this ever-changing, competitive field, the organization looks
+          students and this ever-changing, competitive field, the organization looks
           to empower youth to continue exploring possible careers in medicine.
         </Description>
       </TopWrapper>
       <ImpactWrapper>
         <ImpactCard
-          thumbnail={placeholderImage}
+          thumbnail={Connect}
           isImageTop={false}
           cardTitle="CONNECT"
           textColour={baseTheme.colors.yellow}
           titleSize={2.5}
         />
         <ImpactCard
-          thumbnail={placeholderImage}
+          thumbnail={Involve}
           isImageTop={false}
           cardTitle="INVOLVE"
           textColour={baseTheme.colors.brightBlue}
           titleSize={2.5}
         />
         <ImpactCard
-          thumbnail={placeholderImage}
+          thumbnail={Empower}
           isImageTop={false}
           cardTitle="EMPOWER"
           textColour={baseTheme.colors.turquoise}
@@ -67,7 +69,7 @@ const Title = styled(Text)`
 const TopWrapper = styled.div`
   padding: 0 5% 60px 5%;
 `;
-const Description = styled.text`
+const Description = styled(Text)`
   display: flex;
   text-align: center;
   font-size: 1rem;
