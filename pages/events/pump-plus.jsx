@@ -11,6 +11,17 @@ import TieDye from "../../public/about/tiedye-rect.png";
 import Navy from "../../public/about/navy-rect.png";
 import { baseTheme } from "../../theme";
 
+const MAPPER = [
+  {
+    location: "Toronto",
+    eventbriteLink: "https://bit.ly/pumpplus22"
+  },
+  {
+    location: "Calgary",
+    eventbriteLink: "https://www.eventbrite.ca/e/pump-student-stem-fair-tickets-248417141357"
+  }
+]
+
 const PumpPlus = () => {
   const testimonials = [
     {
@@ -47,29 +58,25 @@ const PumpPlus = () => {
             seeing you there.
           </p>
           <ButtonWrapper>
-            <Button style={{ marginRight: 20 }}>
-              <a
-                href="https://bit.ly/pumpplus22"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: baseTheme.colors.navy,
-                  fontWeight: "bold",
-                }}
-              >
-                Sign up (Toronto Branch)
-              </a>
-            </Button>
-            <Button>
-              <a
-                href="https://www.eventbrite.ca/e/pump-student-stem-fair-tickets-248417141357"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: baseTheme.colors.navy, fontWeight: "bold" }}
-              >
-                Sign up (Calgary Branch)
-              </a>
-            </Button>
+            {MAPPER.map((location) => (
+              <div key={location.location}>
+                <h2 style={{ marginTop: "5%" }}>
+                  Are you from {location.location}?
+                </h2>
+                <Button style={{ margin: "auto" }}>
+                  <a
+                    href={location.eventbriteLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: baseTheme.colors.navy,
+                    }}
+                  >
+                    Sign up here
+                  </a>
+                </Button>
+              </div>
+            ))}
           </ButtonWrapper>
           <CarouselWrapper>
             <ImageCardCarousel
@@ -122,26 +129,7 @@ const PumpPlus = () => {
               presentations, organizations shared opportunities for students to
               engage in research, social advocacy, volunteering and leadership.
             </p>
-            <p>
-              We are excited to announce <b>PuMP’s 3rd annual STEM fair</b>, PuMP+!
-              Join our Toronto branch in February and hear from booths about research
-              opportunities, university programs, and much more! We’ll be raffling
-              off lots of prizes, and the best part? It’s all free! Register today on
-              the Eventbrite pages below - we’re looking forward to seeing you there.
-            </p>
           </div>
-          <ButtonWrapper>
-            <Button>
-              <a
-                href="https://bit.ly/pumpplus22"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: baseTheme.colors.navy, fontWeight: "bold" }}
-              >
-                Sign up
-              </a>
-            </Button>
-          </ButtonWrapper>
           <CarouselWrapper>
             <TestimonialCarousel
               slides={testimonials}
@@ -164,7 +152,11 @@ const CarouselWrapper = styled.div`
 `;
 const ButtonWrapper = styled.div`
   display: flex;
-  flex-flow: row-wrap;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 3%;
+  div {
+    align-items: center;
+  }
 `;
