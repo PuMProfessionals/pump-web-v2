@@ -14,13 +14,14 @@ import { baseTheme } from "../../theme";
 const MAPPER = [
   {
     location: "Toronto",
-    eventbriteLink: "https://bit.ly/pumpplus22"
+    eventbriteLink: "https://bit.ly/pumpplus22",
   },
   {
     location: "Calgary",
-    eventbriteLink: "https://www.eventbrite.ca/e/pump-student-stem-fair-tickets-248417141357"
-  }
-]
+    eventbriteLink:
+      "https://www.eventbrite.ca/e/pump-student-stem-fair-tickets-248417141357",
+  },
+];
 
 const PumpPlus = () => {
   const testimonials = [
