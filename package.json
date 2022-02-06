@@ -21,13 +21,13 @@
     ]
   },
   "dependencies": {
-    "@prisma/client": "^3.8.0",
+    "@prisma/client": "^3.9.1",
     "@styled-icons/bootstrap": "^10.34.0",
     "axios": "^0.24.0",
     "emailjs-com": "^3.2.0",
     "gray-matter": "^4.0.3",
     "multiselect-react-dropdown": "^2.0.17",
-    "next": "^12.0.7",
+    "next": "^12.0.10",
     "next-mdx-remote": "^3.0.8",
     "nprogress": "^0.2.0",
     "prettier": "^2.5.1",
@@ -36,7 +36,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-loader-spinner": "^4.0.0",
-    "react-toastify": "^8.1.0",
+    "react-toastify": "^8.1.1",
     "styled-components": "^5.3.3",
     "swiper": "^7.4.1"
   },
@@ -50,7 +50,7 @@
     "eslint-plugin-react": "^7.28.0",
     "husky": "^4.3.8",
     "lint-staged": "^11.2.6",
-    "prisma": "^3.8.0"
+    "prisma": "^3.9.1"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
