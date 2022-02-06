@@ -38,10 +38,11 @@ export const WhatsHappening = ({ ...props }) => (
               "PowerUp pairs high school students to undergraduate mentors studying the health, life, or biological sciences.",
             thumbnail: PowerUp,
             buttonText: "Learn More",
-            linkTo: "/resources/power-up",
+            linkTo: "/events/power-up",
+            imageHeight: 250,
           },
         ]}
-        cardHeight={500}
+        cardHeight={530}
       />
     </CarouselWrapper>
   </Wrapper>

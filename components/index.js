@@ -22,3 +22,4 @@ export { MDXWrapper } from "./MDXWrapper";
 export { OpportunityCard } from "./OpportunityCard";
 export { Multiselector } from "./Multiselector";
 export { Tag } from "./Tag";
+export { Notification } from "./Notification";
