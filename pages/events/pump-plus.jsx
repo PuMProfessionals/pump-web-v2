@@ -4,7 +4,7 @@ import {
   Title,
   ImageCardCarousel,
   TestimonialCarousel,
-  Button,
+  // Button,
   Video,
 } from "../../components";
 import { PageLayout } from "../../sections/hoc";
@@ -12,17 +12,17 @@ import TieDye from "../../public/about/tiedye-rect.png";
 import Navy from "../../public/about/navy-rect.png";
 import { baseTheme } from "../../theme";
 
-const MAPPER = [
-  {
-    location: "Toronto",
-    eventbriteLink: "https://bit.ly/pumpplus22",
-  },
-  {
-    location: "Calgary",
-    eventbriteLink:
-      "https://www.eventbrite.ca/e/pump-student-stem-fair-tickets-248417141357",
-  },
-];
+// const MAPPER = [
+//   {
+//     location: "Toronto",
+//     eventbriteLink: "https://bit.ly/pumpplus22",
+//   },
+//   {
+//     location: "Calgary",
+//     eventbriteLink:
+//       "https://www.eventbrite.ca/e/pump-student-stem-fair-tickets-248417141357",
+//   },
+// ];
 
 const PumpPlus = () => {
   const testimonials = [
@@ -48,11 +48,11 @@ const PumpPlus = () => {
         <Title title="PuMP+" arrowLink="/events" />
         <Video embedId="Vt1bvyoHA64" />
         <Wrapper>
-          <h2 style={{ marginTop: "5%" }}>
+          {/* <h2 style={{ marginTop: "5%" }}>
             Want to learn more about opportunities in STEM and how to get involved in
             your community?
-          </h2>
-          <p style={{ lineHeight: "1.5rem" }}>
+          </h2> */}
+          {/* <p style={{ lineHeight: "1.5rem" }}>
             We are excited to announce <b>PuMP’s 3rd annual STEM fair</b>, PuMP+!
             Join our Toronto and Calgary branches in February and hear from booths
             about research opportunities, university programs, and much more! We’ll
@@ -80,7 +80,7 @@ const PumpPlus = () => {
                 </Button>
               </div>
             ))}
-          </ButtonWrapper>
+          </ButtonWrapper> */}
           <CarouselWrapper>
             <ImageCardCarousel
               id="quick-facts"
@@ -153,13 +153,13 @@ const Wrapper = styled.div`
 const CarouselWrapper = styled.div`
   margin: 5%;
 `;
-const ButtonWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 3%;
-  div {
-    align-items: center;
-  }
-`;
+// const ButtonWrapper = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 3%;
+//   div {
+//     align-items: center;
+//   }
+// `;
