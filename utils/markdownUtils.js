@@ -18,7 +18,7 @@ export function getSlug(pathType, slugName) {
   switch (pathType) {
     case "blog":
       folderPath = DIGEST_PATHS;
-      matchedPost = posts.find((post) => post.slug === slugName);
+      matchedPost = posts.find((post) => post.slug.trim() == slugName.trim());
       releaseBatch = matchedPost.releaseBatch.split(" ");
       releaseBatch[MONTH] = releaseBatch[MONTH].toLowerCase();
       releaseBatch = releaseBatch.join("-");
