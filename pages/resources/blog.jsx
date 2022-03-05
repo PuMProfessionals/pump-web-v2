@@ -92,7 +92,7 @@ export default function Blog({ blogs, ...props }) {
               </FilterTitle>
               <FilterTitle size={baseTheme.size.h3}>Release Batch</FilterTitle>
               <Multiselector
-                options={["January 2021", "October 2020"]}
+                options={["March 2022", "January 2021", "October 2020"]}
                 displayValue="name"
                 placeholder="Release Batch"
                 setList={setReleaseBatch}

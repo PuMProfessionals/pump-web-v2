@@ -18,11 +18,13 @@ export function getSlug(pathType, slugName) {
   switch (pathType) {
     case "blog":
       folderPath = DIGEST_PATHS;
-      matchedPost = posts.find((post) => post.slug === slugName);
-      releaseBatch = matchedPost.releaseBatch.split(" ");
-      releaseBatch[MONTH] = releaseBatch[MONTH].toLowerCase();
-      releaseBatch = releaseBatch.join("-");
-      folderPath = folderPath.concat("/").concat(releaseBatch);
+      matchedPost = posts.find((post) => post.slug.trim() == slugName.trim());
+      if (matchedPost) {
+        releaseBatch = matchedPost.releaseBatch.split(" ");
+        releaseBatch[MONTH] = releaseBatch[MONTH].toLowerCase();
+        releaseBatch = releaseBatch.join("-");
+        folderPath = folderPath.concat("/").concat(releaseBatch);
+      }
       break;
     case "author":
       folderPath = AUTHOR_PATHS;
