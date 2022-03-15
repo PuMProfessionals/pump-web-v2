@@ -252,7 +252,7 @@ export default function About() {
           />
           <SBoardSection
             board="Ottawa Board"
-            boardDescription="Est. 2021 | 5 Members"
+            boardDescription="Est. 2021 | 21 Members"
             boardMembers={ottawaBoard}
           />
         </PhotoCollageSectionWrapper>
