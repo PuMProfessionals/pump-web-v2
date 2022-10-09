@@ -45,7 +45,7 @@ export default function Home() {
       </Notification> */}
       <PageLayout>
         <TopSection />
-        
+
         <WhatsHappening />
         <Video
           embedId="f5jsJWl5WS0"
