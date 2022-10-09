@@ -7,7 +7,7 @@ import { baseTheme } from "../../theme";
 
 /* TODO-2022: Edit Resources to fit SectionWrapper */
 
-const resources = [
+const resources = Object.freeze([
   {
     titleText: "PuMP Direct",
     descriptionText: `Browse and filter through our database of volunteering, research, and leadership opportunities near you.`,
@@ -60,7 +60,7 @@ const resources = [
     graphicWidth: 250,
     graphicHeight: 250,
   },
-];
+]);
 
 export const ResourcesSection = () => {
   return (
