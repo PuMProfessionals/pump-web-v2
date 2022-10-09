@@ -37,7 +37,6 @@ const BlogsPage = ({ source, frontMatter }) => {
     </div>
   );
 };
-
 export default BlogsPage;
 
 export const getStaticProps = async ({ params }) => {

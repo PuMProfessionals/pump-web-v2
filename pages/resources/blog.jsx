@@ -29,12 +29,15 @@ export default function Blog({ blogs, ...props }) {
   const [releaseBatch, setReleaseBatch] = useState("");
   const [blogPosts, setBlogPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
+    // console.log(blogs);
     setBlogPosts(blogs);
     setIsLoading(false);
   }, []);
 
   const handleChange = (searchValue, tagValues, releaseValues) => {
+    // console.log([searchValue, tagValues, releaseValues]);
     setIsLoading(true);
     axios
       .get(
@@ -63,6 +66,7 @@ export default function Blog({ blogs, ...props }) {
           content="Read advice about interview dos and don'ts, medical school tips, careers in health sciences, and much more. All under one roof!"
         />
       </Head>
+
       <PageLayout>
         <ToastContainer />
         <div {...props}>
@@ -76,6 +80,7 @@ export default function Blog({ blogs, ...props }) {
               medical school tips, time management skills, careers in 
               health sciences, and much more. All under one roof!"
           />
+
           <InputsWrapper>
             <SInput
               placeholder="Search by Title"
@@ -85,6 +90,7 @@ export default function Blog({ blogs, ...props }) {
               onChange={handleSearch}
             />
           </InputsWrapper>
+
           <BottomWrapper>
             <FilterWrapper>
               <FilterTitle size={baseTheme.size.h2} bold="true">

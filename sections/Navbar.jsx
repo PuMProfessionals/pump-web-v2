@@ -12,10 +12,19 @@ import { baseTheme } from "../theme";
 import { media } from "../utils";
 
 {
-  /* TODO: Refactor into object? paths must be same as linked pages*/
+  /* @TODO: Refactor into object? paths must be same as linked pages */
+  // done i think?
 }
+
+// map array to preserve order
 const RESOURCES = ["Home", "About Us", "Resources", "Events", "Community"];
-const PATHS = ["", "about", "resources", "events", "community"];
+const PATH_NAMES = {
+  Home: "",
+  "About Us": "about",
+  Resources: "resources",
+  Events: "events",
+  Community: "community",
+};
 
 export const Navbar = ({
   backgroundColor = baseTheme.colors.navy,
@@ -24,7 +33,9 @@ export const Navbar = ({
   ...props
 }) => {
   const [isHidden, setIsHidden] = useState(false);
+
   const handleClick = () => setIsHidden(!isHidden);
+
   return (
     <NavbarContainer
       backgroundColor={backgroundColor}
@@ -38,32 +49,22 @@ export const Navbar = ({
             <PumpImg src={PumpLogo} alt="Pump Logo" width={80} height={50} />
           </a>
         </Link>
-        {isHidden ? (
-          <Icon
-            src={Close}
-            alt="Cross icon"
-            width={30}
-            height={30}
-            onClick={handleClick}
-          />
-        ) : (
-          <Icon
-            src={Open}
-            alt="Hamburger icon"
-            width={30}
-            height={30}
-            onClick={handleClick}
-          />
-        )}
+        <Icon
+          src={isHidden ? Close : Open}
+          alt={isHidden ? "Cross icon" : "Hamburger icon"}
+          width={30}
+          height={30}
+          onClick={handleClick}
+        />
       </LogoContainer>
       <Container isHidden={isHidden}>
         <ResourcesContainer>
-          {RESOURCES.map((resource, index) => (
+          {RESOURCES.map((resource) => (
             <Resource key={resource}>
-              <Link href={`/${PATHS[index]}`}>
+              <Link href={`/${PATH_NAMES[resource]}`}>
                 <ResourceLink
                   fontColor={fontColor}
-                  isSelected={path == PATHS[index]}
+                  isSelected={path === PATH_NAMES[resource]}
                 >
                   {resource}
                 </ResourceLink>

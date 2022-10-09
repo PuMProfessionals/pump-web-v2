@@ -8,6 +8,7 @@ import { posts } from "../../cache/cache";
     - tags = tags to filter
 */
 export default async (req, res) => {
+  // console.log("tt", req.query);
   let results;
   try {
     results = await prisma.post.findMany();
@@ -20,18 +21,18 @@ export default async (req, res) => {
       post.title.toLowerCase().includes(req.query.search.toLowerCase())
     );
   }
+
+  const selectedTags = req.query.tags.split(",");
+  if (selectedTags.length) {
+    results = results.filter((post) =>
+      post.tags.some((tag) => selectedTags.includes(tag))
+    );
+  }
+
   let allResults = [];
   let filteredResults;
-  if (req.query.tags) {
-    for (let tag of req.query.tags.split(",")) {
-      filteredResults = results.filter((post) => post.tags.includes(tag));
-      allResults.push(...filteredResults);
-    }
-    results = allResults;
-  }
-  allResults = [];
   if (req.query.release) {
-    for (let release of req.query.release.split(",")) {
+    for (const release of req.query.release.split(",")) {
       filteredResults = results.filter((post) => post.releaseBatch === release);
       allResults.push(...filteredResults);
     }

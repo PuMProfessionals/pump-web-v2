@@ -9,7 +9,6 @@ import { media } from "../utils";
 import { baseTheme } from "../theme";
 
 /**
- *
  * Student Resource Component
  * @prop {string} titleText - resource title
  * @prop {string} descriptionText - resource description
