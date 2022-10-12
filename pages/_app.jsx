@@ -45,7 +45,7 @@ function MyApp({ Component, pageProps }) {
 
       <ThemeProvider theme={baseTheme}>
         <GlobalStyle />
-        
+
         <Component {...pageProps} />
       </ThemeProvider>
     </React.Fragment>

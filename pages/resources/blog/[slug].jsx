@@ -1,7 +1,7 @@
 /**
  * Code @P_ERR
  * Noticed that importing from /prisma/index without prisma configured caused error
- * on page load. Wherever '@P_ERR' seen, uncomment when prisma configured, likewise 
+ * on page load. Wherever '@P_ERR' seen, uncomment when prisma configured, likewise
  * the opposite.
  */
 
