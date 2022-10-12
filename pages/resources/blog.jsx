@@ -23,6 +23,10 @@ const customError = () => (
   </div>
 );
 
+/**
+ * Optional @todo:
+ * Infinite scroll blogs (could use redux/context, or maybe neither)
+ */
 export default function Blog({ blogs, ...props }) {
   const [searchParameter, setSearchParameter] = useState("");
   const [tags, setTags] = useState("");
@@ -31,13 +35,11 @@ export default function Blog({ blogs, ...props }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // console.log(blogs);
     setBlogPosts(blogs);
     setIsLoading(false);
   }, []);
 
   const handleChange = (searchValue, tagValues, releaseValues) => {
-    // console.log([searchValue, tagValues, releaseValues]);
     setIsLoading(true);
     axios
       .get(

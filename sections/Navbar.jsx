@@ -11,20 +11,22 @@ import PumpLogo from "../public/pump-logo.png";
 import { baseTheme } from "../theme";
 import { media } from "../utils";
 
-{
-  /* @TODO: Refactor into object? paths must be same as linked pages */
-  // done i think?
-}
-
-// map array to preserve order
 const RESOURCES = ["Home", "About Us", "Resources", "Events", "Community"];
 const PATH_NAMES = {
-  Home: "",
-  "About Us": "about",
-  Resources: "resources",
-  Events: "events",
-  Community: "community",
+  [RESOURCES[0]]: "",
+  [RESOURCES[1]]: "about",
+  [RESOURCES[2]]: "resources",
+  [RESOURCES[3]]: "events",
+  [RESOURCES[4]]: "community",
 };
+/**
+ * @TODO try alternative solution later:
+ * const RESOURCES = [
+ *  {routeName: 'Home', routeNav: ''},
+ *  {routeName: 'About Us', routeNav: 'about},
+ *  ...
+ * ]
+ */
 
 export const Navbar = ({
   backgroundColor = baseTheme.colors.navy,
@@ -59,18 +61,19 @@ export const Navbar = ({
       </LogoContainer>
       <Container isHidden={isHidden}>
         <ResourcesContainer>
-          {RESOURCES.map((resource) => (
-            <Resource key={resource}>
-              <Link href={`/${PATH_NAMES[resource]}`}>
-                <ResourceLink
-                  fontColor={fontColor}
-                  isSelected={path === PATH_NAMES[resource]}
-                >
-                  {resource}
-                </ResourceLink>
-              </Link>
-            </Resource>
-          ))}
+          {RESOURCES.map((resource) => {
+            const navPath = PATH_NAMES[resource];
+
+            return (
+              <Resource key={resource}>
+                <Link href={`/${navPath}`}>
+                  <ResourceLink fontColor={fontColor} isSelected={path === navPath}>
+                    {resource}
+                  </ResourceLink>
+                </Link>
+              </Resource>
+            );
+          })}
           <SButton>
             <Link href="/contact">
               <a style={{ color: baseTheme.colors.navy }}>Contact Us</a>
