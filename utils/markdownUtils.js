@@ -9,7 +9,7 @@ const AUTHOR_PATHS = join(process.cwd(), "_author");
 const OPPORTUNITIES_PATHS = join(process.cwd(), "_direct");
 const EVENTS_PATHS = join(process.cwd(), "_events");
 
-const MONTH = 0;
+const MONTH_INDEX = 0;
 
 export function getSlug(pathType, slugName) {
   let folderPath;
@@ -23,7 +23,7 @@ export function getSlug(pathType, slugName) {
 
       if (matchedPost) {
         releaseBatch = matchedPost.releaseBatch.split(" ");
-        releaseBatch[MONTH] = releaseBatch[MONTH].toLowerCase();
+        releaseBatch[MONTH_INDEX] = releaseBatch[MONTH_INDEX].toLowerCase();
         releaseBatch = releaseBatch.join("-");
         folderPath = folderPath.concat("/").concat(releaseBatch);
       }
@@ -40,6 +40,7 @@ export function getSlug(pathType, slugName) {
     default:
       folderPath = "";
   }
+  
   let fullPath = join(folderPath, `${slugName}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);

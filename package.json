@@ -21,6 +21,7 @@
     ]
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.9",
     "@prisma/client": "^3.10.0",
     "@styled-icons/bootstrap": "^10.34.0",
     "axios": "^0.24.0",
@@ -35,11 +36,13 @@
     "prettier-eslint-cli": "^4.2.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-hook-form": "^7.37.0",
     "react-loader-spinner": "^4.0.0",
     "react-toastify": "^8.2.0",
     "sharp": "^0.29.3",
     "styled-components": "^5.3.3",
-    "swiper": "^7.4.1"
+    "swiper": "^7.4.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.13.3",

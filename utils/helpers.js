@@ -1,10 +1,22 @@
-// export function capitalizeWords(str) {
-//   /**
-//    * @example: "av vv cv" -> "Av Vv Cv"
-//    */
+export function objectFill(obj, fillWith = "") {
+  /**
+   * Clear all values in an object
+   *
+   * objectFill({ a: 1, b: 2 }, "a") // { a: "a", b: "a" }
+   */
 
-//   return str
-//     .split(" ")
-//     .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-//     .join(" ");
-// }
+  return Object.fromEntries(Object.entries(obj).map(([key]) => [key, fillWith]));
+}
+
+export function randomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+export function randomChoice(arraylike) {
+  return arraylike[randomInt(arraylike.length - 1)];
+}
+
+const lcLetsNumbs = "abcdefghijklmnopqrstuvwxyz0123456789";
+export function simpleUUID(length) {
+  return Array.from({ length }, () => randomChoice(lcLetsNumbs)).join("");
+}
