@@ -40,7 +40,7 @@ export function getSlug(pathType, slugName) {
     default:
       folderPath = "";
   }
-  
+
   let fullPath = join(folderPath, `${slugName}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
