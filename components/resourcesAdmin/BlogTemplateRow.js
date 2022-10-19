@@ -12,7 +12,7 @@ export default function BlogTemplateRow({ blog }) {
           {blog.name}
         </a>
         <div className="modified-time-stamp">
-          Last changed {(Date.now() - blog.lastModified )/1000} seconds ago
+          Last changed {(Date.now() - blog.lastModified) / 1000} seconds ago
         </div>
       </BlogInformationContainer>
 

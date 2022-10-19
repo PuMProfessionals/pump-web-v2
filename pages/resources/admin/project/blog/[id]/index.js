@@ -6,7 +6,6 @@ export default function BlogProject() {
     const blogProjects = localStorage.getItem(
       LOCAL_STORAGE_KEYS.ADMIN_BLOG_PROJECTS
     );
-
   }, []);
 
   return (

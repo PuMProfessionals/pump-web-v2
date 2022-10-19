@@ -59,7 +59,6 @@ export default function ResourcesAdmin() {
   }, []);
 
   const handleLogIn = async ({ name, password }) => {
-
     // const data = await axios;
     // console.log(data);
     setUser({ id: 1, name: "Some Name" });
