@@ -1,6 +1,6 @@
 import { prisma } from "../../../prisma/index";
 import { hashString } from "../../../utils/methods/general";
-import { setCookie } from "cookies-next";
+import { deleteCookie, getCookie, getCookies, setCookie } from "cookies-next";
 
 export default async (req, res) => {
   /**
@@ -20,9 +20,10 @@ export default async (req, res) => {
   if (user != null && hashString(password) !== user.password) {
     res.status(200).json({ wrongCombination: true });
   } else {
-    // console.log("wtdf");
-    setCookie("key", "value", {});
-    // console.log("wtdf");
+    setCookie("server-key", "value", { req, res, maxAge: 60 * 60 * 24 });
+    getCookie("key", { req, res });
+    getCookies({ req, res });
+    deleteCookie("key", { req, res });
 
     res.status(200).json({ loggedIn: true });
   }

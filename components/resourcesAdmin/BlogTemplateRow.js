@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Button } from "../Button";
 import { Input } from "../Input";
+import { latestTimeAgo } from "../../utils/methods/time";
 
 export default function BlogTemplateRow({ blog }) {
   return (
@@ -12,7 +13,7 @@ export default function BlogTemplateRow({ blog }) {
           {blog.name}
         </a>
         <div className="modified-time-stamp">
-          Last changed {(Date.now() - blog.lastModified) / 1000} seconds ago
+          Last changed {latestTimeAgo(blog.lastModified)} ago
         </div>
       </BlogInformationContainer>
 
