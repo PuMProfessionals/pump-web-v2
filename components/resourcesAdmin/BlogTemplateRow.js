@@ -30,7 +30,7 @@ const BlogTemplateRowWrapper = styled.section`
   justify-content: space-between;
 
   min-height: 2vh;
-  background-color: lightblue;
+  background-color: whitesmoke;
   margin-bottom: 0.1rem;
   padding: 0.3rem;
   color: black;

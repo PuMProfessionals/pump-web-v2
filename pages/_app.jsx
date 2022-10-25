@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 
 import "react-toastify/dist/ReactToastify.css";
 import "../theme/css/Carousel.css";
+import { ResourcesAdminProvider } from "../contexts/ResourcesAdminProvider";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
@@ -46,7 +47,9 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={baseTheme}>
         <GlobalStyle />
 
-        <Component {...pageProps} />
+        <ResourcesAdminProvider>
+          <Component {...pageProps} />
+        </ResourcesAdminProvider>
       </ThemeProvider>
     </React.Fragment>
   );

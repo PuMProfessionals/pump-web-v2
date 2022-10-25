@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import useLocalStorage from "../../../utils/hooks/useLocalStorage";
-import { LOCAL_STORAGE_KEYS } from "../../../utils/constants";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ADMIN_LOGIN_SCHEMA } from "../../../utils/yup";
 import axios from "axios";
-import { objectFill, simpleUUID } from "../../../utils/helpers";
 import { PageLayout } from "../../../sections/hoc";
 import Head from "next/head";
 
@@ -15,39 +12,20 @@ import { SInput } from "../../../components/Input";
 import BlogTemplateRow from "../../../components/resourcesAdmin/BlogTemplateRow";
 import JobOpportunityRow from "../../../components/resourcesAdmin/JobOpportunityRow";
 import styled from "styled-components";
-
-const defaultBlogProjects = Array.from({ length: 6 }, (_v, i) => {
-  return {
-    id: simpleUUID(7),
-    name: `blog-project-${i + 1}`,
-    lastModified: Date.now(),
-  };
-});
-
-const defaultJobProjects = Array.from({ length: 3 }, (_v, i) => {
-  return {
-    id: simpleUUID(7),
-    name: `job-opportunity-project-${i + 1}`,
-    lastModified: Date.now(),
-  };
-});
+import { useResourcesAdmin } from "../../../contexts/ResourcesAdminProvider";
 
 export default function ResourcesAdmin() {
-  // after access key & login phase
-  const [user, setUser] = useState({ name: null });
+  // login heleprs
+  const [loginHelperMsg, setLoginHelperMsg] = useState("");
+
+  // after login phase
+  const [user, setUser] = useState(null);
   const { register, handleSubmit, formState, reset, getValues } = useForm({
     resolver: yupResolver(ADMIN_LOGIN_SCHEMA),
   });
 
   // after login & admin
-  const [blogTemplates, setBlogTemplates] = useLocalStorage(
-    LOCAL_STORAGE_KEYS.ADMIN_BLOG_PROJECTS,
-    defaultBlogProjects
-  );
-  const [jobOpportunityTemplates, setJobOpportunityTemplates] = useLocalStorage(
-    LOCAL_STORAGE_KEYS.ADMIN_JOB_OPP_PROJECTS,
-    defaultJobProjects
-  );
+  const { blogTemplates, jobOpportunityTemplates } = useResourcesAdmin();
 
   // attempt to log user in
   useEffect(() => {
@@ -59,11 +37,20 @@ export default function ResourcesAdmin() {
   }, []);
 
   const handleLogIn = async ({ name, password }) => {
-    // const data = await axios;
-    // console.log(data);
-    setUser({ id: 1, name: "Some Name" });
+    const res = await axios.post("/api/resources/log-in", { name, password });
+    // console.log(res);
 
-    reset(objectFill(getValues(), ""));
+    if (res.data.loggedIn) {
+      setUser({ id: 1, name: "Some Name" });
+    } else if (res.data.wrongCombination) {
+      setLoginHelperMsg("Wrong username and password combination");
+    }
+
+    reset({
+      ...getValues(),
+      name: res.data.loggedIn ? "" : name,
+      password: "",
+    });
   };
 
   return (
@@ -86,7 +73,7 @@ export default function ResourcesAdmin() {
       </AdminHeader>
 
       <DashboardContainer>
-        {!user.name && (
+        {!user && (
           <AuthorizationContainer>
             <AuthorizationInputContainer>
               <AuthorizationTitle>The PuMP Admin Dashboard</AuthorizationTitle>
@@ -98,20 +85,22 @@ export default function ResourcesAdmin() {
               </LogInInputTitle>
 
               <SInput type={"text"} {...register("name")} />
-              <p>{formState.errors.name?.message}</p>
+              <LogInHelper>{formState.errors.name?.message}</LogInHelper>
 
               <SInput
                 type={"password"}
                 placeholder="Password"
                 {...register("password")}
               />
-              <p>{formState.errors.password?.message}</p>
+              <LogInHelper>{formState.errors.password?.message}</LogInHelper>
+
+              <LogInHelper>{loginHelperMsg}</LogInHelper>
               <Button onClick={handleSubmit(handleLogIn)}>AUTHENTICATE</Button>
             </AuthorizationInputContainer>
           </AuthorizationContainer>
         )}
 
-        {user.name && (
+        {user && (
           <AdminDashboardContainer>
             <DashboardSidebar>
               <div style={{ fontSize: "1.2rem" }}>Utility sidebar coming...</div>
@@ -124,6 +113,7 @@ export default function ResourcesAdmin() {
                 style={{ width: "90%", marginTop: ".5rem" }}
                 placeholder="Search projects (Coming soon..)"
                 disabled
+                onClick={() => alert("being made")}
               />
 
               <h2>Blogs</h2>
@@ -210,6 +200,11 @@ const AuthorizationTitle = styled.h1`
 const LogInInputTitle = styled.h2`
   font-size: 1.5rem;
   margin-bottom: 1rem;
+`;
+
+const LogInHelper = styled.p`
+  font-size: 1rem;
+  color: red;
 `;
 
 // after-authorization styles

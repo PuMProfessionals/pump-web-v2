@@ -11,7 +11,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 
 // @P_ERR
-// import { prisma } from "../../../prisma/index";
+import { prisma } from "../../../prisma/index";
 import { posts } from "../../../cache/cache";
 import { Title, MDXWrapper, Author, Tag, Text } from "../../../components";
 import { PageLayout } from "../../../sections/hoc";
@@ -66,8 +66,8 @@ export const getStaticPaths = async () => {
   let postPaths;
   try {
     // @P_ERR
-    // postPaths = await prisma.post.findMany();
-    postPaths = posts;
+    postPaths = await prisma.post.findMany();
+    // postPaths = posts;
   } catch (e) {
     postPaths = posts;
   }
