@@ -8,7 +8,7 @@ export function AdminProvider({ children }) {
 
   useEffect(() => {
     async function f() {
-    //   const loginStatus = await axios;
+      //   const loginStatus = await axios;
 
       setAdminUser({});
     }
