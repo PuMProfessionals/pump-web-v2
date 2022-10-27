@@ -13,6 +13,7 @@ import "swiper/css/pagination";
 import "react-toastify/dist/ReactToastify.css";
 import "../theme/css/Carousel.css";
 import { ResourcesAdminProvider } from "../contexts/ResourcesAdminProvider";
+import { AdminProvider } from "../contexts/AdminProvider";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
@@ -44,13 +45,15 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:image" content="https://pumprofessionals.org/meta.png" />
       </Head>
 
-      <ThemeProvider theme={baseTheme}>
-        <GlobalStyle />
-
+      <AdminProvider>
         <ResourcesAdminProvider>
-          <Component {...pageProps} />
+          <ThemeProvider theme={baseTheme}>
+            <GlobalStyle />
+
+            <Component {...pageProps} />
+          </ThemeProvider>
         </ResourcesAdminProvider>
-      </ThemeProvider>
+      </AdminProvider>
     </React.Fragment>
   );
 }

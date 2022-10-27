@@ -1,5 +1,12 @@
 import forge from "node-forge";
 
+export function capitalizeEveryWord(str) {
+  return str
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
+}
+
 export function objectFill(obj, fillWith = "") {
   /**
    * Clear all values in an object

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const HEADER_COLOUR = "#1e2530";
 const HEADER_HEIGHT = "6vh";
+
 export const AdminProjectHeader = styled.header`
   display: flex;
   align-items: center;
@@ -22,15 +23,8 @@ export const AdminProjectHeader = styled.header`
 export const AdminProjectEditorContainer = styled.div`
   display: flex;
 
-  background-color: lightgray;
-  background-color: #dadada;
   background-color: whitesmoke;
-  min-height: calc(100vh - ${HEADER_HEIGHT});
-
-  .side {
-    flex: 1;
-    overflow-y: scroll;
-  }
+  height: calc(100vh - ${HEADER_HEIGHT});
 
   .width-adjustor {
     width: 0.8vw;
@@ -46,12 +40,31 @@ export const ProjectEditorSidebar = styled.section`
   display: flex;
   flex-direction: column;
 
-  width: 20vw;
+  width: 25vw;
   height: calc(100vh - ${HEADER_HEIGHT});
   background-color: #455265;
   color: white;
 `;
 
 export const ProjectEditorContainer = styled.section`
-  /*  */
+  overflow-y: scroll;
+  width: 100%;
+  padding: 1rem;
+`;
+
+export const MetadataFormContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const MetadataInput = styled.div`
+  margin-bottom: 1rem;
+
+  * {
+    width: 70%;
+  }
+
+  .info {
+    font-size: 1.2rem;
+  }
 `;

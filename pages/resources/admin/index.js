@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ADMIN_LOGIN_SCHEMA } from "../../../utils/yup";
@@ -13,35 +13,31 @@ import BlogTemplateRow from "../../../components/resourcesAdmin/BlogTemplateRow"
 import JobOpportunityRow from "../../../components/resourcesAdmin/JobOpportunityRow";
 import styled from "styled-components";
 import { useResourcesAdmin } from "../../../contexts/ResourcesAdminProvider";
+import { useAdmin } from "../../../contexts/AdminProvider";
 
 export default function ResourcesAdmin() {
   // login heleprs
-  const [loginHelperMsg, setLoginHelperMsg] = useState("");
-
-  // after login phase
-  const [user, setUser] = useState(null);
   const { register, handleSubmit, formState, reset, getValues } = useForm({
     resolver: yupResolver(ADMIN_LOGIN_SCHEMA),
   });
+  const [loggingIn, setLoggingIn] = useState(false);
+  const [loginHelperMsg, setLoginHelperMsg] = useState("");
+
+  // after login phase
+  const { adminUser, setAdminUser } = useAdmin();
 
   // after login & admin
   const { blogTemplates, jobOpportunityTemplates } = useResourcesAdmin();
 
-  // attempt to log user in
-  useEffect(() => {
-    (async () => {
-      // const data = await axios;
-      // console.log(data);
-      // setUser({});
-    })();
-  }, []);
-
   const handleLogIn = async ({ name, password }) => {
-    const res = await axios.post("/api/resources/log-in", { name, password });
+    if (loggingIn) return;
+    setLoggingIn(true);
+
+    const res = await axios.post("/api/admin/log-in", { name, password });
     // console.log(res);
 
     if (res.data.loggedIn) {
-      setUser({ id: 1, name: "Some Name" });
+      setAdminUser(res.data.user);
     } else if (res.data.wrongCombination) {
       setLoginHelperMsg("Wrong username and password combination");
     }
@@ -51,6 +47,7 @@ export default function ResourcesAdmin() {
       name: res.data.loggedIn ? "" : name,
       password: "",
     });
+    setLoggingIn(false);
   };
 
   return (
@@ -73,7 +70,7 @@ export default function ResourcesAdmin() {
       </AdminHeader>
 
       <DashboardContainer>
-        {!user && (
+        {!adminUser && (
           <AuthorizationContainer>
             <AuthorizationInputContainer>
               <AuthorizationTitle>The PuMP Admin Dashboard</AuthorizationTitle>
@@ -84,7 +81,7 @@ export default function ResourcesAdmin() {
                 Authenticate Identity with Credentials
               </LogInInputTitle>
 
-              <SInput type={"text"} {...register("name")} />
+              <SInput type={"text"} placeholder="Name" {...register("name")} />
               <LogInHelper>{formState.errors.name?.message}</LogInHelper>
 
               <SInput
@@ -100,7 +97,7 @@ export default function ResourcesAdmin() {
           </AuthorizationContainer>
         )}
 
-        {user && (
+        {adminUser && (
           <AdminDashboardContainer>
             <DashboardSidebar>
               <div style={{ fontSize: "1.2rem" }}>Utility sidebar coming...</div>
