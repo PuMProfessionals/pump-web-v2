@@ -23,10 +23,8 @@ export default function ResourcesAdmin() {
   const [loggingIn, setLoggingIn] = useState(false);
   const [loginHelperMsg, setLoginHelperMsg] = useState("");
 
-  // after login phase
+  // after login
   const { adminUser, setAdminUser } = useAdmin();
-
-  // after login & admin
   const { blogTemplates, jobOpportunityTemplates } = useResourcesAdmin();
 
   const handleLogIn = async ({ name, password }) => {

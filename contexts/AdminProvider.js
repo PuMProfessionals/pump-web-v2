@@ -1,6 +1,5 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
-import { capitalizeEveryWord } from "../utils/methods/general";
 
 const Context = createContext();
 
@@ -12,7 +11,7 @@ export function AdminProvider({ children }) {
     async function f() {
       const res = await axios.get("/api/admin/instant-log-in");
       // eslint-disable-next-line no-console
-      console.log(res);
+      console.log(res.data);
 
       if (res.data.loggedIn) {
         const { user } = res.data;
@@ -20,7 +19,6 @@ export function AdminProvider({ children }) {
         setAdminUser(user);
       }
     }
-
     f();
   }, []);
 

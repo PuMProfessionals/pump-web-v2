@@ -4,7 +4,6 @@
 
 // import { prisma } from ".";
 const { prisma } = require(".");
-// @ts-ignore
 const forge = require("node-forge");
 
 const hashString = (msg, encoding) => {
@@ -63,8 +62,9 @@ const createAccount = (
 };
 
 const ADMINS = [
-  createAccount("frED Tu", "pwd"),
+  createAccount("gOOd Name", "pwd"),
   createAccount("somebody qwe", "goodpas"),
+  createAccount("nice nice", "casing dont mattr"),
 ];
 // console.log(ADMINS);
 

@@ -10,6 +10,15 @@ const defaultBlogProjects = Array.from({ length: 6 }, (_v, i) => {
     id: simpleUUID(7),
     name: `blog-project-${i + 1}`,
     lastModified: Date.now(),
+    published: false,
+
+    // blog contents
+    title: "",
+    date: "",
+    releaseBatch: "",
+    authors: [],
+    tags: [],
+    body: "",
   };
 });
 const defaultJobProjects = Array.from({ length: 3 }, (_v, i) => {
@@ -21,6 +30,13 @@ const defaultJobProjects = Array.from({ length: 3 }, (_v, i) => {
 });
 
 export function ResourcesAdminProvider({ children }) {
+  /**
+   * @TODO : remove entirely, only store important project info
+   * (title, last modified) here.
+   * then on each route, store each blog/resource independently
+   * in LS
+   * This so there isnt 1 huge LS value
+   */
   const [blogTemplates, setBlogTemplates] = useLocalStorage(
     LOCAL_STORAGE_KEYS.AdminBlogProjects,
     defaultBlogProjects

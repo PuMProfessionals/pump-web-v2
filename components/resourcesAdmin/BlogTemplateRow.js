@@ -9,12 +9,15 @@ export default function BlogTemplateRow({ blog }) {
       <BlogInformationContainer>
         <Input disabled type="checkbox" />
 
-        <a className="title" href={`/resources/admin/project/blog/${blog.id}`}>
+        <ResourceProjectTitle href={`/resources/admin/project/blog/${blog.id}`}>
           {blog.name}
-        </a>
-        <div className="modified-time-stamp">
+        </ResourceProjectTitle>
+        <ModifiedTimeStamp>
           Last changed {latestTimeAgo(blog.lastModified)} ago
-        </div>
+        </ModifiedTimeStamp>
+
+        {/* extract inline css later */}
+        {blog.published && <div style={{ color: "lightseagreen" }}>(Published)</div>}
       </BlogInformationContainer>
 
       <BlogControlContainer>
@@ -55,22 +58,10 @@ const BlogInformationContainer = styled.section`
       margin-right: 0;
     }
   }
+`;
 
-  .title {
-    font-size: 1.2rem;
-    margin-right: 4rem;
-    font-weight: bold;
-    color: #3e70bb;
-
-    &:hover {
-      cursor: pointer;
-      text-decoration: underline;
-    }
-  }
-
-  .modified-time-stamp {
-    font-size: 1.1rem;
-  }
+export const ModifiedTimeStamp = styled.div`
+  font-size: 1.1rem;
 `;
 
 const BlogControlContainer = styled.section`
@@ -83,5 +74,17 @@ const BlogControlContainer = styled.section`
     &:last-child {
       margin-right: 0;
     }
+  }
+`;
+
+const ResourceProjectTitle = styled.a`
+  font-size: 1.2rem;
+  margin-right: 4rem;
+  font-weight: bold;
+  color: #3e70bb;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
   }
 `;

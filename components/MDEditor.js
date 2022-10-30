@@ -1,20 +1,7 @@
 import { useCallback, useState } from "react";
 import "easymde/dist/easymde.min.css";
 
-export default function MDEditor({
-  submitButtonText,
-  onSubmit,
-  initialValue,
-
-  clearEditorOnSubmit = false,
-  bannedBodyTexts = [],
-  showEmptyBodyTip = false,
-  requiredBody = false,
-  maxBodyMetadataLength,
-  minBodyTextLength,
-  initialBodyMetadata,
-  onBodyMetadataChange,
-}) {
+export default function MDEditor({ initialValue, mdeRecordSetter }) {
   const [mde, setMde] = useState(null);
 
   const injectEditor = useCallback(async (element) => {
@@ -41,11 +28,12 @@ export default function MDEditor({
     });
 
     setMde(easyMDE);
+    mdeRecordSetter(easyMDE);
   }, []);
 
   return (
     <div>
-      <p>Remember you can preview with the toolbar third column</p>
+      <p>Remember you can preview with the toolbar fourth column</p>
       <div ref={injectEditor} />
     </div>
   );

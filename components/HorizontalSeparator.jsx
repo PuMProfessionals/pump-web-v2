@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-// function HorizontalSeparator() {
-//   return <></>;
-// }
-
 export default styled.hr`
   display: block;
   height: 1px;

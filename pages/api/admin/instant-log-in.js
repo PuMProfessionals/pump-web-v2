@@ -1,14 +1,9 @@
 import { prisma } from "../../../prisma/index";
 import { validateToken } from "../../../middlewares/auth";
+import { sanitizeClient } from "../../../utils/methods/secure";
 
 export default async (req, res) => {
   validateToken(req, res);
-
-  /**
-   * asdjkh
-   *
-   * stuff
-   */
 
   if (req.user == null) {
     return res.json({ guestUser: true });
@@ -19,8 +14,7 @@ export default async (req, res) => {
       id: req.user.id,
     },
   });
-  delete user.id;
-  delete user.password;
+  sanitizeClient(user);
 
   res.status(200).json({ loggedIn: true, user });
 };

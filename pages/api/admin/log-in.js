@@ -2,15 +2,9 @@ import { prisma } from "../../../prisma/index";
 import { hashString } from "../../../utils/methods/general";
 import { setCookie } from "cookies-next";
 import { COOKIE_KEYS } from "../../../utils/constants";
-import { createJWT } from "../../../utils/methods/secure";
+import { createJWT, sanitizeClient } from "../../../utils/methods/secure";
 
 export default async (req, res) => {
-  /**
-   * asdjkh
-   *
-   * stuff
-   */
-
   const { name, password } = req.body;
 
   const user = await prisma.adminUser.findUnique({
@@ -29,9 +23,8 @@ export default async (req, res) => {
       maxAge: 60 * 60 * 24 * 7, // in seconds
       httpOnly: true,
     });
+    sanitizeClient();
 
-    delete user.id;
-    delete user.password;
     res.status(200).json({ loggedIn: true, user });
   }
 };
