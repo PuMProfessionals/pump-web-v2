@@ -27,7 +27,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import Head from "next/head";
 
-const AUTOSAVE_SEC_INTERVAL = 2;
+const AUTOSAVE_SECONDS_INTERVAL = 2;
 
 export default function BlogProject() {
   const [blogProject, setBlogProject] = useState(null);
@@ -55,12 +55,13 @@ export default function BlogProject() {
 
   // auto save project details
   useEffect(() => {
-    // let int = setInterval(() => {
-    //   console.log(mde?.value());
-    // }, AUTOSAVE_SEC_INTERVAL * 1000);
-    // return () => {
-    //   clearInterval(int);
-    // };
+    let int = setInterval(() => {
+      saveProject();
+    }, AUTOSAVE_SECONDS_INTERVAL * 1000);
+
+    return () => {
+      clearInterval(int);
+    };
   }, []);
 
   const saveProject = (extraAttributes) => {
