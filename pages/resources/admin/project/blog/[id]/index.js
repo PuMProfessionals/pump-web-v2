@@ -236,10 +236,7 @@ export default function BlogProject() {
             <InputErrorHelper>{blogBodyHelperMsg}</InputErrorHelper>
           </MetadataFormContainer>
 
-          <p>hasdkljalsdj</p>
-          <p>hasdkljalsdj</p>
-          <p>hasdkljalsdj</p>
-          <p>hasdkljalsdj</p>
+          {/* <p>End</p> */}
         </ProjectEditorContainer>
       </AdminProjectEditorContainer>
     </BlogProjectEditorContainer>

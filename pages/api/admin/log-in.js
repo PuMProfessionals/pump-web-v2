@@ -23,7 +23,7 @@ export default async (req, res) => {
       maxAge: 60 * 60 * 24 * 7, // in seconds
       httpOnly: true,
     });
-    sanitizeClient();
+    sanitizeClient(user);
 
     res.status(200).json({ loggedIn: true, user });
   }
