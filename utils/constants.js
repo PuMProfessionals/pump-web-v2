@@ -7,6 +7,12 @@ export const COOKIE_KEYS = Object.freeze({
   AccessToken: "access-token",
 });
 
+export const ADMIN_AUTHORITY = Object.freeze({
+  Super: 3,
+  Mid: 2,
+  Regular: 1,
+});
+
 export const SIZES = Object.freeze({
   Small: 1,
   Medium: 2,

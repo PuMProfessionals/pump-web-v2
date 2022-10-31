@@ -13,11 +13,8 @@ export default function BlogTemplateRow({ blog }) {
           {blog.name}
         </ResourceProjectTitle>
         <ModifiedTimeStamp>
-          Last changed {latestTimeAgo(blog.lastModified)} ago
+          Last opened {latestTimeAgo(blog.lastSaved)} ago
         </ModifiedTimeStamp>
-
-        {/* extract inline css later */}
-        {blog.published && <div style={{ color: "lightseagreen" }}>(Published)</div>}
       </BlogInformationContainer>
 
       <BlogControlContainer>

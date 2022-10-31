@@ -10,9 +10,7 @@ export function validateToken(req, res) {
       // eslint-disable-next-line no-undef
       const decodedToken = verify(accessToken, ENVS.JWT_SECRET_KEY);
 
-      req.user = {
-        id: decodedToken.clientId,
-      };
+      req.user = decodedToken.user;
     } catch (err) {
       // console.log("thee", err);
       // console.log("err done");

@@ -27,11 +27,11 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import Head from "next/head";
 
-const AUTOSAVE_SECONDS_INTERVAL = 2;
+const AUTOSAVE_SECONDS_INTERVAL = 3;
 
 export default function BlogProject() {
   const [blogProject, setBlogProject] = useState(null);
-  const { blogTemplates } = useResourcesAdmin();
+  const { blogTemplates, setBlogTemplates } = useResourcesAdmin();
   const { register, handleSubmit, formState, reset, getValues } = useForm({
     resolver: yupResolver(ADMIN_BLOG_SCHEMA),
   });
@@ -45,32 +45,22 @@ export default function BlogProject() {
 
   // update post with url params
   useEffect(() => {
-    if (router.query == null) return;
+    if (router.query.id == null) return;
 
     const blog = blogTemplates.find((blog) => blog.id === router.query.id);
     setBlogProject(blog);
     reset({ ...blog });
-    setTags(blog?.tags ?? []);
-  }, [router.query]);
-
-  // auto save project details
-  useEffect(() => {
-    let int = setInterval(() => {
-      saveProject();
-    }, AUTOSAVE_SECONDS_INTERVAL * 1000);
-
-    return () => {
-      clearInterval(int);
-    };
-  }, []);
+    setTags(blog.tags);
+  }, [router.query.id]);
 
   const saveProject = (extraAttributes) => {
     const updatedProjects = blogTemplates.map((project) => {
       if (project.id !== router.query.id) return project;
-      let updatedProject = {
-        ...project,
+
+      const updatedProject = {
+        ...blogProject,
         ...getValues(),
-        lastModified: Date.now(),
+        lastSaved: Date.now(),
         body: mde.value(),
         tags,
 
@@ -81,11 +71,19 @@ export default function BlogProject() {
       return updatedProject;
     });
 
-    localStorage.setItem(
-      LOCAL_STORAGE_KEYS.AdminBlogProjects,
-      JSON.stringify(updatedProjects)
-    );
+    setBlogTemplates(updatedProjects);
   };
+
+  // auto save project details
+  useEffect(() => {
+    let interval = setInterval(() => {
+      saveProject();
+    }, AUTOSAVE_SECONDS_INTERVAL * 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [saveProject, blogProject]);
 
   const renderMetadataInput = (metadata) => {
     switch (metadata.inputType) {
@@ -132,7 +130,7 @@ export default function BlogProject() {
     }
   };
 
-  const handleSubmitBlog = async (metadata) => {
+  const handleSubmitBlog = async (blogMetadata) => {
     if (publishing) {
       return toast.warn(() => <div>Already publishing!</div>);
     }
@@ -144,9 +142,10 @@ export default function BlogProject() {
       return setBlogBodyHelperMsg("Body is required");
     }
 
-    saveProject({ published: true });
+    saveProject();
+
     const res = await axios.post("/api/admin/resources/blogs", {
-      ...metadata,
+      ...blogMetadata,
       body: mde.value(),
     });
 
@@ -156,13 +155,16 @@ export default function BlogProject() {
           <span role="img" arial-label="waving-hand">
             👋
           </span>
-          <div>File already exists</div>
+          <div>Blog with the same title already exists</div>
         </div>
       ));
     } else {
-      toast.success(() => <div>Post published!</div>);
-
-      router.push("/resources/admin");
+      toast.success(() => (
+        <div>
+          <div>Post published! Go back to dashboard?</div>
+          <Button onClick={() => router.push("/resources/admin")}>Yes</Button>
+        </div>
+      ));
     }
 
     setPublishing(false);
@@ -183,7 +185,7 @@ export default function BlogProject() {
         <section style={{ display: "flex", alignItems: "center" }}>
           <Button onClick={() => alert("Coming soon")}>Menu</Button>
           <Button>
-            <SeeProjectsLink href="/resources/admin">Projects</SeeProjectsLink>
+            <SeeProjectsLink href="/resources/admin">Dashboard</SeeProjectsLink>
           </Button>
 
           <ProjectName>Current project: {blogProject.name}</ProjectName>

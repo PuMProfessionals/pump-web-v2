@@ -5,6 +5,7 @@
 // import { prisma } from ".";
 const { prisma } = require(".");
 const forge = require("node-forge");
+const { ADMIN_AUTHORITY } = require("../utils/constants");
 
 const hashString = (msg, encoding) => {
   /**
@@ -17,11 +18,6 @@ const hashString = (msg, encoding) => {
 };
 
 const MIN_PWD_LEN = 2;
-const ADMIN_AUTHORITY = Object.freeze({
-  Super: 3,
-  Mid: 2,
-  Regular: 1,
-});
 
 const credErrStr = (cred, dataType) => {
   return `Credential: ${cred} not ${dataType}`;

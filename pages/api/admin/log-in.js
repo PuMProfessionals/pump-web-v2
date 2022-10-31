@@ -16,7 +16,7 @@ export default async (req, res) => {
   if (user == null || hashString(password) !== user.password) {
     res.status(200).json({ wrongCombination: true });
   } else {
-    const accessToken = createJWT({ clientId: user.id });
+    const accessToken = createJWT({ user: { ...user } });
     setCookie(COOKIE_KEYS.AccessToken, accessToken, {
       req,
       res,

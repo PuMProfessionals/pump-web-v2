@@ -1,11 +1,8 @@
 import { sign } from "jsonwebtoken";
-import { fakeTSObjCheck } from "./debug";
 import { ENVS } from "../../lib/envs";
 import { capitalizeEveryWord } from "./general";
 
 export function createJWT(client) {
-  fakeTSObjCheck(client, ["clientId"]);
-
   // eslint-disable-next-line no-undef
   const accessToken = sign(client, ENVS.JWT_SECRET_KEY, {
     noTimestamp: true,

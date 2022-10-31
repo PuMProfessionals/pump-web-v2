@@ -9,8 +9,7 @@ const defaultBlogProjects = Array.from({ length: 6 }, (_v, i) => {
   return {
     id: simpleUUID(7),
     name: `blog-project-${i + 1}`,
-    lastModified: Date.now(),
-    published: false,
+    lastSaved: Date.now(),
 
     // blog contents
     title: "",
@@ -21,11 +20,11 @@ const defaultBlogProjects = Array.from({ length: 6 }, (_v, i) => {
     body: "",
   };
 });
-const defaultJobProjects = Array.from({ length: 3 }, (_v, i) => {
+const defaultJobProjects = Array.from({ length: 3 }, (v, i) => {
   return {
     id: simpleUUID(7),
     name: `job-opportunity-project-${i + 1}`,
-    lastModified: Date.now(),
+    lastSaved: Date.now(),
   };
 });
 
