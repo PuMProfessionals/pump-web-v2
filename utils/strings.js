@@ -11,4 +11,5 @@ export const CONSTANTS = {
     "A Canadian charity connecting students to health sciences opportunities.",
   copyright: "© 2021 Prospective Medical Professionals",
   address: "Richmond Hill, Ontario",
+  charitable_registration_number: "759200330 RR 0001",
 };

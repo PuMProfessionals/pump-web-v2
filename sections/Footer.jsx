@@ -18,6 +18,10 @@ export const Footer = ({ path, ...props }) => (
         {CONSTANTS.registered_charity_descr}
       </SText>
       <SText size="small">{CONSTANTS.copyright}</SText>
+      <SText>
+        Charitable registration number:&nbsp;
+        <b>{CONSTANTS.charitable_registration_number}</b>
+      </SText>
     </FirstColumn>
     <SecondColumn>
       <JosefinNoHoverText bold size="defaultLarger" style={{ marginBottom: "20px" }}>
