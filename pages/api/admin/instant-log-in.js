@@ -18,6 +18,7 @@ export default async (req, res) => {
   });
   if (user == null) return _notifyGuestUser(res);
 
+  // format user info before sending information to client
   sanitizeClient(user);
 
   res.status(200).json({ loggedIn: true, user });

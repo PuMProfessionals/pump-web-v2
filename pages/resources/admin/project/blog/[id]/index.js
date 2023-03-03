@@ -18,10 +18,7 @@ import {
   WidthAdjustor,
 } from "../../../../../../theme/ResourcesAdminStyles";
 import { useResourcesAdmin } from "../../../../../../contexts/ResourcesAdminProvider";
-import {
-  BLOG_METADATA_MAP,
-  LOCAL_STORAGE_KEYS,
-} from "../../../../../../utils/constants";
+import { BLOG_METADATA_MAP } from "../../../../../../utils/constants";
 import { ADMIN_BLOG_SCHEMA } from "../../../../../../utils/yup";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
@@ -180,8 +177,7 @@ export default function BlogProject() {
       </Head>
 
       <AdminProjectHeader>
-        {/* extract inline css later */}
-        {/* tired of frontend */}
+        {/* TODO: extract inline css later () */}
         <section style={{ display: "flex", alignItems: "center" }}>
           <Button onClick={() => alert("Coming soon")}>Menu</Button>
           <Button>
@@ -197,8 +193,6 @@ export default function BlogProject() {
         </section>
       </AdminProjectHeader>
 
-      {/* <button onClick={saveProject}>saveProject</button> */}
-
       <AdminProjectEditorContainer>
         <ProjectEditorSidebar>
           <h1>h</h1>
@@ -210,7 +204,6 @@ export default function BlogProject() {
         <ProjectEditorContainer>
           <MetadataFormContainer>
             <PortionHeader>Provide Data</PortionHeader>
-            {/* {BLOG_METADATA_MAP.map((meta) => renderMetadataInput(meta))} */}
             {BLOG_METADATA_MAP.map((meta) => (
               <MetadataInput key={meta.code}>
                 <div>
@@ -228,8 +221,6 @@ export default function BlogProject() {
             ))}
 
             <PortionHeader>The Body</PortionHeader>
-            {/* <button onClick={() => console.log(tags)}>asldjk</button> */}
-            {/* <button onClick={() => console.log(mde.value())}>yqweqweqw</button> */}
             <MDEditor
               placeholderText={"## Space starts here\n\nand ends here"}
               mdeRecordSetter={setMde}
@@ -245,6 +236,7 @@ export default function BlogProject() {
   );
 }
 
+// Template for changes to page container styles
 const BlogProjectEditorContainer = styled.div`
   /*  */
 `;

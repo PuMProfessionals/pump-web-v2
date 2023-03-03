@@ -12,6 +12,11 @@ export function createJWT(client) {
 }
 
 export function sanitizeClient(user) {
+  /**
+   * Remove sensitive user data from user queries.
+   * Used before sending a user object to the client.
+   */
+  
   delete user.id;
   delete user.password;
 
