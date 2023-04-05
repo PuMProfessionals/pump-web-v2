@@ -8,29 +8,37 @@ import BrainPower from "../public/sponsors/Brain Power.png";
 import Cetaphil from "../public/sponsors/Cetaphil.png";
 import Chipotle from "../public/sponsors/Chipotle.png";
 import CJAY from "../public/sponsors/CJAY.png";
+import CMHF from "../public/sponsors/cmhf.png";
 import CODEX from "../public/sponsors/CODEX.png";
 import CutenSmol from "../public/sponsors/CutenSmol.png";
 import DaanGoLab from "../public/sponsors/DaanGoLab.png";
 import DavidsTea from "../public/sponsors/DavidsTea.png";
+import FreshFusion from "../public/sponsors/fresh_fusion_logo.png";
 import GingerCupcakeDesserts from "../public/sponsors/GingerCupcakeDesserts.png";
 import Kelseys from "../public/sponsors/Kelseys.png";
+import LSA from "../public/sponsors/LSA.png";
 import Maker from "../public/sponsors/Maker.png";
 import MDConsultants from "../public/sponsors/MDConsultants.png";
 import Mediclo from "../public/sponsors/Mediclo.png";
 import Microbi from "../public/sponsors/Microbi.png";
 import MorganCrossing from "../public/sponsors/MorganCrossing.png";
 import NDNextDoor from "../public/sponsors/NDNextDoor.png";
+import Oztrekk from "../public/sponsors/oztrekk_logo.png";
+import Pearson from "../public/sponsors/pearson.png";
 import Reptilla from "../public/sponsors/Reptilia.png";
+import Roche from "../public/sponsors/roche_logo.png";
 import ROM from "../public/sponsors/ROM.png";
 import Smash from "../public/sponsors/Smash.png";
 import StickerGiant from "../public/sponsors/StickerGiant.png";
 import StickerMule from "../public/sponsors/StickerMule.png";
 import TheKeg from "../public/sponsors/TheKeg.png";
+import TKS from "../public/sponsors/TKS_logo.png";
 import Yellofruit from "../public/sponsors/Yellofruit.png";
 import YGOJuiceTea from "../public/sponsors/YGOJuiceTea.png";
 import Leap from "../public/sponsors/Leap.png";
 import STEMFellowship from "../public/sponsors/StemFellowship.png";
 import StudentsForHerdImmunity from "../public/sponsors/StudentsForHerdImmunity.png";
+import YorkU from "../public/sponsors/york_u_logo.png";
 
 import CST from "../public/sponsors/CST.jpeg";
 import CTVNews from "../public/sponsors/CTVNews.png";
@@ -70,6 +78,12 @@ const sponsors = [
     height: 150,
   },
   {
+    title: "CMHF",
+    image: CMHF,
+    width: 330,
+    height: 150,  
+  },
+  {
     title: "Chipotle",
     image: Chipotle,
     width: 180,
@@ -106,6 +120,12 @@ const sponsors = [
     height: 80,
   },
   {
+    title: "FreshFusion",
+    image: FreshFusion,
+    width: 220,
+    height: 80,
+  },
+  {
     title: "GingerCupcakeDesseerts",
     image: GingerCupcakeDesserts,
     width: 180,
@@ -115,6 +135,12 @@ const sponsors = [
     title: "Kelseys",
     image: Kelseys,
     width: 200,
+    height: 180,
+  },
+  {
+    title: "LSA",
+    image: LSA,
+    width: 180,
     height: 180,
   },
   {
@@ -154,8 +180,26 @@ const sponsors = [
     height: 180,
   },
   {
+    title: "Oztrekk",
+    image: Oztrekk,
+    width: 200,
+    height: 180,
+  },
+  {
+    title: "Pearson",
+    image: Pearson,
+    width: 250,
+    height: 180,
+  },
+  {
     title: "Reptilla",
     image: Reptilla,
+    width: 200,
+    height: 180,
+  },
+  {
+    title: "Roche",
+    image: Roche,
     width: 200,
     height: 180,
   },
@@ -190,6 +234,12 @@ const sponsors = [
     height: 180,
   },
   {
+    title: "TKS",
+    image: TKS,
+    width: 280,
+    height: 100,
+  },
+  {
     title: "Yellofruit",
     image: Yellofruit,
     width: 200,
@@ -201,6 +251,12 @@ const sponsors = [
     width: 200,
     height: 180,
   },
+  {
+      title: "YorkU",
+      image: YorkU,
+      width: 350,
+      height: 100,
+  }
 ];
 
 const communityPartners = [
