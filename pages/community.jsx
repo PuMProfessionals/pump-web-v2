@@ -81,7 +81,7 @@ const sponsors = [
     title: "CMHF",
     image: CMHF,
     width: 330,
-    height: 150,  
+    height: 150,
   },
   {
     title: "Chipotle",
@@ -252,11 +252,11 @@ const sponsors = [
     height: 180,
   },
   {
-      title: "YorkU",
-      image: YorkU,
-      width: 350,
-      height: 100,
-  }
+    title: "YorkU",
+    image: YorkU,
+    width: 350,
+    height: 100,
+  },
 ];
 
 const communityPartners = [
