@@ -3,6 +3,8 @@ Next.js overview documentation guide: https://docs.google.com/document/d/1ElPavr
 
 Our website is built with [Next.js](https://nextjs.org/).
 
+The official release repository is [here](https://github.com/xsharonhe/release-2021-pumprofessionals.org).
+
 ## Project Structure
 ```
 pump-web-v2
