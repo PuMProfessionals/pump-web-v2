@@ -77,7 +77,7 @@ const PowerUp = () => {
           </div>
           <ButtonWrapper>
             <Link
-              href="https://forms.gle/rGj32Go4jdYsrzsL8"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScuvEntVUDnMkzOe2nGCyGEW7eOBDdPA6iIUx_pnvAan5N9xQ/viewform"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -86,7 +86,7 @@ const PowerUp = () => {
               </a>
             </Link>
             <Link
-              href="https://docs.google.com/forms/d/e/1FAIpQLSc7DeXtxbPpKQLj-MowdDOXYuXIHjRdErKo0S_fgRmAhLN28Q/viewform"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfQ0OOQMH_Sd0Acf1MXujmEjszw__tfINr_OyrMqoEh-mWNJQ/viewform"
               target="_blank"
               rel="noopener noreferrer"
             >
