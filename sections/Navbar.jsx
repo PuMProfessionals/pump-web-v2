@@ -11,11 +11,22 @@ import PumpLogo from "../public/pump-logo.png";
 import { baseTheme } from "../theme";
 import { media } from "../utils";
 
-{
-  /* TODO: Refactor into object? paths must be same as linked pages*/
-}
 const RESOURCES = ["Home", "About Us", "Resources", "Events", "Community"];
-const PATHS = ["", "about", "resources", "events", "community"];
+const PATH_NAMES = {
+  [RESOURCES[0]]: "",
+  [RESOURCES[1]]: "about",
+  [RESOURCES[2]]: "resources",
+  [RESOURCES[3]]: "events",
+  [RESOURCES[4]]: "community",
+};
+/**
+ * @TODO try alternative solution later:
+ * const RESOURCES = [
+ *  {routeName: 'Home', routeNav: ''},
+ *  {routeName: 'About Us', routeNav: 'about},
+ *  ...
+ * ]
+ */
 
 export const Navbar = ({
   backgroundColor = baseTheme.colors.navy,
@@ -24,7 +35,9 @@ export const Navbar = ({
   ...props
 }) => {
   const [isHidden, setIsHidden] = useState(false);
+
   const handleClick = () => setIsHidden(!isHidden);
+
   return (
     <NavbarContainer
       backgroundColor={backgroundColor}
@@ -38,38 +51,29 @@ export const Navbar = ({
             <PumpImg src={PumpLogo} alt="Pump Logo" width={80} height={50} />
           </a>
         </Link>
-        {isHidden ? (
-          <Icon
-            src={Close}
-            alt="Cross icon"
-            width={30}
-            height={30}
-            onClick={handleClick}
-          />
-        ) : (
-          <Icon
-            src={Open}
-            alt="Hamburger icon"
-            width={30}
-            height={30}
-            onClick={handleClick}
-          />
-        )}
+        <Icon
+          src={isHidden ? Close : Open}
+          alt={isHidden ? "Cross icon" : "Hamburger icon"}
+          width={30}
+          height={30}
+          onClick={handleClick}
+        />
       </LogoContainer>
       <Container isHidden={isHidden}>
         <ResourcesContainer>
-          {RESOURCES.map((resource, index) => (
-            <Resource key={resource}>
-              <Link href={`/${PATHS[index]}`}>
-                <ResourceLink
-                  fontColor={fontColor}
-                  isSelected={path == PATHS[index]}
-                >
-                  {resource}
-                </ResourceLink>
-              </Link>
-            </Resource>
-          ))}
+          {RESOURCES.map((resource) => {
+            const navPath = PATH_NAMES[resource];
+
+            return (
+              <Resource key={resource}>
+                <Link href={`/${navPath}`}>
+                  <ResourceLink fontColor={fontColor} isSelected={path === navPath}>
+                    {resource}
+                  </ResourceLink>
+                </Link>
+              </Resource>
+            );
+          })}
           <SButton>
             <Link href="/contact">
               <a style={{ color: baseTheme.colors.navy }}>Contact Us</a>

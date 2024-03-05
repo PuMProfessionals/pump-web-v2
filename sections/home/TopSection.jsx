@@ -25,7 +25,7 @@ export const TopSection = ({ ...props }) => (
     <SecondColumn>
       <Graphic
         src={MainGraphic}
-        alt="Title graphic - Doctor with stethoscope"
+        alt="Title graphic - 4 pictures of the pump team"
         height={450}
         width={450}
       />

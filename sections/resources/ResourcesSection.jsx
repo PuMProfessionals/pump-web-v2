@@ -6,62 +6,63 @@ import UASLogo from "../../public/resources/uas-logo.png";
 import { baseTheme } from "../../theme";
 
 /* TODO-2022: Edit Resources to fit SectionWrapper */
-export const ResourcesSection = () => {
-  const resources = [
-    {
-      titleText: "PuMP Direct",
-      descriptionText: `Browse and filter through our database of volunteering, research, and leadership opportunities near you.`,
-      buttons: [
-        {
-          color: "yellow",
-          text: "Browse Opportunities",
-          link: "/resources/opportunities",
-        },
-      ],
-      graphic: PuMPDirect,
-      isGraphicLeft: false,
-    },
-    {
-      titleText: "University Admissions Server (UAS)",
-      descriptionText: `Join a Discord comunity for high school and
-        undergraduate students to learn more about diverse medical university
-        programs.`,
-      buttons: [
-        {
-          color: "yellow",
-          text: "Join our community of 900+ students",
-          link: "https://discord.com/invite/vpyF7nCtkm",
-          external: true,
-        },
-        {
-          color: "yellow",
-          text: "Learn more",
-          link: "/resources/uas",
-        },
-      ],
-      graphic: UASLogo,
-      graphicWidth: 300,
-      graphicHeight: 300,
-    },
-    {
-      titleText: "PuMP Digest",
-      descriptionText: `Read advice about interview dos and don'ts, medical
-        school tips, time management skills, careers in health sciences, and much
-        more. All under one roof!`,
-      buttons: [
-        {
-          color: "yellow",
-          text: "Read Blog",
-          link: "/resources/blog",
-        },
-      ],
-      graphic: PuMPDigest,
-      isGraphicLeft: false,
-      graphicWidth: 250,
-      graphicHeight: 250,
-    },
-  ];
 
+const resources = Object.freeze([
+  {
+    titleText: "PuMP Direct",
+    descriptionText: `Browse and filter through our database of volunteering, research, and leadership opportunities near you.`,
+    buttons: [
+      {
+        color: "yellow",
+        text: "Browse Opportunities",
+        link: "/resources/opportunities",
+      },
+    ],
+    graphic: PuMPDirect,
+    isGraphicLeft: false,
+  },
+  {
+    titleText: "University Admissions Server (UAS)",
+    descriptionText: `Join a Discord comunity for high school and
+      undergraduate students to learn more about diverse medical university
+      programs.`,
+    buttons: [
+      {
+        color: "yellow",
+        text: "Join our community of 900+ students",
+        link: "https://discord.com/invite/vpyF7nCtkm",
+        external: true,
+      },
+      {
+        color: "yellow",
+        text: "Learn more",
+        link: "/resources/uas",
+      },
+    ],
+    graphic: UASLogo,
+    graphicWidth: 300,
+    graphicHeight: 300,
+  },
+  {
+    titleText: "PuMP Digest",
+    descriptionText: `Read advice about interview dos and don'ts, medical
+      school tips, time management skills, careers in health sciences, and much
+      more. All under one roof!`,
+    buttons: [
+      {
+        color: "yellow",
+        text: "Read Blog",
+        link: "/resources/blog",
+      },
+    ],
+    graphic: PuMPDigest,
+    isGraphicLeft: false,
+    graphicWidth: 250,
+    graphicHeight: 250,
+  },
+]);
+
+export const ResourcesSection = () => {
   return (
     <>
       <ImageInfoLayout

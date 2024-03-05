@@ -1,8 +1,16 @@
+/**
+ * Code @P_ERR
+ * Noticed that importing from /prisma/index without prisma configured caused error
+ * on page load. Wherever '@P_ERR' seen, uncomment when prisma configured, likewise
+ * the opposite.
+ */
+
 import Head from "next/head";
 import styled from "styled-components";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 
+// @P_ERR
 import { prisma } from "../../../prisma/index";
 import { posts } from "../../../cache/cache";
 import { Title, MDXWrapper, Author, Tag, Text } from "../../../components";
@@ -17,6 +25,7 @@ const BlogsPage = ({ source, frontMatter }) => {
         <title>PuMP | {frontMatter.title}</title>
         <meta property="description" content={frontMatter.description} />
       </Head>
+
       <PageLayout>
         <Title title={frontMatter.title} arrowLink="/resources/blog" />
         <InfoWrapper>
@@ -37,13 +46,12 @@ const BlogsPage = ({ source, frontMatter }) => {
     </div>
   );
 };
-
 export default BlogsPage;
 
 export const getStaticProps = async ({ params }) => {
   const { data, content } = getSlug("blog", params?.slug);
-
   const mdxSource = await serialize(content, { scope: data });
+
   // eslint-disable-next-line no-console
   console.log(data);
   return {
@@ -57,7 +65,9 @@ export const getStaticProps = async ({ params }) => {
 export const getStaticPaths = async () => {
   let postPaths;
   try {
+    // @P_ERR
     postPaths = await prisma.post.findMany();
+    // postPaths = posts;
   } catch (e) {
     postPaths = posts;
   }

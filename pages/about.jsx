@@ -195,6 +195,7 @@ export default function About() {
         <title>PuMP | About Us</title>
         <meta name="description" content="Get to know the PuMP family" />
       </Head>
+
       <PageLayout>
         <Title
           title="About Us"

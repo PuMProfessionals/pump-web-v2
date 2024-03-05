@@ -40,11 +40,13 @@ export default function Home() {
           content="A registered charity dedicated to connecting aspiring students to health sciences opportunities."
         />
       </Head>
+
       {/* <Notification path="/resources/blog" notif="View now!">
         New blog posts released on PuMP Digest.&nbsp;
       </Notification> */}
       <PageLayout>
         <TopSection />
+
         <WhatsHappening />
         <Video
           embedId="f5jsJWl5WS0"

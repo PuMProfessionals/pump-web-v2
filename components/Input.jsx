@@ -20,7 +20,8 @@ export const Input = ({
   />
 );
 
-const SInput = styled.input`
+// used when ref needs to be passed as prop
+export const SInput = styled.input`
   ${({ theme }) => `
         font-size: ${theme.size.default};
         transition: ${theme.transitions.cubicBezier};

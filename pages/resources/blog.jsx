@@ -23,12 +23,17 @@ const customError = () => (
   </div>
 );
 
+/**
+ * Optional @todo:
+ * Infinite scroll blogs (could use redux/context, or maybe neither)
+ */
 export default function Blog({ blogs, ...props }) {
   const [searchParameter, setSearchParameter] = useState("");
   const [tags, setTags] = useState("");
   const [releaseBatch, setReleaseBatch] = useState("");
   const [blogPosts, setBlogPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     setBlogPosts(blogs);
     setIsLoading(false);
@@ -63,6 +68,7 @@ export default function Blog({ blogs, ...props }) {
           content="Read advice about interview dos and don'ts, medical school tips, careers in health sciences, and much more. All under one roof!"
         />
       </Head>
+
       <PageLayout>
         <ToastContainer />
         <div {...props}>
@@ -76,6 +82,7 @@ export default function Blog({ blogs, ...props }) {
               medical school tips, time management skills, careers in 
               health sciences, and much more. All under one roof!"
           />
+
           <InputsWrapper>
             <SInput
               placeholder="Search by Title"
@@ -85,6 +92,7 @@ export default function Blog({ blogs, ...props }) {
               onChange={handleSearch}
             />
           </InputsWrapper>
+
           <BottomWrapper>
             <FilterWrapper>
               <FilterTitle size={baseTheme.size.h2} bold="true">

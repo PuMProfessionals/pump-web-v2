@@ -26,4 +26,20 @@ export const GlobalStyle = createGlobalStyle`
             color: ${theme.colors.white};
         }
     `};
+
+    @media only screen and (max-width: 1000px) {
+        html {
+            font-size: 13px;
+        }
+    }
+    @media only screen and (max-width: 800px) {
+        html {
+            font-size: 10px;
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        html {
+            font-size: 7px;
+        }
+    }
 `;
