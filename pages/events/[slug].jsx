@@ -55,3 +55,4 @@ export const getStaticPaths = async () => {
 };
 
 const Wrapper = styled.div``;
+

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import styled from "styled-components";
@@ -24,14 +25,29 @@ const customError = () => (
 );
 
 export default function Blog({ blogs, ...props }) {
+  const router = useRouter();
   const [searchParameter, setSearchParameter] = useState("");
   const [tags, setTags] = useState("");
   const [releaseBatch, setReleaseBatch] = useState("");
   const [blogPosts, setBlogPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    setBlogPosts(blogs);
-    setIsLoading(false);
+    if (router.asPath == "/resources/blog#March2022") {
+      setReleaseBatch("March 2022");
+      axios
+        .get(`/api/blog?release=March 2022`)
+        .then((res) => {
+          setBlogPosts(res.data.results);
+          setIsLoading(false);
+        })
+        .catch(() => {
+          toast.error(customError);
+        });
+    } else {
+      setBlogPosts(blogs);
+      setIsLoading(false);
+    }
   }, []);
 
   const handleChange = (searchValue, tagValues, releaseValues) => {
