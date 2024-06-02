@@ -16,7 +16,15 @@ export const OurStory = ({ ...props }) => {
         post-secondary students understand different career pathways in life and
         health sciences.
       </Description>
-      <Description>Our goals are to:</Description>
+      <Description
+        style={{
+          justifyContent: "flex-start",
+          fontSize: baseTheme.size.defaultLarger,
+          fontWeight: "bold",
+        }}
+      >
+        Our goals are to:
+      </Description>
       <List>
         <Item>
           Increase the transparency of the entry process into medical career paths.
@@ -63,7 +71,6 @@ const Description = styled(Text)`
   justify-content: center;
   line-height: 1.5;
   padding: 0 5%;
-  line-height: 1.5;
   ${({ theme }) => `
       color: ${theme.colors.white};
   `};

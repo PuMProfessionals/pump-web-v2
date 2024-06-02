@@ -44,17 +44,6 @@ export function getSlug(pathType, slugName) {
   return { data, content };
 }
 
-export const getEventSlugs = () => {
-  const allEventsPath = fs.readdirSync(EVENTS_PATHS);
-  const events = allEventsPath.map((event) => {
-    const slug = event.replace(/\.mdx?$/, "");
-    return {
-      slug,
-    };
-  });
-  return events;
-};
-
 export const getOpportunitySlugs = () => {
   const allOpportunityPath = fs.readdirSync(OPPORTUNITIES_PATHS);
   const opportunities = allOpportunityPath.map((opp) => {

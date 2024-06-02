@@ -3,25 +3,6 @@ Next.js overview documentation guide: https://docs.google.com/document/d/1ElPavr
 
 Our website is built with [Next.js](https://nextjs.org/).
 
-The official release repository is [here](https://github.com/xsharonhe/release-2021-pumprofessionals.org).
-
-## Project Structure
-```
-pump-web-v2
-|-- _digest/ # All blog articles here
-|-- _direct/ # All opportunities here
-|-- .github/ # All CI/CD workflows go here
-|-- cache/ # Backup cache for all our data
-|-- components/ # All reusable components
-|-- lib/ # Script to create cache
-|-- pages/api # All our backend API endpoints
-|-- prisma/ # All our in house database documents and schemas
-|-- public/ # All our images
-|-- sections/ # Larger sections that are composed of different components but not quite the entire page
-|-- theme/ # Our theming files
-|-- utils/ # Utility functions that are common to all files
-```
-
 ## Getting Started
 
 You should clone the repository as described in the [github-git-practice](https://github.com/PuMProfessionals/github-git-practice) repository and install your node modules with ```npm install```. Afterwards go into you root project folder ```pump-web-v2``` and add the following ```.env``` file:

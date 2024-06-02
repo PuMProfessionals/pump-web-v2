@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import PumpDigest from "../../public/resources/pump-digest.png";
-import ImpactReport from "../../public/about/impact-report.png";
+import ImpactReport from "../../public/about/impact-report-2023.png";
 import PowerUp from "../../public/events/power-up.png";
 import { CardCarousel, Text } from "../../components";
 
@@ -31,6 +31,7 @@ export const WhatsHappening = ({ ...props }) => (
             thumbnail: ImpactReport,
             buttonText: "Learn More",
             linkTo: "/about#impact-report",
+            imageHeight: 240,
           },
           {
             title: "PowerUp Mentorship",
