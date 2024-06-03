@@ -117,5 +117,5 @@ const ImageWrapper = styled.div`
 `;
 
 const SImage = styled(Image)`
-    border-radius: 30px;
+  border-radius: 30px;
 `;
