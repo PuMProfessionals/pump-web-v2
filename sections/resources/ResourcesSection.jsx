@@ -73,7 +73,7 @@ export const ResourcesSection = () => {
         graphicWidth={resources[0].graphicWidth}
         graphicHeight={resources[0].graphicHeight}
         isGraphicLeft={resources[0].isGraphicLeft}
-        style={{ marginTop: "5%" }}
+        style={{ marginTop: "2%" }}
       />
       <MiddleImageInfoLayout
         key={resources[1].titleText}
@@ -95,7 +95,7 @@ export const ResourcesSection = () => {
         graphicWidth={resources[2].graphicWidth}
         graphicHeight={resources[2].graphicHeight}
         isGraphicLeft={resources[2].isGraphicLeft}
-        style={{ margin: "5% 0" }}
+        style={{ margin: "2% 0" }}
       />
     </>
   );
