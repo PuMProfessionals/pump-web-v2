@@ -31,7 +31,7 @@ export const ImpactCard = ({
     <Wrapper cardHeight={cardHeight} {...props}>
       <Section isImageTop={isImageTop}>
         <ImageWrapper>
-          <Image
+          <SImage
             alt={`Card image for ${cardTitle} ${description}`}
             src={thumbnail}
             height={imageHeight}
@@ -114,4 +114,8 @@ const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding: 5% 0;
+`;
+
+const SImage = styled(Image)`
+  border-radius: 30px;
 `;
