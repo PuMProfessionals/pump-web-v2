@@ -21,7 +21,7 @@
     ]
   },
   "dependencies": {
-    "@prisma/client": "^3.10.0",
+    "@prisma/client": "^5.19.0",
     "@styled-icons/bootstrap": "^10.34.0",
     "axios": "^0.24.0",
     "emailjs-com": "^3.2.0",
@@ -51,7 +51,7 @@
     "eslint-plugin-react": "^7.29.3",
     "husky": "^4.3.8",
     "lint-staged": "^11.2.6",
-    "prisma": "^3.10.0"
+    "prisma": "^5.19.0"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
