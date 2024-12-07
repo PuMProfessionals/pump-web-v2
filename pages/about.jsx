@@ -83,6 +83,7 @@ const nationalBoard = [
     avatar: Vasharna,
     position: "VP of Eastern Regional Operations",
     cardHeight: 370,
+    imageWidth: 230,
     fontColor: baseTheme.colors.turquoise,
   },
   {
