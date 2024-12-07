@@ -100,7 +100,7 @@ const Graphic = styled.div`
 `;
 
 const Wrapper = styled.div`
-  padding: 4vh 0;
+  padding: 1vh 0;
   display: flex;
   ${({ isgraphicleft }) => `
       flex-direction: ${isgraphicleft ? "row" : "row-reverse"}
