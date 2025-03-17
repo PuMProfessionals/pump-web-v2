@@ -38,6 +38,7 @@ import YGOJuiceTea from "../public/sponsors/YGOJuiceTea.png";
 import Leap from "../public/sponsors/Leap.png";
 import STEMFellowship from "../public/sponsors/StemFellowship.png";
 import StudentsForHerdImmunity from "../public/sponsors/StudentsForHerdImmunity.png";
+import YorkRegionTutoring from "../public/sponsors/york_region_tutoring.png";
 import YorkU from "../public/sponsors/york_u_logo.png";
 
 import CST from "../public/sponsors/CST.jpeg";
@@ -53,6 +54,11 @@ import { ImpactSection } from "../sections/sponsors";
 import { media } from "../utils";
 
 const sponsors = [
+  {
+    title: "York Region Tutoring",
+    image: YorkRegionTutoring,
+    link: "https://www.yorkregiontutoring.com/",
+  },
   {
     title: "Aroma Cafe Bar",
     image: AromaCafe,
@@ -386,7 +392,22 @@ export default function Community() {
           </SponsorsWrapper>
           <Subtitle>Our Sponsors</Subtitle>
           <SponsorsWrapper>
-            {sponsors.map((sponsor) => (
+            {sponsors.map((sponsor) => sponsor.link ? (
+                <ImageContainer key={`Sponsors__Logo__${sponsor.title}`}>
+                  <a
+                    href={sponsor.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src={sponsor.image}
+                      height={sponsor.height}
+                      width={sponsor.width}
+                      alt={`Logo for ${sponsor.title}`}
+                    />
+                  </a>
+                </ImageContainer>
+            ) : (
               <ImageContainer key={`Sponsors__Logo__${sponsor.title}`}>
                 <Image
                   src={sponsor.image}
